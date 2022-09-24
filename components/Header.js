@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import SimpleLink from "./SimpleLink";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
 
 export default function Header({ t, bg }) {
   const list = ["finance", "it", "legal", "marketing"];
@@ -19,7 +20,9 @@ export default function Header({ t, bg }) {
         style={{ backgroundColor: "#091E42" + bg }}
       >
         <div className="w-[15%]">
-          <Image src="/images/logo.png" width={2061} height={968} />
+          <Link href="/">
+            <Image src="/images/logo.png" width={2061} height={968} />
+          </Link>
         </div>
         <div className="flex flex-row justify-evenly w-[70%]">
           {list.map((name) => (

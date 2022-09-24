@@ -17,7 +17,7 @@ export async function getStaticProps({ locale }) {
   };
 }
 
-export default function Home() {
+export default function Index() {
   const t = useTranslations("index");
   const h = useTranslations("header");
   const f = useTranslations("footer");
