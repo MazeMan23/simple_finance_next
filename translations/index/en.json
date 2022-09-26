@@ -1,6 +1,26 @@
 {
     "index": {
         "heroTitle": "MANAGE YOUR BUSINESS FROM A SINGLE PORTAL",
-        "heroSubtitle": "ALL CORPORATE SERVICES AT ONE PLACE "
+        "heroSubtitle": "ALL CORPORATE SERVICES AT ONE PLACE ",
+        "whoAreWeTitle": "Who Are We?",
+        "whoAreWe": "We are a consulting company helping businesses realise their ambitious ideas for change and define their future. We operate in Central and Eastern Europe with our customers as one team, sharing a common vision to deliver exceptional results and grow industries. We complement our expertise with a digital ecosystem to deliver better, faster and longer lasting results. For more than 15 years, we've invested in training and upskilling so we can meet economic development challenges together.",
+        "whatWeDo": "We provide comprehensive consulting and management for finance and accounting, human resources, legal, information technology, sales and marketing, independent valuations, insurance and risk assessment, project management and financing, implementation of management system standards, automated translation. We help our partners rediscover opportunities and achieve results before anyone else through automated digital processes and activities on a single platform. Digital transformation has made it possible to make informed decisions anytime through our mobile app.",
+        "ourMission": "Together with our partners, we seek the challenges of the future, striving to be honest, open, engaged and practical, setting new standards and excellence across business sectors together. We think boldly, we inspire, and our passion for results defines your success.",
+        "servicesTitle": "Our Services",
+        "service_fin": "We are a financial and accounting consultancy helping businesses realise their ambitious ideas for change and define their future, operating in Central and Eastern Europe with our clients.",
+        "service_law": "At Simple Law, we don’t just provide legal services, we bring an entrepreneurial mindset and creativity that allows us to offer you solutions with the highest efficiency.",
+        "service_it": "We help business formalize their digital strategy to deliver the best results on time, at cost and at specification. ",
+        "service_mar": "Simple Marketing is a full-service digital agency that cares about building and promoting our clients’ businesses in the digital space, reaching and engaging potential and current customers.",
+        "contact": "Contact Us",
+        "name": "Full name",
+        "subject": "Subject",
+        "message": "Message",
+        "send": "Send",
+        "address_title": "Office Address:",
+        "address": "Sofia 1113, ″Nikolay Haitov” street № 3A, floor 2",
+        "phone_title": "Phone number:",
+        "heroTitleFinance": "MANAGE YOUR BUSINESS",
+        "heroSubtitle1Finance": "FROM THE EARLIEST DEVELOPMENT.",
+        "heroSubtitle2Finance": "Be a professional in what you do."
     }
 }

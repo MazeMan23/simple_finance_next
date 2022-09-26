@@ -3,7 +3,7 @@ import React from "react";
 
 export default function SimpleLink({ href, children, className = "" }) {
   return (
-    <Link href={href}>
+    <Link href={href} style={{ cursor: "pointer" }}>
       <div className={`flex flex-col ${className}`}>
         <div className="text-[rgba(255,255,255,.6)] focus:text-[#ffffff] hover:text-[#ffffff] active:text-[#ffffff]">
           {children}

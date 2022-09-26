@@ -32,7 +32,7 @@ export default function Layout({ h, f, children }) {
   }, [setOffset]);
 
   return (
-    <div className="min-w-full min-h-screen">
+    <div className="min-w-full min-h-screen ">
       <Header t={h} bg={offset} />
       <div className="flex flex-col min-w-full justify-center">{children}</div>
       <Footer t={f} h={h} />

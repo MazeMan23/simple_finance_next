@@ -19,18 +19,25 @@ export default function Header({ t, bg }) {
         className="lg:flex hidden fixed flex-row justify-evenly p-4 z-20"
         style={{ backgroundColor: "#091E42" + bg }}
       >
-        <div className="w-[15%]">
+        <div className="w-[10%]">
           <Link href="/">
             <Image src="/images/logo.png" width={2061} height={968} />
           </Link>
         </div>
-        <div className="flex flex-row justify-evenly w-[70%]">
+        <div className="flex flex-row justify-evenly w-[90%]">
           {list.map((name) => (
-            <SimpleLink href={`/${name}`} key={name} className="justify-center w-[14%] text-center">
+            <SimpleLink
+              href={`/${name}`}
+              key={name}
+              className="justify-center text-center"
+            >
               {t(name)}
             </SimpleLink>
           ))}
-          <SimpleLink href="/contact" className="justify-center w-[14%] text-center">
+          <SimpleLink
+            href="/contact"
+            className="justify-center w-[15%] text-center"
+          >
             {t("contact")}
           </SimpleLink>
           <SimpleLink
@@ -74,7 +81,11 @@ export default function Header({ t, bg }) {
           <div className="w-[25%]" onClick={() => setIsOpen(!isOpen)}>
             <div className="flex flex-col justify-center min-h-full">
               <div className="flex flex-row justify-center min-w-full">
-                <FontAwesomeIcon icon={faBars} color="rgba(255,255,255,.6)" size="2x" />
+                <FontAwesomeIcon
+                  icon={faBars}
+                  color="rgba(255,255,255,.6)"
+                  size="2x"
+                />
               </div>
             </div>
           </div>
@@ -94,7 +105,10 @@ export default function Header({ t, bg }) {
               </SimpleLink>
             </div>
             <div className="w-full">
-              <SimpleLink href="https://groupsimple.sharepoint.com/_layouts/15/sharepoint.aspx" className="text-lg">
+              <SimpleLink
+                href="https://groupsimple.sharepoint.com/_layouts/15/sharepoint.aspx"
+                className="text-lg"
+              >
                 {t("login")}
               </SimpleLink>
             </div>
@@ -106,7 +120,9 @@ export default function Header({ t, bg }) {
                     className="max-w-[2rem]"
                     onClick={() => {
                       setCookie("NEXT_LOCALE", "en");
-                      router.push(router.asPath, router.asPath, { locale: "en" });
+                      router.push(router.asPath, router.asPath, {
+                        locale: "en",
+                      });
                     }}
                   />
                   <BG
@@ -114,7 +130,9 @@ export default function Header({ t, bg }) {
                     className="max-w-[2rem]"
                     onClick={() => {
                       setCookie("NEXT_LOCALE", "bg");
-                      router.push(router.asPath, router.asPath, { locale: "bg" });
+                      router.push(router.asPath, router.asPath, {
+                        locale: "bg",
+                      });
                     }}
                   />
                 </div>
