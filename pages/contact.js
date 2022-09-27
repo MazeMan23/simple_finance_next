@@ -2,7 +2,6 @@ import React from "react";
 import { useTranslations } from "use-intl";
 import Layout from "../components/Layout";
 import ParticlesHero from "../components/ParticlesHero";
-import { Pagination } from "@nextui-org/react";
 import { Partner } from "../components/Partner";
 import ContactForm from "../components/ContactForm";
 
@@ -25,34 +24,30 @@ export default function Index() {
   const h = useTranslations("header");
   const f = useTranslations("footer");
 
-  const services_list = [
+  const partners = [
     {
-      category: t("accounting_title"),
-      banner: "/images/acc.jpg",
-      desc1: t("acc1"),
-      desc2: t("acc2"),
-      desc3: t("acc3"),
+      name: "AllDigital",
+      image: "/images/partners/ad.png",
     },
     {
-      category: t("finance_tile"),
-      banner: "/images/fin.jpg",
-      desc1: t("fin1"),
-      desc2: t("fin2"),
-      desc3: t("fin3"),
+      name: "Check Point",
+      image: "/images/partners/checkpoint.png",
     },
     {
-      category: t("consulting_title"),
-      banner: "/images/cons.jpg",
-      desc1: t("con1"),
-      desc2: t("con2"),
-      desc3: t("con3"),
+      name: "Crayon",
+      image: "/images/partners/crayon.png",
     },
     {
-      category: t("business_title"),
-      banner: "/images/business.jpg",
-      desc1: t("bus1"),
-      desc2: t("bus2"),
-      desc3: t("bus3"),
+      name: "Navtech",
+      image: "/images/partners/navtech.png",
+    },
+    {
+      name: "PolyComp",
+      image: "/images/partners/polycomp.png",
+    },
+    {
+      name: "TUV Rheinland",
+      image: "/images/partners/tuv.png",
     },
   ];
 
@@ -66,13 +61,12 @@ export default function Index() {
       </ParticlesHero>
       <ContactForm t={t} h={h} />
       <div className="flex flex-col mb-16">
-        <div className="flex flex-col md:flex-row md:mt-8 md:mb-8">
-          <Partner className="flex flex-1" />
-          <Partner className="flex flex-1" />
-          <Partner className="flex flex-1" />
-          <Partner className="flex flex-1 ml-8 mr-8" />
+        <div className="text-center mb-8 text-2xl md:text-3xl font-bold">{t("partnerTitle")}</div>
+        <div className="flex flex-row flex-wrap justify-center gap-8">
+          {partners.map((p, i) => (
+            <Partner image={p.image} text={p.name} key={i} />
+          ))}
         </div>
-        <Pagination className="self-center" shadow color="warning" onlyDots total={8} loop initialPage={1} />
       </div>
     </Layout>
   );
