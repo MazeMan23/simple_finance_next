@@ -75,10 +75,10 @@ export default function Index() {
             <h1 className="mt-5 text-3xl font-semibold	">
               {t("whoAreWeTitle")}
             </h1>
-            <p className="mt-3 md:text-lg">{t("whoAreWe")}</p>
+            <p className="mt-3">{t("whoAreWe")}</p>
             <ul className="list-disc ml-5 mt-5  marker:text-orange-500">
-              <li className="mb-2 md:text-lg">{t("whatWeDo")}</li>
-              <li className="mb-2 md:text-lg">{t("ourMission")}</li>
+              <li className="mb-2">{t("whatWeDo")}</li>
+              <li className="mb-2">{t("ourMission")}</li>
             </ul>
           </div>
           <div className="hidden self-center lg:flex lg:flex-1 lg:justify-center">
