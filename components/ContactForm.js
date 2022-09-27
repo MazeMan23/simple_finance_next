@@ -2,9 +2,9 @@ import React from "react";
 
 export default function ContactForm({ t, h }) {
   return (
-    <form className="flex flex-col px-8 py-8 bg-white dark:bg-blue-500">
+    <form className="flex flex-col px-8 py-8 bg-white">
       <div className=" flex justify-center">
-        <h1 className="text-3xl font-bold dark:text-gray-50 text-center">{t("contact")}</h1>
+        <h1 className="text-3xl font-bold text-center">{t("contact")}</h1>
       </div>
       <div className="flex flex-row justify-between gap-8">
         <div className="hidden lg:flex lg:flex-1 lg:flex-col justify-start items-end">
@@ -17,40 +17,40 @@ export default function ContactForm({ t, h }) {
         </div>
         <div className="flex flex-col flex-2">
           <div className="flex flex-2 flex-col flex-2">
-            <label htmlFor="fullname" className="font-light mt-8 text-white">
+            <label htmlFor="fullname" className="font-light mt-8 ">
               {t("name")}
               <span className="text-red-500">&nbsp;*</span>
             </label>
             <input
               type="text"
               name="fullname"
-              className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 font-light text-white"
+              className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 font-light "
             />
-            <label htmlFor="email" className="text-white font-light mt-4">
+            <label htmlFor="email" className=" font-light mt-4">
               E-mail<span className="text-red-500">&nbsp;*</span>
             </label>
             <input
               type="email"
               name="email"
-              className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-white"
+              className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light "
             />
-            <label htmlFor="subject" className="text-white font-light mt-4">
+            <label htmlFor="subject" className=" font-light mt-4">
               {t("subject")}
               <span className="text-red-500">&nbsp;*</span>
             </label>
-            <select className="mt-2 bg-transparent border-b py-2 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-white">
+            <select className="mt-2 bg-transparent border-b py-2 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light ">
               <option>{h("finance")}</option>
               <option>{h("legal")}</option>
               <option>{h("it")}</option>
               <option>{h("marketing")}</option>
             </select>
-            <label htmlFor="message" className="text-white font-light mt-4">
+            <label htmlFor="message" className=" font-light mt-4">
               {t("message")}
               <span className="text-red-500">&nbsp;*</span>
             </label>
             <textarea
               name="message"
-              className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-white"
+              className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light "
             ></textarea>
             <div className="flex flex-row items-center justify-end">
               <button className="px-10 mt-8 py-2 bg-[#130F49] text-white font-light rounded-md text-lg flex flex-row items-center">

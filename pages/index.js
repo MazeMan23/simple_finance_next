@@ -89,13 +89,16 @@ export default function Index() {
           <h1 className="text-3xl font-semibold	mt-10 mb-3">{t("servicesTitle")}</h1>
           <div className="flex flex-row justify-center gap-4 px-8 mb-4 flex-wrap">
             {services_list.map((item, index) => (
-              <div key={index} className="rounded-xl bg-white active:bg-gray-200  w-full md:w-[48%] lg:w-[23%]">
+              <div
+                key={index}
+                className="rounded-xl bg-white active:bg-gray-200  w-full md:w-[48%] lg:w-[23%] shadow-xl"
+              >
                 <Link href={`/${item.url}`}>
                   <div className="flex flex-col justify-between gap-2">
                     <Image src={item.banner} className="rounded-t-xl" layout="intrinsic" width={1920} height={697} />
                     <div className="flex flex-row justify-start items-center mt-2 p-4 pb-0 h-[5rem]">
                       <div className="w-[15%] flex flex-col justify-center">
-                        <Image src={item.img} layout="intrinsic" width={1000} height={999} />
+                        <Image src={item.img} className="rounded-xl" layout="intrinsic" width={1000} height={999} />
                       </div>
                       <p className="ml-2 text-2xl w-[85%]">{item.title}</p>
                     </div>
