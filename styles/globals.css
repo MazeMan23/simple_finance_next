@@ -30,6 +30,8 @@ a {
   z-index: -1;
 }
 
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+

@@ -1,0 +1,12 @@
+{
+    "contact": {
+        "contact": "Contact Us",
+        "name": "Full name",
+        "subject": "Subject",
+        "message": "Message",
+        "send": "Send",
+        "address_title": "Office Address:",
+        "address": "Sofia 1113, ″Nikolay Haitov” street № 3A, floor 2",
+        "phone_title": "Phone number:"
+    }
+}

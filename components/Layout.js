@@ -13,8 +13,6 @@ export default function Layout({ h, f, children }) {
       }
 
       setOffset(Math.round(window.scrollY).toString(16).padStart(2, "0"));
-      console.log(window.scrollY);
-      console.log(Math.round(window.scrollY).toString(16).padStart(2, "0"));
     });
 
     return () => {
@@ -25,8 +23,6 @@ export default function Layout({ h, f, children }) {
         }
 
         setOffset(Math.round(window.scrollY).toString(16).padStart(2, "0"));
-        console.log(window.scrollY);
-        console.log(Math.round(window.scrollY).toString(16).padStart(2, "0"));
       });
     };
   }, [setOffset]);

@@ -1,3 +1,4 @@
+import React from "react";
 import { Card, Col, Row, Button, Text } from "@nextui-org/react";
 
 export const Partner = () => (
@@ -43,12 +44,7 @@ export const Partner = () => (
         <Col>
           <Row justify="flex-end">
             <Button flat auto rounded color="secondary">
-              <Text
-                css={{ color: "inherit" }}
-                size={12}
-                weight="bold"
-                transform="uppercase"
-              >
+              <Text css={{ color: "inherit" }} size={12} weight="bold" transform="uppercase">
                 Notify Me
               </Text>
             </Button>
