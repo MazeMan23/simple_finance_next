@@ -7,7 +7,7 @@
         "service2": "Creating personalized customer experiences and relationships.",
         "service3": "Managing operational excellence and innovative offerings, services, and business models.",
         "service4": "Monitoring Trust and Compliance.",
-        "roadmap": "We help companies creating a digital roadmap",
+        "roadmap": "We help companies to create a digital roadmap",
         "roadmap1": "We build together your digital vision. How is digital changing your industry or domain? What new offerings, operating models, and business models can it enable? We perform a competitive advantage assessment. How is digital affecting competitive advantage? Where are the companies well positioned? Where are they disadvantaged?",
         "roadmap2": "We create together prioritized list of digital bets. Which digital opportunities are consistent with your business strategy based on value potential? In what order should we pursue them?",
         "roadmap3": "We perform a gap analysis. Based on our client’s bets, what gaps in capabilities, organization, and systems need to be filled to win?",
@@ -22,6 +22,23 @@
         "innovation4": "New Digital Technology Adoption & Change management and Agile delivery",
         "tc": "Trust And Compliance",
         "tc1": "We help companies to secure their assets and transactions and to prevent fraud.",
-        "tc2": "We lead businesses ISO Certification Process - Certification can be a useful tool to add credibility, by demonstrating that your product or service meets the expectations of your customers. For some industries, certification is a legal or contractual requirement."
+        "tc2": "We lead businesses ISO Certification Process - Certification can be a useful tool to add credibility, by demonstrating that your product or service meets the expectations of your customers. For some industries, certification is a legal or contractual requirement.",
+        "works": "We Have Done The Works, Recent Case Studies",
+        "erpTitle": "Implementation of enterprise resource planning (ERP) systems",
+        "erp1": "Streamline and automate processes.",
+        "erp2": "Create a leaner, more accurate and efficient operation.",
+        "erp3": "Provide complete visibility into core business processes.",
+        "ba_title": "Provide complete visibility into core business processes.",
+        "ba1": "Improve strategic and technical capabilities",
+        "ba2": "Increase in ROI",
+        "ba3": "Decrease in cost",
+        "business_services": "Business Services",
+        "bs1": "Consulting and Financial Services",
+        "bs2": "Software and Security service",
+        "bs3": "Consulting services",
+        "consulting": "Strategic IT management consulting",
+        "consulting1": "Transform the performance of an organization",
+        "consulting2": "Help a decision-maker to get equipped with management tools",
+        "consulting3": "Raise the Level of Success"
     }
 }
