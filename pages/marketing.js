@@ -157,12 +157,12 @@ export default function Marketing() {
       <div className="flex flex-col justify-center w-full items-center my-8 gap-8">
         <h1 className="my-5 text-5xl font-semibold">{t("services")}</h1>
         {services.map((value, index) => (
-          <div key={index} className="flex flex-row flex-wrap-reverse w-[60%] gap-8">
-            <div className="flex flex-col justify-start w-[45%]">
+          <div key={index} className="flex flex-row flex-wrap-reverse w-[90%] lg:w-[60%] gap-8">
+            <div className="flex flex-col justify-start w-full lg:w-[45%]">
               <p className="font-semibold text-4xl mb-4">{value.title}</p>
               <p className="text-gray-700 text-lg">{value.desc}</p>
             </div>
-            <div className="flex flex-col justify-center w-[45%] ">
+            <div className="flex flex-col justify-center w-full lg:w-[45%] ">
               <Image src={value.url} width={969} height={723} className="rounded-xl" />
             </div>
           </div>
