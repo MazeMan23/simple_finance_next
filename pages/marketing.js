@@ -124,7 +124,7 @@ export default function Marketing() {
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
-                  className="text-cyan-500 ml-2"
+                  className="text-white ml-2"
                   fill="currentColor"
                   xmlns="http://www.w3.org/2000/svg"
                 >
