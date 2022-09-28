@@ -76,7 +76,9 @@ export default function Header({ t, bg }) {
           <div className="w-[25%]" onClick={() => setIsOpen(!isOpen)}>
             <div className="flex flex-col justify-center min-h-full">
               <div className="flex flex-row justify-center min-w-full">
-                <FontAwesomeIcon icon={faBars} color="rgba(255,255,255,.6)" size="2x" />
+                <div className="w-[2rem] h-[2rem]">
+                  <FontAwesomeIcon icon={faBars} color="rgba(255,255,255,.6)" size="1x" />
+                </div>
               </div>
             </div>
           </div>
