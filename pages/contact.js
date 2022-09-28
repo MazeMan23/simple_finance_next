@@ -15,6 +15,7 @@ export async function getStaticProps({ locale }) {
   return {
     props: {
       messages: final,
+      title: contact.contact.htmlTitle,
     },
   };
 }

@@ -1,5 +1,6 @@
 {
   "marketing": {
+    "htmlTitle": "Simple Finance - Sales and Marketing",
     "heroTitle": "Creative solutions to improve your business",
     "heroSubtitle": "WE ARE CREATING RESULTS",
     "about": "Simple Marketing is a full-service digital agency that cares about building and promoting our clients’ businesses in the digital space, reaching and engaging potential and current customers.",
@@ -47,6 +48,8 @@
     "sm_sub": "Social media engagement",
     "sm_title": "Full service social media packages",
     "sm_desc1": "Platform specific social media management",
-    "sm_desc2": "Personalized social media content strategy"
+    "sm_desc2": "Personalized social media content strategy",
+    "services": "Services"
+
   }
 }
