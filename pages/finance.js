@@ -75,7 +75,10 @@ export default function Finance() {
             <Grid.Container gap={2}>
               <Grid>
                 <Collapse.Group splitted>
-                  <Collapse title={t("accounting_title")} contentLeft={<Avatar src="/images/acc_av.jpg" size="xl" />}>
+                  <Collapse
+                    title={t("accounting_title")}
+                    contentLeft={<Avatar src="/images/acc_av.jpg" size="xl" className="!z-0" />}
+                  >
                     <ul className="list-disc ml-5 mt-5 marker:text-orange-500">
                       <li className="mt-1">{t("accounting2")}</li>
                       <li className="mt-1">{t("accounting3")}</li>
@@ -87,7 +90,10 @@ export default function Finance() {
                       <li className="mt-1">{t("accounting1")}</li>
                     </ul>
                   </Collapse>
-                  <Collapse title={t("financial_title")} contentLeft={<Avatar src="/images/jws.jpg" size="xl" />}>
+                  <Collapse
+                    title={t("financial_title")}
+                    contentLeft={<Avatar src="/images/jws.jpg" size="xl" className="!z-0" />}
+                  >
                     <ul className="list-disc ml-5 mt-5 marker:text-orange-500">
                       <li className="mt-1">{t("financial1")}</li>
                       <li className="mt-1">{t("financial2")}</li>
@@ -99,7 +105,10 @@ export default function Finance() {
                       <li className="mt-1">{t("financial8")}</li>
                     </ul>
                   </Collapse>
-                  <Collapse title={t("legal_title")} contentLeft={<Avatar src="/images/jwstreet.jpg" size="xl" />}>
+                  <Collapse
+                    title={t("legal_title")}
+                    contentLeft={<Avatar src="/images/jwstreet.jpg" size="xl" className="!z-0" />}
+                  >
                     <ul className="list-disc ml-5 mt-5 marker:text-orange-500">
                       <li className="mt-1">{t("legal1")}</li>
                       <li className="mt-1">{t("legal2")}</li>
@@ -111,7 +120,12 @@ export default function Finance() {
                       <li className="mt-1">{t("legal8")}</li>
                     </ul>
                   </Collapse>
-                  <Collapse contentLeft={<Avatar src="/images/taxes.jpg" size="xl" />} title={t("tax_title")}>
+                  <Collapse
+                    contentLeft={<Avatar src="/images/taxes.jpg" size="xl" className="!z-0" />}
+                    title={t("tax_title")}
+                    size="xl"
+                    className="!z-0"
+                  >
                     <ul className="list-disc ml-5 mt-5 marker:text-orange-500">
                       <li className="mt-1">{t("tax1")}</li>
                       <li className="mt-1">{t("tax2")}</li>
@@ -131,7 +145,7 @@ export default function Finance() {
                 <Collapse.Group splitted>
                   <Collapse
                     title={t("business_val_title")}
-                    contentLeft={<Avatar src="/images/valuation.jpg" size="xl" />}
+                    contentLeft={<Avatar src="/images/valuation.jpg" size="xl" className="!z-0" />}
                   >
                     <ul className="list-disc ml-5 mt-5 marker:text-orange-500">
                       <li className="mt-1">{t("business_val1")}</li>
@@ -143,14 +157,17 @@ export default function Finance() {
                       <li className="mt-1">{t("business_val7")}</li>
                     </ul>
                   </Collapse>
-                  <Collapse title={t("audit")} contentLeft={<Avatar src="/images/audit.jpg" size="xl" />}>
+                  <Collapse
+                    title={t("audit")}
+                    contentLeft={<Avatar src="/images/audit.jpg" size="xl" className="!z-0" />}
+                  >
                     <ul className="list-disc ml-5 mt-5 marker:text-orange-500">
                       <li className="mt-1">{t("audit1")}</li>
                       <li className="mt-1">{t("audit2")}</li>
                       <li className="mt-1">{t("audit3")}</li>
                     </ul>
                   </Collapse>
-                  <Collapse title={t("hr")} contentLeft={<Avatar src="/images/ppl.jpg" size="xl" />}>
+                  <Collapse title={t("hr")} contentLeft={<Avatar src="/images/ppl.jpg" size="xl" className="!z-0" />}>
                     <ul className="list-disc ml-5 mt-5 marker:text-orange-500">
                       <li className="mt-1">{t("hr1")}</li>
                       <li className="mt-1">{t("hr2")}</li>
