@@ -48,7 +48,7 @@ export default function Header({ t, bg }) {
             <div className="flex flex-row justify-evenly">
               <US
                 title="United States"
-                className="max-w-[2rem] cursor-pointer"
+                className="max-w-[2rem] cursor-pointer min-w-[12.5%]"
                 onClick={() => {
                   setCookie("NEXT_LOCALE", "en");
                   router.push(router.asPath, router.asPath, { locale: "en", scroll: false });
@@ -56,7 +56,7 @@ export default function Header({ t, bg }) {
               />
               <BG
                 title="Bulgaria"
-                className="max-w-[2rem] cursor-pointer"
+                className="max-w-[2rem] cursor-pointer min-w-[12.5%]"
                 onClick={() => {
                   setCookie("NEXT_LOCALE", "bg");
                   router.push(router.asPath, router.asPath, { locale: "bg", scroll: false });

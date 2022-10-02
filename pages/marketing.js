@@ -110,7 +110,7 @@ export default function Marketing() {
             <div className="flex lg:hidden self-center max-w-[90vw]">
               <img src="/images/marketing.png" />
             </div>
-            <h1 className="mt-5 text-3xl font-semibold">{t("about")}</h1>
+            <h1 className="mt-5 text-xl lg:text-3xl font-semibold">{t("about")}</h1>
             <ul className="list-disc ml-5 mt-5  marker:text-orange-500">
               <li className="mb-2">{t("about_1")}</li>
               <li className="mb-2">{t("about_2")}</li>
