@@ -41,8 +41,8 @@ const limiter = rateLimit({
   uniqueTokenPerInterval: 500, // Max 500 users per second
 });
 
-const bg = require("../translations/header/bg.json").default.header;
-const en = require("../translations/header/en.json").default.header;
+const bg = require("../../translations/header/bg.json").default.header;
+const en = require("../../translations/header/en.json").default.header;
 
 export default async function contact(req, res) {
   try {
