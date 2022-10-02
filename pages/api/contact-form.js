@@ -41,9 +41,6 @@ const limiter = rateLimit({
   uniqueTokenPerInterval: 500, // Max 500 users per second
 });
 
-const bg = require("../../translations/header/bg.json").default.header;
-const en = require("../../translations/header/en.json").default.header;
-
 export default async function contact(req, res) {
   try {
     await limiter.check(res, 10, "CACHE_TOKEN");
@@ -67,13 +64,13 @@ export default async function contact(req, res) {
   }
 
   let recepient = "";
-  if (subject === bg.finance || subject === en.finance) {
+  if (subject === "Финанси и счетоводство" || subject === "Finance and accounting") {
     recepient = "accounting@simplefinance.net";
-  } else if (subject === bg.it || subject === en.it) {
+  } else if (subject === "Информационни технологии" || subject === "Information Technology") {
     recepient = "it@simplefinance.net";
-  } else if (subject === bg.marketing || subject === en.marketing) {
+  } else if (subject === "Продажби и маркетинг" || subject === "Sales and Marketing") {
     recepient = "marketing@simplefinance.net";
-  } else if (subject === bg.legal || subject === en.legal) {
+  } else if (subject === "Правни услуги" || subject === "Legal") {
     recepient = "legal@simplefinance.net";
   } else {
     res.status(400).json({ message: "Please pick an appropriate subject!" });
