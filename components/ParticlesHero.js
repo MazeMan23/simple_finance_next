@@ -9,18 +9,15 @@ export default function ParticlesHero({ img, children }) {
   const particlesLoaded = React.useCallback(async () => {}, []);
 
   return (
-    <div className="flex min-w-full min-h-[100vh] flex-col justify-center">
+    <div
+      className="flex w-full h-[50vh] lg:h-[100vh] flex-col justify-center bg-cover bg-center"
+      style={{ backgroundImage: `url('${img}')` }}
+    >
       <Particles
-        id="particles"
+        className="absolute w-[100vw] h-[50vh] lg:h-[100vh]"
         init={particlesInit}
         loaded={particlesLoaded}
         options={{
-          background: {
-            image: `url(${img})`,
-            position: "center",
-            repeat: "no-repeat",
-            size: "cover",
-          },
           fullScreen: { enable: false },
           detectRetina: true,
           fpsLimit: 30,
