@@ -34,7 +34,16 @@ export default function Footer({ t, h }) {
       </div>
       <div className="flex flex-row justify-center bg-[#132844] py-5">
         <div className="flex flex-row justify-between flex-wrap lg:w-[75%] w-[90%]">
-          <div className="text-[rgba(255,255,255,.6)]">2022 © Simple Finance</div>
+          <div className="text-[rgba(255,255,255,.6)]">
+            <a
+              href="https://euipo.europa.eu/eSearch/#details/trademarks/018575197"
+              target="_blank"
+              className="underline"
+              rel="noreferrer"
+            >
+              2022 © Simple Finance
+            </a>
+          </div>
           <div className="flex flex-row justify-end gap-4">
             <div className="flex flex-col justify-center min-h-full">
               <a href="https://www.facebook.com/people/Simple-Finance/100065641413166/">

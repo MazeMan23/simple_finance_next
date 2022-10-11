@@ -4,6 +4,8 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  min-width: 100vw;
+  @apply overflow-x-hidden;
 }
 
 .circle_image{
@@ -21,13 +23,6 @@ a {
 
 * {
   box-sizing: border-box;
-}
-
-#particles {
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
-  z-index: -1;
 }
 
 

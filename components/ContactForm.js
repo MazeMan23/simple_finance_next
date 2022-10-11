@@ -1,8 +1,54 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function ContactForm({ t, h }) {
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(null);
+
   return (
-    <form className="flex flex-col px-8 py-8 bg-white">
+    <form
+      className="flex flex-col px-8 py-8 bg-white"
+      onSubmit={async (e) => {
+        e.preventDefault();
+
+        const fullname = e.target.fullname.value;
+        const email = e.target.email.value;
+        const subject = e.target.subject.value;
+        const message = e.target.message.value;
+
+        if (!fullname || !email || !subject | !message) {
+          setError("Please fill out all the fields!");
+          return;
+        }
+
+        if (
+          !String(email)
+            .toLowerCase()
+            .match(/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/)
+        ) {
+          setError("Please fill out a valid email!");
+          return;
+        }
+
+        const body = { fullname, email, subject, message };
+        const bodyJSON = JSON.stringify(body);
+
+        let result;
+        result = await fetch("/api/contact-form", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: bodyJSON,
+        });
+        const content = await result.json();
+        if (result.status !== 200) {
+          setError(content.message);
+          return;
+        }
+
+        setSuccess("Thanks! We'll be in touch shortly.");
+      }}
+    >
       <div className=" flex justify-center">
         <h1 className="text-3xl font-bold text-center">{t("contact")}</h1>
       </div>
@@ -32,13 +78,16 @@ export default function ContactForm({ t, h }) {
             <input
               type="email"
               name="email"
-              className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light "
+              className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-black"
             />
             <label htmlFor="subject" className=" font-light mt-4">
               {t("subject")}
               <span className="text-red-500">&nbsp;*</span>
             </label>
-            <select className="mt-2 bg-transparent border-b py-2 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light ">
+            <select
+              name="subject"
+              className="mt-2 bg-transparent border-b py-2 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light "
+            >
               <option>{h("finance")}</option>
               <option>{h("legal")}</option>
               <option>{h("it")}</option>
@@ -71,6 +120,20 @@ export default function ContactForm({ t, h }) {
               </button>
             </div>
           </div>
+          {error ? (
+            <div className="flex flex-row justify-center texte-center bg-red-400 my-4 rounded-xl text-white min-w-full">
+              {error}
+            </div>
+          ) : (
+            <></>
+          )}
+          {success ? (
+            <div className="flex flex-row justify-center texte-center bg-green-400 my-4 rounded-xl text-white min-w-full">
+              {success}
+            </div>
+          ) : (
+            <></>
+          )}
         </div>
       </div>
     </form>

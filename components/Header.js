@@ -48,7 +48,7 @@ export default function Header({ t, bg }) {
             <div className="flex flex-row justify-evenly">
               <US
                 title="United States"
-                className="max-w-[2rem] cursor-pointer"
+                className="max-w-[2rem] cursor-pointer min-w-[12.5%]"
                 onClick={() => {
                   setCookie("NEXT_LOCALE", "en");
                   router.push(router.asPath, router.asPath, { locale: "en", scroll: false });
@@ -56,7 +56,7 @@ export default function Header({ t, bg }) {
               />
               <BG
                 title="Bulgaria"
-                className="max-w-[2rem] cursor-pointer"
+                className="max-w-[2rem] cursor-pointer min-w-[12.5%]"
                 onClick={() => {
                   setCookie("NEXT_LOCALE", "bg");
                   router.push(router.asPath, router.asPath, { locale: "bg", scroll: false });
@@ -71,7 +71,9 @@ export default function Header({ t, bg }) {
         <div className="flex flex-row justify-evenly min-w-full">
           <div className="w-[25%]" />
           <div className="w-[50%]">
-            <Image src="/images/logo.png" width={2061} height={968} />
+            <Link href="/">
+              <Image src="/images/logo.png" width={2061} height={968} />
+            </Link>
           </div>
           <div className="w-[25%]" onClick={() => setIsOpen(!isOpen)}>
             <div className="flex flex-col justify-center min-h-full">
@@ -107,7 +109,7 @@ export default function Header({ t, bg }) {
                 <div className="flex flex-row justify-evenly">
                   <US
                     title="United States"
-                    className="max-w-[2rem]"
+                    className="w-[2rem] max-w-[2rem]"
                     onClick={() => {
                       setCookie("NEXT_LOCALE", "en");
                       router.push(router.asPath, router.asPath, {
@@ -117,7 +119,7 @@ export default function Header({ t, bg }) {
                   />
                   <BG
                     title="Bulgaria"
-                    className="max-w-[2rem]"
+                    className="w-[2rem] max-w-[2rem]"
                     onClick={() => {
                       setCookie("NEXT_LOCALE", "bg");
                       router.push(router.asPath, router.asPath, {
