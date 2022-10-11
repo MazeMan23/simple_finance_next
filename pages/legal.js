@@ -8,9 +8,12 @@ import Image from "next/image";
 
 export async function getStaticProps({ locale }) {
   const legal = (await import(`../translations/legal/${locale}.json`)).default;
-  const header = (await import(`../translations/header/${locale}.json`)).default;
-  const footer = (await import(`../translations/footer/${locale}.json`)).default;
-  const contact = (await import(`../translations/contact/${locale}.json`)).default;
+  const header = (await import(`../translations/header/${locale}.json`))
+    .default;
+  const footer = (await import(`../translations/footer/${locale}.json`))
+    .default;
+  const contact = (await import(`../translations/contact/${locale}.json`))
+    .default;
 
   const final = { ...legal, ...header, ...footer, ...contact };
 
@@ -32,59 +35,71 @@ export default function Legal() {
     {
       url: "/images/icons/chart.png",
       title: t("companies"),
-      points: new Array(13).fill(undefined).map((val, index) => t(`companies_${index + 1}`)),
+      points: new Array(13)
+        .fill(undefined)
+        .map((val, index) => t(`companies_${index + 1}`)),
     },
     {
       url: "/images/icons/file.png",
       title: t("transactions"),
-      points: new Array(3).fill(undefined).map((val, index) => t(`transactions_${index + 1}`)),
+      points: new Array(3)
+        .fill(undefined)
+        .map((val, index) => t(`transactions_${index + 1}`)),
     },
     {
       url: "/images/icons/dollar.png",
       title: t("banks"),
-      points: new Array(6).fill(undefined).map((val, index) => t(`banks_${index + 1}`)),
+      points: new Array(6)
+        .fill(undefined)
+        .map((val, index) => t(`banks_${index + 1}`)),
     },
     {
       url: "/images/icons/boy.png",
       title: t("procurement"),
-      points: new Array(4).fill(undefined).map((val, index) => t(`procurement_${index + 1}`)),
+      points: new Array(4)
+        .fill(undefined)
+        .map((val, index) => t(`procurement_${index + 1}`)),
     },
     {
       url: "/images/icons/tools.png",
       title: t("labour"),
-      points: new Array(7).fill(undefined).map((val, index) => t(`labour_${index + 1}`)),
+      points: new Array(7)
+        .fill(undefined)
+        .map((val, index) => t(`labour_${index + 1}`)),
     },
     {
       url: "/images/icons/shield.png",
       title: t("law"),
-      points: new Array(5).fill(undefined).map((val, index) => t(`law_${index + 1}`)),
+      points: new Array(5)
+        .fill(undefined)
+        .map((val, index) => t(`law_${index + 1}`)),
     },
   ];
 
   const projects = [
     {
-      url: "/images/acc.jpg",
+      url: "/images/legal1.jpg",
       title: t("acc_title"),
       subtitle: t("acc_sub"),
       desc1: t("acc_desc1"),
       desc2: t("acc_desc2"),
     },
     {
-      url: "/images/fin.jpg",
+      url: "/images/legal2.jpg",
       title: t("fin_title"),
       subtitle: t("fin_sub"),
       desc1: t("fin_desc1"),
       desc2: t("fin_desc2"),
     },
     {
-      url: "/images/cons.jpg",
+      url: "/images/legal3.jpg",
       title: t("con_title"),
       subtitle: t("con_sub"),
       desc1: t("con_desc1"),
       desc2: t("con_desc2"),
     },
     {
-      url: "/images/business.jpg",
+      url: "/images/legal4.jpg",
       title: t("bus_title"),
       subtitle: t("bus_sub"),
       desc1: t("bus_desc1"),
@@ -96,9 +111,15 @@ export default function Legal() {
     <Layout h={h} f={f}>
       <ParticlesHero img="/images/law_hero.jpeg">
         <div className="flex flex-col justify-center text-center text-white gap-4">
-          <div className=" text-2xl md:text-5xl font-bold">{t("heroTitle")}</div>
-          <div className="text-xl md:text-4xl font-bold">{t("heroSubtitle1")}</div>
-          <div className="text-lg md:text-xl font-semibold tracking-widest">{t("heroSubtitle2")}</div>
+          <div className=" text-2xl md:text-5xl font-bold">
+            {t("heroTitle")}
+          </div>
+          <div className="text-xl md:text-4xl font-bold">
+            {t("heroSubtitle1")}
+          </div>
+          <div className="text-lg md:text-xl font-semibold tracking-widest">
+            {t("heroSubtitle2")}
+          </div>
         </div>
       </ParticlesHero>
       <div className="flex flex-col items-center mt-8">
@@ -116,7 +137,9 @@ export default function Legal() {
                     <Collapse
                       key={index}
                       title={value.title}
-                      contentLeft={<Avatar src={value.url} size="xl" className="!z-0" />}
+                      contentLeft={
+                        <Avatar src={value.url} size="xl" className="!z-0" />
+                      }
                     >
                       <ul className="list-disc ml-5 mt-5 marker:text-orange-500">
                         {value.points.map((value, index) => (
@@ -139,7 +162,9 @@ export default function Legal() {
                     <Collapse
                       key={index}
                       title={value.title}
-                      contentLeft={<Avatar src={value.url} size="xl" className="!z-0" />}
+                      contentLeft={
+                        <Avatar src={value.url} size="xl" className="!z-0" />
+                      }
                     >
                       <ul className="list-disc ml-5 mt-5 marker:text-orange-500">
                         {value.points.map((value, index) => (
@@ -166,7 +191,13 @@ export default function Legal() {
                 className="rounded-xl bg-white active:bg-gray-200  w-full md:w-[48%] lg:w-[23%] shadow-xl"
               >
                 <div className="flex flex-col justify-between gap-2">
-                  <Image src={item.url} className="rounded-t-xl" layout="intrinsic" width={315} height={369} />
+                  <Image
+                    src={item.url}
+                    className="rounded-t-xl"
+                    layout="intrinsic"
+                    width={1000}
+                    height={1000}
+                  />
                   <div className="p-4">
                     <p className="text-gray-700">{item.subtitle}</p>
                     <p className="text-2xl">{item.title}</p>

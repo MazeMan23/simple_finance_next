@@ -6,10 +6,14 @@ import ContactForm from "../components/ContactForm";
 import Image from "next/image";
 
 export async function getStaticProps({ locale }) {
-  const header = (await import(`../translations/header/${locale}.json`)).default;
-  const footer = (await import(`../translations/footer/${locale}.json`)).default;
-  const contact = (await import(`../translations/contact/${locale}.json`)).default;
-  const marketing = (await import(`../translations/marketing/${locale}.json`)).default;
+  const header = (await import(`../translations/header/${locale}.json`))
+    .default;
+  const footer = (await import(`../translations/footer/${locale}.json`))
+    .default;
+  const contact = (await import(`../translations/contact/${locale}.json`))
+    .default;
+  const marketing = (await import(`../translations/marketing/${locale}.json`))
+    .default;
 
   const final = { ...marketing, ...header, ...footer, ...contact };
 
@@ -29,28 +33,28 @@ export default function Marketing() {
 
   const projects = [
     {
-      url: "/images/acc.jpg",
+      url: "/images/marketing1.jpg",
       title: t("seo_title"),
       subtitle: t("seo_sub"),
       desc1: t("seo_desc1"),
       desc2: t("seo_desc2"),
     },
     {
-      url: "/images/fin.jpg",
+      url: "/images/marketing2.jpg",
       title: t("fb_title"),
       subtitle: t("fb_sub"),
       desc1: t("fb_desc1"),
       desc2: t("fb_desc2"),
     },
     {
-      url: "/images/cons.jpg",
+      url: "/images/marketing3.jpg",
       title: t("ga_title"),
       subtitle: t("ga_sub"),
       desc1: t("ga_desc1"),
       desc2: t("ga_desc2"),
     },
     {
-      url: "/images/business.jpg",
+      url: "/images/marketing4.jpg",
       title: t("sm_title"),
       subtitle: t("sm_sub"),
       desc1: t("sm_desc1"),
@@ -100,7 +104,9 @@ export default function Marketing() {
     <Layout h={h} f={f}>
       <ParticlesHero img="/images/simple_marketing.jpg">
         <div className="flex flex-col justify-center text-center items-center text-white gap-4">
-          <div className=" text-2xl md:text-5xl max-w-4xl font-bold">{t("heroTitle")}</div>
+          <div className=" text-2xl md:text-5xl max-w-4xl font-bold">
+            {t("heroTitle")}
+          </div>
           <div className="text-xl font-bold max-w-3xl">{t("heroSubtitle")}</div>
         </div>
       </ParticlesHero>
@@ -136,34 +142,51 @@ export default function Marketing() {
               </button>
             </div>
             <h1 className="mt-5 text-3xl font-semibold">{t("what")}</h1>
-            <h1 className="mt-5 text-2xl text-gray-700 font-semibold">{t("consultative")}</h1>
+            <h1 className="mt-5 text-2xl text-gray-700 font-semibold">
+              {t("consultative")}
+            </h1>
             <ul className="list-disc ml-5 mt-5  marker:text-orange-500">
               <li className="mb-2">{t("consultative_desc")}</li>
             </ul>
-            <h1 className="mt-5 text-2xl text-gray-700 font-semibold">{t("precise")}</h1>
+            <h1 className="mt-5 text-2xl text-gray-700 font-semibold">
+              {t("precise")}
+            </h1>
             <ul className="list-disc ml-5 mt-5  marker:text-orange-500">
               <li className="mb-2">{t("precise_desc")}</li>
             </ul>
-            <h1 className="mt-5 text-2xl text-gray-700 font-semibold">{t("customer")}</h1>
+            <h1 className="mt-5 text-2xl text-gray-700 font-semibold">
+              {t("customer")}
+            </h1>
             <ul className="list-disc ml-5 mt-5  marker:text-orange-500">
               <li className="mb-2">{t("customer_desc")}</li>
             </ul>
           </div>
           <div className="hidden self-center lg:flex justify-center">
-            <img src="/images/marketing.png" className="ml-10 mb-10 max-w-3xl" />
+            <img
+              src="/images/marketing.png"
+              className="ml-10 mb-10 max-w-3xl"
+            />
           </div>
         </div>
       </div>
       <div className="flex flex-col justify-center w-full items-center my-8 gap-8">
         <h1 className="my-5 text-5xl font-semibold">{t("services")}</h1>
         {services.map((value, index) => (
-          <div key={index} className="flex flex-row flex-wrap-reverse w-[90%] lg:w-[60%] gap-8">
+          <div
+            key={index}
+            className="flex flex-row flex-wrap-reverse w-[90%] lg:w-[60%] gap-8"
+          >
             <div className="flex flex-col justify-start w-full lg:w-[45%]">
               <p className="font-semibold text-4xl mb-4">{value.title}</p>
               <p className="text-gray-700 text-lg">{value.desc}</p>
             </div>
             <div className="flex flex-col justify-center w-full lg:w-[45%] ">
-              <Image src={value.url} width={969} height={723} className="rounded-xl" />
+              <Image
+                src={value.url}
+                width={969}
+                height={723}
+                className="rounded-xl"
+              />
             </div>
           </div>
         ))}
@@ -174,9 +197,18 @@ export default function Marketing() {
         <p className="mb-4">{t("aboutSubtitle2")}</p>
         <div className="flex flex-row justify-center gap-4 px-8 mb-4 flex-wrap">
           {projects.map((item, index) => (
-            <div key={index} className="rounded-xl bg-white active:bg-gray-200  w-full md:w-[48%] lg:w-[23%] shadow-xl">
+            <div
+              key={index}
+              className="rounded-xl bg-white active:bg-gray-200  w-full md:w-[48%] lg:w-[23%] shadow-xl"
+            >
               <div className="flex flex-col justify-between gap-2">
-                <Image src={item.url} className="rounded-t-xl" layout="intrinsic" width={315} height={369} />
+                <Image
+                  src={item.url}
+                  className="rounded-t-xl"
+                  layout="intrinsic"
+                  width={1000}
+                  height={1000}
+                />
                 <div className="p-4">
                   <p className="text-gray-700">{item.subtitle}</p>
                   <p className="text-2xl">{item.title}</p>
