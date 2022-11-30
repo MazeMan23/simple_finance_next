@@ -12,7 +12,9 @@ export default function Footer({ t, h }) {
         <div className="flex lg:flex-row flex-col justify-evenly p-10 gap-8 lg:w-[75%]">
           <div className="flex flex-col justify-start lg:max-w-[30%]">
             <div className="text-white text-lg">{t("title")}</div>
-            <div className="text-[rgba(255,255,255,.6)]">{t("description")}</div>
+            <div className="text-[rgba(255,255,255,.6)]">
+              {t("description")}
+            </div>
           </div>
           <div className="flex flex-col justify-start">
             <div className="text-white text-lg">{t("services")}</div>
@@ -41,18 +43,32 @@ export default function Footer({ t, h }) {
               className="underline"
               rel="noreferrer"
             >
-              2022 © Simple Finance
+              2022 © Simple Finance.
+            </a>
+            <br />
+            <a
+              href="https://www.javery.bg"
+              className=" text-white underline"
+              target="_blank"
+            >
+              Made by Javery.
             </a>
           </div>
           <div className="flex flex-row justify-end gap-4">
             <div className="flex flex-col justify-center min-h-full">
               <a href="https://www.facebook.com/people/Simple-Finance/100065641413166/">
-                <FontAwesomeIcon icon={faFacebook} color={"rgba(255,255,255,.6)"} />
+                <FontAwesomeIcon
+                  icon={faFacebook}
+                  color={"rgba(255,255,255,.6)"}
+                />
               </a>
             </div>
             <a href="https://www.linkedin.com/company/simple-finance-ltd/">
               <div className="flex flex-col justify-center min-h-full">
-                <FontAwesomeIcon icon={faLinkedin} color={"rgba(255,255,255,.6)"} />
+                <FontAwesomeIcon
+                  icon={faLinkedin}
+                  color={"rgba(255,255,255,.6)"}
+                />
               </div>
             </a>
           </div>
