@@ -37,8 +37,6 @@ export default function Translate() {
   const h = useTranslations("header");
   const f = useTranslations("footer");
 
-  const translator = require("deepl");
-
   const [selectedInput, setSelectedInput] = React.useState(
     new Set([t("selectLanguage")])
   );
@@ -66,206 +64,35 @@ export default function Translate() {
     setVisible(false);
   };
 
-  const translate = async () => {
-    const input = document.querySelector("#input").value;
-    if (
-      selectedValueInput == t("selectLanguage") ||
-      selectedValueOutput == t("selectLanguage") ||
-      selectedValueInput == selectedValueOutput ||
-      input.length == 0
-    ) {
-      setVisible(true);
-    } else {
-      let inLang = "";
-      let outLang = "";
-      switch (selectedValueInput) {
-        case t("bulgarian"):
-          inLang = "BG";
-          break;
-        case t("chinese"):
-          inLang = "ZH";
-          break;
-        case t("czech"):
-          inLang = "CS";
-          break;
-        case t("danish"):
-          inLang = "DA";
-          break;
-        case t("dutch"):
-          inLang = "NL";
-          break;
-        case t("english"):
-          inLang = "EN";
-          break;
-        case t("estonian"):
-          inLang = "ET";
-          break;
-        case t("finnish"):
-          inLang = "FI";
-          break;
-        case t("french"):
-          inLang = "FR";
-          break;
-        case t("hungarian"):
-          inLang = "HU";
-          break;
-        case t("german"):
-          inLang = "DE";
-          break;
-        case t("greek"):
-          inLang = "EL";
-          break;
-        case t("indonesian"):
-          inLang = "ID";
-          break;
-        case t("italian"):
-          inLang = "IT";
-          break;
-        case t("japanese"):
-          inLang = "JA";
-          break;
-        case t("latvian"):
-          inLang = "LV";
-          break;
-        case t("lithuanian"):
-          inLang = "LT";
-          break;
-        case t("polish"):
-          inLang = "PL";
-          break;
-        case t("portugese"):
-          inLang = "PT";
-          break;
-        case t("romanian"):
-          inLang = "RO";
-          break;
-        case t("russian"):
-          inLang = "RU";
-          break;
-        case t("slovak"):
-          inLang = "SK";
-          break;
-        case t("slovenian"):
-          inLang = "SL";
-          break;
-        case t("swedish"):
-          inLang = "SV";
-          break;
-        case t("spanish"):
-          inLang = "ES";
-          break;
-        case t("turkish"):
-          inLang = "TR";
-          break;
-        case t("ukranian"):
-          inLang = "UK";
-          break;
-        default:
-          inLang = undefined;
-          break;
-      }
-      switch (selectedValueOutput) {
-        case t("bulgarian"):
-          outLang = "BG";
-          break;
-        case t("chinese"):
-          outLang = "ZH";
-          break;
-        case t("czech"):
-          outLang = "CS";
-          break;
-        case t("danish"):
-          outLang = "DA";
-          break;
-        case t("dutch"):
-          outLang = "NL";
-          break;
-        case t("english"):
-          outLang = "EN";
-          break;
-        case t("estonian"):
-          outLang = "ET";
-          break;
-        case t("finnish"):
-          outLang = "FI";
-          break;
-        case t("french"):
-          outLang = "FR";
-          break;
-        case t("hungarian"):
-          outLang = "HU";
-          break;
-        case t("german"):
-          outLang = "DE";
-          break;
-        case t("greek"):
-          outLang = "EL";
-          break;
-        case t("indonesian"):
-          outLang = "ID";
-          break;
-        case t("italian"):
-          outLang = "IT";
-          break;
-        case t("japanese"):
-          outLang = "JA";
-          break;
-        case t("latvian"):
-          outLang = "LV";
-          break;
-        case t("lithuanian"):
-          outLang = "LT";
-          break;
-        case t("polish"):
-          outLang = "PL";
-          break;
-        case t("portugese"):
-          outLang = "PT";
-          break;
-        case t("romanian"):
-          outLang = "RO";
-          break;
-        case t("russian"):
-          outLang = "RU";
-          break;
-        case t("slovak"):
-          outLang = "SK";
-          break;
-        case t("slovenian"):
-          outLang = "SL";
-          break;
-        case t("swedish"):
-          outLang = "SV";
-          break;
-        case t("spanish"):
-          outLang = "ES";
-          break;
-        case t("turkish"):
-          outLang = "TR";
-          break;
-        case t("ukranian"):
-          outLang = "UK";
-          break;
-        default:
-          outLang = undefined;
-          break;
-      }
-      translator({
-        free_api: true,
-        text: input,
-        source_lang: inLang,
-        target_lang: outLang,
-        auth_key: "1595754f-3030-9c84-088b-43a925753bb9:fx",
-      })
-        .then((result) => {
-          document.querySelector("#output").value =
-            result.data.translations[0].text;
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    }
-  };
+  const supportedLanguages = [
+    { key: "BG", value: t("bulgarian") },
+    { key: "ZH", value: t("chinese") },
+    { key: "CS", value: t("czech") },
+    { key: "DA", value: t("danish") },
+    { key: "NL", value: t("dutch") },
+    { key: "EN", value: t("english") },
+    { key: "ET", value: t("estonian") },
+    { key: "FI", value: t("finnish") },
+    { key: "FR", value: t("french") },
+    { key: "DE", value: t("german") },
+    { key: "EL", value: t("greek") },
+    { key: "HU", value: t("hungarian") },
+    { key: "ID", value: t("indonesian") },
+    { key: "IT", value: t("italian") },
+    { key: "JA", value: t("japanese") },
+    { key: "LV", value: t("latvian") },
+    { key: "LT", value: t("lithuanian") },
+    { key: "PL", value: t("polish") },
+    { key: "PT", value: t("portugese") },
+    { key: "RO", value: t("romanian") },
+    { key: "RU", value: t("russian") },
+    { key: "SK", value: t("slovak") },
+    { key: "SL", value: t("slovenian") },
+    { key: "SV", value: t("swedish") },
+    { key: "ES", value: t("spanish") },
+    { key: "TR", value: t("turkish") },
+    { key: "UK", value: t("ukranian") },
+  ];
 
   return (
     <Layout h={h} f={f}>
@@ -326,266 +153,116 @@ export default function Translate() {
         </Button>
       </div>
       {translationType == "textTranslation" ? (
-        <div className="flex flex-col">
-          <div className="mt-4 ml-4 md:ml-16 mr-4 md:mr-16 flex flex-col md:flex-row">
-            <div className="flex flex-1 mr-1 flex-col">
-              <div className="flex self-start">
-                <Dropdown className="flex self-start">
-                  <Dropdown.Button flat color="primary">
-                    {selectedValueInput}
-                  </Dropdown.Button>
-                  <Dropdown.Menu
-                    aria-label="Single selection actions"
-                    color="primary"
-                    disallowEmptySelection
-                    selectionMode="single"
-                    selectedKeys={selectedInput}
-                    onSelectionChange={setSelectedInput}
+        <form method="post" action="/api/translate-text">
+          <div className="flex flex-col">
+            <div className="mt-4 ml-4 md:ml-16 mr-4 md:mr-16 flex flex-col md:flex-row">
+              <div className="flex flex-1 mr-1 flex-col">
+                <div className="flex self-start">
+                  <Dropdown
+                    className="flex self-start"
+                    id="inputLang"
+                    name="inputLang"
                   >
-                    <Dropdown.Section>
-                      <Dropdown.Item key={t("selectLanguage")}>
-                        {t("selectLanguage")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("bulgarian")}>
-                        {t("bulgarian")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("chinese")}>
-                        {t("chinese")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("czech")}>
-                        {t("czech")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("danish")}>
-                        {t("danish")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("dutch")}>
-                        {t("dutch")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("english")}>
-                        {t("english")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("estonian")}>
-                        {t("estonian")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("finnish")}>
-                        {t("finnish")}
-                      </Dropdown.Item>
-                    </Dropdown.Section>
-                    <Dropdown.Section>
-                      <Dropdown.Item key={t("french")}>
-                        {t("french")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("german")}>
-                        {t("german")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("greek")}>
-                        {t("greek")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("hungarian")}>
-                        {t("hungarian")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("indonesian")}>
-                        {t("indonesian")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("italian")}>
-                        {t("italian")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("japanese")}>
-                        {t("japanese")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("latvian")}>
-                        {t("latvian")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("lithuanian")}>
-                        {t("lithuanian")}
-                      </Dropdown.Item>
-                    </Dropdown.Section>
-                    <Dropdown.Section>
-                      <Dropdown.Item key={t("polish")}>
-                        {t("polish")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("portugese")}>
-                        {t("portugese")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("romanian")}>
-                        {t("romanian")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("russian")}>
-                        {t("russian")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("slovak")}>
-                        {t("slovak")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("slovenian")}>
-                        {t("slovenian")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("spanish")}>
-                        {t("spanish")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("swedish")}>
-                        {t("swedish")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("turkish")}>
-                        {t("turkish")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("ukranian")}>
-                        {t("ukranian")}
-                      </Dropdown.Item>
-                    </Dropdown.Section>
-                  </Dropdown.Menu>
-                </Dropdown>
+                    <Dropdown.Button flat color="primary">
+                      {selectedValueInput}
+                    </Dropdown.Button>
+                    <Dropdown.Menu
+                      aria-label="Single selection actions"
+                      color="primary"
+                      disallowEmptySelection
+                      selectionMode="single"
+                      selectedKeys={selectedInput}
+                      onSelectionChange={setSelectedInput}
+                      items={supportedLanguages}
+                      id="inputLang"
+                      name="inputLang"
+                    >
+                      {(item) => (
+                        <Dropdown.Item
+                          key={item.key}
+                          id="inputLang"
+                          name="inputLang"
+                        >
+                          {item.value}
+                        </Dropdown.Item>
+                      )}
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </div>
+                <div className="mt-4">
+                  <Textarea
+                    className=""
+                    shadow
+                    name="input"
+                    id="input"
+                    bordered
+                    rows={18}
+                    width="100%"
+                    color="primary"
+                    placeholder={t("placeholderInput")}
+                    status="default"
+                    onchan
+                  />
+                </div>
               </div>
-              <div className="mt-4">
-                <Textarea
-                  className=""
-                  shadow
-                  name="input"
-                  id="input"
-                  bordered
-                  rows={18}
-                  width="100%"
-                  color="primary"
-                  placeholder={t("placeholderInput")}
-                  status="default"
-                  onchan
-                />
+              <div className="flex flex-1 ml-1 flex-col">
+                <div className="flex self-start">
+                  <Dropdown
+                    className="flex self-start"
+                    id="outputLang"
+                    name="outputLang"
+                  >
+                    <Dropdown.Button flat color="primary">
+                      {selectedValueOutput}
+                    </Dropdown.Button>
+                    <Dropdown.Menu
+                      aria-label="Single selection actions"
+                      color="primary"
+                      disallowEmptySelection
+                      selectionMode="single"
+                      selectedKeys={selectedOutput}
+                      onSelectionChange={setSelectedOutput}
+                      id="outputLang"
+                      name="outputLang"
+                      items={supportedLanguages}
+                    >
+                      {(item) => (
+                        <Dropdown.Item key={item.key}>
+                          {item.value}
+                        </Dropdown.Item>
+                      )}
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </div>
+                <div className="mt-4">
+                  <Textarea
+                    id="output"
+                    name="output"
+                    className="flex flex-1"
+                    shadow
+                    placeholder={t("placeholderOutput")}
+                    bordered
+                    width="100%"
+                    rows={18}
+                    readOnly
+                    status="default"
+                  />
+                </div>
               </div>
             </div>
-            <div className="flex flex-1 ml-1 flex-col">
-              <div className="flex self-start">
-                <Dropdown className="flex self-start">
-                  <Dropdown.Button flat color="primary">
-                    {selectedValueOutput}
-                  </Dropdown.Button>
-                  <Dropdown.Menu
-                    aria-label="Single selection actions"
-                    color="primary"
-                    disallowEmptySelection
-                    selectionMode="single"
-                    selectedKeys={selectedOutput}
-                    onSelectionChange={setSelectedOutput}
-                  >
-                    <Dropdown.Section>
-                      <Dropdown.Item key={t("selectLanguage")}>
-                        {t("selectLanguage")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("bulgarian")}>
-                        {t("bulgarian")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("chinese")}>
-                        {t("chinese")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("czech")}>
-                        {t("czech")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("danish")}>
-                        {t("danish")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("dutch")}>
-                        {t("dutch")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("english")}>
-                        {t("english")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("estonian")}>
-                        {t("estonian")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("finnish")}>
-                        {t("finnish")}
-                      </Dropdown.Item>
-                    </Dropdown.Section>
-                    <Dropdown.Section>
-                      <Dropdown.Item key={t("french")}>
-                        {t("french")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("german")}>
-                        {t("german")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("greek")}>
-                        {t("greek")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("hungarian")}>
-                        {t("hungarian")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("indonesian")}>
-                        {t("indonesian")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("italian")}>
-                        {t("italian")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("japanese")}>
-                        {t("japanese")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("latvian")}>
-                        {t("latvian")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("lithuanian")}>
-                        {t("lithuanian")}
-                      </Dropdown.Item>
-                    </Dropdown.Section>
-                    <Dropdown.Section>
-                      <Dropdown.Item key={t("polish")}>
-                        {t("polish")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("portugese")}>
-                        {t("portugese")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("romanian")}>
-                        {t("romanian")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("russian")}>
-                        {t("russian")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("slovak")}>
-                        {t("slovak")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("slovenian")}>
-                        {t("slovenian")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("spanish")}>
-                        {t("spanish")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("swedish")}>
-                        {t("swedish")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("turkish")}>
-                        {t("turkish")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("ukranian")}>
-                        {t("ukranian")}
-                      </Dropdown.Item>
-                    </Dropdown.Section>
-                  </Dropdown.Menu>
-                </Dropdown>
-              </div>
-              <div className="mt-4">
-                <Textarea
-                  id="output"
-                  name="output"
-                  className="flex flex-1"
-                  shadow
-                  placeholder={t("placeholderOutput")}
-                  bordered
-                  width="100%"
-                  rows={18}
-                  readOnly
-                  status="default"
-                />
-              </div>
+            <div className="self-center mt-4  mb-16">
+              <Button
+                shadow
+                color="primary"
+                auto
+                className="bg-blue-800"
+                type="submit"
+              >
+                {t("submitButton")}
+              </Button>
             </div>
           </div>
-          <div className="self-center mt-4  mb-16">
-            <Button
-              shadow
-              color="primary"
-              auto
-              className="bg-blue-800"
-              onPress={() => translate()}
-            >
-              {t("submitButton")}
-            </Button>
-          </div>
-        </div>
+        </form>
       ) : (
         <div className="flex flex-col">
           <div className="mt-4 ml-4 md:ml-16 mr-4 md:mr-16 flex flex-col md:flex-row">
@@ -626,7 +303,7 @@ export default function Translate() {
             </div>
             <div className="flex flex-1 ml-1 flex-col mt-4 md:mt-0">
               <div className="flex self-start">
-                <Dropdown className="flex self-start w-96">
+                <Dropdown className="flex self-start">
                   <Dropdown.Button flat color="primary">
                     {selectedValueOutput}
                   </Dropdown.Button>
@@ -637,97 +314,12 @@ export default function Translate() {
                     selectionMode="single"
                     selectedKeys={selectedOutput}
                     onSelectionChange={setSelectedOutput}
+                    id="outputLang"
+                    items={supportedLanguages}
                   >
-                    <Dropdown.Section>
-                      <Dropdown.Item key={t("selectLanguage")}>
-                        {t("selectLanguage")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("bulgarian")}>
-                        {t("bulgarian")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("chinese")}>
-                        {t("chinese")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("czech")}>
-                        {t("czech")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("danish")}>
-                        {t("danish")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("dutch")}>
-                        {t("dutch")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("english")}>
-                        {t("english")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("estonian")}>
-                        {t("estonian")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("finnish")}>
-                        {t("finnish")}
-                      </Dropdown.Item>
-                    </Dropdown.Section>
-                    <Dropdown.Section>
-                      <Dropdown.Item key={t("french")}>
-                        {t("french")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("german")}>
-                        {t("german")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("greek")}>
-                        {t("greek")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("hungarian")}>
-                        {t("hungarian")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("indonesian")}>
-                        {t("indonesian")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("italian")}>
-                        {t("italian")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("japanese")}>
-                        {t("japanese")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("latvian")}>
-                        {t("latvian")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("lithuanian")}>
-                        {t("lithuanian")}
-                      </Dropdown.Item>
-                    </Dropdown.Section>
-                    <Dropdown.Section>
-                      <Dropdown.Item key={t("polish")}>
-                        {t("polish")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("portugese")}>
-                        {t("portugese")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("romanian")}>
-                        {t("romanian")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("russian")}>
-                        {t("russian")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("slovak")}>
-                        {t("slovak")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("slovenian")}>
-                        {t("slovenian")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("spanish")}>
-                        {t("spanish")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("swedish")}>
-                        {t("swedish")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("turkish")}>
-                        {t("turkish")}
-                      </Dropdown.Item>
-                      <Dropdown.Item key={t("ukranian")}>
-                        {t("ukranian")}
-                      </Dropdown.Item>
-                    </Dropdown.Section>
+                    {(item) => (
+                      <Dropdown.Item key={item.key}>{item.value}</Dropdown.Item>
+                    )}
                   </Dropdown.Menu>
                 </Dropdown>
               </div>
@@ -751,7 +343,7 @@ export default function Translate() {
               color="primary"
               auto
               className="bg-blue-800"
-              onPress={() => translate()}
+              onPress={() => sendTranslate(t)}
             >
               {t("submitButton")}
             </Button>
