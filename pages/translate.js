@@ -2,25 +2,14 @@ import React from "react";
 import { useTranslations } from "use-intl";
 import Layout from "../components/Layout";
 import ParticlesHero from "../components/ParticlesHero";
-import {
-  Textarea,
-  Dropdown,
-  Button,
-  Text,
-  useModal,
-  Modal,
-} from "@nextui-org/react";
+import { Textarea, Dropdown, Button, Text, useModal, Modal } from "@nextui-org/react";
 import Image from "next/image";
 
 export async function getStaticProps({ locale }) {
-  const header = (await import(`../translations/header/${locale}.json`))
-    .default;
-  const footer = (await import(`../translations/footer/${locale}.json`))
-    .default;
-  const contact = (await import(`../translations/contact/${locale}.json`))
-    .default;
-  const translate = (await import(`../translations/translate/${locale}.json`))
-    .default;
+  const header = (await import(`../translations/header/${locale}.json`)).default;
+  const footer = (await import(`../translations/footer/${locale}.json`)).default;
+  const contact = (await import(`../translations/contact/${locale}.json`)).default;
+  const translate = (await import(`../translations/translate/${locale}.json`)).default;
 
   const final = { ...translate, ...header, ...footer, ...contact };
 
@@ -36,33 +25,6 @@ export default function Translate() {
   const t = useTranslations("translate");
   const h = useTranslations("header");
   const f = useTranslations("footer");
-
-  const [selectedInput, setSelectedInput] = React.useState(
-    new Set([t("selectLanguage")])
-  );
-
-  const selectedValueInput = React.useMemo(
-    () => Array.from(selectedInput).join(", ").replaceAll("_", " "),
-    [selectedInput]
-  );
-
-  const [selectedOutput, setSelectedOutput] = React.useState(
-    new Set([t("selectLanguage")])
-  );
-
-  const selectedValueOutput = React.useMemo(
-    () => Array.from(selectedOutput).join(", ").replaceAll("_", " "),
-    [selectedOutput]
-  );
-
-  const [translationType, setTranslationType] =
-    React.useState("textTranslation");
-
-  const { setVisible, bindings } = useModal();
-
-  const closeHandler = () => {
-    setVisible(false);
-  };
 
   const supportedLanguages = [
     { key: "BG", value: t("bulgarian") },
@@ -94,15 +56,23 @@ export default function Translate() {
     { key: "UK", value: t("ukranian") },
   ];
 
+  const [selectedInput, setSelectedInput] = React.useState(supportedLanguages[0]);
+  const [selectedOutput, setSelectedOutput] = React.useState(supportedLanguages[5]);
+
+  const [input, setInput] = React.useState(null);
+  const [output, setOutput] = React.useState(null);
+
+  const [translationType, setTranslationType] = React.useState("textTranslation");
+
+  const { setVisible, bindings } = useModal();
+
+  const closeHandler = () => {
+    setVisible(false);
+  };
+
   return (
     <Layout h={h} f={f}>
-      <Modal
-        blur
-        width="50%"
-        aria-labelledby="modal-title"
-        aria-describedby="modal-description"
-        {...bindings}
-      >
+      <Modal blur width="50%" aria-labelledby="modal-title" aria-describedby="modal-description" {...bindings}>
         <Modal.Header>
           <div className="text-xl font-bold">{t("errorTitle")}</div>
         </Modal.Header>
@@ -117,9 +87,7 @@ export default function Translate() {
       </Modal>
       <ParticlesHero img="/images/translate.jpg">
         <div className="flex flex-col justify-center text-center items-center text-white gap-4">
-          <div className=" text-2xl md:text-5xl max-w-4xl font-bold">
-            {t("heroTitle")}
-          </div>
+          <div className=" text-2xl md:text-5xl max-w-4xl font-bold">{t("heroTitle")}</div>
           <div className="text-xl font-bold max-w-3xl">{t("heroSubtitle")}</div>
         </div>
       </ParticlesHero>
@@ -131,12 +99,7 @@ export default function Translate() {
           className="bg-green-500"
           onPress={() => setTranslationType("textTranslation")}
         >
-          <Image
-            src="/images/icons/text.png"
-            width={30}
-            height={30}
-            className="!z-[30]"
-          />
+          <Image src="/images/icons/text.png" width={30} height={30} className="!z-[30]" />
           {t("translateText")}
         </Button>
         <Button
@@ -153,39 +116,77 @@ export default function Translate() {
         </Button>
       </div>
       {translationType == "textTranslation" ? (
-        <form method="post" action="/api/translate-text">
+        <form
+          onSubmit={async (e) => {
+            // don't actually do traditional-style HTML from submission that redirects
+            e.preventDefault();
+
+            // set loading on button
+            // TODO
+
+            // don't waste API calls on empty input
+            const trimmed_input = input.trim();
+            if (trimmed_input.length === 0) {
+              // show error
+              return;
+            }
+
+            // don't try to translate the same language
+            if (selectedInput.key === selectedOutput.key) {
+              // show error
+              return;
+            }
+
+            // generate body
+            const bodyJSON = JSON.stringify({
+              input,
+              inputLanguage: selectedInput.key,
+              outputLanguage: selectedOutput.key,
+            });
+
+            // send request to backend and get reponse
+            const response = await fetch("/api/translate-text", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: bodyJSON,
+            });
+            const response_json = await response.json();
+
+            // if something went wrong
+            if (response.status !== 200) {
+              // show error: response_json.error
+              return;
+            }
+
+            // set output
+            setOutput(response_json.output);
+
+            // set loading to false
+            // TODO
+          }}
+        >
           <div className="flex flex-col">
             <div className="mt-4 ml-4 md:ml-16 mr-4 md:mr-16 flex flex-col md:flex-row">
               <div className="flex flex-1 mr-1 flex-col">
                 <div className="flex self-start">
-                  <Dropdown
-                    className="flex self-start"
-                    id="inputLang"
-                    name="inputLang"
-                  >
+                  <Dropdown className="flex self-start">
                     <Dropdown.Button flat color="primary">
-                      {selectedValueInput}
+                      {selectedInput.value}
                     </Dropdown.Button>
                     <Dropdown.Menu
-                      aria-label="Single selection actions"
+                      aria-label="Input language"
                       color="primary"
                       disallowEmptySelection
                       selectionMode="single"
-                      selectedKeys={selectedInput}
-                      onSelectionChange={setSelectedInput}
-                      items={supportedLanguages}
-                      id="inputLang"
-                      name="inputLang"
+                      onAction={(selected) => {
+                        setSelectedInput(supportedLanguages.find((language) => language.key == selected));
+                      }}
                     >
-                      {(item) => (
-                        <Dropdown.Item
-                          key={item.key}
-                          id="inputLang"
-                          name="inputLang"
-                        >
-                          {item.value}
-                        </Dropdown.Item>
-                      )}
+                      {supportedLanguages.map((language) => (
+                        <Dropdown.Item key={language.key}>{language.value}</Dropdown.Item>
+                      ))}
                     </Dropdown.Menu>
                   </Dropdown>
                 </div>
@@ -193,44 +194,37 @@ export default function Translate() {
                   <Textarea
                     className=""
                     shadow
-                    name="input"
-                    id="input"
                     bordered
                     rows={18}
                     width="100%"
                     color="primary"
                     placeholder={t("placeholderInput")}
                     status="default"
-                    onchan
+                    value={input}
+                    onChange={(v) => {
+                      setInput(v.target.value);
+                    }}
                   />
                 </div>
               </div>
               <div className="flex flex-1 ml-1 flex-col">
                 <div className="flex self-start">
-                  <Dropdown
-                    className="flex self-start"
-                    id="outputLang"
-                    name="outputLang"
-                  >
+                  <Dropdown className="flex self-start" id="outputLang" name="outputLang">
                     <Dropdown.Button flat color="primary">
-                      {selectedValueOutput}
+                      {selectedOutput.value}
                     </Dropdown.Button>
                     <Dropdown.Menu
-                      aria-label="Single selection actions"
+                      aria-label="Output Language"
                       color="primary"
                       disallowEmptySelection
                       selectionMode="single"
-                      selectedKeys={selectedOutput}
-                      onSelectionChange={setSelectedOutput}
-                      id="outputLang"
-                      name="outputLang"
-                      items={supportedLanguages}
+                      onAction={(selected) => {
+                        setSelectedOutput(supportedLanguages.find((language) => language.key == selected));
+                      }}
                     >
-                      {(item) => (
-                        <Dropdown.Item key={item.key}>
-                          {item.value}
-                        </Dropdown.Item>
-                      )}
+                      {supportedLanguages.map((language) => (
+                        <Dropdown.Item key={language.key}>{language.value}</Dropdown.Item>
+                      ))}{" "}
                     </Dropdown.Menu>
                   </Dropdown>
                 </div>
@@ -246,18 +240,13 @@ export default function Translate() {
                     rows={18}
                     readOnly
                     status="default"
+                    value={output}
                   />
                 </div>
               </div>
             </div>
             <div className="self-center mt-4  mb-16">
-              <Button
-                shadow
-                color="primary"
-                auto
-                className="bg-blue-800"
-                type="submit"
-              >
+              <Button shadow color="primary" auto className="bg-blue-800" type="submit">
                 {t("submitButton")}
               </Button>
             </div>
@@ -280,22 +269,12 @@ export default function Translate() {
               >
                 <div className="flex flex-col justify-center">
                   <div className="flex flex-row self-center">
-                    <img
-                      className=" self-center"
-                      width={320}
-                      height={180}
-                      src="/images/icons/files.png"
-                    />
+                    <img className=" self-center" width={320} height={180} src="/images/icons/files.png" />
                   </div>
                   <Text className="text-blue-800 text-center" weight="bold">
                     {t("uploadText")}
                   </Text>
-                  <Button
-                    shadow
-                    color="gradient"
-                    auto
-                    className="bg-blue-800 mt-4 mb-4 ml-4 mr-4"
-                  >
+                  <Button shadow color="gradient" auto className="bg-blue-800 mt-4 mb-4 ml-4 mr-4">
                     {t("attachFile")}
                   </Button>
                 </div>
@@ -317,9 +296,7 @@ export default function Translate() {
                     id="outputLang"
                     items={supportedLanguages}
                   >
-                    {(item) => (
-                      <Dropdown.Item key={item.key}>{item.value}</Dropdown.Item>
-                    )}
+                    {(item) => <Dropdown.Item key={item.key}>{item.value}</Dropdown.Item>}
                   </Dropdown.Menu>
                 </Dropdown>
               </div>
@@ -338,13 +315,7 @@ export default function Translate() {
             </div>
           </div>
           <div className="self-center mt-4  mb-16">
-            <Button
-              shadow
-              color="primary"
-              auto
-              className="bg-blue-800"
-              onPress={() => sendTranslate(t)}
-            >
+            <Button shadow color="primary" auto className="bg-blue-800" onPress={() => sendTranslate(t)}>
               {t("submitButton")}
             </Button>
           </div>
