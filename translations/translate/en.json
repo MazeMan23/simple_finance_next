@@ -41,6 +41,9 @@
     "uploadText": "Upload a PDF, Word or PPT file for us to translate.",
     "errorMessage": "Please select two different languages that correspond to the input text and the translation, which you would like.",
     "errorTitle": "Incorrect Input",
-    "closeButton": "Close"
+    "closeButton": "Close",
+    "textLength": "Please enter a valid text that is less than 5000 characters.",
+    "errorNoFile": "Please upload a file.",
+    "successButton": "Press to download the translated file."
   }
 }

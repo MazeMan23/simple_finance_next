@@ -1,5 +1,7 @@
 import * as deepl from "deepl-node";
 import IncomingForm from "formidable/src/Formidable";
+import { v4 as uuidv4 } from "uuid";
+import { unlinkSync, copyFileSync, mkdirSync } from "fs";
 
 // we're sending a file, so we tell next.js to not try and parse the file as JSON body
 export const config = {
@@ -44,11 +46,13 @@ export default async function translateText(req, res) {
   // get the file
   const file_object = reqBody.files.file;
 
-  //get the outputLanguage
+  //get the input, output language
   let outputLanguage = reqBody.fields.outputLanguage;
+  let inputLanguage = reqBody.fields.inputLanguage;
 
   // force lowercase on languages
   outputLanguage = outputLanguage.toLowerCase();
+  inputLanguage = inputLanguage.toLowerCase();
 
   // this is because deepl is regarded
   if (outputLanguage === "en") {
@@ -73,6 +77,21 @@ export default async function translateText(req, res) {
     return;
   }
 
+  //check if file bigger than yo mama
+  if (file_object.size > 1000 * 1024 * 1024) {
+    res.status(400).json({ message: "The file that you uploaded is too big!" });
+    return;
+  }
+
+  //make copy of file because original one is regarded
+  const file_id = uuidv4();
+  const filedir = `${process.cwd()}/uploads/`;
+  const extension = file_object.originalFilename.split(".").pop();
+  const filepath = `${filedir}${file_id}.${extension}`;
+
+  mkdirSync(filedir, { recursive: true });
+  copyFileSync(file_object.filepath, filepath);
+
   const translator = new deepl.Translator(process.env.DEEPL_API_KEY);
 
   //check if correct output language
@@ -84,34 +103,29 @@ export default async function translateText(req, res) {
     res.status(400).json({ error: outputLanguage });
     return;
   }
-
-  //get the file extension
-  let ext = ".pdf";
+  //check if correct input language
   if (
-    file_object.mimetype ==
-    "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    !(await translator.getSourceLanguages()).find(
+      (language) => language.code.toLocaleLowerCase() == inputLanguage
+    )
   ) {
-    ext = ".docx";
-  } else if (
-    file_object.mimetype !=
-    "application/vnd.openxmlformats-officedocument.presentationml.presentation"
-  ) {
-    ext = ".pptx";
+    res.status(400).json({ error: "Unrecognized input language!" });
+    return;
   }
 
-  //generate a file path for the existing file
-  let filePath = "/" + file_object.filepath + ext;
   //generate a file path for the translated file
-  let newFilePath = "./public/translated-files/" + file_object.originalFilename;
+  let newFilePath = `public/translated-files/TranslationID${file_id}.${extension}`;
 
-  console.log(filePath);
+  //simulate translation because it do be kinda expensive tho
+  // copyFileSync(file_object.filepath, newFilePath);
 
+  //TODO save the file in the user's folder.
   try {
     await translator.translateDocument(
-      filePath,
-      "public/testen.docx",
-      "bg",
-      "de"
+      filepath,
+      newFilePath,
+      inputLanguage,
+      outputLanguage
     );
   } catch (error) {
     // If the error occurs after the document was already uploaded,
@@ -127,6 +141,13 @@ export default async function translateText(req, res) {
     }
   }
 
+  //delete file so we don't clog the server
+  try {
+    unlinkSync(filepath);
+  } catch (err) {
+    console.error(err);
+  }
+
   // all ok, send it
-  res.status(200).json({ lang: outputLanguage });
+  res.status(200).json({ path: newFilePath });
 }

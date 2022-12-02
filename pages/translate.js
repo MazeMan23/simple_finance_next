@@ -9,8 +9,10 @@ import {
   Text,
   useModal,
   Modal,
+  Loading,
 } from "@nextui-org/react";
 import Image from "next/image";
+import { Form } from "react-bootstrap";
 
 export async function getStaticProps({ locale }) {
   const header = (await import(`../translations/header/${locale}.json`))
@@ -74,19 +76,24 @@ export default function Translate() {
     supportedLanguages[5]
   );
 
-  const [input, setInput] = React.useState(null);
+  const [input, setInput] = React.useState("");
   const [output, setOutput] = React.useState(null);
+  const [loading, setLoading] = React.useState(false);
+  const [errorText, setErrorText] = React.useState("");
 
   const [translationType, setTranslationType] =
     React.useState("textTranslation");
 
   const { setVisible, bindings } = useModal();
 
+  const [downloaded, setDownloaded] = React.useState(false);
+
   const closeHandler = () => {
     setVisible(false);
   };
 
   const [file, setFile] = React.useState(null);
+  const [path, setPath] = React.useState("");
 
   return (
     <Layout h={h} f={f}>
@@ -101,7 +108,7 @@ export default function Translate() {
           <div className="text-xl font-bold">{t("errorTitle")}</div>
         </Modal.Header>
         <Modal.Body>
-          <div className="self-center">{t("errorMessage")}</div>
+          <div className="self-center">{errorText}</div>
         </Modal.Body>
         <Modal.Footer>
           <Button auto flat color="error" onClick={closeHandler}>
@@ -117,317 +124,396 @@ export default function Translate() {
           <div className="text-xl font-bold max-w-3xl">{t("heroSubtitle")}</div>
         </div>
       </ParticlesHero>
-      <div className="flex flex-row mt-16 ml-4 md:ml-16">
-        <Button
-          shadow
-          color="success"
-          auto
-          className="bg-green-500"
-          onPress={() => setTranslationType("textTranslation")}
-        >
-          <Image
-            src="/images/icons/text.png"
-            width={30}
-            height={30}
-            className="!z-[30]"
-          />
-          {t("translateText")}
-        </Button>
-        <Button
-          shadow
-          color="warning"
-          auto
-          className="bg-yellow-500 ml-8"
-          onPress={() => {
-            setTranslationType("fileTranslation");
-          }}
-        >
-          <Image src="/images/icons/file.png" width={30} height={30} />
-          {t("translateFile")}
-        </Button>
-      </div>
-      {translationType == "textTranslation" ? (
-        <form
-          onSubmit={async (e) => {
-            // don't actually do traditional-style HTML from submission that redirects
-            e.preventDefault();
+      <div className="lg:h-[80vh]">
+        <div className="flex flex-row mt-16 ml-4 md:ml-16">
+          <Button
+            shadow
+            color="success"
+            auto
+            className="bg-green-500"
+            onPress={() => setTranslationType("textTranslation")}
+          >
+            <Image
+              src="/images/icons/text.png"
+              width={30}
+              height={30}
+              className="!z-[30]"
+            />
+            {t("translateText")}
+          </Button>
+          <Button
+            shadow
+            color="warning"
+            auto
+            className="bg-yellow-500 ml-8"
+            onPress={() => {
+              setTranslationType("fileTranslation");
+            }}
+          >
+            <Image src="/images/icons/file.png" width={30} height={30} />
+            {t("translateFile")}
+          </Button>
+        </div>
+        {translationType == "textTranslation" ? (
+          <form
+            onSubmit={async (e) => {
+              // don't actually do traditional-style HTML from submission that redirects
+              e.preventDefault();
 
-            // set loading on button
-            // TODO
+              // set loading on button
+              setLoading(true);
 
-            // don't waste API calls on empty input
-            const trimmed_input = input.trim();
-            if (trimmed_input.length === 0) {
-              // show error
-              return;
-            }
+              // don't waste API calls on empty input
+              const trimmed_input = input.trim();
+              if (trimmed_input.length === 0 || input.length > 5000) {
+                setErrorText(t("textLength"));
+                setVisible(true);
+                setLoading(false);
+                return;
+              }
 
-            // don't try to translate the same language
-            if (selectedInput.key === selectedOutput.key) {
-              // show error
-              return;
-            }
+              // don't try to translate the same language
+              if (selectedInput.key === selectedOutput.key) {
+                setErrorText(t("errorMessage"));
+                setVisible(true);
+                setLoading(false);
+                return;
+              }
 
-            // generate body
-            const bodyJSON = JSON.stringify({
-              input,
-              inputLanguage: selectedInput.key,
-              outputLanguage: selectedOutput.key,
-            });
+              // generate body
+              const bodyJSON = JSON.stringify({
+                input,
+                inputLanguage: selectedInput.key,
+                outputLanguage: selectedOutput.key,
+              });
 
-            // send request to backend and get reponse
-            const response = await fetch("/api/translate-text", {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: bodyJSON,
-            });
-            const response_json = await response.json();
+              // send request to backend and get reponse
+              const response = await fetch("/api/translate-text", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: bodyJSON,
+              });
+              const response_json = await response.json();
 
-            // if something went wrong
-            if (response.status !== 200) {
-              // show error: response_json.error
-              return;
-            }
+              // if something went wrong
+              if (response.status !== 200) {
+                // show error: response_json.error
+                setErrorText(req.error);
+                setVisible(true);
+                setLoading(false);
+                setLoading(false);
+                return;
+              }
 
-            // set output
-            setOutput(response_json.output);
-
-            // set loading to false
-            // TODO
-          }}
-        >
-          <div className="flex flex-col">
-            <div className="mt-4 ml-4 md:ml-16 mr-4 md:mr-16 flex flex-col md:flex-row">
-              <div className="flex flex-1 mr-1 flex-col">
-                <div className="flex self-start">
-                  <Dropdown className="flex self-start">
-                    <Dropdown.Button flat color="primary">
-                      {selectedInput.value}
-                    </Dropdown.Button>
-                    <Dropdown.Menu
-                      aria-label="Input language"
+              // set output
+              setOutput(response_json.output);
+              setLoading(false);
+              // set loading to false
+              // TODO
+            }}
+          >
+            <div className="flex flex-col">
+              <div className="mt-4 ml-4 md:ml-16 mr-4 md:mr-16 flex flex-col md:flex-row">
+                <div className="flex flex-1 mr-1 flex-col">
+                  <div className="flex self-start">
+                    <Dropdown className="flex self-start">
+                      <Dropdown.Button flat color="primary">
+                        {selectedInput.value}
+                      </Dropdown.Button>
+                      <Dropdown.Menu
+                        aria-label="Input language"
+                        color="primary"
+                        disallowEmptySelection
+                        selectionMode="single"
+                        onAction={(selected) => {
+                          setSelectedInput(
+                            supportedLanguages.find(
+                              (language) => language.key == selected
+                            )
+                          );
+                        }}
+                      >
+                        {supportedLanguages.map((language) => (
+                          <Dropdown.Item key={language.key}>
+                            {language.value}
+                          </Dropdown.Item>
+                        ))}
+                      </Dropdown.Menu>
+                    </Dropdown>
+                  </div>
+                  <div className="mt-4">
+                    <Textarea
+                      className=""
+                      shadow
+                      bordered
+                      rows={18}
+                      width="100%"
                       color="primary"
-                      disallowEmptySelection
-                      selectionMode="single"
-                      onAction={(selected) => {
-                        setSelectedInput(
-                          supportedLanguages.find(
-                            (language) => language.key == selected
-                          )
-                        );
+                      placeholder={t("placeholderInput")}
+                      status="default"
+                      value={input}
+                      onChange={(v) => {
+                        setInput(v.target.value);
                       }}
-                    >
-                      {supportedLanguages.map((language) => (
-                        <Dropdown.Item key={language.key}>
-                          {language.value}
-                        </Dropdown.Item>
-                      ))}
-                    </Dropdown.Menu>
-                  </Dropdown>
-                </div>
-                <div className="mt-4">
-                  <Textarea
-                    className=""
-                    shadow
-                    bordered
-                    rows={18}
-                    width="100%"
-                    color="primary"
-                    placeholder={t("placeholderInput")}
-                    status="default"
-                    value={input}
-                    onChange={(v) => {
-                      setInput(v.target.value);
-                    }}
-                  />
-                </div>
-              </div>
-              <div className="flex flex-1 ml-1 flex-col">
-                <div className="flex self-start">
-                  <Dropdown
-                    className="flex self-start"
-                    id="outputLang"
-                    name="outputLang"
-                  >
-                    <Dropdown.Button flat color="primary">
-                      {selectedOutput.value}
-                    </Dropdown.Button>
-                    <Dropdown.Menu
-                      aria-label="Output Language"
-                      color="primary"
-                      disallowEmptySelection
-                      selectionMode="single"
-                      onAction={(selected) => {
-                        setSelectedOutput(
-                          supportedLanguages.find(
-                            (language) => language.key == selected
-                          )
-                        );
-                      }}
-                    >
-                      {supportedLanguages.map((language) => (
-                        <Dropdown.Item key={language.key}>
-                          {language.value}
-                        </Dropdown.Item>
-                      ))}{" "}
-                    </Dropdown.Menu>
-                  </Dropdown>
-                </div>
-                <div className="mt-4">
-                  <Textarea
-                    id="output"
-                    name="output"
-                    className="flex flex-1"
-                    shadow
-                    placeholder={t("placeholderOutput")}
-                    bordered
-                    width="100%"
-                    rows={18}
-                    readOnly
-                    status="default"
-                    value={output}
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="self-center mt-4  mb-16">
-              <Button
-                shadow
-                color="primary"
-                auto
-                className="bg-blue-800"
-                type="submit"
-              >
-                {t("submitButton")}
-              </Button>
-            </div>
-          </div>
-        </form>
-      ) : (
-        <form
-          onSubmit={async (e) => {
-            e.preventDefault();
-
-            if (!file) {
-              // TODO: error no file
-              return;
-            }
-
-            let formData = new FormData();
-            formData.append("file", file);
-            formData.append("outputLanguage", selectedOutput.key);
-
-            let result = await fetch("/api/translate-file", {
-              method: "POST",
-              body: formData,
-            });
-
-            const result_json = await result.json();
-
-            if (result.status !== 200) {
-              // TODO: error in result_json.error
-              console.log(result_json.error);
-              return;
-            } else {
-              console.log(result_json.lang);
-            }
-
-            // DOWNLOAD URL IN result_json.url
-          }}
-        >
-          <div className="flex flex-col">
-            <div className="mt-4 ml-4 md:ml-16 mr-4 md:mr-16 flex flex-col md:flex-row">
-              <div className="flex flex-1 mr-1 flex-col">
-                <div className="flex self-start">
-                  <Dropdown className="flex self-start w-96">
-                    <Dropdown.Button flat disabled color="primary">
-                      {t("detectLanguage")}
-                    </Dropdown.Button>
-                  </Dropdown>
-                </div>
-                <div
-                  className="mt-4 border-2 rounded-lg w-fill h-full flex justify-center"
-                  style={{ borderColor: "#d9d9d9" }}
-                >
-                  <div className="flex flex-col justify-center">
-                    <div className="flex flex-row self-center">
-                      <img
-                        className=" self-center"
-                        width={320}
-                        height={180}
-                        src="/images/icons/files.png"
-                      />
-                    </div>
-                    <Text className="text-blue-800 text-center" weight="bold">
-                      {t("uploadText")}
-                    </Text>
-                    <input
-                      type="file"
-                      onChange={(e) => setFile(e.target.files[0])}
                     />
-                    {/* <Button shadow color="gradient" auto className="bg-blue-800 mt-4 mb-4 ml-4 mr-4">
-                    {t("attachFile")}
-                  </Button> */}
+                    <div className="font-bold text-gray-400 text-sm ml-2 mt-2">
+                      {input.length}/5000
+                    </div>
+                  </div>
+                </div>
+                <div className="flex flex-1 ml-1 flex-col">
+                  <div className="flex self-start">
+                    <Dropdown
+                      className="flex self-start"
+                      id="outputLang"
+                      name="outputLang"
+                    >
+                      <Dropdown.Button flat color="primary">
+                        {selectedOutput.value}
+                      </Dropdown.Button>
+                      <Dropdown.Menu
+                        aria-label="Output Language"
+                        color="primary"
+                        disallowEmptySelection
+                        selectionMode="single"
+                        onAction={(selected) => {
+                          setSelectedOutput(
+                            supportedLanguages.find(
+                              (language) => language.key == selected
+                            )
+                          );
+                        }}
+                      >
+                        {supportedLanguages.map((language) => (
+                          <Dropdown.Item key={language.key}>
+                            {language.value}
+                          </Dropdown.Item>
+                        ))}{" "}
+                      </Dropdown.Menu>
+                    </Dropdown>
+                  </div>
+                  <div className="mt-4">
+                    <Textarea
+                      id="output"
+                      name="output"
+                      className="flex flex-1"
+                      shadow
+                      placeholder={t("placeholderOutput")}
+                      bordered
+                      width="100%"
+                      rows={18}
+                      readOnly
+                      status="default"
+                      value={output}
+                    />
                   </div>
                 </div>
               </div>
-              <div className="flex flex-1 ml-1 flex-col mt-4 md:mt-0">
-                <div className="flex self-start">
-                  <Dropdown className="flex self-start">
-                    <Dropdown.Button flat color="primary">
-                      {selectedInput.value}
-                    </Dropdown.Button>
-                    <Dropdown.Menu
-                      aria-label="Input language"
-                      color="primary"
-                      disallowEmptySelection
-                      selectionMode="single"
-                      onAction={(selected) => {
-                        setSelectedOutput(
-                          supportedLanguages.find(
-                            (language) => language.key == selected
-                          )
-                        );
-                      }}
-                    >
-                      {supportedLanguages.map((language) => (
-                        <Dropdown.Item key={language.key}>
-                          {language.value}
-                        </Dropdown.Item>
-                      ))}
-                    </Dropdown.Menu>
-                  </Dropdown>
-                </div>
-                <div className="mt-4">
-                  <Textarea
-                    className="flex flex-1"
+              <div className="self-center mt-4  mb-16">
+                {!loading ? (
+                  <Button
                     shadow
-                    placeholder={t("placeholderOutput")}
+                    color="primary"
+                    auto
+                    className="bg-blue-800"
+                    type="submit"
+                  >
+                    {t("submitButton")}
+                  </Button>
+                ) : (
+                  <Button
+                    disabled
+                    auto
                     bordered
-                    width="100%"
-                    readOnly
-                    rows={18}
-                    status="default"
-                  />
-                </div>
+                    color="success"
+                    css={{ px: "$13" }}
+                  >
+                    <Loading type="points" color="currentColor" size="sm" />
+                  </Button>
+                )}
               </div>
             </div>
-            <div className="self-center mt-4  mb-16">
-              <Button
-                shadow
-                color="primary"
-                auto
-                className="bg-blue-800"
-                type="submit"
-              >
-                {t("submitButton")}
-              </Button>
+          </form>
+        ) : (
+          <form
+            onSubmit={async (e) => {
+              e.preventDefault();
+
+              setLoading(true);
+
+              if (!file) {
+                // TODO: error no file
+                setErrorText(t("errorNoFile"));
+                setVisible(true);
+                setLoading(false);
+                return;
+              }
+
+              // don't try to translate the same language
+              if (selectedInput.key === selectedOutput.key) {
+                // show error
+                setErrorText(t("errorMessage"));
+                setVisible(true);
+                setLoading(false);
+                return;
+              }
+
+              let formData = new FormData();
+              formData.append("file", file);
+              formData.append("inputLanguage", selectedInput.key);
+              formData.append("outputLanguage", selectedOutput.key);
+
+              let result = await fetch("/api/translate-file", {
+                method: "POST",
+                body: formData,
+              });
+
+              const result_json = await result.json();
+              const result_path = result_json.path;
+
+              if (result.status !== 200) {
+                // TODO: error in result_json.error
+                setErrorText(result_json.error);
+                setVisible(true);
+                setLoading(false);
+                return;
+              } else {
+                setPath(result_path);
+                setLoading(false);
+                setDownloaded(true);
+              }
+            }}
+          >
+            <div className="flex flex-col">
+              <div className="mt-4 ml-4 md:ml-16 mr-4 md:mr-16 flex flex-col md:flex-row">
+                <div className="flex flex-1 mr-1 flex-col">
+                  <div className="flex flex-row mt-4 lg:w-1/3 self-center justify-between">
+                    <div className="flex self-start">
+                      <Dropdown className="flex self-start">
+                        <Dropdown.Button flat color="primary">
+                          {selectedInput.value}
+                        </Dropdown.Button>
+                        <Dropdown.Menu
+                          aria-label="Input language"
+                          color="primary"
+                          disallowEmptySelection
+                          selectionMode="single"
+                          onAction={(selected) => {
+                            setSelectedInput(
+                              supportedLanguages.find(
+                                (language) => language.key == selected
+                              )
+                            );
+                          }}
+                        >
+                          {supportedLanguages.map((language) => (
+                            <Dropdown.Item key={language.key}>
+                              {language.value}
+                            </Dropdown.Item>
+                          ))}
+                        </Dropdown.Menu>
+                      </Dropdown>
+                    </div>
+                    <div className="flex self-end">
+                      <Dropdown
+                        className="flex self-start"
+                        id="outputLang"
+                        name="outputLang"
+                      >
+                        <Dropdown.Button flat color="primary">
+                          {selectedOutput.value}
+                        </Dropdown.Button>
+                        <Dropdown.Menu
+                          aria-label="Output Language"
+                          color="primary"
+                          disallowEmptySelection
+                          selectionMode="single"
+                          onAction={(selected) => {
+                            setSelectedOutput(
+                              supportedLanguages.find(
+                                (language) => language.key == selected
+                              )
+                            );
+                          }}
+                        >
+                          {supportedLanguages.map((language) => (
+                            <Dropdown.Item key={language.key}>
+                              {language.value}
+                            </Dropdown.Item>
+                          ))}{" "}
+                        </Dropdown.Menu>
+                      </Dropdown>
+                    </div>
+                  </div>
+                  <div
+                    className="mt-4 border-2 rounded-lg md:w-2/3 lg:w-1/3 self-center h-full flex justify-center"
+                    style={{ borderColor: "#d9d9d9" }}
+                  >
+                    <div className="flex flex-col justify-center">
+                      <div className="flex flex-row self-center">
+                        <img
+                          className=" self-center"
+                          width={320}
+                          height={180}
+                          src="/images/icons/files.png"
+                        />
+                      </div>
+                      <Text className="text-blue-800 text-center" weight="bold">
+                        {t("uploadText")}
+                      </Text>
+                      <Form.Group
+                        className="self-center mt-8 mb-8"
+                        controlId="file"
+                        onChange={(e) => setFile(e.target.files[0])}
+                      >
+                        <Form.Control type="file" accept=".pdf, .docx, .pptx" />
+                      </Form.Group>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="self-center mt-8  mb-16">
+                {downloaded == false ? (
+                  !loading ? (
+                    <Button
+                      shadow
+                      color="primary"
+                      auto
+                      className="bg-blue-800"
+                      type="submit"
+                    >
+                      {t("submitButton")}
+                    </Button>
+                  ) : (
+                    <Button
+                      disabled
+                      auto
+                      bordered
+                      color="success"
+                      css={{ px: "$13" }}
+                    >
+                      <Loading type="points" color="currentColor" size="sm" />
+                    </Button>
+                  )
+                ) : (
+                  <a href={`/api/download-file?_path=${path}`}>
+                    <Button
+                      shadow
+                      color="success"
+                      auto
+                      className="bg-green-600"
+                    >
+                      {t("successButton")}
+                    </Button>
+                  </a>
+                )}
+              </div>
             </div>
-          </div>
-        </form>
-      )}
+          </form>
+        )}
+      </div>
     </Layout>
   );
 }
