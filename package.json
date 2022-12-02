@@ -17,6 +17,7 @@
     "cookies-next": "^2.1.1",
     "country-flag-icons": "^1.5.5",
     "deepl-node": "^1.7.2",
+    "formidable": "^2.1.1",
     "fs": "false",
     "lru-cache": "^7.14.0",
     "next": "12.3.1",

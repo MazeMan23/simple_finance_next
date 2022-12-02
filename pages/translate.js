@@ -70,6 +70,8 @@ export default function Translate() {
     setVisible(false);
   };
 
+  const [file, setFile] = React.useState(null);
+
   return (
     <Layout h={h} f={f}>
       <Modal blur width="50%" aria-labelledby="modal-title" aria-describedby="modal-description" {...bindings}>
@@ -253,73 +255,103 @@ export default function Translate() {
           </div>
         </form>
       ) : (
-        <div className="flex flex-col">
-          <div className="mt-4 ml-4 md:ml-16 mr-4 md:mr-16 flex flex-col md:flex-row">
-            <div className="flex flex-1 mr-1 flex-col">
-              <div className="flex self-start">
-                <Dropdown className="flex self-start w-96">
-                  <Dropdown.Button flat disabled color="primary">
-                    {t("detectLanguage")}
-                  </Dropdown.Button>
-                </Dropdown>
-              </div>
-              <div
-                className="mt-4 border-2 rounded-lg w-fill h-full flex justify-center"
-                style={{ borderColor: "#d9d9d9" }}
-              >
-                <div className="flex flex-col justify-center">
-                  <div className="flex flex-row self-center">
-                    <img className=" self-center" width={320} height={180} src="/images/icons/files.png" />
-                  </div>
-                  <Text className="text-blue-800 text-center" weight="bold">
-                    {t("uploadText")}
-                  </Text>
-                  <Button shadow color="gradient" auto className="bg-blue-800 mt-4 mb-4 ml-4 mr-4">
+        <form
+          onSubmit={async (e) => {
+            e.preventDefault();
+
+            if (!file) {
+              // TODO: error no file
+              return;
+            }
+
+            let formData = new FormData();
+            formData.append("file", file);
+
+            let result = await fetch("/api/translate-file", {
+              method: "POST",
+              body: formData,
+            });
+
+            // const result_json = await result.json();
+
+            if (result.status !== 200) {
+              // TODO: error in result_json.error
+              return;
+            }
+
+            // DOWNLOAD URL IN result_json.url
+          }}
+        >
+          <div className="flex flex-col">
+            <div className="mt-4 ml-4 md:ml-16 mr-4 md:mr-16 flex flex-col md:flex-row">
+              <div className="flex flex-1 mr-1 flex-col">
+                <div className="flex self-start">
+                  <Dropdown className="flex self-start w-96">
+                    <Dropdown.Button flat disabled color="primary">
+                      {t("detectLanguage")}
+                    </Dropdown.Button>
+                  </Dropdown>
+                </div>
+                <div
+                  className="mt-4 border-2 rounded-lg w-fill h-full flex justify-center"
+                  style={{ borderColor: "#d9d9d9" }}
+                >
+                  <div className="flex flex-col justify-center">
+                    <div className="flex flex-row self-center">
+                      <img className=" self-center" width={320} height={180} src="/images/icons/files.png" />
+                    </div>
+                    <Text className="text-blue-800 text-center" weight="bold">
+                      {t("uploadText")}
+                    </Text>
+                    <input type="file" onChange={(e) => setFile(e.target.files[0])} />
+                    {/* <Button shadow color="gradient" auto className="bg-blue-800 mt-4 mb-4 ml-4 mr-4">
                     {t("attachFile")}
-                  </Button>
+                  </Button> */}
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-1 ml-1 flex-col mt-4 md:mt-0">
+                <div className="flex self-start">
+                  <Dropdown className="flex self-start">
+                    <Dropdown.Button flat color="primary">
+                      {selectedInput.value}
+                    </Dropdown.Button>
+                    <Dropdown.Menu
+                      aria-label="Input language"
+                      color="primary"
+                      disallowEmptySelection
+                      selectionMode="single"
+                      onAction={(selected) => {
+                        setSelectedInput(supportedLanguages.find((language) => language.key == selected));
+                      }}
+                    >
+                      {supportedLanguages.map((language) => (
+                        <Dropdown.Item key={language.key}>{language.value}</Dropdown.Item>
+                      ))}
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </div>
+                <div className="mt-4">
+                  <Textarea
+                    className="flex flex-1"
+                    shadow
+                    placeholder={t("placeholderOutput")}
+                    bordered
+                    width="100%"
+                    readOnly
+                    rows={18}
+                    status="default"
+                  />
                 </div>
               </div>
             </div>
-            <div className="flex flex-1 ml-1 flex-col mt-4 md:mt-0">
-              <div className="flex self-start">
-                <Dropdown className="flex self-start">
-                  <Dropdown.Button flat color="primary">
-                    {selectedValueOutput}
-                  </Dropdown.Button>
-                  <Dropdown.Menu
-                    aria-label="Single selection actions"
-                    color="primary"
-                    disallowEmptySelection
-                    selectionMode="single"
-                    selectedKeys={selectedOutput}
-                    onSelectionChange={setSelectedOutput}
-                    id="outputLang"
-                    items={supportedLanguages}
-                  >
-                    {(item) => <Dropdown.Item key={item.key}>{item.value}</Dropdown.Item>}
-                  </Dropdown.Menu>
-                </Dropdown>
-              </div>
-              <div className="mt-4">
-                <Textarea
-                  className="flex flex-1"
-                  shadow
-                  placeholder={t("placeholderOutput")}
-                  bordered
-                  width="100%"
-                  readOnly
-                  rows={18}
-                  status="default"
-                />
-              </div>
+            <div className="self-center mt-4  mb-16">
+              <Button shadow color="primary" auto className="bg-blue-800" type="submit">
+                {t("submitButton")}
+              </Button>
             </div>
           </div>
-          <div className="self-center mt-4  mb-16">
-            <Button shadow color="primary" auto className="bg-blue-800" onPress={() => sendTranslate(t)}>
-              {t("submitButton")}
-            </Button>
-          </div>
-        </div>
+        </form>
       )}
     </Layout>
   );
