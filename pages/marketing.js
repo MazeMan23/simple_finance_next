@@ -4,12 +4,17 @@ import Layout from "../components/Layout";
 import ParticlesHero from "../components/ParticlesHero";
 import ContactForm from "../components/ContactForm";
 import Image from "next/image";
+import { Avatar, Card, Collapse, Grid } from "@nextui-org/react";
 
 export async function getStaticProps({ locale }) {
-  const header = (await import(`../translations/header/${locale}.json`)).default;
-  const footer = (await import(`../translations/footer/${locale}.json`)).default;
-  const contact = (await import(`../translations/contact/${locale}.json`)).default;
-  const marketing = (await import(`../translations/marketing/${locale}.json`)).default;
+  const header = (await import(`../translations/header/${locale}.json`))
+    .default;
+  const footer = (await import(`../translations/footer/${locale}.json`))
+    .default;
+  const contact = (await import(`../translations/contact/${locale}.json`))
+    .default;
+  const marketing = (await import(`../translations/marketing/${locale}.json`))
+    .default;
 
   const final = { ...marketing, ...header, ...footer, ...contact };
 
@@ -61,38 +66,29 @@ export default function Marketing() {
   const services = [
     {
       url: "/images/m1.png",
-      title: t("soc"),
-      desc: t("soc_desc"),
-    },
-    {
-      url: "/images/m2.png",
-      title: t("fb"),
-      desc: t("fb_desc"),
-    },
-    {
-      url: "/images/m3.png",
-      title: t("ig"),
-      desc: t("ig_desc"),
-    },
-    {
-      url: "/images/m4.png",
-      title: t("li"),
-      desc: t("li_desc"),
+      title: "Social Media",
+      desc: t("soc_desc2"),
     },
     {
       url: "/images/m5.png",
       title: t("ga"),
       desc: t("ga_desc"),
+      title2: t("blog"),
+      desc2: t("blog_desc"),
+      title3: t("web_content"),
+      desc3: t("web_desc"),
+    },
+    {
+      url: "/images/m2.png",
+      title: "YouTube",
+      desc: t("yt_desc"),
+      title2: t("email_campaign"),
+      desc2: t("email_campaign_desc"),
     },
     {
       url: "/images/m6.png",
-      title: t("email"),
-      desc: t("email_desc"),
-    },
-    {
-      url: "/images/m7.png",
-      title: t("seo"),
-      desc: t("seo_desc"),
+      title: t("email_campaign2"),
+      desc: t("email_campaign_desc2"),
     },
   ];
 
@@ -100,73 +96,233 @@ export default function Marketing() {
     <Layout h={h} f={f}>
       <ParticlesHero img="/images/simple_marketing.jpg">
         <div className="flex flex-col justify-center text-center items-center text-white gap-4">
-          <div className=" text-2xl md:text-5xl max-w-4xl font-bold">{t("heroTitle")}</div>
+          <div className=" text-2xl md:text-5xl max-w-4xl font-bold">
+            {t("heroTitle")}
+          </div>
           <div className="text-xl font-bold max-w-3xl">{t("heroSubtitle")}</div>
         </div>
       </ParticlesHero>
       <div className="bg-slate-100 pb-8">
-        <div className="flex mr-3 ml-3 mt-3 flex-col md:mr-20 md:ml-20 md:mt-20">
+        <div className="flex mr-3 ml-3 mt-3 flex-col md:flex-row md:mr-20 md:ml-20 md:mt-20 md:gap-12">
+          <video autoPlay muted loop className="lg:w-1/3 rounded-xl">
+            <source src="/images/marketing.mp4" />
+          </video>
           <div className="flex flex-col">
-            <div className="flex lg:hidden self-center max-w-[90vw]">
-              <img src="/images/marketing.png" className="lg:hidden" />
-            </div>
-            <h1 className="mt-5 text-xl lg:text-3xl font-semibold">{t("about")}</h1>
-            <ul className="list-disc ml-5 mt-5  marker:text-orange-500">
-              <li className="mb-2">{t("about_1")}</li>
-              <li className="mb-2">{t("about_2")}</li>
-              <li className="mb-2">{t("about_3")}</li>
-              <li className="mb-2">{t("about_4")}</li>
-            </ul>
-            <div className="flex flex-row items-center justify-start">
-              <button className="px-10 mt-8 py-2 bg-[#f28123] text-white font-light rounded-md text-lg flex flex-row items-center">
-                {t("learnMore")}
-                <svg width="24" height="24" viewBox="0 0 24 24" className="text-white ml-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9.00967 5.12761H11.0097C12.1142 5.12761 13.468 5.89682 14.0335 6.8457L16.5089 11H21.0097C21.562 11 22.0097 11.4477 22.0097 12C22.0097 12.5523 21.562 13 21.0097 13H16.4138L13.9383 17.1543C13.3729 18.1032 12.0191 18.8724 10.9145 18.8724H8.91454L12.4138 13H5.42485L3.99036 15.4529H1.99036L4.00967 12L4.00967 11.967L2.00967 8.54712H4.00967L5.44417 11H12.5089L9.00967 5.12761Z" fill="currentColor" />
-                </svg>
-              </button>
-            </div>
             <h1 className="mt-5 text-3xl font-semibold">{t("what")}</h1>
-            <h1 className="mt-5 text-2xl text-gray-700 font-semibold">{t("consultative")}</h1>
+            <h1 className="mt-5 text-2xl text-gray-700 font-semibold">
+              {t("consultative")}
+            </h1>
             <ul className="list-disc ml-5 mt-5  marker:text-orange-500">
               <li className="mb-2">{t("consultative_desc")}</li>
             </ul>
-            <h1 className="mt-5 text-2xl text-gray-700 font-semibold">{t("precise")}</h1>
+            <h1 className="mt-5 text-2xl text-gray-700 font-semibold">
+              {t("precise")}
+            </h1>
             <ul className="list-disc ml-5 mt-5  marker:text-orange-500">
               <li className="mb-2">{t("precise_desc")}</li>
             </ul>
-            <h1 className="mt-5 text-2xl text-gray-700 font-semibold">{t("customer")}</h1>
+            <h1 className="mt-5 text-2xl text-gray-700 font-semibold">
+              {t("customer")}
+            </h1>
             <ul className="list-disc ml-5 mt-5  marker:text-orange-500">
               <li className="mb-2">{t("customer_desc")}</li>
             </ul>
-          </div>
-          <div className="hidden self-center lg:flex justify-center">
-            <img src="/images/marketing.png" className="ml-10 mb-10 max-w-3xl md:hidden" />
           </div>
         </div>
       </div>
       <div className="flex flex-col justify-center w-full items-center my-8 gap-8">
         <h1 className="my-5 text-5xl font-semibold">{t("services")}</h1>
+        <div className="flex flex-col lg:flex-row gap-8 ml-8 mr-8">
+          <Card isHoverable>
+            <Card.Header>
+              <span className=" text-xl font-bold">
+                {t("marketing_strategy")}
+              </span>
+            </Card.Header>
+            <Card.Body>
+              <span className=" text-sm md:text-lg ">
+                {t("marketing_strategy_desc")}
+              </span>
+              <br />
+              <img
+                className="hidden rounded-xl lg:flex self-center"
+                src="images/marketing_start.jpg"
+                height={200}
+                width={600}
+              />
+            </Card.Body>
+          </Card>
+          <Card isHoverable>
+            <Card.Header>
+              <span className=" text-xl font-bold">{t("market_research")}</span>
+            </Card.Header>
+            <Card.Body>
+              <span className=" text-sm md:text-lg ">
+                {t("market_research_desc")}
+              </span>
+              <br />
+              <ul>
+                <li className="text-sm md:text-lg">
+                  ❖ {t("market_research_desc_desc")}
+                </li>
+                <br />
+                <li className="text-sm md:text-lg">
+                  ❖ {t("customer_research")}
+                </li>
+                <br />
+                <li className="text-sm md:text-lg">
+                  ❖ {t("product_research")}
+                </li>
+                <br />
+                <li className="text-sm md:text-lg">❖ {t("user_research")}</li>
+              </ul>
+            </Card.Body>
+          </Card>
+          <Card isHoverable>
+            <Card.Header>
+              <span className=" text-xl font-bold">{t("pest")}</span>
+            </Card.Header>
+            <Card.Body>
+              <span className=" text-sm md:text-lg ">{t("pest_desc")}</span>
+              <br />
+              <img
+                className="hidden rounded-xl lg:flex self-center"
+                src="images/pest.jpg"
+                height={200}
+                width={600}
+              />
+            </Card.Body>
+          </Card>
+        </div>
+        <br />
+        <h1 className="my-5 text-5xl font-semibold ml-5">
+          {t("digital_marketing")}
+        </h1>
+        <div className="flex flex-col lg:flex-row">
+          <div className="flex flex-1">
+            <Grid.Container gap={2}>
+              <Grid>
+                <Collapse.Group splitted>
+                  <Collapse
+                    title="Digital Marketing Strategy"
+                    contentLeft={
+                      <Avatar className="!z-0" src="/images/m1.jpg" size="xl" />
+                    }
+                  >
+                    <ul className="list-disc ml-5 mt-5 marker:text-orange-500">
+                      <p>{t("digital_marketing_desc")}</p>
+                      <br />
+                      <li className="mt-1">{t("online_presence")}</li>
+                      <li className="mt-1">{t("digital_space")}</li>
+                      <li className="mt-1">{t("keyword")}</li>
+                    </ul>
+                  </Collapse>
+                  <Collapse
+                    title="Web Design"
+                    contentLeft={
+                      <Avatar className="!z-0" src="/images/m2.jpg" size="xl" />
+                    }
+                  >
+                    <ul className="list-disc ml-5 mt-5 marker:text-orange-500">
+                      <p>{t("web_design")}</p>
+                    </ul>
+                  </Collapse>
+                </Collapse.Group>
+              </Grid>
+            </Grid.Container>
+          </div>
+          <div className="flex flex-1">
+            <Grid.Container gap={2}>
+              <Grid>
+                <Collapse.Group splitted>
+                  <Collapse
+                    title="Branding and Brand Identity"
+                    contentLeft={
+                      <Avatar className="!z-0" src="/images/m3.jpg" size="xl" />
+                    }
+                  >
+                    <ul className="list-disc ml-5 mt-5 marker:text-orange-500">
+                      <p>{t("branding")}</p>
+                    </ul>
+                  </Collapse>
+                </Collapse.Group>
+              </Grid>
+            </Grid.Container>
+          </div>
+        </div>
+        <h1 className="my-5 text-4xl font-semibold ml-5 mr-5">
+          Content Marketing
+        </h1>
+        <p className="self-center md:w-1/2 text-center ml-5 mr-5">
+          {t("content_marketing")}
+        </p>
+        <br />
         {services.map((value, index) => (
-          <div key={index} className="flex flex-row flex-wrap-reverse w-[90%] lg:w-[60%] gap-8">
+          <div
+            key={index}
+            className="flex flex-row flex-wrap-reverse w-[90%] lg:w-[60%] gap-8 mb-9"
+          >
             <div className="flex flex-col justify-start w-full lg:w-[45%]">
               <p className="font-semibold text-4xl mb-4">{value.title}</p>
               <p className="text-gray-700 text-lg">{value.desc}</p>
+              <br />
+              <p className="font-semibold text-4xl mb-4">{value.title2}</p>
+              <p className="text-gray-700 text-lg">{value.desc2}</p>
+              <br />
+              <p className="font-semibold text-4xl mb-4">{value.title3}</p>
+              <p className="text-gray-700 text-lg">{value.desc3}</p>
             </div>
             <div className="flex flex-col justify-center w-full lg:w-[45%] ">
-              <Image src={value.url} width={969} height={723} className="rounded-xl" />
+              <Image
+                src={value.url}
+                width={969}
+                height={723}
+                className="rounded-xl"
+              />
             </div>
           </div>
         ))}
+        <div className="flex flex-row flex-wrap-reverse w-[90%] lg:w-[60%] gap-8 mb-9">
+          <div className="flex flex-col justify-start w-full lg:w-[45%]">
+            <p className="font-semibold text-4xl mb-4">{t("seo")}</p>
+            <p className="text-gray-700 text-lg">{t("seo_desc1")}</p>
+            <ul className="mb-4 ml-4 list-disc text-smml-5 mt-5 marker:text-orange-500">
+              <li className="mt-1">{t("seo1")}</li>
+              <li className="mt-1">{t("seo2")}</li>
+              <li className="mt-1">{t("seo3")}</li>
+              <li className="mt-1">{t("seo4")}</li>
+            </ul>{" "}
+          </div>
+          <div className="flex flex-col justify-center w-full lg:w-[45%] ">
+            <Image
+              src={"/images/m7.png"}
+              width={969}
+              height={723}
+              className="rounded-xl"
+            />
+          </div>
+        </div>
       </div>
+
       <div className="flex flex-col items-center">
         <h1 className="text-2xl font-semibold	mt-10">{t("aboutTitle")}</h1>
         <p className="mt-4">{t("aboutSubtitle1")}</p>
         <p className="mb-4">{t("aboutSubtitle2")}</p>
         <div className="flex flex-row justify-center gap-4 px-8 mb-4 flex-wrap">
           {projects.map((item, index) => (
-            <div key={index} className="rounded-xl bg-white active:bg-gray-200  w-full shadow-xl">
+            <div
+              key={index}
+              className="rounded-xl flex flex-1 bg-white active:bg-gray-200 shadow-xl"
+            >
               <div className="flex flex-col justify-between gap-2">
-                <Image src={item.url} className="rounded-t-xl" layout="intrinsic" width={1000} height={1000} />
+                <Image
+                  src={item.url}
+                  className="rounded-t-xl"
+                  layout="intrinsic"
+                  objectFit="cover"
+                  width={1000}
+                  height={500}
+                />
                 <div className="p-4">
                   <p className="text-gray-700">{item.subtitle}</p>
                   <p className="text-2xl">{item.title}</p>
