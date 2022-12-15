@@ -80,8 +80,14 @@ export default function Index() {
             </h1>
             <p className="mt-3">{t("whoAreWe")}</p>
             <ul className="list-disc ml-5 mt-5  marker:text-orange-500">
-              <li className="mb-2">{t("whatWeDo")}</li>
-              <li className="mb-2">{t("ourMission")}</li>
+              <h2 className="text-xl font-bold text-black">
+                {t("whatWeDoTitle")}
+              </h2>
+              <li className="mb-2 mt-2 ml-8">{t("whatWeDo")}</li>
+              <h2 className="text-xl font-bold text-black">
+                {t("ourMissionTitle")}
+              </h2>
+              <li className="mb-2 mt-2 ml-8">{t("ourMission")}</li>
             </ul>
           </div>
           <div className="hidden self-center lg:flex justify-center">

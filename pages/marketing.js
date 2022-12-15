@@ -146,7 +146,7 @@ export default function Marketing() {
               <br />
               <img
                 className="hidden rounded-xl lg:flex self-center"
-                src="images/marketing_start.jpg"
+                src="/images/marketing_start.jpg"
                 height={200}
                 width={600}
               />
@@ -187,7 +187,7 @@ export default function Marketing() {
               <br />
               <img
                 className="hidden rounded-xl lg:flex self-center"
-                src="images/pest.jpg"
+                src="/images/pest.jpg"
                 height={200}
                 width={600}
               />
