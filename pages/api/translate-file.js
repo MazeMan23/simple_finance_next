@@ -2,6 +2,7 @@ import * as deepl from "deepl-node";
 import IncomingForm from "formidable/src/Formidable";
 import { v4 as uuidv4 } from "uuid";
 import { unlinkSync, copyFileSync, mkdirSync, readFileSync } from "fs";
+import mime from "mime-types";
 
 // we're sending a file, so we tell next.js to not try and parse the file as JSON body
 export const config = {
@@ -133,9 +134,10 @@ export default async function translateText(req, res) {
     console.error(err);
   }
 
+  console.log(mime.lookup(extension));
+  console.log(`TranslationID_${file_id}.${extension}`);
   // all ok, send it
-  res.setHeader("Content-Type", `application/${extension}`);
-  res.setHeader("Content-Disposition", `attachment; filename=TranslationID_${file_id}.${extension}`);
-  res.status(200);
+  res.setHeader("Content-Type", mime.lookup(extension));
+  res.setHeader("Content-Disposition", `attachment; filename="TranslationID_${file_id}.${extension}"`);
   res.status(200).send(final_file);
 }

@@ -20,6 +20,7 @@
     "formidable": "^2.1.1",
     "fs": "false",
     "lru-cache": "^7.14.0",
+    "mime-types": "^2.1.35",
     "next": "12.3.1",
     "next-intl": "^2.7.6",
     "next-videos": "^1.5.0",
