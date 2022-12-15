@@ -44,6 +44,7 @@
     "closeButton": "Close",
     "textLength": "Please enter a valid text that is less than 5000 characters.",
     "errorNoFile": "Please upload a file.",
-    "successButton": "Press to download the translated file."
+    "successButton": "Press to download the translated file.",
+    "disclaimer":"If you are translating a PDF, note that it may take a few minutes for the OCR software to first process it."
   }
 }

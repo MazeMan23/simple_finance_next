@@ -396,13 +396,19 @@ export default function Translate() {
               <div className="self-center mt-8  mb-16">
                 {downloaded == false ? (
                   !loading ? (
-                    <Button shadow color="primary" auto className="bg-blue-800" type="submit">
-                      {t("submitButton")}
-                    </Button>
+                    <div className="flex flex-col self-center justify-center items-center">
+                      <div className="mb-2">{t("disclaimer")}</div>
+                      <Button shadow color="primary" auto className="bg-blue-800" type="submit">
+                        {t("submitButton")}
+                      </Button>
+                    </div>
                   ) : (
-                    <Button disabled auto bordered color="success" css={{ px: "$13" }}>
-                      <Loading type="points" color="currentColor" size="sm" />
-                    </Button>
+                    <div className="flex flex-col self-center justify-center items-center">
+                      <div className="mb-2">{t("disclaimer")}</div>
+                      <Button disabled auto bordered color="success" css={{ px: "$13" }}>
+                        <Loading type="points" color="currentColor" size="sm" />
+                      </Button>
+                    </div>
                   )
                 ) : (
                   <></>
