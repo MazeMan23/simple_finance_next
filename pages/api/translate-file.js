@@ -1,7 +1,7 @@
 import * as deepl from "deepl-node";
 import IncomingForm from "formidable/src/Formidable";
 import { v4 as uuidv4 } from "uuid";
-import { unlinkSync, copyFileSync, mkdirSync } from "fs";
+import { unlinkSync, copyFileSync, mkdirSync, readFileSync } from "fs";
 
 // we're sending a file, so we tell next.js to not try and parse the file as JSON body
 export const config = {
@@ -23,9 +23,7 @@ const asyncParse = (req) =>
 export default async function translateText(req, res) {
   // only post requests so they're encrypted by HTTPS
   if (req.method !== "POST") {
-    res
-      .status(405)
-      .json({ error: "This API endpoint only accepts POST requests!" });
+    res.status(405).json({ error: "This API endpoint only accepts POST requests!" });
     return;
   }
 
@@ -67,11 +65,9 @@ export default async function translateText(req, res) {
 
   //check if file type is pdf, docx, or pptx
   if (
-    file_object.mimetype !=
-      "application/vnd.openxmlformats-officedocument.wordprocessingml.document" &&
+    file_object.mimetype != "application/vnd.openxmlformats-officedocument.wordprocessingml.document" &&
     file_object.mimetype != "application/pdf" &&
-    file_object.mimetype !=
-      "application/vnd.openxmlformats-officedocument.presentationml.presentation"
+    file_object.mimetype != "application/vnd.openxmlformats-officedocument.presentationml.presentation"
   ) {
     res.status(400).json({ error: "Incorrect file type" });
     return;
@@ -96,58 +92,50 @@ export default async function translateText(req, res) {
 
   //check if correct output language
   if (
-    !(await translator.getTargetLanguages()).find(
-      (language) => language.code.toLocaleLowerCase() == outputLanguage
-    )
+    !(await translator.getTargetLanguages()).find((language) => language.code.toLocaleLowerCase() == outputLanguage)
   ) {
     res.status(400).json({ error: outputLanguage });
     return;
   }
   //check if correct input language
-  if (
-    !(await translator.getSourceLanguages()).find(
-      (language) => language.code.toLocaleLowerCase() == inputLanguage
-    )
-  ) {
+  if (!(await translator.getSourceLanguages()).find((language) => language.code.toLocaleLowerCase() == inputLanguage)) {
     res.status(400).json({ error: "Unrecognized input language!" });
     return;
   }
 
   //generate a file path for the translated file
-  let newFilePath = `public/translated-files/TranslationID${file_id}.${extension}`;
+  let newFilePath = `translated_files/TranslationID_${file_id}.${extension}`;
 
   //simulate translation because it do be kinda expensive tho
   // copyFileSync(file_object.filepath, newFilePath);
 
   //TODO save the file in the user's folder.
   try {
-    await translator.translateDocument(
-      filepath,
-      newFilePath,
-      inputLanguage,
-      outputLanguage
-    );
+    await translator.translateDocument(filepath, newFilePath, inputLanguage, outputLanguage);
   } catch (error) {
     // If the error occurs after the document was already uploaded,
     // documentHandle will contain the document ID and key
     if (error.documentHandle) {
       const handle = error.documentHandle;
-      console.log(
-        `Document ID: ${handle.documentId}, ` +
-          `Document key: ${handle.documentKey}`
-      );
+      console.log(`Document ID: ${handle.documentId}, ` + `Document key: ${handle.documentKey}`);
     } else {
       console.log(`Error occurred during document upload: ${error}`);
     }
   }
 
   //delete file so we don't clog the server
+  let final_file;
   try {
+    final_file = readFileSync(newFilePath);
     unlinkSync(filepath);
   } catch (err) {
+    res.satus(500).json({ error: "Internal server error! Please try again later!" });
     console.error(err);
   }
 
   // all ok, send it
-  res.status(200).json({ path: newFilePath });
+  res.setHeader("Content-Type", `application/${extension}`);
+  res.setHeader("Content-Disposition", `attachment; filename=TranslationID_${file_id}.${extension}`);
+  res.status(200);
+  res.status(200).send(final_file);
 }

@@ -76,7 +76,6 @@ export default function Translate() {
   };
 
   const [file, setFile] = React.useState(null);
-  const [path, setPath] = React.useState("");
 
   return (
     <Layout h={h} f={f}>
@@ -310,20 +309,21 @@ export default function Translate() {
                 body: formData,
               });
 
-              const result_json = await result.json();
-              const result_path = result_json.path;
-
               if (result.status !== 200) {
+                const result_json = await result.json();
                 // TODO: error in result_json.error
                 setErrorText(result_json.error);
                 setVisible(true);
                 setLoading(false);
                 return;
-              } else {
-                setPath(result_path);
-                setLoading(false);
-                setDownloaded(true);
               }
+
+              const blob = await result.blob();
+              const f = window.URL.createObjectURL(blob);
+              window.location.assign(f);
+
+              setLoading(false);
+              setDownloaded(true);
             }}
           >
             <div className="flex flex-col">
@@ -405,11 +405,7 @@ export default function Translate() {
                     </Button>
                   )
                 ) : (
-                  <a href={`/api/download-file?_path=${path}`}>
-                    <Button shadow color="success" auto className="bg-green-600">
-                      {t("successButton")}
-                    </Button>
-                  </a>
+                  <></>
                 )}
               </div>
             </div>
