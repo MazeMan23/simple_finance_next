@@ -2,27 +2,15 @@ import React from "react";
 import { useTranslations } from "use-intl";
 import Layout from "../components/Layout";
 import ParticlesHero from "../components/ParticlesHero";
-import {
-  Textarea,
-  Dropdown,
-  Button,
-  Text,
-  useModal,
-  Modal,
-  Loading,
-} from "@nextui-org/react";
+import { Textarea, Dropdown, Button, Text, useModal, Modal, Loading } from "@nextui-org/react";
 import Image from "next/image";
 import { Form } from "react-bootstrap";
 
 export async function getStaticProps({ locale }) {
-  const header = (await import(`../translations/header/${locale}.json`))
-    .default;
-  const footer = (await import(`../translations/footer/${locale}.json`))
-    .default;
-  const contact = (await import(`../translations/contact/${locale}.json`))
-    .default;
-  const translate = (await import(`../translations/translate/${locale}.json`))
-    .default;
+  const header = (await import(`../translations/header/${locale}.json`)).default;
+  const footer = (await import(`../translations/footer/${locale}.json`)).default;
+  const contact = (await import(`../translations/contact/${locale}.json`)).default;
+  const translate = (await import(`../translations/translate/${locale}.json`)).default;
 
   const final = { ...translate, ...header, ...footer, ...contact };
 
@@ -69,20 +57,15 @@ export default function Translate() {
     { key: "UK", value: t("ukranian") },
   ];
 
-  const [selectedInput, setSelectedInput] = React.useState(
-    supportedLanguages[0]
-  );
-  const [selectedOutput, setSelectedOutput] = React.useState(
-    supportedLanguages[5]
-  );
+  const [selectedInput, setSelectedInput] = React.useState(supportedLanguages[0]);
+  const [selectedOutput, setSelectedOutput] = React.useState(supportedLanguages[5]);
 
   const [input, setInput] = React.useState("");
   const [output, setOutput] = React.useState(null);
   const [loading, setLoading] = React.useState(false);
   const [errorText, setErrorText] = React.useState("");
 
-  const [translationType, setTranslationType] =
-    React.useState("textTranslation");
+  const [translationType, setTranslationType] = React.useState("textTranslation");
 
   const { setVisible, bindings } = useModal();
 
@@ -93,17 +76,10 @@ export default function Translate() {
   };
 
   const [file, setFile] = React.useState(null);
-  const [path, setPath] = React.useState("");
 
   return (
     <Layout h={h} f={f}>
-      <Modal
-        blur
-        width="50%"
-        aria-labelledby="modal-title"
-        aria-describedby="modal-description"
-        {...bindings}
-      >
+      <Modal blur width="50%" aria-labelledby="modal-title" aria-describedby="modal-description" {...bindings}>
         <Modal.Header>
           <div className="text-xl font-bold">{t("errorTitle")}</div>
         </Modal.Header>
@@ -118,9 +94,7 @@ export default function Translate() {
       </Modal>
       <ParticlesHero img="/images/translate.jpg">
         <div className="flex flex-col justify-center text-center items-center text-white gap-4">
-          <div className=" text-2xl md:text-5xl max-w-4xl font-bold">
-            {t("heroTitle")}
-          </div>
+          <div className=" text-2xl md:text-5xl max-w-4xl font-bold">{t("heroTitle")}</div>
           <div className="text-xl font-bold max-w-3xl">{t("heroSubtitle")}</div>
         </div>
       </ParticlesHero>
@@ -133,12 +107,7 @@ export default function Translate() {
             className="bg-green-500"
             onPress={() => setTranslationType("textTranslation")}
           >
-            <Image
-              src="/images/icons/text.png"
-              width={30}
-              height={30}
-              className="!z-[30]"
-            />
+            <Image src="/images/icons/text.png" width={30} height={30} className="!z-[30]" />
             {t("translateText")}
           </Button>
           <Button
@@ -200,7 +169,7 @@ export default function Translate() {
               // if something went wrong
               if (response.status !== 200) {
                 // show error: response_json.error
-                setErrorText(req.error);
+                setErrorText(response_json.error);
                 setVisible(true);
                 setLoading(false);
                 setLoading(false);
@@ -228,17 +197,11 @@ export default function Translate() {
                         disallowEmptySelection
                         selectionMode="single"
                         onAction={(selected) => {
-                          setSelectedInput(
-                            supportedLanguages.find(
-                              (language) => language.key == selected
-                            )
-                          );
+                          setSelectedInput(supportedLanguages.find((language) => language.key == selected));
                         }}
                       >
                         {supportedLanguages.map((language) => (
-                          <Dropdown.Item key={language.key}>
-                            {language.value}
-                          </Dropdown.Item>
+                          <Dropdown.Item key={language.key}>{language.value}</Dropdown.Item>
                         ))}
                       </Dropdown.Menu>
                     </Dropdown>
@@ -258,18 +221,12 @@ export default function Translate() {
                         setInput(v.target.value);
                       }}
                     />
-                    <div className="font-bold text-gray-400 text-sm ml-2 mt-2">
-                      {input.length}/5000
-                    </div>
+                    <div className="font-bold text-gray-400 text-sm ml-2 mt-2">{input.length}/5000</div>
                   </div>
                 </div>
                 <div className="flex flex-1 ml-1 flex-col">
                   <div className="flex self-start">
-                    <Dropdown
-                      className="flex self-start"
-                      id="outputLang"
-                      name="outputLang"
-                    >
+                    <Dropdown className="flex self-start" id="outputLang" name="outputLang">
                       <Dropdown.Button flat color="primary">
                         {selectedOutput.value}
                       </Dropdown.Button>
@@ -279,17 +236,11 @@ export default function Translate() {
                         disallowEmptySelection
                         selectionMode="single"
                         onAction={(selected) => {
-                          setSelectedOutput(
-                            supportedLanguages.find(
-                              (language) => language.key == selected
-                            )
-                          );
+                          setSelectedOutput(supportedLanguages.find((language) => language.key == selected));
                         }}
                       >
                         {supportedLanguages.map((language) => (
-                          <Dropdown.Item key={language.key}>
-                            {language.value}
-                          </Dropdown.Item>
+                          <Dropdown.Item key={language.key}>{language.value}</Dropdown.Item>
                         ))}{" "}
                       </Dropdown.Menu>
                     </Dropdown>
@@ -313,23 +264,11 @@ export default function Translate() {
               </div>
               <div className="self-center mt-4  mb-16">
                 {!loading ? (
-                  <Button
-                    shadow
-                    color="primary"
-                    auto
-                    className="bg-blue-800"
-                    type="submit"
-                  >
+                  <Button shadow color="primary" auto className="bg-blue-800" type="submit">
                     {t("submitButton")}
                   </Button>
                 ) : (
-                  <Button
-                    disabled
-                    auto
-                    bordered
-                    color="success"
-                    css={{ px: "$13" }}
-                  >
+                  <Button disabled auto bordered color="success" css={{ px: "$13" }}>
                     <Loading type="points" color="currentColor" size="sm" />
                   </Button>
                 )}
@@ -370,20 +309,21 @@ export default function Translate() {
                 body: formData,
               });
 
-              const result_json = await result.json();
-              const result_path = result_json.path;
-
               if (result.status !== 200) {
+                const result_json = await result.json();
                 // TODO: error in result_json.error
                 setErrorText(result_json.error);
                 setVisible(true);
                 setLoading(false);
                 return;
-              } else {
-                setPath(result_path);
-                setLoading(false);
-                setDownloaded(true);
               }
+
+              const blob = await result.blob();
+              const f = window.URL.createObjectURL(blob);
+              window.location.assign(f);
+
+              setLoading(false);
+              setDownloaded(true);
             }}
           >
             <div className="flex flex-col">
@@ -401,27 +341,17 @@ export default function Translate() {
                           disallowEmptySelection
                           selectionMode="single"
                           onAction={(selected) => {
-                            setSelectedInput(
-                              supportedLanguages.find(
-                                (language) => language.key == selected
-                              )
-                            );
+                            setSelectedInput(supportedLanguages.find((language) => language.key == selected));
                           }}
                         >
                           {supportedLanguages.map((language) => (
-                            <Dropdown.Item key={language.key}>
-                              {language.value}
-                            </Dropdown.Item>
+                            <Dropdown.Item key={language.key}>{language.value}</Dropdown.Item>
                           ))}
                         </Dropdown.Menu>
                       </Dropdown>
                     </div>
                     <div className="flex self-end">
-                      <Dropdown
-                        className="flex self-start"
-                        id="outputLang"
-                        name="outputLang"
-                      >
+                      <Dropdown className="flex self-start" id="outputLang" name="outputLang">
                         <Dropdown.Button flat color="primary">
                           {selectedOutput.value}
                         </Dropdown.Button>
@@ -431,17 +361,11 @@ export default function Translate() {
                           disallowEmptySelection
                           selectionMode="single"
                           onAction={(selected) => {
-                            setSelectedOutput(
-                              supportedLanguages.find(
-                                (language) => language.key == selected
-                              )
-                            );
+                            setSelectedOutput(supportedLanguages.find((language) => language.key == selected));
                           }}
                         >
                           {supportedLanguages.map((language) => (
-                            <Dropdown.Item key={language.key}>
-                              {language.value}
-                            </Dropdown.Item>
+                            <Dropdown.Item key={language.key}>{language.value}</Dropdown.Item>
                           ))}{" "}
                         </Dropdown.Menu>
                       </Dropdown>
@@ -453,12 +377,7 @@ export default function Translate() {
                   >
                     <div className="flex flex-col justify-center">
                       <div className="flex flex-row self-center">
-                        <img
-                          className=" self-center"
-                          width={320}
-                          height={180}
-                          src="/images/icons/files.png"
-                        />
+                        <img className=" self-center" width={320} height={180} src="/images/icons/files.png" />
                       </div>
                       <Text className="text-blue-800 text-center" weight="bold">
                         {t("uploadText")}
@@ -477,37 +396,22 @@ export default function Translate() {
               <div className="self-center mt-8  mb-16">
                 {downloaded == false ? (
                   !loading ? (
-                    <Button
-                      shadow
-                      color="primary"
-                      auto
-                      className="bg-blue-800"
-                      type="submit"
-                    >
-                      {t("submitButton")}
-                    </Button>
+                    <div className="flex flex-col self-center justify-center items-center">
+                      <div className="mb-2">{t("disclaimer")}</div>
+                      <Button shadow color="primary" auto className="bg-blue-800" type="submit">
+                        {t("submitButton")}
+                      </Button>
+                    </div>
                   ) : (
-                    <Button
-                      disabled
-                      auto
-                      bordered
-                      color="success"
-                      css={{ px: "$13" }}
-                    >
-                      <Loading type="points" color="currentColor" size="sm" />
-                    </Button>
+                    <div className="flex flex-col self-center justify-center items-center">
+                      <div className="mb-2">{t("disclaimer")}</div>
+                      <Button disabled auto bordered color="success" css={{ px: "$13" }}>
+                        <Loading type="points" color="currentColor" size="sm" />
+                      </Button>
+                    </div>
                   )
                 ) : (
-                  <a href={`/api/download-file?_path=${path}`}>
-                    <Button
-                      shadow
-                      color="success"
-                      auto
-                      className="bg-green-600"
-                    >
-                      {t("successButton")}
-                    </Button>
-                  </a>
+                  <></>
                 )}
               </div>
             </div>
