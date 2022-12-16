@@ -7,6 +7,7 @@ import { unlinkSync, copyFileSync, mkdirSync } from "fs";
 export const config = {
   api: {
     bodyParser: false,
+    sizeLimit: "10mb",
   },
 };
 
@@ -78,7 +79,7 @@ export default async function translateText(req, res) {
   }
 
   //check if file bigger than yo mama
-  if (file_object.size > 1000 * 1024 * 1024) {
+  if (file_object.size > 10 * 1024 * 1024) {
     res.status(400).json({ message: "The file that you uploaded is too big!" });
     return;
   }
