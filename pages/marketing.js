@@ -4,7 +4,7 @@ import Layout from "../components/Layout";
 import ParticlesHero from "../components/ParticlesHero";
 import ContactForm from "../components/ContactForm";
 import Image from "next/image";
-import { Avatar, Card, Collapse, Grid } from "@nextui-org/react";
+import { Avatar, Card, Collapse, Grid, Modal } from "@nextui-org/react";
 
 export async function getStaticProps({ locale }) {
   const header = (await import(`../translations/header/${locale}.json`))
@@ -27,6 +27,10 @@ export async function getStaticProps({ locale }) {
 }
 
 export default function Marketing() {
+  const [research, setResearch] = React.useState(false);
+  const [strategy, setStrategy] = React.useState(false);
+  const [analysis, setAnalysis] = React.useState(false);
+
   const t = useTranslations("marketing");
   const h = useTranslations("header");
   const f = useTranslations("footer");
@@ -70,20 +74,32 @@ export default function Marketing() {
       desc: t("soc_desc2"),
     },
     {
-      url: "/images/m5.png",
+      url: "/images/pexels-andrea-piacquadio-840996.jpg",
       title: t("ga"),
       desc: t("ga_desc"),
-      title2: t("blog"),
-      desc2: t("blog_desc"),
-      title3: t("web_content"),
-      desc3: t("web_desc"),
     },
+    {
+      url: "/images/m5.png",
+      title: t("blog"),
+      desc: t("blog_desc"),
+    },
+    {
+      url: "/images/pexels-dominika-roseclay-905.jpg",
+      title: t("web_content"),
+      desc: t("web_desc"),
+    },
+  ];
+
+  const services2 = [
     {
       url: "/images/m2.png",
       title: "YouTube",
       desc: t("yt_desc"),
-      title2: t("email_campaign"),
-      desc2: t("email_campaign_desc"),
+    },
+    {
+      url: "/images/pexels-liza-summer-6347919.jpg",
+      title: t("email_campaign"),
+      desc: t("email_campaign_desc"),
     },
     {
       url: "/images/m6.png",
@@ -104,7 +120,7 @@ export default function Marketing() {
       </ParticlesHero>
       <div className="bg-slate-100 pb-8">
         <div className="flex mr-3 ml-3 mt-3 flex-col md:flex-row md:mr-20 md:ml-20 md:mt-20 md:gap-12">
-          <video autoPlay muted loop className="lg:w-1/3 rounded-xl">
+          <video autoPlay muted loop className="lg:w-1/2 rounded-xl">
             <source src="/images/marketing.mp4" />
           </video>
           <div className="flex flex-col">
@@ -133,30 +149,51 @@ export default function Marketing() {
       <div className="flex flex-col justify-center w-full items-center my-8 gap-8">
         <h1 className="my-5 text-5xl font-semibold">{t("services")}</h1>
         <div className="flex flex-col lg:flex-row gap-8 ml-8 mr-8">
-          <Card isHoverable>
+          <Modal
+            blurred
+            open={strategy}
+            onClose={() => setStrategy(false)}
+            width="90%"
+          >
+            <Modal.Header>
+              <span className=" text-xl font-bold">
+                {t("marketing_strategy")}
+              </span>
+            </Modal.Header>
+            <Modal.Body>
+              <span className=" text-sm md:text-lg  text-center">
+                {t("marketing_strategy_desc")}
+              </span>
+            </Modal.Body>
+          </Modal>
+          <Card isHoverable isPressable onPress={() => setStrategy(true)}>
             <Card.Header>
               <span className=" text-xl font-bold">
                 {t("marketing_strategy")}
               </span>
             </Card.Header>
             <Card.Body>
-              <span className=" text-sm md:text-lg ">
-                {t("marketing_strategy_desc")}
-              </span>
-              <br />
               <img
-                className="hidden rounded-xl lg:flex self-center"
+                className=" rounded-xl lg:flex self-center"
                 src="/images/marketing_start.jpg"
                 height={200}
                 width={600}
               />
             </Card.Body>
+            <Card.Footer className="font-bold text-md">
+              {t("moreInfo")}
+            </Card.Footer>
           </Card>
-          <Card isHoverable>
-            <Card.Header>
+          <Modal
+            blurred
+            open={research}
+            onClose={() => setResearch(false)}
+            width="90%"
+          >
+            <Modal.Header>
               <span className=" text-xl font-bold">{t("market_research")}</span>
-            </Card.Header>
-            <Card.Body>
+            </Modal.Header>
+            <Modal.Body>
               <span className=" text-sm md:text-lg ">
                 {t("market_research_desc")}
               </span>
@@ -176,26 +213,58 @@ export default function Marketing() {
                 <br />
                 <li className="text-sm md:text-lg">❖ {t("user_research")}</li>
               </ul>
+            </Modal.Body>
+          </Modal>
+          <Card isHoverable isPressable onPress={() => setResearch(true)}>
+            <Card.Header>
+              <span className=" text-xl font-bold">{t("market_research")}</span>
+            </Card.Header>
+            <Card.Body>
+              <img
+                className="rounded-xl lg:flex self-center"
+                src="/images/market_research.jpg"
+                height={200}
+                width={600}
+              />
             </Card.Body>
+            <Card.Footer className="font-bold text-md">
+              {t("moreInfo")}
+            </Card.Footer>
           </Card>
-          <Card isHoverable>
+          <Modal
+            blurred
+            open={analysis}
+            onClose={() => setAnalysis(false)}
+            width="90%"
+          >
+            <Modal.Header>
+              <span className=" text-xl font-bold">{t("pest")}</span>
+            </Modal.Header>
+            <Modal.Body>
+              <span className=" text-sm md:text-lg text-center">
+                {t("pest_desc")}
+              </span>
+            </Modal.Body>
+          </Modal>
+          <Card isHoverable isPressable onPress={() => setAnalysis(true)}>
             <Card.Header>
               <span className=" text-xl font-bold">{t("pest")}</span>
             </Card.Header>
             <Card.Body>
-              <span className=" text-sm md:text-lg ">{t("pest_desc")}</span>
-              <br />
               <img
-                className="hidden rounded-xl lg:flex self-center"
+                className="rounded-xl lg:flex self-center"
                 src="/images/pest.jpg"
                 height={200}
                 width={600}
               />
             </Card.Body>
+            <Card.Footer className="font-bold text-md">
+              {t("moreInfo")}
+            </Card.Footer>
           </Card>
         </div>
         <br />
-        <h1 className="my-5 text-5xl font-semibold ml-5">
+        <h1 className="my-5 text-5xl font-semibold ml-5 text-center">
           {t("digital_marketing")}
         </h1>
         <div className="flex flex-col lg:flex-row">
@@ -257,49 +326,42 @@ export default function Marketing() {
           {t("content_marketing")}
         </p>
         <br />
-        {services.map((value, index) => (
-          <div
-            key={index}
-            className="flex flex-row flex-wrap-reverse w-[90%] lg:w-[60%] gap-8 mb-9"
-          >
-            <div className="flex flex-col justify-start w-full lg:w-[45%]">
-              <p className="font-semibold text-4xl mb-4">{value.title}</p>
-              <p className="text-gray-700 text-lg">{value.desc}</p>
-              <br />
-              <p className="font-semibold text-4xl mb-4">{value.title2}</p>
-              <p className="text-gray-700 text-lg">{value.desc2}</p>
-              <br />
-              <p className="font-semibold text-4xl mb-4">{value.title3}</p>
-              <p className="text-gray-700 text-lg">{value.desc3}</p>
-            </div>
-            <div className="flex flex-col justify-center w-full lg:w-[45%] ">
-              <Image
-                src={value.url}
-                width={969}
-                height={723}
-                className="rounded-xl"
-              />
-            </div>
-          </div>
-        ))}
-        <div className="flex flex-row flex-wrap-reverse w-[90%] lg:w-[60%] gap-8 mb-9">
-          <div className="flex flex-col justify-start w-full lg:w-[45%]">
-            <p className="font-semibold text-4xl mb-4">{t("seo")}</p>
-            <p className="text-gray-700 text-lg">{t("seo_desc1")}</p>
-            <ul className="mb-4 ml-4 list-disc text-smml-5 mt-5 marker:text-orange-500">
-              <li className="mt-1">{t("seo1")}</li>
-              <li className="mt-1">{t("seo2")}</li>
-              <li className="mt-1">{t("seo3")}</li>
-              <li className="mt-1">{t("seo4")}</li>
-            </ul>{" "}
-          </div>
-          <div className="flex flex-col justify-center w-full lg:w-[45%] ">
-            <Image
-              src={"/images/m7.png"}
-              width={969}
-              height={723}
-              className="rounded-xl"
-            />
+        <div className="flex flex-col lg:flex-row">
+          <div className="flex flex-col">
+            <Grid.Container gap={2}>
+              <Grid className="flex flex-col gap-12 lg:gap-2 lg:flex-row">
+                <Collapse.Group splitted className="gap-8 ml-8 mr-8">
+                  {services.map((item, index) => (
+                    <Collapse
+                      key={index}
+                      title={
+                        <span className="font-semibold">{item.title}</span>
+                      }
+                      contentLeft={
+                        <Avatar className="!z-0" src={item.url} size="xl" />
+                      }
+                    >
+                      {item.desc}
+                    </Collapse>
+                  ))}
+                </Collapse.Group>
+                <Collapse.Group splitted className="gap-8 ml-8 mr-8">
+                  {services2.map((item, index) => (
+                    <Collapse
+                      key={index}
+                      title={
+                        <span className="font-semibold">{item.title}</span>
+                      }
+                      contentLeft={
+                        <Avatar className="!z-0" src={item.url} size="xl" />
+                      }
+                    >
+                      {item.desc}
+                    </Collapse>
+                  ))}
+                </Collapse.Group>
+              </Grid>
+            </Grid.Container>
           </div>
         </div>
       </div>
@@ -314,7 +376,7 @@ export default function Marketing() {
               key={index}
               className="rounded-xl flex flex-1 bg-white active:bg-gray-200 shadow-xl"
             >
-              <div className="flex flex-col justify-between gap-2">
+              <div className="flex flex-col gap-2">
                 <Image
                   src={item.url}
                   className="rounded-t-xl"

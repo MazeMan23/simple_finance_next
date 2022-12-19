@@ -124,8 +124,12 @@ export default function Legal() {
       </ParticlesHero>
       <div className="flex flex-col items-center mt-8">
         <div className="flex flex-row justify-center gap-10 flex-wrap mx-auto p-10 pt-5">
-          <p className="lg:max-w-[30%]">{t("text1")}</p>
-          <p className="lg:max-w-[30%]">{t("text2")}</p>
+          <p className="lg:max-w-[45%] lg:text-lg lg:font-semibold">
+            {t("text1")}
+          </p>
+          <p className="lg:max-w-[45%] lg:text-lg lg:font-semibold">
+            {t("text2")}
+          </p>
         </div>
         <h1 className="text-2xl font-semibold">{t("servicesTitle")}</h1>
         <div className="flex flex-col lg:flex-row">
