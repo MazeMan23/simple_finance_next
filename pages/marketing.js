@@ -88,6 +88,11 @@ export default function Marketing() {
       title: t("web_content"),
       desc: t("web_desc"),
     },
+    {
+      title: t("digital_marketing_strategy"),
+      url: "none",
+      desc: t("digital_marketing_desc")
+    }
   ];
 
   const services2 = [
@@ -97,7 +102,7 @@ export default function Marketing() {
       desc: t("yt_desc"),
     },
     {
-      url: "/images/pexels-liza-summer-6347919.jpg",
+      url: "none",
       title: t("email_campaign"),
       desc: t("email_campaign_desc"),
     },
@@ -106,6 +111,16 @@ export default function Marketing() {
       title: t("email_campaign2"),
       desc: t("email_campaign_desc2"),
     },
+    {
+      url: "/images/m3.jpg",
+      title: "Branding and Brand Identity",
+      desc: t("branding")
+    },
+    {
+      url: "/images/m2.jpg",
+      title: "Web Design",
+      desc: t("web_design")
+    }
   ];
 
   return (
@@ -119,213 +134,98 @@ export default function Marketing() {
         </div>
       </ParticlesHero>
       <div className="bg-slate-100 pb-8">
-        <div className="flex mr-3 ml-3 mt-3 flex-col md:flex-row md:mr-20 md:ml-20 md:mt-20 md:gap-12">
-          <video autoPlay muted loop className="lg:w-1/2 rounded-xl">
+        <div className="mt-8 flex justify-center">
+          <video autoPlay muted loop className="lg:w-3/4 rounded-xl">
             <source src="/images/marketing.mp4" />
           </video>
-          <div className="flex flex-col">
-            <h1 className="mt-5 text-3xl font-semibold">{t("what")}</h1>
-            <h1 className="mt-5 text-2xl text-gray-700 font-semibold">
-              {t("consultative")}
-            </h1>
-            <ul className="list-disc ml-5 mt-5  marker:text-orange-500">
-              <li className="mb-2">{t("consultative_desc")}</li>
-            </ul>
-            <h1 className="mt-5 text-2xl text-gray-700 font-semibold">
-              {t("precise")}
-            </h1>
-            <ul className="list-disc ml-5 mt-5  marker:text-orange-500">
-              <li className="mb-2">{t("precise_desc")}</li>
-            </ul>
-            <h1 className="mt-5 text-2xl text-gray-700 font-semibold">
-              {t("customer")}
-            </h1>
-            <ul className="list-disc ml-5 mt-5  marker:text-orange-500">
-              <li className="mb-2">{t("customer_desc")}</li>
-            </ul>
-          </div>
         </div>
       </div>
       <div className="flex flex-col justify-center w-full items-center my-8 gap-8">
         <h1 className="my-5 text-5xl font-semibold">{t("services")}</h1>
         <div className="flex flex-col lg:flex-row gap-8 ml-8 mr-8">
-          <Modal
-            blurred
-            open={strategy}
-            onClose={() => setStrategy(false)}
-            width="90%"
-          >
-            <Modal.Header>
-              <span className=" text-xl font-bold">
-                {t("marketing_strategy")}
-              </span>
-            </Modal.Header>
-            <Modal.Body>
-              <span className=" text-sm md:text-lg  text-center">
-                {t("marketing_strategy_desc")}
-              </span>
-            </Modal.Body>
-          </Modal>
-          <Card isHoverable isPressable onPress={() => setStrategy(true)}>
-            <Card.Header>
-              <span className=" text-xl font-bold">
-                {t("marketing_strategy")}
-              </span>
-            </Card.Header>
-            <Card.Body>
-              <img
-                className=" rounded-xl lg:flex self-center"
-                src="/images/marketing_start.jpg"
-                height={200}
-                width={600}
-              />
-            </Card.Body>
-            <Card.Footer className="font-bold text-md">
-              {t("moreInfo")}
-            </Card.Footer>
-          </Card>
-          <Modal
-            blurred
-            open={research}
-            onClose={() => setResearch(false)}
-            width="90%"
-          >
-            <Modal.Header>
-              <span className=" text-xl font-bold">{t("market_research")}</span>
-            </Modal.Header>
-            <Modal.Body>
-              <span className=" text-sm md:text-lg ">
-                {t("market_research_desc")}
-              </span>
-              <br />
-              <ul>
-                <li className="text-sm md:text-lg">
-                  ❖ {t("market_research_desc_desc")}
-                </li>
-                <br />
-                <li className="text-sm md:text-lg">
-                  ❖ {t("customer_research")}
-                </li>
-                <br />
-                <li className="text-sm md:text-lg">
-                  ❖ {t("product_research")}
-                </li>
-                <br />
-                <li className="text-sm md:text-lg">❖ {t("user_research")}</li>
-              </ul>
-            </Modal.Body>
-          </Modal>
-          <Card isHoverable isPressable onPress={() => setResearch(true)}>
-            <Card.Header>
-              <span className=" text-xl font-bold">{t("market_research")}</span>
-            </Card.Header>
-            <Card.Body>
-              <img
-                className="rounded-xl lg:flex self-center"
-                src="/images/market_research.jpg"
-                height={200}
-                width={600}
-              />
-            </Card.Body>
-            <Card.Footer className="font-bold text-md">
-              {t("moreInfo")}
-            </Card.Footer>
-          </Card>
-          <Modal
-            blurred
-            open={analysis}
-            onClose={() => setAnalysis(false)}
-            width="90%"
-          >
-            <Modal.Header>
-              <span className=" text-xl font-bold">{t("pest")}</span>
-            </Modal.Header>
-            <Modal.Body>
-              <span className=" text-sm md:text-lg text-center">
-                {t("pest_desc")}
-              </span>
-            </Modal.Body>
-          </Modal>
-          <Card isHoverable isPressable onPress={() => setAnalysis(true)}>
-            <Card.Header>
-              <span className=" text-xl font-bold">{t("pest")}</span>
-            </Card.Header>
-            <Card.Body>
-              <img
-                className="rounded-xl lg:flex self-center"
-                src="/images/pest.jpg"
-                height={200}
-                width={600}
-              />
-            </Card.Body>
-            <Card.Footer className="font-bold text-md">
-              {t("moreInfo")}
-            </Card.Footer>
-          </Card>
+
+          <Grid.Container gap={2}>
+            <Grid className="flex flex-col gap-12 lg:gap-2 lg:flex-row">
+              <Collapse.Group splitted className="gap-8 ml-8 mr-8">
+                <Collapse
+                  title={
+                    <span className="font-semibold">{t("marketing_strategy")}</span>
+                  }
+                  contentLeft={
+                    <Avatar className="!z-0" src="/images/marketing_start.jpg"
+                      size="xl" />
+                  }
+                >
+                  <span className=" text-sm md:text-lg ">
+                    {t("market_research_desc")}
+                  </span>
+                  <br />
+                  <ul>
+                    <li className="text-sm md:text-lg">
+                      ❖ {t("market_research_desc_desc")}
+                    </li>
+                    <br />
+                    <li className="text-sm md:text-lg">
+                      ❖ {t("customer_research")}
+                    </li>
+                    <br />
+                    <li className="text-sm md:text-lg">
+                      ❖ {t("product_research")}
+                    </li>
+                    <br />
+                    <li className="text-sm md:text-lg">❖ {t("user_research")}</li>
+                  </ul>
+                </Collapse>
+                <Collapse
+                  title={
+                    <span className="font-semibold">{t("market_research")}</span>
+                  }
+                  contentLeft={
+                    <Avatar className="!z-0" src="/images/market_research.jpg"
+                      size="xl" />
+                  }
+                >
+                  <span className=" text-sm md:text-lg ">
+                    {t("market_research_desc")}
+                  </span>
+                  <br />
+                  <ul>
+                    <li className="text-sm md:text-lg">
+                      ❖ {t("market_research_desc_desc")}
+                    </li>
+                    <br />
+                    <li className="text-sm md:text-lg">
+                      ❖ {t("customer_research")}
+                    </li>
+                    <br />
+                    <li className="text-sm md:text-lg">
+                      ❖ {t("product_research")}
+                    </li>
+                    <br />
+                    <li className="text-sm md:text-lg">❖ {t("user_research")}</li>
+                  </ul>
+                </Collapse>
+                <Collapse
+                  title={
+                    <span className="font-semibold">{t("pest")}</span>
+                  }
+                  contentLeft={
+                    <Avatar className="!z-0" src="/images/pest.jpg"
+                      size="xl" />
+                  }
+                >
+                  <span className=" text-sm md:text-lg text-center">
+                    {t("pest_desc")}
+                  </span>
+                </Collapse>
+              </Collapse.Group>
+            </Grid>
+          </Grid.Container>
         </div>
         <br />
         <h1 className="my-5 text-5xl font-semibold ml-5 text-center">
           {t("digital_marketing")}
         </h1>
-        <div className="flex flex-col lg:flex-row">
-          <div className="flex flex-1">
-            <Grid.Container gap={2}>
-              <Grid>
-                <Collapse.Group splitted>
-                  <Collapse
-                    title="Digital Marketing Strategy"
-                    contentLeft={
-                      <Avatar className="!z-0" src="/images/m1.jpg" size="xl" />
-                    }
-                  >
-                    <ul className="list-disc ml-5 mt-5 marker:text-orange-500">
-                      <p>{t("digital_marketing_desc")}</p>
-                      <br />
-                      <li className="mt-1">{t("online_presence")}</li>
-                      <li className="mt-1">{t("digital_space")}</li>
-                      <li className="mt-1">{t("keyword")}</li>
-                    </ul>
-                  </Collapse>
-                  <Collapse
-                    title="Web Design"
-                    contentLeft={
-                      <Avatar className="!z-0" src="/images/m2.jpg" size="xl" />
-                    }
-                  >
-                    <ul className="list-disc ml-5 mt-5 marker:text-orange-500">
-                      <p>{t("web_design")}</p>
-                    </ul>
-                  </Collapse>
-                </Collapse.Group>
-              </Grid>
-            </Grid.Container>
-          </div>
-          <div className="flex flex-1">
-            <Grid.Container gap={2}>
-              <Grid>
-                <Collapse.Group splitted>
-                  <Collapse
-                    title="Branding and Brand Identity"
-                    contentLeft={
-                      <Avatar className="!z-0" src="/images/m3.jpg" size="xl" />
-                    }
-                  >
-                    <ul className="list-disc ml-5 mt-5 marker:text-orange-500">
-                      <p>{t("branding")}</p>
-                    </ul>
-                  </Collapse>
-                </Collapse.Group>
-              </Grid>
-            </Grid.Container>
-          </div>
-        </div>
-        <h1 className="my-5 text-4xl font-semibold ml-5 mr-5">
-          Content Marketing
-        </h1>
-        <p className="self-center md:w-1/2 text-center ml-5 mr-5">
-          {t("content_marketing")}
-        </p>
-        <br />
         <div className="flex flex-col lg:flex-row">
           <div className="flex flex-col">
             <Grid.Container gap={2}>
@@ -338,7 +238,9 @@ export default function Marketing() {
                         <span className="font-semibold">{item.title}</span>
                       }
                       contentLeft={
-                        <Avatar className="!z-0" src={item.url} size="xl" />
+                        item.url != "none" ?
+                          <Avatar className="!z-0" src={item.url} size="xl" /> :
+                          <></>
                       }
                     >
                       {item.desc}
@@ -353,7 +255,9 @@ export default function Marketing() {
                         <span className="font-semibold">{item.title}</span>
                       }
                       contentLeft={
-                        <Avatar className="!z-0" src={item.url} size="xl" />
+                        item.url != "none" ?
+                          <Avatar className="!z-0" src={item.url} size="xl" /> :
+                          <></>
                       }
                     >
                       {item.desc}
