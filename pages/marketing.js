@@ -81,23 +81,13 @@ export default function Marketing() {
       desc: t("web_desc"),
     },
     {
-      title: t("digital_marketing_strategy"),
-      url: "none",
-      desc: t("digital_marketing_desc"),
-    },
-  ];
-
-  const services2 = [
-    {
       url: "/images/m2.png",
       title: "YouTube",
       desc: t("yt_desc"),
     },
-    {
-      url: "none",
-      title: t("email_campaign"),
-      desc: t("email_campaign_desc"),
-    },
+  ];
+
+  const services2 = [
     {
       url: "/images/m6.png",
       title: t("email_campaign2"),
@@ -123,19 +113,19 @@ export default function Marketing() {
           <div className="text-xl font-bold max-w-3xl">{t("heroSubtitle")}</div>
         </div>
       </ParticlesHero>
-      <div className="bg-slate-100 pb-8">
-        <div className="mt-8 flex justify-center">
+      <div className="bg-slate-100">
+        <div className="my-1 flex justify-center">
           <video autoPlay muted loop className="lg:w-3/4 rounded-xl">
             <source src="/images/marketing.mp4" />
           </video>
         </div>
       </div>
-      <div className="flex flex-col justify-center w-full items-center my-8 gap-8">
-        <h1 className="my-5 text-5xl font-semibold">{t("services")}</h1>
-        <div className="flex flex-col lg:flex-row gap-8 ml-8 mr-8">
+      <div className="flex flex-col justify-center w-full items-center mt-4">
+        <h1 className="text-5xl font-semibold">{t("services")}</h1>
+        <div className="flex flex-col lg:flex-row ml-8 mr-8">
           <Grid.Container gap={2}>
             <Grid className="flex flex-col gap-12 lg:gap-2 lg:flex-row">
-              <Collapse.Group splitted className="gap-8 ml-8 mr-8">
+              <Collapse.Group splitted className="ml-8 mr-8">
                 <Collapse
                   title={<span className="font-semibold">{t("marketing_strategy")}</span>}
                   contentLeft={<Avatar className="!z-0" src="/images/marketing_start.jpg" size="xl" />}
