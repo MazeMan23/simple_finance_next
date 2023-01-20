@@ -3,7 +3,6 @@ import { useTranslations } from "use-intl";
 import Layout from "../components/Layout";
 import ParticlesHero from "../components/ParticlesHero";
 import ContactForm from "../components/ContactForm";
-import Image from "next/image";
 import { Avatar, Collapse, Grid } from "@nextui-org/react";
 
 export async function getStaticProps({ locale }) {
@@ -28,36 +27,36 @@ export default function Marketing() {
   const f = useTranslations("footer");
   const c = useTranslations("contact");
 
-  const projects = [
-    {
-      url: "/images/marketing1.jpg",
-      title: t("seo_title"),
-      subtitle: t("seo_sub"),
-      desc1: t("seo_desc1"),
-      desc2: t("seo_desc2"),
-    },
-    {
-      url: "/images/marketing2.jpg",
-      title: t("fb_title"),
-      subtitle: t("fb_sub"),
-      desc1: t("fb_desc1"),
-      desc2: t("fb_desc2"),
-    },
-    {
-      url: "/images/marketing3.jpg",
-      title: t("ga_title"),
-      subtitle: t("ga_sub"),
-      desc1: t("ga_desc1"),
-      desc2: t("ga_desc2"),
-    },
-    {
-      url: "/images/marketing4.jpg",
-      title: t("sm_title"),
-      subtitle: t("sm_sub"),
-      desc1: t("sm_desc1"),
-      desc2: t("sm_desc2"),
-    },
-  ];
+  // const projects = [
+  //   {
+  //     url: "/images/marketing1.jpg",
+  //     title: t("seo_title"),
+  //     subtitle: t("seo_sub"),
+  //     desc1: t("seo_desc1"),
+  //     desc2: t("seo_desc2"),
+  //   },
+  //   {
+  //     url: "/images/marketing2.jpg",
+  //     title: t("fb_title"),
+  //     subtitle: t("fb_sub"),
+  //     desc1: t("fb_desc1"),
+  //     desc2: t("fb_desc2"),
+  //   },
+  //   {
+  //     url: "/images/marketing3.jpg",
+  //     title: t("ga_title"),
+  //     subtitle: t("ga_sub"),
+  //     desc1: t("ga_desc1"),
+  //     desc2: t("ga_desc2"),
+  //   },
+  //   {
+  //     url: "/images/marketing4.jpg",
+  //     title: t("sm_title"),
+  //     subtitle: t("sm_sub"),
+  //     desc1: t("sm_desc1"),
+  //     desc2: t("sm_desc2"),
+  //   },
+  // ];
 
   const services = [
     {
