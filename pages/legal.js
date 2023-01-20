@@ -109,7 +109,7 @@ export default function Legal() {
 
   return (
     <Layout h={h} f={f}>
-      <ParticlesHero img="/images/law_hero.jpeg">
+      <ParticlesHero img="/images/simple-law.jpg">
         <div className="flex flex-col justify-center text-center text-white gap-4">
           <div className=" text-2xl md:text-5xl font-bold">
             {t("heroTitle")}
@@ -184,7 +184,7 @@ export default function Legal() {
             </Grid.Container>
           </div>
         </div>
-        <div className="flex flex-col items-center">
+        {/* <div className="flex flex-col items-center">
           <h1 className="text-2xl font-semibold	mt-10">{t("aboutTitle")}</h1>
           <p className="mt-4">{t("aboutSubtitle1")}</p>
           <p className="mb-4">{t("aboutSubtitle2")}</p>
@@ -214,7 +214,7 @@ export default function Legal() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
       <ContactForm t={c} h={h} />
     </Layout>

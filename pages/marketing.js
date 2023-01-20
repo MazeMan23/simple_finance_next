@@ -202,7 +202,7 @@ export default function Marketing() {
         </div>
       </div>
 
-      <div className="flex flex-col items-center">
+      {/* <div className="flex flex-col items-center">
         <h1 className="text-2xl font-semibold	mt-10">{t("aboutTitle")}</h1>
         <p className="mt-4">{t("aboutSubtitle1")}</p>
         <p className="mb-4">{t("aboutSubtitle2")}</p>
@@ -230,7 +230,7 @@ export default function Marketing() {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
       <ContactForm t={c} h={h} />
     </Layout>
   );
