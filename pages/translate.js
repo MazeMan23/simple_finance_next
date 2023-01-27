@@ -5,6 +5,7 @@ import ParticlesHero from "../components/ParticlesHero";
 import { Textarea, Dropdown, Button, Text, useModal, Modal, Loading } from "@nextui-org/react";
 import Image from "next/image";
 import { Form } from "react-bootstrap";
+import { useRouter } from "next/router";
 
 export async function getStaticProps({ locale }) {
   const header = (await import(`../translations/header/${locale}.json`)).default;
@@ -26,6 +27,10 @@ export default function Translate() {
   const t = useTranslations("translate");
   const h = useTranslations("header");
   const f = useTranslations("footer");
+
+  const router = useRouter();
+
+  console.log(router.locale);
 
   const supportedLanguages = [
     { key: "BG", value: t("bulgarian") },
@@ -59,7 +64,11 @@ export default function Translate() {
 
   const [selectedInput, setSelectedInput] = React.useState(supportedLanguages[0]);
   const [selectedOutput, setSelectedOutput] = React.useState(supportedLanguages[5]);
-
+  React.useEffect(() => {
+    console.log(supportedLanguages.find((element) => selectedInput.key === element.key));
+    setSelectedInput({ key: selectedInput.key, value: supportedLanguages.find((element) => selectedInput.key === element.key).value });
+    setSelectedOutput({ key: selectedOutput.key, value: supportedLanguages.find((element) => selectedOutput.key === element.key).value });
+  }, [t]);
   const [input, setInput] = React.useState("");
   const [output, setOutput] = React.useState(null);
   const [loading, setLoading] = React.useState(false);
