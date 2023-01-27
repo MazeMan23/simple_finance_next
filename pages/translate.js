@@ -98,15 +98,9 @@ export default function Translate() {
           <div className="text-xl font-bold max-w-3xl">{t("heroSubtitle")}</div>
         </div>
       </ParticlesHero>
-      <div className="lg:h-[80vh]">
+      <div className="lg:h-[100%]">
         <div className="flex flex-row mt-16 ml-4 md:ml-16">
-          <Button
-            shadow
-            color="success"
-            auto
-            className="bg-green-500"
-            onPress={() => setTranslationType("textTranslation")}
-          >
+          <Button shadow color="success" auto className="bg-green-500" onPress={() => setTranslationType("textTranslation")}>
             <Image src="/images/icons/text.png" width={30} height={30} className="!z-[30]" />
             {t("translateText")}
           </Button>
@@ -246,19 +240,7 @@ export default function Translate() {
                     </Dropdown>
                   </div>
                   <div className="mt-4">
-                    <Textarea
-                      id="output"
-                      name="output"
-                      className="flex flex-1"
-                      shadow
-                      placeholder={t("placeholderOutput")}
-                      bordered
-                      width="100%"
-                      rows={18}
-                      readOnly
-                      status="default"
-                      value={output}
-                    />
+                    <Textarea id="output" name="output" className="flex flex-1" shadow placeholder={t("placeholderOutput")} bordered width="100%" rows={18} readOnly status="default" value={output} />
                   </div>
                 </div>
               </div>
@@ -371,10 +353,7 @@ export default function Translate() {
                       </Dropdown>
                     </div>
                   </div>
-                  <div
-                    className="mt-4 border-2 rounded-lg md:w-2/3 lg:w-1/3 self-center h-full flex justify-center"
-                    style={{ borderColor: "#d9d9d9" }}
-                  >
+                  <div className="mt-4 border-2 rounded-lg md:w-2/3 lg:w-1/3 self-center h-full flex justify-center" style={{ borderColor: "#d9d9d9" }}>
                     <div className="flex flex-col justify-center">
                       <div className="flex flex-row self-center">
                         <img className=" self-center" width={320} height={180} src="/images/icons/files.png" />
@@ -382,11 +361,7 @@ export default function Translate() {
                       <Text className="text-blue-800 text-center" weight="bold">
                         {t("uploadText")}
                       </Text>
-                      <Form.Group
-                        className="self-center mt-8 mb-8"
-                        controlId="file"
-                        onChange={(e) => setFile(e.target.files[0])}
-                      >
+                      <Form.Group className="self-center mt-8 mb-8" controlId="file" onChange={(e) => setFile(e.target.files[0])}>
                         <Form.Control type="file" accept=".pdf, .docx, .pptx" />
                       </Form.Group>
                     </div>
