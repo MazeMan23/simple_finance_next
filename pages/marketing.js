@@ -168,7 +168,7 @@ export default function Marketing() {
           </Grid.Container>
         </div>
         <br />
-        <h1 className="my-5 text-5xl font-semibold ml-5 text-center">{t("digital_marketing")}</h1>
+        <h1 className="mb-5 text-3xl font-semibold ml-5 text-center text-gray-500">{t("digital_marketing")}</h1>
         <div className="flex flex-col lg:flex-row">
           <div className="flex flex-col">
             <Grid.Container gap={2}>
