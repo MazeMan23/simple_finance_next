@@ -326,19 +326,19 @@ export default function Finance() {
                   <br />
                   <li className="mt-1">{item.desc6}</li>
                   <br />
-                  {item.category == "Предимства на Microsoft Office 365" ||
-                  item.category == t("business_services") ? (
+                  {(item.category == "Предимства на Microsoft Office 365" ||
+                    item.category == t("business_services")) && (
                     <li className="mt-1">{item.desc7}</li>
-                  ) : null}
+                  )}
                   <br />
-                  {item.category == "Предимства на Microsoft Office 365" ||
-                  item.category == t("business_services") ? (
+                  {(item.category == "Предимства на Microsoft Office 365" ||
+                    item.category == t("business_services")) && (
                     <li className="mt-1">{item.desc8}</li>
-                  ) : null}
+                  )}
                   <br />
-                  {item.category == "Предимства на Microsoft Office 365" ? (
+                  {item.category == "Предимства на Microsoft Office 365" && (
                     <li className="mt-1">{item.desc9}</li>
-                  ) : null}
+                  )}
                 </ul>
                 <p className="font-bold ml-8">{t("learnMore")}</p>
               </div>
