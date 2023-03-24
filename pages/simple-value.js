@@ -34,7 +34,6 @@ export default function Finance() {
 
   const services_list = [
     {
-      index: "odd",
       category: t("accounting_title"),
       banner: "/images/value-prop.jpg",
       desc1: t("acc1"),
@@ -42,7 +41,6 @@ export default function Finance() {
       desc3: t("acc3"),
     },
     {
-      index: "even",
       category: t("finance_tile"),
       banner: "/images/value-car.jpg",
       desc1: t("fin1"),
@@ -50,7 +48,6 @@ export default function Finance() {
       desc3: t("fin3"),
     },
     {
-      index: "odd",
       category: t("consulting_title"),
       banner: "/images/value-nonmat.jpg",
       desc1: t("con1"),
@@ -58,7 +55,6 @@ export default function Finance() {
       desc3: t("con3"),
     },
     {
-      index: "even",
       category: t("business_title"),
       banner: "/images/value-fin.jpg",
       desc1: t("bus1"),
@@ -66,7 +62,6 @@ export default function Finance() {
       desc3: t("bus3"),
     },
     {
-      index: "odd",
       category: t("business_title"),
       banner: "/images/value-land.jpg",
       desc1: t("bus1"),
@@ -95,12 +90,12 @@ export default function Finance() {
       </h1>
       <div className="flex flex-row justify-center gap-12 px-8 mb-10 flex-wrap">
         {services_list.map((item, index) =>
-          item.index == "odd" ? (
+          index % 2 === 0 ? (
             <div
               key={index}
               className="flex justify-start rounded-xl bg-white active:bg-gray-200 w-full md:w-[82%] lg:w-[63%] shadow-xl "
             >
-              <div>
+              <div className="flex">
                 <img
                   className="rounded-l-lg"
                   src={item.banner}
@@ -131,7 +126,7 @@ export default function Finance() {
                   </ul>
                 </div>
               </div>
-              <div>
+              <div className="flex">
                 <img
                   className="rounded-r-lg"
                   src={item.banner}
