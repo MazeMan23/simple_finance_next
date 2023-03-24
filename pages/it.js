@@ -74,7 +74,10 @@ export default function Finance() {
   ];
 
   return (
-    <Layout h={h} f={f}>
+    <Layout
+      h={h}
+      f={f}
+    >
       <ParticlesHero img="/images/simple_it.jpg">
         <div className="flex flex-col justify-center text-center items-center text-white gap-4">
           <div className=" text-2xl md:text-5xl max-w-4xl font-bold">
@@ -112,7 +115,11 @@ export default function Finance() {
                 <Collapse
                   title={t("roadmap")}
                   contentLeft={
-                    <Avatar className="!z-0" src="/images/it4.png" size="xl" />
+                    <Avatar
+                      className="!z-0"
+                      src="/images/it4.png"
+                      size="xl"
+                    />
                   }
                 >
                   <ul className="list-disc ml-5 mt-5 marker:text-white">
@@ -126,7 +133,11 @@ export default function Finance() {
                 <Collapse
                   title={t("innovation")}
                   contentLeft={
-                    <Avatar className="!z-0" src="/images/3cx.png" size="xl" />
+                    <Avatar
+                      className="!z-0"
+                      src="/images/3cx.png"
+                      size="xl"
+                    />
                   }
                 >
                   <ul className="list-disc ml-5 mt-5 marker:text-white">
@@ -162,7 +173,11 @@ export default function Finance() {
                 <Collapse
                   title={t("relations")}
                   contentLeft={
-                    <Avatar className="!z-0" src="/images/it3.png" size="xl" />
+                    <Avatar
+                      className="!z-0"
+                      src="/images/it3.png"
+                      size="xl"
+                    />
                   }
                 >
                   <ul className="list-disc ml-5 mt-5 marker:text-white">
@@ -180,7 +195,11 @@ export default function Finance() {
                 <Collapse
                   title={t("tc")}
                   contentLeft={
-                    <Avatar className="!z-0" src="/images/web.webp" size="xl" />
+                    <Avatar
+                      className="!z-0"
+                      src="/images/web.webp"
+                      size="xl"
+                    />
                   }
                 >
                   <ul className="list-disc ml-5 mt-5 marker:text-white">
@@ -346,7 +365,10 @@ export default function Finance() {
           ))}
         </div>
       </div>
-      <ContactForm t={c} h={h} />
+      <ContactForm
+        t={c}
+        h={h}
+      />
     </Layout>
   );
 }
