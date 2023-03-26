@@ -90,14 +90,16 @@ export default function Finance() {
                 height={369}
               />
               <div className="mx-auto max-w-md my-6">
-                <div className="flex flex-col justify-center items-center">
-                  <h1 className="font-bold text-2xl">{item.category}</h1>
-                  <ul className="px-8 mb-2 list-disc text-gray-700 font-semibold text-smml-5 mt-3 marker:text-orange-500">
+                <div className="flex flex-col justify-center">
+                  <h1 className="font-bold text-2xl text-center">
+                    {item.category}
+                  </h1>
+                  <ul className=" mx-8 mb-2 mt-3 list-disc text-gray-700 font-semibold text-smml-5 marker:text-orange-500">
                     {item.info.map((x) => (
                       <li className="mt-1">{x}</li>
                     ))}
                   </ul>
-                  <button className="bg-orange-400 text-white font-bold rounded-full my-3 py-1.5 px-6">
+                  <button className="bg-orange-400 text-white font-bold rounded-full my-3 py-1.5 w-36 mx-auto">
                     {t("button")}
                   </button>
                 </div>
@@ -109,14 +111,16 @@ export default function Finance() {
               className="flex justify-between items-stretch rounded-xl bg-white active:bg-gray-200 max-w-5xl md:w-[82%] lg:w-[63%] shadow-xl "
             >
               <div className="mx-auto max-w-md my-6">
-                <div className="flex flex-col justify-center items-center">
-                  <h1 className="font-bold text-2xl">{item.category}</h1>
-                  <ul className="px-8 mb-2 list-disc text-gray-700 font-semibold text-smml-5 mt-3 marker:text-orange-500">
+                <div className="flex flex-col justify-center">
+                  <h1 className="font-bold text-2xl text-center">
+                    {item.category}
+                  </h1>
+                  <ul className="mx-8 mb-2 list-disc text-gray-700 font-semibold text-smml-5 mt-3 marker:text-orange-500">
                     {item.info.map((x) => (
                       <li className="mt-1">{x}</li>
                     ))}
                   </ul>
-                  <button className="bg-orange-400 text-white font-bold rounded-full my-3 py-1.5 px-6">
+                  <button className="bg-orange-400 text-white font-bold rounded-full my-3 py-1.5 w-36 mx-auto">
                     {t("button")}
                   </button>
                 </div>
