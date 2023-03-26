@@ -81,17 +81,15 @@ export default function Finance() {
           index % 2 === 0 ? (
             <div
               key={index}
-              className="flex justify-start rounded-xl bg-white active:bg-gray-200 w-full md:w-[82%] lg:w-[63%] shadow-xl "
+              className="flex justify-start items-stretch rounded-xl bg-white active:bg-gray-200 w-full max-w-5xl md:w-[82%] lg:w-[63%] shadow-xl "
             >
-              <div className="flex">
-                <img
-                  className="rounded-l-lg"
-                  src={item.banner}
-                  width={437}
-                  height={369}
-                />
-              </div>
-              <div className="max-w-md">
+              <img
+                className="rounded-l-lg"
+                src={item.banner}
+                width={437}
+                height={369}
+              />
+              <div className="mx-auto max-w-md">
                 <div className="ml-16 my-6">
                   <div className="flex flex-col justify-center items-center">
                     <h1 className="font-bold text-2xl">{item.category}</h1>
@@ -110,31 +108,27 @@ export default function Finance() {
           ) : (
             <div
               key={index}
-              className="flex justify-between rounded-xl bg-white active:bg-gray-200 w-full md:w-[82%] lg:w-[63%] shadow-xl "
+              className="flex justify-between items-stretch rounded-xl bg-white active:bg-gray-200 max-w-5xl md:w-[82%] lg:w-[63%] shadow-xl "
             >
-              <div className="max-w-md">
-                <div className="ml-16 my-6">
-                  <div className="flex flex-col justify-center items-center">
-                    <h1 className="font-bold text-2xl">{item.category}</h1>
-                    <ul className="px-8 mb-2 list-disc text-gray-700 font-semibold text-smml-5 mt-3 marker:text-orange-500">
-                      {item.info.map((x) => (
-                        <li className="mt-1">{x}</li>
-                      ))}
-                    </ul>
-                    <button className="bg-orange-400 text-white font-bold rounded-full my-3 py-1.5 px-6">
-                      {t("button")}
-                    </button>
-                  </div>
+              <div className="mx-auto max-w-md">
+                <div className="flex flex-col justify-center items-center">
+                  <h1 className="font-bold text-2xl">{item.category}</h1>
+                  <ul className="px-8 mb-2 list-disc text-gray-700 font-semibold text-smml-5 mt-3 marker:text-orange-500">
+                    {item.info.map((x) => (
+                      <li className="mt-1">{x}</li>
+                    ))}
+                  </ul>
+                  <button className="bg-orange-400 text-white font-bold rounded-full my-3 py-1.5 px-6">
+                    {t("button")}
+                  </button>
                 </div>
               </div>
-              <div className="flex">
-                <img
-                  className="rounded-r-lg"
-                  src={item.banner}
-                  width={437}
-                  height={369}
-                />
-              </div>
+              <img
+                className="rounded-r-lg"
+                src={item.banner}
+                width={437}
+                height={369}
+              />
             </div>
           )
         )}
