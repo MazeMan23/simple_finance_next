@@ -2,9 +2,7 @@ import React from "react";
 import { useTranslations } from "use-intl";
 import Layout from "../components/Layout";
 import ParticlesHero from "../components/ParticlesHero";
-import { Collapse, Grid, Avatar } from "@nextui-org/react";
 import ContactForm from "../components/ContactForm";
-import Image from "next/image";
 
 export async function getStaticProps({ locale }) {
   const simpleValue = (await import(`../translations/value/${locale}.json`))
@@ -34,39 +32,29 @@ export default function Finance() {
 
   const services_list = [
     {
-      category: t("accounting_title"),
+      category: t("property_title"),
       banner: "/images/value-prop.jpg",
-      desc1: t("acc1"),
-      desc2: t("acc2"),
-      desc3: t("acc3"),
+      info: [t("prop1"), t("prop2"), t("prop3"), t("prop4")],
     },
     {
-      category: t("finance_tile"),
+      category: t("movable_title"),
       banner: "/images/value-car.jpg",
-      desc1: t("fin1"),
-      desc2: t("fin2"),
-      desc3: t("fin3"),
+      info: [t("mov1"), t("mov2"), t("mov3"), t("mov4"), t("mov5"), t("mov6")],
     },
     {
-      category: t("consulting_title"),
+      category: t("intangible_title"),
       banner: "/images/value-nonmat.jpg",
-      desc1: t("con1"),
-      desc2: t("con2"),
-      desc3: t("con3"),
+      info: [t("intg1"), t("intg2"), t("intg3"), t("intg4"), t("intg5")],
     },
     {
-      category: t("business_title"),
+      category: t("company_title"),
       banner: "/images/value-fin.jpg",
-      desc1: t("bus1"),
-      desc2: t("bus2"),
-      desc3: t("bus3"),
+      info: [t("com1"), t("com2"), t("com3"), t("com4")],
     },
     {
-      category: t("business_title"),
+      category: t("agricultur_title"),
       banner: "/images/value-land.jpg",
-      desc1: t("bus1"),
-      desc2: t("bus2"),
-      desc3: t("bus3"),
+      info: [t("agr")],
     },
   ];
 
@@ -88,7 +76,7 @@ export default function Finance() {
       <h1 className="flex justify-center text-4xl font-bold	mt-10 my-12">
         {t("our_works")}
       </h1>
-      <div className="flex flex-row justify-center gap-12 px-8 mb-10 flex-wrap">
+      <div className="flex flex-col items-center gap-12 px-8 mb-10">
         {services_list.map((item, index) =>
           index % 2 === 0 ? (
             <div
@@ -103,27 +91,40 @@ export default function Finance() {
                   height={369}
                 />
               </div>
-              <div>
-                <div className="ml-24 my-12">
-                  <h1 className="font-bold text-2xl ">Valuation on property</h1>
-                  <ul className="px-8 mb-4 list-disc text-gray-700 font-semibold text-smml-5 mt-5 marker:text-orange-500">
-                    <li className="mt-1">{item.desc1}</li>
-                    <li className="mt-1">{item.desc2}</li>
-                    <li className="mt-1">{item.desc3}</li>
-                  </ul>
+              <div className="max-w-md">
+                <div className="ml-16 my-6">
+                  <div className="flex flex-col justify-center items-center">
+                    <h1 className="font-bold text-2xl">{item.category}</h1>
+                    <ul className="px-8 mb-2 list-disc text-gray-700 font-semibold text-smml-5 mt-3 marker:text-orange-500">
+                      {item.info.map((x) => (
+                        <li className="mt-1">{x}</li>
+                      ))}
+                    </ul>
+                    <button className="bg-orange-400 text-white font-bold rounded-full my-3 py-1.5 px-6">
+                      {t("button")}
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
           ) : (
-            <div className="flex justify-between rounded-xl bg-white active:bg-gray-200 w-full md:w-[82%] lg:w-[63%] shadow-xl ">
-              <div>
-                <div className="ml-24 my-12">
-                  <h1 className="font-bold text-2xl ">Valuation on property</h1>
-                  <ul className="px-8 mb-4 list-disc text-gray-700 font-semibold text-smml-5 mt-5 marker:text-orange-500">
-                    <li className="mt-1">{item.desc1}</li>
-                    <li className="mt-1">{item.desc2}</li>
-                    <li className="mt-1">{item.desc3}</li>
-                  </ul>
+            <div
+              key={index}
+              className="flex justify-between rounded-xl bg-white active:bg-gray-200 w-full md:w-[82%] lg:w-[63%] shadow-xl "
+            >
+              <div className="max-w-md">
+                <div className="ml-16 my-6">
+                  <div className="flex flex-col justify-center items-center">
+                    <h1 className="font-bold text-2xl">{item.category}</h1>
+                    <ul className="px-8 mb-2 list-disc text-gray-700 font-semibold text-smml-5 mt-3 marker:text-orange-500">
+                      {item.info.map((x) => (
+                        <li className="mt-1">{x}</li>
+                      ))}
+                    </ul>
+                    <button className="bg-orange-400 text-white font-bold rounded-full my-3 py-1.5 px-6">
+                      {t("button")}
+                    </button>
+                  </div>
                 </div>
               </div>
               <div className="flex">
@@ -145,76 +146,3 @@ export default function Finance() {
     </Layout>
   );
 }
-
-{
-  /* <div className="flex flex-row justify-center gap-12 px-8 mb-10 flex-wrap">
-            {services_list.map((item, index) => (
-              <div
-                key={index}
-                className="flex justify-start rounded-xl bg-white active:bg-gray-200 w-full md:w-[82%] lg:w-[63%] shadow-xl "
-              >
-                <div>
-                  <img
-                    className="rounded-l-lg"
-                    src={item.banner}
-                    width={437}
-                    height={369}
-                  />
-                </div>
-                <div>
-                  <div className="ml-24 my-12">
-                    <h1 className="font-bold text-2xl ">
-                      Valuation on property
-                    </h1>
-                    <ul className="px-8 mb-4 list-disc text-gray-700 font-semibold text-smml-5 mt-5 marker:text-orange-500">
-                      <li className="mt-1">{item.desc1}</li>
-                      <li className="mt-1">{item.desc2}</li>
-                      <li className="mt-1">{item.desc3}</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            ))} */
-}
-
-//left-right img
-// 1<div className="flex justify-start rounded-xl bg-white active:bg-gray-200 w-full md:w-[82%] lg:w-[63%] shadow-xl ">
-// <div>
-// 	<img
-// 		className="rounded-l-lg"
-// 		src={services_list[0].banner}
-// 		width={437}
-// 		height={369}
-// 	/>
-// </div>
-// <div>
-// 	<div className="ml-24 my-12">
-// 		<h1 className="font-bold text-2xl ">Valuation on property</h1>
-// 		<ul className="px-8 mb-4 list-disc text-gray-700 font-semibold text-smml-5 mt-5 marker:text-orange-500">
-// 			<li className="mt-1">{services_list[0].desc1}</li>
-// 			<li className="mt-1">{services_list[0].desc2}</li>
-// 			<li className="mt-1">{services_list[0].desc3}</li>
-// 		</ul>
-// 	</div>
-// </div>
-// </div>
-// 2 <div className="flex justify-between rounded-xl bg-white active:bg-gray-200 w-full md:w-[82%] lg:w-[63%] shadow-xl ">
-// <div>
-// 	<div className="ml-24 my-12">
-// 		<h1 className="font-bold text-2xl ">Valuation on property</h1>
-// 		<ul className="px-8 mb-4 list-disc text-gray-700 font-semibold text-smml-5 mt-5 marker:text-orange-500">
-// 			<li className="mt-1">{services_list[1].desc1}</li>
-// 			<li className="mt-1">{services_list[1].desc2}</li>
-// 			<li className="mt-1">{services_list[1].desc3}</li>
-// 		</ul>
-// 	</div>
-// </div>
-// <div>
-// 	<img
-// 		className="rounded-r-lg"
-// 		src={services_list[1].banner}
-// 		width={437}
-// 		height={369}
-// 	/>
-// </div>
-// </div>
