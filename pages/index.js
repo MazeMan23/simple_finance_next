@@ -70,10 +70,7 @@ export default function Index() {
   ];
 
   return (
-    <Layout
-      h={h}
-      f={f}
-    >
+    <Layout h={h} f={f}>
       <ParticlesHero img="/images/main-bg.jpg">
         <div className="flex flex-col justify-center text-center text-white gap-4">
           <div className="text-2xl font-bold">{t("heroTitle")}</div>
@@ -83,7 +80,7 @@ export default function Index() {
         </div>
       </ParticlesHero>
       <div style={{ backgroundColor: "#F8FCFD" }}>
-        <div className="flex mr-3 ml-3 mt-3 flex-row md:mr-20 md:ml-20 md:mt-20">
+        <div className="flex mr-3 ml-3 flex-row md:mr-20 md:ml-20">
           <div className="flex flex-col">
             <h1 className="mt-5 text-3xl font-semibold">
               {t("whoAreWeTitle")}
@@ -100,15 +97,6 @@ export default function Index() {
               <li className="mb-2 mt-2 ml-8">{t("ourMission")}</li>
             </ul>
           </div>
-          <div className="hidden self-center lg:flex justify-center">
-            <video
-              autoPlay
-              loop
-              className="ml-10 mb-10 max-w-lg"
-            >
-              <source src="/images/finance.mp4" />
-            </video>
-          </div>
         </div>
       </div>
       <div className="bg-slate-100">
@@ -120,7 +108,7 @@ export default function Index() {
             {services_list.map((item, index) => (
               <div
                 key={index}
-                className="rounded-xl bg-white active:bg-gray-200  w-full md:w-[48%] lg:w-[23%] shadow-xl"
+                className="rounded-xl bg-white active:bg-gray-200  w-full md:w-[48%] lg:w-[23%] shadow-xl hover:cursor-pointer hover:shadow-2xl"
               >
                 <Link href={`/${item.url}`}>
                   <div className="flex flex-col justify-between gap-2">
@@ -153,10 +141,7 @@ export default function Index() {
           </div>
         </div>
       </div>
-      <ContactForm
-        t={c}
-        h={h}
-      />
+      <ContactForm t={c} h={h} />
     </Layout>
   );
 }

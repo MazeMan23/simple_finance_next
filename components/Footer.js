@@ -40,14 +40,6 @@ export default function Footer({ t, h }) {
               2022 © Simple Finance.
             </a>
             <br />
-            <a
-              href="https://www.javery.bg"
-              className=" text-white underline"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Made by Javery.
-            </a>
           </div>
           <div className="flex flex-row justify-end gap-4">
             <div className="flex flex-col justify-center min-h-full">

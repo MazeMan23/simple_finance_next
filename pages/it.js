@@ -74,10 +74,7 @@ export default function Finance() {
   ];
 
   return (
-    <Layout
-      h={h}
-      f={f}
-    >
+    <Layout h={h} f={f}>
       <ParticlesHero img="/images/simple_it.jpg">
         <div className="flex flex-col justify-center text-center items-center text-white gap-4">
           <div className=" text-2xl md:text-5xl max-w-4xl font-bold">
@@ -98,9 +95,6 @@ export default function Finance() {
               />
             </div>
             <div className="flex flex-col items-center ml-4 mr-4 lg:w-1/2 gap-4">
-              <h1 className="text-2xl md:text-4xl font-bold text-center">
-                {t("services")}
-              </h1>
               <p className="text-center text-lg">{t("general")}</p>
             </div>
           </div>
@@ -114,12 +108,9 @@ export default function Finance() {
               <Collapse.Group splitted>
                 <Collapse
                   title={t("roadmap")}
+                  className="scale-100 hover:scale-105"
                   contentLeft={
-                    <Avatar
-                      className="!z-0"
-                      src="/images/it4.png"
-                      size="xl"
-                    />
+                    <Avatar className="!z-0" src="/images/it4.png" size="xl" />
                   }
                 >
                   <ul className="list-disc ml-5 mt-5 marker:text-white">
@@ -132,12 +123,9 @@ export default function Finance() {
                 </Collapse>
                 <Collapse
                   title={t("innovation")}
+                  className="scale-100 hover:scale-105"
                   contentLeft={
-                    <Avatar
-                      className="!z-0"
-                      src="/images/3cx.png"
-                      size="xl"
-                    />
+                    <Avatar className="!z-0" src="/images/3cx.png" size="xl" />
                   }
                 >
                   <ul className="list-disc ml-5 mt-5 marker:text-white">
@@ -148,6 +136,7 @@ export default function Finance() {
                 </Collapse>
                 <Collapse
                   title={t("mobile")}
+                  className="scale-100 hover:scale-105"
                   contentLeft={
                     <Avatar
                       className="!z-0"
@@ -172,12 +161,9 @@ export default function Finance() {
               <Collapse.Group splitted>
                 <Collapse
                   title={t("relations")}
+                  className="scale-100 hover:scale-105"
                   contentLeft={
-                    <Avatar
-                      className="!z-0"
-                      src="/images/it3.png"
-                      size="xl"
-                    />
+                    <Avatar className="!z-0" src="/images/it3.png" size="xl" />
                   }
                 >
                   <ul className="list-disc ml-5 mt-5 marker:text-white">
@@ -194,12 +180,9 @@ export default function Finance() {
                 </Collapse>
                 <Collapse
                   title={t("tc")}
+                  className="scale-100 hover:scale-105"
                   contentLeft={
-                    <Avatar
-                      className="!z-0"
-                      src="/images/web.webp"
-                      size="xl"
-                    />
+                    <Avatar className="!z-0" src="/images/web.webp" size="xl" />
                   }
                 >
                   <ul className="list-disc ml-5 mt-5 marker:text-white">
@@ -306,7 +289,7 @@ export default function Finance() {
           {services_list.map((item, index) => (
             <div
               key={index}
-              className="rounded-xl bg-white w-full md:w-[90%] lg:w-[30%] lg:h-[56rem] shadow-xl hover:cursor-pointer"
+              className="rounded-xl bg-white w-full md:w-[90%] lg:w-[30%] lg:h-[40rem] shadow-xl hover:cursor-pointer"
             >
               <div
                 className="flex flex-col justify-between gap-2"
@@ -334,41 +317,30 @@ export default function Finance() {
                 </h1>
                 <ul className="px-8 mb-4 list-disc text-gray-700 font-semibold text-smml-5 mt-5 marker:text-orange-500">
                   <li className="mt-1">{item.desc1}</li>
-                  <br />
                   <li className="mt-1">{item.desc2}</li>
-                  <br />
                   <li className="mt-1">{item.desc3}</li>
-                  <br />
                   <li className="mt-1">{item.desc4}</li>
-                  <br />
                   <li className="mt-1">{item.desc5}</li>
-                  <br />
                   <li className="mt-1">{item.desc6}</li>
-                  <br />
                   {(item.category == "Предимства на Microsoft Office 365" ||
                     item.category == t("business_services")) && (
                     <li className="mt-1">{item.desc7}</li>
                   )}
-                  <br />
                   {(item.category == "Предимства на Microsoft Office 365" ||
                     item.category == t("business_services")) && (
                     <li className="mt-1">{item.desc8}</li>
                   )}
-                  <br />
                   {item.category == "Предимства на Microsoft Office 365" && (
                     <li className="mt-1">{item.desc9}</li>
                   )}
                 </ul>
-                <p className="font-bold ml-8">{t("learnMore")}</p>
+                <p className="font-bold ml-8 mb-2">{t("learnMore")}</p>
               </div>
             </div>
           ))}
         </div>
       </div>
-      <ContactForm
-        t={c}
-        h={h}
-      />
+      <ContactForm t={c} h={h} />
     </Layout>
   );
 }
