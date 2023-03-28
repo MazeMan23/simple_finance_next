@@ -3,6 +3,7 @@ import { useTranslations } from "use-intl";
 import Layout from "../components/Layout";
 import ParticlesHero from "../components/ParticlesHero";
 import ContactForm from "../components/ContactForm";
+import Image from "next/image";
 
 export async function getStaticProps({ locale }) {
   const simpleValue = (await import(`../translations/value/${locale}.json`))
@@ -83,11 +84,12 @@ export default function Finance() {
               key={index}
               className="flex justify-center items-stretch rounded-xl bg-white active:bg-gray-200 w-full max-w-5xl md:w-[82%] lg:w-[63%] shadow-xl "
             >
-              <img
+              <Image
                 className="rounded-l-lg"
                 src={item.banner}
+                layout="intrinsic"
                 width={437}
-                height={369}
+                height={320}
               />
               <div className="mx-auto max-w-md my-6">
                 <div className="flex flex-col justify-center">
@@ -99,9 +101,6 @@ export default function Finance() {
                       <li className="mt-1">{x}</li>
                     ))}
                   </ul>
-                  <button className="bg-orange-400 text-white font-bold rounded-full my-3 py-1.5 w-36 mx-auto">
-                    {t("button")}
-                  </button>
                 </div>
               </div>
             </div>
@@ -120,16 +119,14 @@ export default function Finance() {
                       <li className="mt-1">{x}</li>
                     ))}
                   </ul>
-                  <button className="bg-orange-400 text-white font-bold rounded-full my-3 py-1.5 w-36 mx-auto">
-                    {t("button")}
-                  </button>
                 </div>
               </div>
-              <img
+              <Image
                 className="rounded-r-lg"
                 src={item.banner}
+                layout="intrinsic"
                 width={437}
-                height={369}
+                height={320}
               />
             </div>
           )

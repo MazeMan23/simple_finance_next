@@ -63,14 +63,17 @@ export default function Index() {
     {
       title: h("simple-value"),
       img: "/images/LOGO4b.png",
-      banner: "/images/banner-card.jpg",
+      banner: "/images/banner-card.png",
       desc: t("service_val"),
       url: "simple-value",
     },
   ];
 
   return (
-    <Layout h={h} f={f}>
+    <Layout
+      h={h}
+      f={f}
+    >
       <ParticlesHero img="/images/main-bg.jpg">
         <div className="flex flex-col justify-center text-center text-white gap-4">
           <div className="text-2xl font-bold">{t("heroTitle")}</div>
@@ -141,7 +144,10 @@ export default function Index() {
           </div>
         </div>
       </div>
-      <ContactForm t={c} h={h} />
+      <ContactForm
+        t={c}
+        h={h}
+      />
     </Layout>
   );
 }
