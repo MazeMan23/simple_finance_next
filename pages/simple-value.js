@@ -60,10 +60,7 @@ export default function Finance() {
   ];
 
   return (
-    <Layout
-      h={h}
-      f={f}
-    >
+    <Layout h={h} f={f}>
       <ParticlesHero img="/images/simple-value.jpg">
         <div className="flex flex-col justify-center text-center text-white gap-4">
           <div className=" text-2xl md:text-5xl font-bold text-orange-400">
@@ -98,7 +95,9 @@ export default function Finance() {
                   </h1>
                   <ul className=" mx-8 mb-2 mt-3 list-disc text-gray-700 font-semibold text-smml-5 marker:text-orange-500">
                     {item.info.map((x) => (
-                      <li className="mt-1">{x}</li>
+                      <li className="mt-1" key={item.banner}>
+                        {x}
+                      </li>
                     ))}
                   </ul>
                 </div>
@@ -116,7 +115,9 @@ export default function Finance() {
                   </h1>
                   <ul className="mx-8 mb-2 list-disc text-gray-700 font-semibold text-smml-5 mt-3 marker:text-orange-500">
                     {item.info.map((x) => (
-                      <li className="mt-1">{x}</li>
+                      <li className="mt-1" key={item.banner}>
+                        {x}
+                      </li>
                     ))}
                   </ul>
                 </div>
@@ -132,10 +133,7 @@ export default function Finance() {
           )
         )}
       </div>
-      <ContactForm
-        t={c}
-        h={h}
-      />
+      <ContactForm t={c} h={h} />
     </Layout>
   );
 }
