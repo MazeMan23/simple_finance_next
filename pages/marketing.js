@@ -132,7 +132,7 @@ export default function Marketing() {
             <Grid className="flex flex-col gap-12 lg:gap-2 lg:flex-row">
               <Collapse.Group splitted className="ml-8 mr-8">
                 <Collapse
-                  className="scale-100 hover:scale-105"
+                  className="scale-100 "
                   title={
                     <span className="font-semibold">
                       {t("marketing_strategy")}
@@ -169,7 +169,7 @@ export default function Marketing() {
                   </ul>
                 </Collapse>
                 <Collapse
-                  className="scale-100 hover:scale-105"
+                  className="scale-100 "
                   title={
                     <span className="font-semibold">
                       {t("market_research")}
@@ -206,7 +206,7 @@ export default function Marketing() {
                   </ul>
                 </Collapse>
                 <Collapse
-                  className="scale-100 hover:scale-105"
+                  className="scale-100 "
                   title={<span className="font-semibold">{t("pest")}</span>}
                   contentLeft={
                     <Avatar className="!z-0" src="/images/pest.jpg" size="xl" />
@@ -231,7 +231,7 @@ export default function Marketing() {
                 <Collapse.Group splitted className="gap-8 ml-8 mr-8">
                   {services.map((item, index) => (
                     <Collapse
-                      className="scale-100 hover:scale-105"
+                      className="scale-100 "
                       key={index}
                       title={
                         <span className="font-semibold">{item.title}</span>
@@ -251,7 +251,7 @@ export default function Marketing() {
                 <Collapse.Group splitted className="gap-8 ml-8 mr-8">
                   {services2.map((item, index) => (
                     <Collapse
-                      className="scale-100 hover:scale-105"
+                      className="scale-100 "
                       key={index}
                       title={
                         <span className="font-semibold">{item.title}</span>

@@ -289,7 +289,7 @@ export default function Finance() {
           {services_list.map((item, index) => (
             <div
               key={index}
-              className="rounded-xl bg-white w-full md:w-[90%] lg:w-[30%] lg:h-[40rem] shadow-xl hover:cursor-pointer"
+              className="rounded-xl bg-white w-full md:w-[90%] lg:w-[30%] lg:h-[45rem] shadow-xl hover:cursor-pointer"
             >
               <div
                 className="flex flex-col justify-between gap-2"
