@@ -62,7 +62,7 @@ export default function Index() {
     },
     {
       title: h("simple-value"),
-      img: "/images/service_value.png",
+      img: "/images/LOGO4b.png",
       banner: "/images/banner-card.png",
       desc: t("service_val"),
       url: "simple-value",
