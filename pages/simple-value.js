@@ -58,15 +58,16 @@ export default function Finance() {
       info: [t("agr")],
     },
   ];
-
+  //w-full max-w-4xl md:w-[82%] lg:w-[63%]
+  //w-full max-w-4xl md:w-[82%] lg:w-[63%]
   return (
     <Layout
       h={h}
       f={f}
     >
-      <ParticlesHero img="/images/simple-value.jpg">
+      <ParticlesHero img="/images/simple-value-dark-t.jpg">
         <div className="flex flex-col justify-center text-center text-white gap-4">
-          <div className=" text-2xl md:text-5xl font-bold text-orange-400">
+          <div className="text-2xl md:text-5xl font-bold text-orange-400">
             {t("heroTitle")}
           </div>
           <div className="text-lg md:text-2xl font-semibold tracking-widest">
@@ -77,26 +78,28 @@ export default function Finance() {
       <h1 className="flex justify-center text-4xl font-bold	mt-10 my-12">
         {t("our_works")}
       </h1>
-      <div className="flex flex-col items-center gap-12 px-8 mb-10">
+      <div className="flex flex-col items-center justify-center flex-wrap gap-5 px-5 mb-10 lg:flex-row ">
         {services_list.map((item, index) =>
           index % 2 === 0 ? (
             <div
               key={index}
-              className="flex justify-center items-stretch rounded-xl bg-white active:bg-gray-200 w-full max-w-5xl md:w-[82%] lg:w-[63%] shadow-xl "
+              className="flex justify-center rounded-xl bg-white shadow-xl w-[82%] lg:w-[76%] xl:w-[49%] xl:min-h-[330px]"
             >
-              <Image
-                className="rounded-l-lg"
-                src={item.banner}
-                layout="intrinsic"
-                width={437}
-                height={320}
-              />
-              <div className="mx-auto max-w-md my-6">
+              <div className="flex xl:min-w-[398px]">
+                <Image
+                  className="rounded-l-lg"
+                  src={item.banner}
+                  layout="intrinsic"
+                  width={412}
+                  height={320}
+                />
+              </div>
+              <div className="mx-auto max-w-[48%] my-6">
                 <div className="flex flex-col justify-center">
                   <h1 className="font-bold text-2xl text-center">
                     {item.category}
                   </h1>
-                  <ul className=" mx-8 mb-2 mt-3 list-disc text-gray-700 font-semibold text-smml-5 marker:text-orange-500">
+                  <ul className="mx-8 mb-2 mt-3 list-disc text-gray-700 font-semibold text-smml-5 marker:text-orange-500">
                     {item.info.map((x) => (
                       <li className="mt-1">{x}</li>
                     ))}
@@ -107,9 +110,9 @@ export default function Finance() {
           ) : (
             <div
               key={index}
-              className="flex justify-between items-stretch rounded-xl bg-white active:bg-gray-200 max-w-5xl md:w-[82%] lg:w-[63%] shadow-xl "
+              className="flex justify-between rounded-xl bg-white shadow-xl w-[82%] lg:w-[76%] xl:w-[49%] xl:min-h-[330px]"
             >
-              <div className="mx-auto max-w-md my-6">
+              <div className="mx-auto max-w-[48%] my-6">
                 <div className="flex flex-col justify-center">
                   <h1 className="font-bold text-2xl text-center">
                     {item.category}
@@ -121,13 +124,15 @@ export default function Finance() {
                   </ul>
                 </div>
               </div>
-              <Image
-                className="rounded-r-lg"
-                src={item.banner}
-                layout="intrinsic"
-                width={437}
-                height={320}
-              />
+              <div className="flex xl:min-w-[398px]">
+                <Image
+                  className="rounded-r-lg"
+                  src={item.banner}
+                  layout="intrinsic"
+                  width={412}
+                  height={320}
+                />
+              </div>
             </div>
           )
         )}
