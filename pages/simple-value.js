@@ -80,15 +80,17 @@ export default function Finance() {
           index % 2 === 0 ? (
             <div
               key={index}
-              className="flex justify-center rounded-xl bg-white shadow-xl w-[82%] lg:w-[76%] xl:w-[49%] xl:h-[395px]"
+              className="flex justify-center rounded-xl bg-white shadow-xl w-[82%] lg:w-[76%] xl:w-[49%] xl:h-[396px]"
             >
-              <Image
-                className="rounded-l-lg object-cover"
-                src={item.banner}
-                layout="intrinsic"
-                width={412}
-                height={320}
-              />
+              <div className="flex max-w-[378px]">
+                <Image
+                  className="rounded-l-lg object-cover"
+                  src={item.banner}
+                  layout="intrinsic"
+                  width={412}
+                  height={320}
+                />
+              </div>
               <div className="mx-auto max-w-[48%] my-6">
                 <div className="flex flex-col justify-center">
                   <h1 className="font-bold text-2xl text-center">
@@ -107,7 +109,7 @@ export default function Finance() {
           ) : (
             <div
               key={index}
-              className="flex justify-between rounded-xl bg-white shadow-xl w-[82%] lg:w-[76%] xl:w-[49%] xl:h-[395px]"
+              className="flex justify-between rounded-xl bg-white shadow-xl w-[82%] lg:w-[76%] xl:w-[49%] xl:h-[396px]"
             >
               <div className="mx-auto max-w-[48%] my-6">
                 <div className="flex flex-col justify-center">
@@ -123,13 +125,15 @@ export default function Finance() {
                   </ul>
                 </div>
               </div>
-              <Image
-                className="rounded-r-lg object-cover"
-                src={item.banner}
-                layout="intrinsic"
-                width={412}
-                height={320}
-              />
+              <div className="flex max-w-[378px]">
+                <Image
+                  className="rounded-r-lg object-cover"
+                  src={item.banner}
+                  layout="intrinsic"
+                  width={412}
+                  height={320}
+                />
+              </div>
             </div>
           )
         )}
