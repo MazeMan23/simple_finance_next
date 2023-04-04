@@ -58,13 +58,10 @@ export default function Finance() {
       info: [t("agr")],
     },
   ];
-  //w-full max-w-4xl md:w-[82%] lg:w-[63%]
-  //w-full max-w-4xl md:w-[82%] lg:w-[63%]
+
+
   return (
-    <Layout
-      h={h}
-      f={f}
-    >
+    <Layout h={h} f={f}>
       <ParticlesHero img="/images/simple-value-dark-t.jpg">
         <div className="flex flex-col justify-center text-center text-white gap-4">
           <div className="text-2xl md:text-5xl font-bold text-orange-400">
@@ -83,11 +80,11 @@ export default function Finance() {
           index % 2 === 0 ? (
             <div
               key={index}
-              className="flex justify-center rounded-xl bg-white shadow-xl w-[82%] lg:w-[76%] xl:w-[49%] xl:min-h-[330px]"
+              className="flex justify-center rounded-xl bg-white shadow-xl w-[82%] lg:w-[76%] xl:w-[49%] xl:h-[395px]"
             >
-              <div className="flex xl:min-w-[398px]">
+              <div className="flex">
                 <Image
-                  className="rounded-l-lg"
+                  className="rounded-l-lg object-cover"
                   src={item.banner}
                   layout="intrinsic"
                   width={412}
@@ -100,8 +97,10 @@ export default function Finance() {
                     {item.category}
                   </h1>
                   <ul className="mx-8 mb-2 mt-3 list-disc text-gray-700 font-semibold text-smml-5 marker:text-orange-500">
-                    {item.info.map((x) => (
-                      <li className="mt-1">{x}</li>
+                    {item.info.map((x, index) => (
+                      <li className="mt-1" key={index}>
+                        {x}
+                      </li>
                     ))}
                   </ul>
                 </div>
@@ -110,7 +109,7 @@ export default function Finance() {
           ) : (
             <div
               key={index}
-              className="flex justify-between rounded-xl bg-white shadow-xl w-[82%] lg:w-[76%] xl:w-[49%] xl:min-h-[330px]"
+              className="flex justify-between rounded-xl bg-white shadow-xl w-[82%] lg:w-[76%] xl:w-[49%] xl:h-[395px]"
             >
               <div className="mx-auto max-w-[48%] my-6">
                 <div className="flex flex-col justify-center">
@@ -118,15 +117,17 @@ export default function Finance() {
                     {item.category}
                   </h1>
                   <ul className="mx-8 mb-2 list-disc text-gray-700 font-semibold text-smml-5 mt-3 marker:text-orange-500">
-                    {item.info.map((x) => (
-                      <li className="mt-1">{x}</li>
+                    {item.info.map((x, index) => (
+                      <li className="mt-1" key={index}>
+                        {x}
+                      </li>
                     ))}
                   </ul>
                 </div>
               </div>
-              <div className="flex xl:min-w-[398px]">
+              <div className="flex">
                 <Image
-                  className="rounded-r-lg"
+                  className="rounded-r-lg object-cover"
                   src={item.banner}
                   layout="intrinsic"
                   width={412}
@@ -137,10 +138,7 @@ export default function Finance() {
           )
         )}
       </div>
-      <ContactForm
-        t={c}
-        h={h}
-      />
+      <ContactForm t={c} h={h} />
     </Layout>
   );
 }
