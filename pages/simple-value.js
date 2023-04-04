@@ -82,15 +82,13 @@ export default function Finance() {
               key={index}
               className="flex justify-center rounded-xl bg-white shadow-xl w-[82%] lg:w-[76%] xl:w-[49%] xl:h-[395px]"
             >
-              <div className="flex">
-                <Image
-                  className="rounded-l-lg object-cover"
-                  src={item.banner}
-                  layout="intrinsic"
-                  width={412}
-                  height={320}
-                />
-              </div>
+              <Image
+                className="rounded-l-lg object-cover"
+                src={item.banner}
+                layout="intrinsic"
+                width={412}
+                height={320}
+              />
               <div className="mx-auto max-w-[48%] my-6">
                 <div className="flex flex-col justify-center">
                   <h1 className="font-bold text-2xl text-center">
@@ -125,15 +123,13 @@ export default function Finance() {
                   </ul>
                 </div>
               </div>
-              <div className="flex">
-                <Image
-                  className="rounded-r-lg object-cover"
-                  src={item.banner}
-                  layout="intrinsic"
-                  width={412}
-                  height={320}
-                />
-              </div>
+              <Image
+                className="rounded-r-lg object-cover"
+                src={item.banner}
+                layout="intrinsic"
+                width={412}
+                height={320}
+              />
             </div>
           )
         )}
