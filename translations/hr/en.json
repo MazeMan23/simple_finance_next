@@ -1,0 +1,33 @@
+{
+  "hr": {
+    "htmlTitle": "Simple Finance - Simple Value",
+    "heroTitle": "Simple Value",
+    "heroSubtitle": "Independent expert valuations and consultancy services applying best valuation practices.",
+    "property_title": "Real estate valuations",
+    "movable_title": "Valuation of movable property",
+    "intangible_title": "Valuation of intangible assets",
+    "company_title": "Business valuations",
+    "agricultur_title": "Valuation of agricultural land and permanent crops",
+    "our_works": "Our valuation services",
+    "prop1": "Residential properties - apartments, houses, garages, parking lots",
+    "prop2": "Commercial properties - shops, restaurants, hotels",
+    "prop3": "Administrative and office buildings",
+    "prop4": "Public buildings",
+    "mov1": "Machinery and equipment",
+    "mov2": "Means of transport",
+    "mov3": "Production equipment",
+    "mov4": "Special apparatus",
+    "mov5": "Service systems and installations",
+    "mov6": "Electronic devices",
+    "intg1": "Trademarks and trade names",
+    "intg2": "Patents and patent technologies",
+    "intg3": "Software",
+    "intg4": "Rights of use - concessions",
+    "intg5": "Contracts for the transfer of rights",
+    "com1": "An analysis of the company's financial position, and the overall value of the capital and shares of a business or commercial enterprise",
+    "com2": "Determining the value of a commercial enterprise",
+    "com3": "Determination of the value of shares or capital stock",
+    "com4": "Determining the value of receivables",
+    "agr": "The valuation of the quality and quantity of agricultural produce"
+  }
+}
