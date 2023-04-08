@@ -28,7 +28,7 @@ export default function Header({ t, bg }) {
           <Link href="/">
             <div className="cursor-pointer ">
               <Image
-                src={`/images/${router.pathname == '/simple-value' ? logo.value : logo.finance}`}
+                src={`/images/${router.pathname == '/value' ? logo.value : logo.finance}`}
                 width={2061}
                 height={968}
               />
@@ -95,7 +95,7 @@ export default function Header({ t, bg }) {
           <div className="w-[50%]">
             <Link href="/">
               <Image
-                src={`/images/${router.pathname == '/simple-value' ? logo.value : logo.finance}`}
+                src={`/images/${router.pathname == '/value' ? logo.value : logo.finance}`}
                 width={2061}
                 height={968}
               />
