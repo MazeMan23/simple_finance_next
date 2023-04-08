@@ -101,7 +101,7 @@ export default function Finance() {
           </div>
         </div>
       </ParticlesHero>
-      <h1 className="flex justify-center text-4xl font-bold mt-10 my-12">
+      <h1 className="text-center text-4xl font-bold my-10">
         {t("our_works")}
       </h1>
       <Collapse.Group>
@@ -109,7 +109,7 @@ export default function Finance() {
           {services_list.map((item, index) => (
             <div
               key={index}
-              className="rounded-xl bg-white active:bg-gray-200 w-full md:w-[68%] lg:w-[43%]"
+              className="rounded-xl bg-white active:bg-gray-200 w-full md:w-[68%] lg:w-[43%] xl:w-[41%] 2xl:w-[610px]"
             >
               <div className="flex flex-col">
                 <Image
