@@ -13,11 +13,6 @@ export default function Header({ t, bg }) {
   const router = useRouter();
   const [isOpen, setIsOpen] = React.useState(false);
 
-  let logo = {
-    finance: 'logo.png',
-    value: 'logo-value.png'
-  }
-
   return (
     <>
       <nav
@@ -28,7 +23,7 @@ export default function Header({ t, bg }) {
           <Link href="/">
             <div className="cursor-pointer ">
               <Image
-                src={`/images/${router.pathname == '/value' ? logo.value : logo.finance}`}
+                src="/images/logo.png"
                 width={2061}
                 height={968}
               />
@@ -95,7 +90,7 @@ export default function Header({ t, bg }) {
           <div className="w-[50%]">
             <Link href="/">
               <Image
-                src={`/images/${router.pathname == '/value' ? logo.value : logo.finance}`}
+                src="/images/logo.png"
                 width={2061}
                 height={968}
               />
