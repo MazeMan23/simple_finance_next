@@ -96,7 +96,7 @@ export default function Finance() {
           <div className="text-2xl md:text-5xl font-bold text-orange-400">
             {t("heroTitle")}
           </div>
-          <div className="text-lg md:text-2xl font-semibold tracking-widest mx-20">
+          <div className="text-lg md:text-2xl font-semibold tracking-widest mx-auto max-w-4xl">
             {t("heroSubtitle")}
           </div>
         </div>

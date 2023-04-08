@@ -67,31 +67,32 @@ export default function Finance() {
           <div className="text-2xl md:text-5xl font-bold text-orange-400">
             {t("heroTitle")}
           </div>
-          <div className="text-lg md:text-2xl font-semibold tracking-widest">
+          <div className="text-lg md:text-2xl font-semibold max-w-4xl mx-auto">
             {t("heroSubtitle")}
           </div>
         </div>
       </ParticlesHero>
-      <h1 className="flex justify-center text-4xl font-bold	mt-10 my-12">
+      <h1 className="text-center text-3xl font-bold my-10 mx-5 md:text-4xl">
         {t("our_works")}
       </h1>
-      <div className="flex flex-col items-center justify-center flex-wrap gap-5 px-5 mb-10 lg:flex-row ">
+      <div className="flex flex-col items-center justify-center flex-wrap gap-5 px-5 mb-10 lg:flex-row">
         {services_list.map((item, index) =>
           index % 2 === 0 ? (
             <div
               key={index}
-              className="flex justify-center rounded-xl bg-white shadow-xl w-[82%] lg:w-[76%] xl:w-[49%] xl:h-[396px]"
+              className="flex flex-col md:flex-row justify-center rounded-xl bg-white shadow-xl w-[82%] lg:w-[80%] xl:w-[49%] xl:min-h-[428px] 2xl:min-h-[356px]"
             >
-              <div className="flex max-w-[378px]">
+              <div className="flex flex-col md:flex-row">
                 <Image
-                  className="rounded-l-lg object-cover"
+                  className="rounded-t-xl md:rounded-l-xl md:rounded-tr-none"
                   src={item.banner}
+                  objectFit="cover"
                   layout="intrinsic"
                   width={412}
                   height={320}
                 />
               </div>
-              <div className="mx-auto max-w-[48%] my-6">
+              <div className="ml-5 md:mx-auto md:max-w-[48%] my-6">
                 <div className="flex flex-col justify-center">
                   <h1 className="font-bold text-2xl text-center">
                     {item.category}
@@ -109,9 +110,9 @@ export default function Finance() {
           ) : (
             <div
               key={index}
-              className="flex justify-between rounded-xl bg-white shadow-xl w-[82%] lg:w-[76%] xl:w-[49%] xl:h-[396px]"
+              className="flex flex-col md:flex-row justify-between rounded-xl bg-white shadow-xl w-[82%] lg:w-[80%] xl:w-[49%] xl:min-h-[428px] 2xl:min-h-[356px]"
             >
-              <div className="mx-auto max-w-[48%] my-6">
+              <div className="ml-5 md:mx-auto md:max-w-[48%] my-6">
                 <div className="flex flex-col justify-center">
                   <h1 className="font-bold text-2xl text-center">
                     {item.category}
@@ -125,10 +126,11 @@ export default function Finance() {
                   </ul>
                 </div>
               </div>
-              <div className="flex max-w-[378px]">
+              <div className="flex flex-col md:flex-row">
                 <Image
-                  className="rounded-r-lg object-cover"
+                  className="rounded-b-xl md:rounded-l-none md:rounded-r-xl"
                   src={item.banner}
+                  objectFit="cover"
                   layout="intrinsic"
                   width={412}
                   height={320}
