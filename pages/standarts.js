@@ -125,11 +125,11 @@ export default function Finance() {
         </div>
       </ParticlesHero>
       <div className="flex flex-col justify-center text-center">
-        <h1 className="text-4xl lg:text-5xl font-bold mt-16 mb-10">{t("our_works")}</h1>
+        <h1 className="text-xl md:text-4xl font-bold my-5 md:my-10">{t("our_works")}</h1>
         {ourWorks_info.our_services.map((desc, index) => (
-          <p key={index} className="text-2xl font-semibold mx-[10%] mb-6">{desc}</p>
+          <p key={index} className="text-xs font-semibold mx-[10%] mb-6 md:text-xl">{desc}</p>
         ))}
-        <ul className="mb-16 text-2xl font-semibold mx-[12%]">
+        <ul className="mb-16 text-xs font-semibold mx-[12%] lg:text-xl">
           <li>&#10146; {t("our_service_desc3")}</li>
           <li>&#10146; {t("our_service_desc4")}</li>
         </ul>
@@ -145,11 +145,11 @@ export default function Finance() {
                 contentLeft={
                   <Image src={item.banner} className="rounded-t-xl" objectFit="cover" width={180} height={180} />}
               >
-                <p className="mb-3 indent-5 font-bold text-gray-700 text-left">{item.desc}</p>
+                <p className="mb-3 indent-5 text-xs font-bold text-gray-700 text-left md:text-xl">{item.desc}</p>
                 {item["benefit"] ? (
                   <div>
-                    <p className="indent-5 font-bold text-gray-700">{item.benefit}</p>
-                    <ul className="font-semibold text-gray-700 list-disc marker: marker:text-orange-500">
+                    <p className="indent-5 text-xs font-bold text-gray-700 md:text-xl">{item.benefit}</p>
+                    <ul className="font-semibold text-xs text-gray-700 list-disc marker: marker:text-orange-500 md:text-xl">
                       {item.args.map((arg, index) => (
                         <li className="ml-10" key={index}>
                           {arg}
@@ -157,7 +157,7 @@ export default function Finance() {
                       ))}
                     </ul>
                     {item["info"] ?
-                      <p className="mt-3 indent-5 font-bold text-gray-700">{item.info}</p>
+                      <p className="mt-3 indent-5 text-xs font-bold text-gray-700 md:text-xl">{item.info}</p>
                       : <></>
                     }
                   </div>
