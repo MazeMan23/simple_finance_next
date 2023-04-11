@@ -125,11 +125,11 @@ export default function Finance() {
         </div>
       </ParticlesHero>
       <div className="flex flex-col justify-center text-center">
-        <h1 className="text-xl md:text-4xl font-bold my-5 md:my-10">{t("our_works")}</h1>
+        <h1 className="text-xl md:text-4xl xl:text-5xl font-bold my-5 md:my-10">{t("our_works")}</h1>
         {ourWorks_info.our_services.map((desc, index) => (
-          <p key={index} className="text-xs font-semibold mx-[10%] mb-6 md:text-xl">{desc}</p>
+          <p key={index} className="text-xs font-semibold mx-[10%] mb-6 md:text-xl xl:text-2xl">{desc}</p>
         ))}
-        <ul className="mb-16 text-xs font-semibold mx-[12%] lg:text-xl">
+        <ul className="mb-16 text-xs font-semibold mx-[12%] md:text-xl xl:text-2xl">
           <li>&#10146; {t("our_service_desc3")}</li>
           <li>&#10146; {t("our_service_desc4")}</li>
         </ul>
