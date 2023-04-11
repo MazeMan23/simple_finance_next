@@ -7,72 +7,66 @@ import Image from "next/image";
 import { Collapse } from "@nextui-org/react";
 
 export async function getStaticProps({ locale }) {
-  const simpleStandarts = (await import(`../translations/standarts/${locale}.json`)).default;
+  const simpleStandards = (await import(`../translations/standards/${locale}.json`)).default;
   const header = (await import(`../translations/header/${locale}.json`)).default;
   const footer = (await import(`../translations/footer/${locale}.json`)).default;
   const contact = (await import(`../translations/contact/${locale}.json`)).default;
 
-  const final = { ...simpleStandarts, ...header, ...footer, ...contact };
+  const final = { ...simpleStandards, ...header, ...footer, ...contact };
 
   return {
     props: {
       messages: final,
-      title: simpleStandarts.standarts.htmlTitle,
+      title: simpleStandards.standards.htmlTitle,
     },
   };
 }
 
 export default function Finance() {
-  const t = useTranslations("standarts");
+  const t = useTranslations("standards");
   const h = useTranslations("header");
   const f = useTranslations("footer");
   const c = useTranslations("contact");
 
   const ourWorks_info = {
     our_services: [t("our_service_desc"), t("our_service_desc1"), t("our_service_desc2")],
-  }
+  };
 
   const certificates_list = [
     {
       category: t("title_9001"),
       banner: "/images/ISO_9001-2015.jpg",
       desc: t("9001_desc"),
-      benefit: t('9001_benefit'),
-      args: [t('9001_arg'), t('9001_arg1'), t('9001_arg2'),]
+      benefit: t("9001_benefit"),
+      args: [t("9001_arg"), t("9001_arg1"), t("9001_arg2")],
     },
     {
       category: t("title_14001"),
       banner: "/images/ISO-14001.png",
       desc: t("14001_desc"),
-      benefit: t('14001_benefit'),
+      benefit: t("14001_benefit"),
       args: [
-        t('14001_arg'),
-        t('14001_arg1'),
-        t('14001_arg2'),
-        t('14001_arg3'),
-        t('14001_arg4'),
-        t('14001_arg5'),
-        t('14001_arg6'),
-        t('14001_arg7'),
-        t('14001_arg8'),
-        t('14001_arg9'),
-        t('14001_arg10'),
-        t('14001_arg11'),
-      ]
+        t("14001_arg"),
+        t("14001_arg1"),
+        t("14001_arg2"),
+        t("14001_arg3"),
+        t("14001_arg4"),
+        t("14001_arg5"),
+        t("14001_arg6"),
+        t("14001_arg7"),
+        t("14001_arg8"),
+        t("14001_arg9"),
+        t("14001_arg10"),
+        t("14001_arg11"),
+      ],
     },
     {
       category: t("title_45001"),
       banner: "/images/Iso-45001.png",
       desc: t("45001_desc"),
-      benefit: t('45001_benefit'),
-      args: [
-        t('45001_arg'),
-        t('45001_arg1'),
-        t('45001_arg2'),
-        t('45001_arg3'),
-        t('45001_arg4'),
-      ],
-      info: t('45001_addit')
+      benefit: t("45001_benefit"),
+      args: [t("45001_arg"), t("45001_arg1"), t("45001_arg2"), t("45001_arg3"), t("45001_arg4")],
+      info: t("45001_addit"),
     },
     {
       category: t("title_20000"),
@@ -83,7 +77,7 @@ export default function Finance() {
       category: t("title_27001"),
       banner: "/images/ISO-27001.png",
       desc: t("27001_desc"),
-      benefit: t('27001_benefit'),
+      benefit: t("27001_benefit"),
       args: [
         t("27001_arg"),
         t("27001_arg1"),
@@ -91,8 +85,8 @@ export default function Finance() {
         t("27001_arg3"),
         t("27001_arg4"),
         t("27001_arg5"),
-        t("27001_arg6")
-      ]
+        t("27001_arg6"),
+      ],
     },
     {
       category: t("title_39001"),
@@ -100,19 +94,19 @@ export default function Finance() {
       benefit: t("39001_benefit"),
       desc: t("39001_desc"),
       args: [
-        t('39001_arg'),
-        t('39001_arg1'),
-        t('39001_arg2'),
-        t('39001_arg3'),
-        t('39001_arg4'),
-        t('39001_arg5'),
-        t('39001_arg6'),
-        t('39001_arg7'),
-        t('39001_arg8'),
-        t('39001_arg9'),
-        t('39001_arg10'),
-        t('39001_arg11'),
-      ]
+        t("39001_arg"),
+        t("39001_arg1"),
+        t("39001_arg2"),
+        t("39001_arg3"),
+        t("39001_arg4"),
+        t("39001_arg5"),
+        t("39001_arg6"),
+        t("39001_arg7"),
+        t("39001_arg8"),
+        t("39001_arg9"),
+        t("39001_arg10"),
+        t("39001_arg11"),
+      ],
     },
   ];
 
@@ -121,13 +115,17 @@ export default function Finance() {
       <ParticlesHero img="/images/standarts-background.jpg">
         <div className="flex flex-col justify-center text-center text-white gap-4">
           <div className="text-2xl md:text-5xl font-bold text-orange-400 mx-3">{t("heroTitle")}</div>
-          <div className="text-lg md:text-2xl font-semibold tracking-widest mx-5 max-w-4xl md:mx-auto">{t("heroSubtitle")}</div>
+          <div className="text-lg md:text-2xl font-semibold tracking-widest mx-5 max-w-4xl md:mx-auto">
+            {t("heroSubtitle")}
+          </div>
         </div>
       </ParticlesHero>
       <div className="flex flex-col justify-center text-center">
         <h1 className="text-xl md:text-4xl xl:text-5xl font-bold my-5 md:my-10">{t("our_works")}</h1>
         {ourWorks_info.our_services.map((desc, index) => (
-          <p key={index} className="text-xs font-semibold mx-[10%] mb-6 md:text-xl xl:text-2xl">{desc}</p>
+          <p key={index} className="text-xs font-semibold mx-[10%] mb-6 md:text-xl xl:text-2xl">
+            {desc}
+          </p>
         ))}
         <ul className="mb-16 text-xs font-semibold mx-[12%] md:text-xl xl:text-2xl">
           <li>&#10146; {t("our_service_desc3")}</li>
@@ -137,13 +135,17 @@ export default function Finance() {
       <Collapse.Group>
         <div className="flex flex-row justify-center gap-10 px-8 mb-8 flex-wrap">
           {certificates_list.map((item, index) => (
-            <div key={index} className="rounded-xl bg-white active:bg-gray-200 w-full md:w-[68%] lg:w-[43%] xl:w-[41%] 2xl:w-[47%]">
+            <div
+              key={index}
+              className="rounded-xl bg-white active:bg-gray-200 w-full md:w-[68%] lg:w-[43%] xl:w-[41%] 2xl:w-[47%]"
+            >
               <Collapse
                 className="font-semibold text-xs md:text-xl scale-100 hover:scale-105"
                 title={item.category}
                 shadow="true"
                 contentLeft={
-                  <Image src={item.banner} className="rounded-t-xl" objectFit="cover" width={180} height={180} />}
+                  <Image src={item.banner} className="rounded-t-xl" objectFit="cover" width={180} height={180} />
+                }
               >
                 <p className="mb-3 indent-5 text-xs font-bold text-gray-700 text-left md:text-xl">{item.desc}</p>
                 {item["benefit"] ? (
@@ -156,13 +158,15 @@ export default function Finance() {
                         </li>
                       ))}
                     </ul>
-                    {item["info"] ?
+                    {item["info"] ? (
                       <p className="mt-3 indent-5 text-xs font-bold text-gray-700 md:text-xl">{item.info}</p>
-                      : <></>
-                    }
+                    ) : (
+                      <></>
+                    )}
                   </div>
-                ) : <></>
-                }
+                ) : (
+                  <></>
+                )}
               </Collapse>
             </div>
           ))}
