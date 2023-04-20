@@ -61,25 +61,32 @@ export default function Index() {
       url: "marketing",
     },
     {
-      title: h("HR"),
+      title: h("hr"),
       img: "/images/service_finance.jpg", //waiting logo from customer
       banner: "/images/hr-background.jpg",
       desc: t("service_hr"),
       url: "hr",
     },
     {
-      title: h("standards"),
+      title: h("standard"),
       img: "/images/service_finance.jpg", //waiting logo from customer
       banner: "/images/standards-background.jpg",
       desc: t("service_stand"),
       url: "standards",
     },
     {
-      title: h("value"),
+      title: h("valuation"),
       img: "/images/service_value.png",
       banner: "/images/banner-card.png",
       desc: t("service_val"),
       url: "value",
+    },
+    {
+      title: h("translation"),
+      img: "/images/SimpleTRANSLATE.png",
+      banner: "/images/translate.jpg",
+      desc: t("translate"),
+      url: "translate",
     },
   ];
 
