@@ -258,8 +258,12 @@ export default function Header({ t, bg }) {
       >
         <div className="w-[10%]">
           <Link href="/">
-            <div className="cursor-pointer">
-              <Image src="/images/logo.png" width={2061} height={968} />
+            <div className="cursor-pointer ">
+              <Image
+                src="/images/logo.png"
+                width={2061}
+                height={968}
+              />
             </div>
           </Link>
         </div>
@@ -322,10 +326,17 @@ export default function Header({ t, bg }) {
           <div className="w-[25%]" />
           <div className="w-[50%]">
             <Link href="/">
-              <Image src="/images/logo.png" width={2061} height={968} />
+              <Image
+                src="/images/logo.png"
+                width={2061}
+                height={968}
+              />
             </Link>
           </div>
-          <div className="w-[25%]" onClick={() => setIsOpen(!isOpen)}>
+          <div
+            className="w-[25%]"
+            onClick={() => setIsOpen(!isOpen)}
+          >
             <div className="flex flex-col justify-center min-h-full">
               <div className="flex flex-row justify-center min-w-full">
                 <div className="w-[2rem] h-[2rem]">
@@ -342,14 +353,23 @@ export default function Header({ t, bg }) {
         {isOpen ? (
           <div className="w-full flex flex-col justify-center gap-8">
             {list.map((name) => (
-              <div className="w-full" key={name}>
-                <SimpleLink href={`/${name}`} className="text-lg">
+              <div
+                className="w-full"
+                key={name}
+              >
+                <SimpleLink
+                  href={`/${name}`}
+                  className="text-lg"
+                >
                   {t(name)}
                 </SimpleLink>
               </div>
             ))}
             <div className="w-full">
-              <SimpleLink href="/contact" className="text-lg">
+              <SimpleLink
+                href="/contact"
+                className="text-lg"
+              >
                 {t("contact")}
               </SimpleLink>
             </div>

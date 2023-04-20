@@ -60,6 +60,27 @@ export default function Index() {
       desc: t("service_mar"),
       url: "marketing",
     },
+    {
+      title: h("HR"),
+      img: "/images/service_finance.jpg", //waiting logo from customer
+      banner: "/images/hr-background.jpg",
+      desc: t("service_hr"),
+      url: "hr",
+    },
+    {
+      title: h("standards"),
+      img: "/images/service_finance.jpg", //waiting logo from customer
+      banner: "/images/standards-background.jpg",
+      desc: t("service_stand"),
+      url: "standards",
+    },
+    {
+      title: h("value"),
+      img: "/images/service_value.png",
+      banner: "/images/banner-card.png",
+      desc: t("service_val"),
+      url: "value",
+    },
   ];
 
   return (
@@ -73,7 +94,7 @@ export default function Index() {
         </div>
       </ParticlesHero>
       <div style={{ backgroundColor: "#F8FCFD" }}>
-        <div className="flex mr-3 ml-3 mt-3 flex-row md:mr-20 md:ml-20 md:mt-0">
+        <div className="flex mr-3 ml-3 flex-row md:mr-20 md:ml-20">
           <div className="flex flex-col">
             <h1 className="mt-5 text-3xl font-semibold">
               {t("whoAreWeTitle")}
@@ -90,7 +111,6 @@ export default function Index() {
               <li className="mb-2 mt-2 ml-8">{t("ourMission")}</li>
             </ul>
           </div>
-          <div className="hidden self-center lg:flex justify-center"></div>
         </div>
       </div>
       <div className="bg-slate-100">
@@ -102,7 +122,7 @@ export default function Index() {
             {services_list.map((item, index) => (
               <div
                 key={index}
-                className="rounded-xl bg-white active:bg-gray-200  w-full md:w-[48%] lg:w-[23%] shadow-xl"
+                className="rounded-xl bg-white active:bg-gray-200  w-full md:w-[48%] lg:w-[23%] shadow-xl hover:cursor-pointer hover:shadow-2xl scale-100 duration-150 hover:scale-105"
               >
                 <Link href={`/${item.url}`}>
                   <div className="flex flex-col justify-between gap-2">
@@ -110,6 +130,7 @@ export default function Index() {
                       src={item.banner}
                       className="rounded-t-xl"
                       layout="intrinsic"
+                      objectFit="cover"
                       width={1920}
                       height={697}
                     />
