@@ -2,16 +2,28 @@ import React from "react";
 import { useTranslations } from "use-intl";
 import Layout from "../components/Layout";
 import ParticlesHero from "../components/ParticlesHero";
-import { Textarea, Dropdown, Button, Text, useModal, Modal, Loading } from "@nextui-org/react";
+import {
+  Textarea,
+  Dropdown,
+  Button,
+  Text,
+  useModal,
+  Modal,
+  Loading,
+} from "@nextui-org/react";
 import Image from "next/image";
 import { Form } from "react-bootstrap";
 import { useRouter } from "next/router";
 
 export async function getStaticProps({ locale }) {
-  const header = (await import(`../translations/header/${locale}.json`)).default;
-  const footer = (await import(`../translations/footer/${locale}.json`)).default;
-  const contact = (await import(`../translations/contact/${locale}.json`)).default;
-  const translate = (await import(`../translations/translate/${locale}.json`)).default;
+  const header = (await import(`../translations/header/${locale}.json`))
+    .default;
+  const footer = (await import(`../translations/footer/${locale}.json`))
+    .default;
+  const contact = (await import(`../translations/contact/${locale}.json`))
+    .default;
+  const translate = (await import(`../translations/translate/${locale}.json`))
+    .default;
 
   const final = { ...translate, ...header, ...footer, ...contact };
 
@@ -62,19 +74,36 @@ export default function Translate() {
     { key: "UK", value: t("ukranian") },
   ];
 
-  const [selectedInput, setSelectedInput] = React.useState(supportedLanguages[0]);
-  const [selectedOutput, setSelectedOutput] = React.useState(supportedLanguages[5]);
+  const [selectedInput, setSelectedInput] = React.useState(
+    supportedLanguages[0]
+  );
+  const [selectedOutput, setSelectedOutput] = React.useState(
+    supportedLanguages[5]
+  );
   React.useEffect(() => {
-    console.log(supportedLanguages.find((element) => selectedInput.key === element.key));
-    setSelectedInput({ key: selectedInput.key, value: supportedLanguages.find((element) => selectedInput.key === element.key).value });
-    setSelectedOutput({ key: selectedOutput.key, value: supportedLanguages.find((element) => selectedOutput.key === element.key).value });
+    console.log(
+      supportedLanguages.find((element) => selectedInput.key === element.key)
+    );
+    setSelectedInput({
+      key: selectedInput.key,
+      value: supportedLanguages.find(
+        (element) => selectedInput.key === element.key
+      ).value,
+    });
+    setSelectedOutput({
+      key: selectedOutput.key,
+      value: supportedLanguages.find(
+        (element) => selectedOutput.key === element.key
+      ).value,
+    });
   }, [t]);
   const [input, setInput] = React.useState("");
   const [output, setOutput] = React.useState(null);
   const [loading, setLoading] = React.useState(false);
   const [errorText, setErrorText] = React.useState("");
 
-  const [translationType, setTranslationType] = React.useState("textTranslation");
+  const [translationType, setTranslationType] =
+    React.useState("textTranslation");
 
   const { setVisible, bindings } = useModal();
 
@@ -88,7 +117,13 @@ export default function Translate() {
 
   return (
     <Layout h={h} f={f}>
-      <Modal blur width="50%" aria-labelledby="modal-title" aria-describedby="modal-description" {...bindings}>
+      <Modal
+        blur
+        width="50%"
+        aria-labelledby="modal-title"
+        aria-describedby="modal-description"
+        {...bindings}
+      >
         <Modal.Header>
           <div className="text-xl font-bold">{t("errorTitle")}</div>
         </Modal.Header>
@@ -103,17 +138,30 @@ export default function Translate() {
       </Modal>
       <ParticlesHero img="/images/translate.jpg">
         <div className="flex flex-col justify-center text-center items-center text-white gap-4">
-          <div className=" text-2xl md:text-5xl max-w-4xl font-bold">{t("heroTitle")}</div>
+          <div className=" text-2xl md:text-5xl max-w-4xl font-bold">
+            {t("heroTitle")}
+          </div>
           <div className="text-xl font-bold max-w-3xl">{t("heroSubtitle")}</div>
         </div>
       </ParticlesHero>
       <div className="lg:h-[100%]">
         <div className="flex flex-row mt-16 ml-4 md:ml-16">
-          <Button shadow color="success" auto className="bg-green-500" onPress={() => setTranslationType("textTranslation")}>
-            <Image src="/images/icons/text.png" width={30} height={30} className="!z-[30]" />
+          <Button
+            shadow
+            color="success"
+            auto
+            className="bg-green-500"
+            onPress={() => setTranslationType("textTranslation")}
+          >
+            <Image
+              src="/images/icons/text.png"
+              width={30}
+              height={30}
+              className="!z-[30]"
+            />
             {t("translateText")}
           </Button>
-          <Button
+          {/* <Button
             shadow
             color="warning"
             auto
@@ -124,7 +172,7 @@ export default function Translate() {
           >
             <Image src="/images/icons/file.png" width={30} height={30} />
             {t("translateFile")}
-          </Button>
+          </Button> */}
         </div>
         {translationType == "textTranslation" ? (
           <form
@@ -200,11 +248,17 @@ export default function Translate() {
                         disallowEmptySelection
                         selectionMode="single"
                         onAction={(selected) => {
-                          setSelectedInput(supportedLanguages.find((language) => language.key == selected));
+                          setSelectedInput(
+                            supportedLanguages.find(
+                              (language) => language.key == selected
+                            )
+                          );
                         }}
                       >
                         {supportedLanguages.map((language) => (
-                          <Dropdown.Item key={language.key}>{language.value}</Dropdown.Item>
+                          <Dropdown.Item key={language.key}>
+                            {language.value}
+                          </Dropdown.Item>
                         ))}
                       </Dropdown.Menu>
                     </Dropdown>
@@ -224,12 +278,18 @@ export default function Translate() {
                         setInput(v.target.value);
                       }}
                     />
-                    <div className="font-bold text-gray-400 text-sm ml-2 mt-2">{input.length}/5000</div>
+                    <div className="font-bold text-gray-400 text-sm ml-2 mt-2">
+                      {input.length}/5000
+                    </div>
                   </div>
                 </div>
                 <div className="flex flex-1 ml-1 flex-col">
                   <div className="flex self-start">
-                    <Dropdown className="flex self-start" id="outputLang" name="outputLang">
+                    <Dropdown
+                      className="flex self-start"
+                      id="outputLang"
+                      name="outputLang"
+                    >
                       <Dropdown.Button flat color="primary">
                         {selectedOutput.value}
                       </Dropdown.Button>
@@ -239,27 +299,57 @@ export default function Translate() {
                         disallowEmptySelection
                         selectionMode="single"
                         onAction={(selected) => {
-                          setSelectedOutput(supportedLanguages.find((language) => language.key == selected));
+                          setSelectedOutput(
+                            supportedLanguages.find(
+                              (language) => language.key == selected
+                            )
+                          );
                         }}
                       >
                         {supportedLanguages.map((language) => (
-                          <Dropdown.Item key={language.key}>{language.value}</Dropdown.Item>
+                          <Dropdown.Item key={language.key}>
+                            {language.value}
+                          </Dropdown.Item>
                         ))}{" "}
                       </Dropdown.Menu>
                     </Dropdown>
                   </div>
                   <div className="mt-4">
-                    <Textarea id="output" name="output" className="flex flex-1" shadow placeholder={t("placeholderOutput")} bordered width="100%" rows={18} readOnly status="default" value={output} />
+                    <Textarea
+                      id="output"
+                      name="output"
+                      className="flex flex-1"
+                      shadow
+                      placeholder={t("placeholderOutput")}
+                      bordered
+                      width="100%"
+                      rows={18}
+                      readOnly
+                      status="default"
+                      value={output}
+                    />
                   </div>
                 </div>
               </div>
               <div className="self-center mt-4  mb-16">
                 {!loading ? (
-                  <Button shadow color="primary" auto className="bg-blue-800" type="submit">
+                  <Button
+                    shadow
+                    color="primary"
+                    auto
+                    className="bg-blue-800"
+                    type="submit"
+                  >
                     {t("submitButton")}
                   </Button>
                 ) : (
-                  <Button disabled auto bordered color="success" css={{ px: "$13" }}>
+                  <Button
+                    disabled
+                    auto
+                    bordered
+                    color="success"
+                    css={{ px: "$13" }}
+                  >
                     <Loading type="points" color="currentColor" size="sm" />
                   </Button>
                 )}
@@ -332,17 +422,27 @@ export default function Translate() {
                           disallowEmptySelection
                           selectionMode="single"
                           onAction={(selected) => {
-                            setSelectedInput(supportedLanguages.find((language) => language.key == selected));
+                            setSelectedInput(
+                              supportedLanguages.find(
+                                (language) => language.key == selected
+                              )
+                            );
                           }}
                         >
                           {supportedLanguages.map((language) => (
-                            <Dropdown.Item key={language.key}>{language.value}</Dropdown.Item>
+                            <Dropdown.Item key={language.key}>
+                              {language.value}
+                            </Dropdown.Item>
                           ))}
                         </Dropdown.Menu>
                       </Dropdown>
                     </div>
                     <div className="flex self-end">
-                      <Dropdown className="flex self-start" id="outputLang" name="outputLang">
+                      <Dropdown
+                        className="flex self-start"
+                        id="outputLang"
+                        name="outputLang"
+                      >
                         <Dropdown.Button flat color="primary">
                           {selectedOutput.value}
                         </Dropdown.Button>
@@ -352,25 +452,43 @@ export default function Translate() {
                           disallowEmptySelection
                           selectionMode="single"
                           onAction={(selected) => {
-                            setSelectedOutput(supportedLanguages.find((language) => language.key == selected));
+                            setSelectedOutput(
+                              supportedLanguages.find(
+                                (language) => language.key == selected
+                              )
+                            );
                           }}
                         >
                           {supportedLanguages.map((language) => (
-                            <Dropdown.Item key={language.key}>{language.value}</Dropdown.Item>
+                            <Dropdown.Item key={language.key}>
+                              {language.value}
+                            </Dropdown.Item>
                           ))}{" "}
                         </Dropdown.Menu>
                       </Dropdown>
                     </div>
                   </div>
-                  <div className="mt-4 border-2 rounded-lg md:w-2/3 lg:w-1/3 self-center h-full flex justify-center" style={{ borderColor: "#d9d9d9" }}>
+                  <div
+                    className="mt-4 border-2 rounded-lg md:w-2/3 lg:w-1/3 self-center h-full flex justify-center"
+                    style={{ borderColor: "#d9d9d9" }}
+                  >
                     <div className="flex flex-col justify-center">
                       <div className="flex flex-row self-center">
-                        <img className=" self-center" width={320} height={180} src="/images/icons/files.png" />
+                        <img
+                          className=" self-center"
+                          width={320}
+                          height={180}
+                          src="/images/icons/files.png"
+                        />
                       </div>
                       <Text className="text-blue-800 text-center" weight="bold">
                         {t("uploadText")}
                       </Text>
-                      <Form.Group className="self-center mt-8 mb-8" controlId="file" onChange={(e) => setFile(e.target.files[0])}>
+                      <Form.Group
+                        className="self-center mt-8 mb-8"
+                        controlId="file"
+                        onChange={(e) => setFile(e.target.files[0])}
+                      >
                         <Form.Control type="file" accept=".pdf, .docx, .pptx" />
                       </Form.Group>
                     </div>
@@ -382,14 +500,26 @@ export default function Translate() {
                   !loading ? (
                     <div className="flex flex-col self-center justify-center items-center">
                       <div className="mb-2">{t("disclaimer")}</div>
-                      <Button shadow color="primary" auto className="bg-blue-800" type="submit">
+                      <Button
+                        shadow
+                        color="primary"
+                        auto
+                        className="bg-blue-800"
+                        type="submit"
+                      >
                         {t("submitButton")}
                       </Button>
                     </div>
                   ) : (
                     <div className="flex flex-col self-center justify-center items-center">
                       <div className="mb-2">{t("disclaimer")}</div>
-                      <Button disabled auto bordered color="success" css={{ px: "$13" }}>
+                      <Button
+                        disabled
+                        auto
+                        bordered
+                        color="success"
+                        css={{ px: "$13" }}
+                      >
                         <Loading type="points" color="currentColor" size="sm" />
                       </Button>
                     </div>

@@ -1,5 +1,7 @@
 {
     "header": {
+        "home": "Home",
+        "services": "Services",
         "finance": "Finance and accounting",
         "hr": "HR and Training",
         "legal": "Legal",
@@ -8,7 +10,7 @@
         "valuation": "Licensed Valuations",
         "risk": "Insurance and Risk Assessment",
         "management": "Project Management and Funding",
-        "standard": "Implementation of Management System Standards",
+        "standard": "ISO Standards",
         "translation": "Automated Translation",
         "login": "Login For Clients",
         "contact": "Contact"
