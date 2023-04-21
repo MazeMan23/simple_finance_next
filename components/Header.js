@@ -172,9 +172,9 @@ export default function Header({ t }) {
                 </Link>
                 <Link href="/hr">
                   <div className=" hover:cursor-pointer flex flex-row items-center">
-                    <div className="w-16 h-16">
+                    <div className="w-14 h-14">
                       <Image
-                        src="/images/service_finance_cut.jpg"
+                        src="/images/hr_cut.png"
                         width={500}
                         height={500}
                       />
@@ -212,7 +212,7 @@ export default function Header({ t }) {
                   <div className=" hover:cursor-pointer flex flex-row items-center">
                     <div className="w-16 h-16">
                       <Image
-                        src="/images/service_finance_cut.jpg"
+                        src="/images/standards_cut.png"
                         width={500}
                         height={500}
                       />
@@ -420,7 +420,7 @@ export default function Header({ t }) {
                     <div className=" hover:cursor-pointer flex flex-row items-center">
                       <div className="w-16 h-16">
                         <Image
-                          src="/images/service_market_cut.png"
+                          src="/images/hr_cut.png"
                           width={500}
                           height={500}
                         />
@@ -466,7 +466,7 @@ export default function Header({ t }) {
                     <div className=" hover:cursor-pointer flex flex-row items-center">
                       <div className="w-16 h-16">
                         <Image
-                          src="/images/logo-value_cut.png"
+                          src="/images/standards_cut.png"
                           width={500}
                           height={500}
                         />

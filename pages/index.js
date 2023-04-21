@@ -62,14 +62,14 @@ export default function Index() {
     },
     {
       title: h("hr"),
-      img: "/images/service_finance.jpg", //waiting logo from customer
+      img: "/images/hr.png",
       banner: "/images/hr-background.jpg",
       desc: t("service_hr"),
       url: "hr",
     },
     {
       title: h("standard"),
-      img: "/images/service_finance.jpg", //waiting logo from customer
+      img: "/images/standarts.png",
       banner: "/images/standards-background.jpg",
       desc: t("service_stand"),
       url: "standards",
