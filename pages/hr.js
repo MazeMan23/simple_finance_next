@@ -54,7 +54,7 @@ export default function Finance() {
     },
     {
       category: t("staffAdministration_title"),
-      banner: "/images/staff-administration.jpg",
+      banner: "/images/personnel-administration.jpg",
       desc: t("staffAdministration_desc"),
       info: [t("staffAdministration_info")],
       args: [t("administration_arg1"), t("administration_arg2"), t("administration_arg3"), t("administration_arg4"), t("administration_arg5"), t("administration_arg6"), t("administration_arg7"), t("administration_arg8"), t("administration_arg9"), t("administration_arg10")],
@@ -71,8 +71,7 @@ export default function Finance() {
     <Layout h={h} f={f}>
       <ParticlesHero img="/images/hr-background.jpg">
         <div className="flex flex-col justify-center text-center text-white gap-4">
-          <div className="text-2xl md:text-5xl font-bold text-orange-400">{t("heroTitle")}</div>
-          <div className="text-lg md:text-2xl font-semibold tracking-widest mx-auto max-w-4xl">{t("heroSubtitle")}</div>
+          <div className="text-lg md:text-2xl font-semibold tracking-normal mx-auto max-w-4xl">{t("heroSubtitle")}</div>
         </div>
       </ParticlesHero>
       <h1 className="text-center text-3xl lg:text-4xl font-bold my-10">{t("our_works")}</h1>
@@ -97,7 +96,7 @@ export default function Finance() {
                     </ul>
                     <p className="indent-5 font-bold text-gray-700">{item.info[1]}</p>
                     <ul className="font-semibold text-gray-700 list-disc marker: marker:text-orange-500">
-                      {item.args.map((arg, index) => (
+                      {item.args1.map((arg, index) => (
                         <li className="ml-12" key={index}>
                           {arg}
                         </li>

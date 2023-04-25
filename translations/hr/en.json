@@ -1,8 +1,7 @@
 {
   "hr": {
     "htmlTitle": "Simple Finance - Simple HR",
-    "heroTitle": "Simple HR",
-    "heroSubtitle": "At Simple HR, we provide a complete solution for all our client's HR requirements - from recruitment, outsourced staffing, market research and consulting, personnel administration, and company structuring.",
+    "heroSubtitle": "We provide a complete solution for all our client's HR requirements - recruitment, outsourced staffing, market research and consulting, personnel administration, and company structuring.",
     "staffSearch_title": "Staffing and Executive Search",
     "staffLeasing_title": "Staff leasing",
     "staffEvaluation_title": "Evaluation and development of human resources",
@@ -17,7 +16,7 @@
     "leasing_info1_arg2": "Preparation, registration, conclusion, and termination of employment contracts",
     "leasing_info1_arg3": "Calculation, preparation, and payment of salaries",
     "leasing_info1_arg4": "Administration of all processes related to employee performance",
-    "leasing_info1_arg5": "Reduces administrative costs for companies",
+    "leasing_info1_arg5": "Reduces administrative costs",
     "leasing_info1_arg6": "Allows quality personnel selection, organized management, and administration",
     "leasing_info1_arg7": "Reduces the amount of administrative work for companies",
     "leasing_info1_arg8": "Greater control over employee costs",
@@ -35,7 +34,7 @@
     "administration_arg8": "Processing of documents for temporary disability, pregnancy and childbirth and their submission to the National Social Insurance Institution",
     "administration_arg9": "Representation of the company before the Labour Inspectorate, NRA, etc. Institutions regarding Social Security, Social Insurance, and Social Insurance",
     "administration_arg10": "Preparation of internal company documents",
-    "compStructuring_desc": "Through this service, we help you improve your company's management structures by:",
+    "compStructuring_desc": "We help improve your company's management structure by:",
     "compStructuring_arg1": "Analysis and study of the management-hierarchical structure of the company",
     "compStructuring_arg2": "Building a management-hierarchical structure of the company",
     "compStructuring_arg3": "Preparation of job descriptions",

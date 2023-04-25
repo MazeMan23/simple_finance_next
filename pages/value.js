@@ -59,12 +59,6 @@ export default function Finance() {
     <Layout h={h} f={f}>
       <ParticlesHero img="/images/simple-value-dark-t.jpg">
         <div className="flex flex-col justify-center items-center text-center text-white">
-          <div>
-            <Image src={"/images/logo-value.png"} width={160} height={80} objectFit="cover"></Image>
-          </div>
-          <div className="text-2xl md:text-5xl font-bold mb-5 text-orange-400">
-            {t("heroTitle")}
-          </div>
           <div className="text-lg md:text-2xl font-semibold max-w-4xl mx-5">{t("heroSubtitle")}</div>
         </div>
       </ParticlesHero>
