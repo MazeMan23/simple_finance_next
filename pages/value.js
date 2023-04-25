@@ -50,7 +50,7 @@ export default function Finance() {
     },
     {
       category: t("agricultur_title"),
-      banner: "/images/value-land.jpg",
+      banner: "/images/plants.jpg",
       info: [t("agr")],
     },
   ];
@@ -70,13 +70,13 @@ export default function Finance() {
               <div className="flex flex-col md:flex-row">
                 <Image className="rounded-t-xl md:rounded-l-xl md:rounded-tr-none" src={item.banner} objectFit="cover" layout="intrinsic" width={412} height={320} />
               </div>
-              <div className="ml-5 md:mx-auto md:max-w-[48%] my-6">
+              <div className="md:mx-auto md:max-w-[48%] my-auto">
+                <h1 className="font-bold text-2xl text-center">{item.category}</h1>
                 <div className="flex flex-col justify-center">
-                  <h1 className="font-bold text-2xl text-center">{item.category}</h1>
-                  <ul className="mx-8 mb-2 mt-3 list-disc text-gray-700 font-semibold text-smml-5 marker:text-orange-500">
+                  <ul className="mx-8 mb-2 mt-3 text-gray-700 font-semibold text-smml-5 list-none">
                     {item.info.map((x, index) => (
                       <li className="mt-1" key={index}>
-                        {x}
+                        &#x2705; {x}
                       </li>
                     ))}
                   </ul>
@@ -85,13 +85,13 @@ export default function Finance() {
             </div>
           ) : (
             <div key={index} className="flex flex-col-reverse md:flex-row md:justify-between rounded-xl bg-white shadow-xl w-[82%] lg:w-[80%] xl:w-[49%] xl:min-h-[428px] 2xl:min-h-[356px]">
-              <div className="ml-5 md:mx-auto md:max-w-[48%] my-6">
+              <div className="ml-5 md:mx-auto md:max-w-[48%] my-auto">
                 <div className="flex flex-col justify-center">
                   <h1 className="font-bold text-2xl text-center">{item.category}</h1>
-                  <ul className="mx-8 mb-2 list-disc text-gray-700 font-semibold text-smml-5 mt-3 marker:text-orange-500">
+                  <ul className="mx-8 mb-2 text-gray-700 font-semibold text-smml-5 mt-3 list-none">
                     {item.info.map((x, index) => (
                       <li className="mt-1" key={index}>
-                        {x}
+                        &#x2705; {x}
                       </li>
                     ))}
                   </ul>
