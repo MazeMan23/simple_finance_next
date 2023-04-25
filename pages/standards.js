@@ -29,7 +29,7 @@ export default function Finance() {
   const c = useTranslations("contact");
 
   const ourWorks_info = {
-    our_services: [t("our_service_desc"), t("our_service_desc1"), t("our_service_desc2")],
+    our_services: [t("our_service_desc"), t("our_service_desc1")],
   };
 
   const certificates_list = [
@@ -66,7 +66,6 @@ export default function Finance() {
       desc: t("45001_desc"),
       benefit: t("45001_benefit"),
       args: [t("45001_arg"), t("45001_arg1"), t("45001_arg2"), t("45001_arg3"), t("45001_arg4")],
-      info: t("45001_addit"),
     },
     {
       category: t("title_20000"),
@@ -115,22 +114,17 @@ export default function Finance() {
       <ParticlesHero img="/images/standards-background.jpg">
         <div className="flex flex-col justify-center text-center text-white gap-4">
           <div className="text-2xl md:text-5xl font-bold text-orange-400 mx-3">{t("heroTitle")}</div>
-          <div className="text-lg md:text-2xl font-semibold tracking-widest mx-5 max-w-4xl md:mx-auto">
+          <div className="text-lg md:text-2xl font-semibold tracking-normal mx-5 max-w-4xl md:mx-auto">
             {t("heroSubtitle")}
           </div>
         </div>
       </ParticlesHero>
-      <div className="flex flex-col justify-center text-center">
-        <h1 className="text-xl md:text-4xl xl:text-5xl font-bold my-5 md:my-10">{t("our_works")}</h1>
+      <div className="flex flex-col justify-center text-center my-5 md:my-10">
         {ourWorks_info.our_services.map((desc, index) => (
           <p key={index} className="text-xs font-semibold mx-[10%] mb-6 md:text-xl xl:text-2xl">
             {desc}
           </p>
         ))}
-        <ul className="mb-16 text-xs font-semibold mx-[12%] md:text-xl xl:text-2xl">
-          <li>&#10146; {t("our_service_desc3")}</li>
-          <li>&#10146; {t("our_service_desc4")}</li>
-        </ul>
       </div>
       <Collapse.Group>
         <div className="flex flex-row justify-center gap-10 px-8 mb-8 flex-wrap">
@@ -147,7 +141,7 @@ export default function Finance() {
                   <Image src={item.banner} className="rounded-t-xl" objectFit="cover" width={180} height={180} />
                 }
               >
-                <p className="mb-3 indent-5 text-xs font-bold text-gray-700 text-left md:text-xl">{item.desc}</p>
+                <p className="mb-3 indent-5 text-xs font-bold text-gray-700 text-justify break-all md:text-xl">{item.desc}</p>
                 {item["benefit"] ? (
                   <div>
                     <p className="indent-5 text-xs font-bold text-gray-700 md:text-xl">{item.benefit}</p>
@@ -158,11 +152,6 @@ export default function Finance() {
                         </li>
                       ))}
                     </ul>
-                    {item["info"] ? (
-                      <p className="mt-3 indent-5 text-xs font-bold text-gray-700 md:text-xl">{item.info}</p>
-                    ) : (
-                      <></>
-                    )}
                   </div>
                 ) : (
                   <></>
