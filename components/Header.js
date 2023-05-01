@@ -189,21 +189,21 @@ export default function Header({ t }) {
                 </Link>
               </div>
               <div className="flex flex-row w-full justify-center gap-16">
-                <Link href="/value">
+                <Link href="/project">
                   <div className=" hover:cursor-pointer flex flex-row items-center">
                     <div className="w-16 h-16">
                       <Image
-                        src="/images/logo-value_cut.png"
+                        src="/images/service_project.png"
                         width={500}
                         height={500}
                       />
                     </div>
                     <div className="flex flex-col">
                       <p className="text-[#e98f2f] text-xl font-bold">
-                        Simple Value
+                        Simple Project
                       </p>
                       <p className="text-gray-400 font-semibold">
-                        {t("valuation")}
+                        {t("project")}
                       </p>
                     </div>
                   </div>
@@ -436,23 +436,23 @@ export default function Header({ t }) {
                 </Dropdown.Item>
                 <Dropdown.Item
                   showFullDescription
-                  className="active:bg-[#021f41] focus:bg-[#021f41] hover:bg-[#021f41]"
+                  className="active:bg-[#021f41] focus:bg-[#021f41] hover:bg-[#021f41] mt-2 mb-2"
                 >
-                  <Link href="/value">
+                  <Link href="/project">
                     <div className=" hover:cursor-pointer flex flex-row items-center">
                       <div className="w-16 h-16">
                         <Image
-                          src="/images/logo-value_cut.png"
+                          src="/images/service_project.png"
                           width={500}
                           height={500}
                         />
                       </div>
                       <div className="flex flex-col">
                         <p className="text-[#e98f2f] text-xl font-bold">
-                          Simple Value
+                          Simple Project
                         </p>
                         <p className="text-gray-400 font-semibold">
-                          {t("valuation")}
+                          {t("project")}
                         </p>
                       </div>
                     </div>

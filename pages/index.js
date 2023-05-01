@@ -88,6 +88,13 @@ export default function Index() {
       desc: t("translate"),
       url: "translate",
     },
+    {
+      title: h("project"),
+      img: "/images/service_project.png",
+      banner: "/images/project-background.png",
+      desc: t("project"),
+      url: "project",
+    },
   ];
 
   return (
@@ -145,7 +152,7 @@ export default function Index() {
                       <div className="w-[15%] flex flex-col justify-center">
                         <Image
                           src={item.img}
-                          className="rounded-xl"
+                          className="rounded-lg bg-[#11213E]"
                           layout="intrinsic"
                           width={1000}
                           height={999}
