@@ -62,7 +62,7 @@ export default function Finance() {
           <div className="lg:my-8 lg:ml-8 flex">
             <Image src="/images/pexels-andrea-piacquadio-3760529.jpg" objectFit="cover" width={600} height={400} className="rounded-t-lg lg:rounded-lg" />
           </div>
-          <div className="self-center mx-6 mb-6 lg:mr-8 lg:ml-6 lg:w-[60%]">
+          <div className="self-center mx-6 mb-6 lg:mr-8 lg:ml-6 lg:w-[50%]">
             <h1 className="text-center text-2xl font-bold mb-4">{t("projectManagementTitle")}</h1>
             <div className="text-justify indent-4 font-semibold">{t("projectManagementText")}</div>
             <div className="text-justify indent-4 font-semibold">{t("projectManagementText2")}</div>
