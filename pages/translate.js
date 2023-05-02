@@ -10,6 +10,7 @@ import {
   useModal,
   Modal,
   Loading,
+  Collapse,
 } from "@nextui-org/react";
 import Image from "next/image";
 import { Form } from "react-bootstrap";
@@ -115,6 +116,33 @@ export default function Translate() {
 
   const [file, setFile] = React.useState(null);
 
+  const services_list = [
+    {
+      title: t("translationTitle"),
+      text: t("translationText")
+    },
+    {
+      title: t("interpretationTitle"),
+      text: t("interpretationText")
+    },
+    {
+      title: t("editingTitle"),
+      text: t("editingText")
+    },
+    {
+      title: t("proofreadingTitile"),
+      text: t("proofreadingText")
+    },
+    {
+      title: t("machineTranslationTitle"),
+      text: t("machineTranslationText")
+    },
+    {
+      title: t("icoTitle"),
+      text: t("icoText")
+    },
+  ];
+
   return (
     <Layout h={h} f={f}>
       <Modal
@@ -161,6 +189,8 @@ export default function Translate() {
             />
             {t("translateText")}
           </Button>
+
+          {/* modal + link to contact page */}
           {/* <Button
             shadow
             color="warning"
@@ -173,6 +203,7 @@ export default function Translate() {
             <Image src="/images/icons/file.png" width={30} height={30} />
             {t("translateFile")}
           </Button> */}
+
         </div>
         {translationType == "textTranslation" ? (
           <form
@@ -532,6 +563,19 @@ export default function Translate() {
           </form>
         )}
       </div>
-    </Layout>
+
+      <Collapse.Group splitted>
+        <h1 className="text-center text-3xl font-bold">{t("our_services")}</h1>
+        <div className="grid grid-cols-3 gap-x-6 pt-6 pb-12 px-5">
+          {services_list.map((item, index) => (
+            <div key={index} className="scale-100 hover:scale-105 duration-200">
+              <Collapse title={item.title} shadow="true" className="text-lg font-semibold">
+                <div className="text-justify indent-3">{item.text}</div>
+              </Collapse>
+            </div>
+          ))}
+        </div>
+      </Collapse.Group>
+    </Layout >
   );
 }
