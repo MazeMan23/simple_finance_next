@@ -194,6 +194,14 @@ export default function Translate() {
       </Modal>
       <ParticlesHero img="/images/translate.jpg">
         <div className="flex flex-col justify-center text-center items-center text-white gap-4">
+          <div className=" h-48 w-96 self-center">
+            <Image
+              src="/images/simple-translate.png"
+              width={8334}
+              height={5442}
+              alt="Simple Translate Logo"
+            />
+          </div>
           <div className=" text-2xl md:text-5xl max-w-4xl font-bold">
             {t("heroTitle")}
           </div>
