@@ -145,7 +145,7 @@ export default function Finance() {
                 {item["benefit"] ? (
                   <div>
                     <p className="indent-5 text-xs font-bold text-gray-700 md:text-xl">{item.benefit}</p>
-                    <ul className="font-semibold text-xs text-gray-700 list-disc marker: marker:text-orange-500 md:text-xl">
+                    <ul className="font-semibold text-xs text-gray-700 list-disc marker:text-orange-500 md:text-xl">
                       {item.args.map((arg, index) => (
                         <li className="ml-10" key={index}>
                           {arg}

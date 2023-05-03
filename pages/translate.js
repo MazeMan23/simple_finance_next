@@ -43,7 +43,7 @@ export default function Translate() {
 
   const router = useRouter();
 
-  console.log(router.locale);
+  // console.log(router.locale);
 
   const supportedLanguages = [
     { key: "BG", value: t("bulgarian") },
@@ -82,9 +82,9 @@ export default function Translate() {
     supportedLanguages[5]
   );
   React.useEffect(() => {
-    console.log(
-      supportedLanguages.find((element) => selectedInput.key === element.key)
-    );
+    // console.log(
+    //   supportedLanguages.find((element) => selectedInput.key === element.key)
+    // );
     setSelectedInput({
       key: selectedInput.key,
       value: supportedLanguages.find(
@@ -135,11 +135,39 @@ export default function Translate() {
     },
     {
       title: t("machineTranslationTitle"),
-      text: t("machineTranslationText")
+      text: t("machineTranslationText"),
+      addit: t("machineTranslationAddit")
     },
     {
       title: t("icoTitle"),
-      text: t("icoText")
+      text: t("icoText"),
+      service: t("icoService"),
+      args: [t("icoArg"), t("icoArg1"), t("icoArg2"), t("icoArg3"), t("icoArg4")]
+    },
+    {
+      title: t("transcreationTitle"),
+      text: t("transcreationText"),
+      args: [t("transcreationArg"), t("transcreationArg1"), t("transcreationArg2"), t("transcreationArg3"), t("transcreationArg4"), t("transcreationArg5")]
+    },
+    {
+      title: t("legalisationTitle"),
+      text: t("legalisationText")
+    },
+    {
+      title: t("localizationTitle"),
+      text: t("localizationText"),
+      args: [t("localizationArg"), t("localizationArg1"), t("localizationArg2"), t("localizationArg3")]
+    },
+    {
+      title: t("multilingualTitle"),
+      text: t("multilingualText"),
+      args: [t("multilingualArg"), t("multilingualArg1"), t("multilingualArg2")],
+      addit: t("multilingualAddit")
+    },
+    {
+      title: t("qualityTranslationTitle"),
+      text: t("qualityTranslationText"),
+      addit: t("qualityTranslationAddit")
     },
   ];
 
@@ -566,11 +594,27 @@ export default function Translate() {
 
       <Collapse.Group splitted>
         <h1 className="text-center text-3xl font-bold">{t("our_services")}</h1>
-        <div className="grid grid-cols-3 gap-x-6 pt-6 pb-12 px-5">
+        <div className="grid grid-cols-1 gap-x-12 pt-6 pb-12 px-5 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-10">
           {services_list.map((item, index) => (
             <div key={index} className="scale-100 hover:scale-105 duration-200">
               <Collapse title={item.title} shadow="true" className="text-lg font-semibold">
-                <div className="text-justify indent-3">{item.text}</div>
+                <div className="text-justify indent-3 mb-2">{item.text}</div>
+                {item.service
+                  ? <p className="indent-3 mb-2">{item.service}</p>
+                  : <></>
+                }
+                {item.args
+                  ? <ul className="list-disc marker:text-orange-500">
+                    {item.args.map((arg, index) => (
+                      <li key={index} className="ml-5">{arg}</li>
+                    ))}
+                  </ul>
+                  : <></>
+                }
+                {item.addit
+                  ? <p className="mt-2 indent-3 text-justify">{item.addit}</p>
+                  : <></>
+                }
               </Collapse>
             </div>
           ))}
