@@ -11,6 +11,7 @@ import {
   Modal,
   Loading,
   Collapse,
+  Avatar,
 } from "@nextui-org/react";
 import Image from "next/image";
 import { Form } from "react-bootstrap";
@@ -119,55 +120,66 @@ export default function Translate() {
   const services_list = [
     {
       title: t("translationTitle"),
-      text: t("translationText")
+      text: t("translationText"),
+      img: "/images/translation.jpg"
     },
     {
       title: t("interpretationTitle"),
-      text: t("interpretationText")
+      text: t("interpretationText"),
+      img: "/images/interpretation.jpg"
     },
     {
       title: t("editingTitle"),
-      text: t("editingText")
+      text: t("editingText"),
+      img: "/images/Editing.jpg"
     },
     {
       title: t("proofreadingTitile"),
-      text: t("proofreadingText")
+      text: t("proofreadingText"),
+      img: "/images/proofreading.jpg"
     },
     {
       title: t("machineTranslationTitle"),
       text: t("machineTranslationText"),
-      addit: t("machineTranslationAddit")
+      addit: t("machineTranslationAddit"),
+      img: "/images/translate-keyboard-key.jpg"
     },
     {
       title: t("icoTitle"),
       text: t("icoText"),
       service: t("icoService"),
-      args: [t("icoArg"), t("icoArg1"), t("icoArg2"), t("icoArg3"), t("icoArg4")]
+      args: [t("icoArg"), t("icoArg1"), t("icoArg2"), t("icoArg3"), t("icoArg4")],
+      img: "/images/ICO.jpg"
     },
     {
       title: t("transcreationTitle"),
       text: t("transcreationText"),
-      args: [t("transcreationArg"), t("transcreationArg1"), t("transcreationArg2"), t("transcreationArg3"), t("transcreationArg4"), t("transcreationArg5")]
+      args: [t("transcreationArg"), t("transcreationArg1"), t("transcreationArg2"), t("transcreationArg3"), t("transcreationArg4"), t("transcreationArg5")],
+      img: "/images/transcreation.png"
     },
     {
       title: t("legalisationTitle"),
-      text: t("legalisationText")
+      text: t("legalisationText"),
+      img: "/images/legalization.jpg"
     },
     {
       title: t("localizationTitle"),
       text: t("localizationText"),
-      args: [t("localizationArg"), t("localizationArg1"), t("localizationArg2"), t("localizationArg3")]
+      args: [t("localizationArg"), t("localizationArg1"), t("localizationArg2"), t("localizationArg3")],
+      img: "/images/localization.jpg"
     },
     {
       title: t("multilingualTitle"),
       text: t("multilingualText"),
       args: [t("multilingualArg"), t("multilingualArg1"), t("multilingualArg2")],
-      addit: t("multilingualAddit")
+      addit: t("multilingualAddit"),
+      img: "/images/multilingual.jpg"
     },
     {
       title: t("qualityTranslationTitle"),
       text: t("qualityTranslationText"),
-      addit: t("qualityTranslationAddit")
+      addit: t("qualityTranslationAddit"),
+      img: "/images/quality.jpg"
     },
   ];
 
@@ -605,7 +617,14 @@ export default function Translate() {
         <div className="grid grid-cols-1 gap-x-12 pt-6 pb-12 px-5 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-10">
           {services_list.map((item, index) => (
             <div key={index} className="scale-100 hover:scale-105 duration-200">
-              <Collapse title={item.title} shadow="true" className="text-lg font-semibold">
+              <Collapse
+                title={item.title}
+                shadow="true"
+                className="text-lg font-semibold"
+                contentLeft={
+                  <Avatar src={item.img} css={{ size: "$20" }} />
+                }
+              >
                 <div className="text-justify indent-3 mb-2">{item.text}</div>
                 {item.service
                   ? <p className="indent-3 mb-2">{item.service}</p>
