@@ -181,6 +181,15 @@ export default function Translate() {
       addit: t("qualityTranslationAddit"),
       img: "/images/quality.jpg"
     },
+    {
+      title: t("automatedTitle"),
+      text: t("automatedText"),
+      text2: t("automatedText2"),
+      service: t("automatedService"),
+      args: [t("automatedArg"), t("automatedArg1"), t("automatedArg2")],
+      img: "/images/auto-translate.png"
+    },
+
   ];
 
   return (
@@ -616,16 +625,19 @@ export default function Translate() {
         <h1 className="text-center text-3xl font-bold">{t("our_services")}</h1>
         <div className="grid grid-cols-1 gap-x-12 pt-6 pb-12 px-5 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-10">
           {services_list.map((item, index) => (
-            <div key={index} className="scale-100 hover:scale-105 duration-200">
+            <div key={index} className="scale-100 hover:scale-105 duration-200 drop-shadow-xl">
               <Collapse
                 title={item.title}
-                shadow="true"
                 className="text-lg font-semibold"
                 contentLeft={
                   <Avatar src={item.img} css={{ size: "$20" }} />
                 }
               >
                 <div className="text-justify indent-3 mb-2">{item.text}</div>
+                {item.text2
+                  ? <div className="text-justify indent-3 mb-2">{item.text2}</div>
+                  : <></>
+                }
                 {item.service
                   ? <p className="indent-3 mb-2">{item.service}</p>
                   : <></>
