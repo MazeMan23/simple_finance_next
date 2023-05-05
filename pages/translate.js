@@ -103,6 +103,7 @@ export default function Translate() {
   const [output, setOutput] = React.useState(null);
   const [loading, setLoading] = React.useState(false);
   const [errorText, setErrorText] = React.useState("");
+  const [fileTranslate, setFileTranslate] = React.useState(false);
 
   const [translationType, setTranslationType] =
     React.useState("textTranslation");
@@ -113,6 +114,11 @@ export default function Translate() {
 
   const closeHandler = () => {
     setVisible(false);
+  };
+
+  const handler = () => setFileTranslate(true);
+  const closeFileTranslateHandler = () => {
+    setFileTranslate(false);
   };
 
   const [file, setFile] = React.useState(null);
@@ -248,18 +254,38 @@ export default function Translate() {
           </Button>
 
           {/* modal + link to contact page */}
-          {/* <Button
-            shadow
-            color="warning"
-            auto
-            className="bg-yellow-500 ml-8"
-            onPress={() => {
-              setTranslationType("fileTranslation");
-            }}
-          >
-            <Image src="/images/icons/file.png" width={30} height={30} />
-            {t("translateFile")}
-          </Button> */}
+          <div>
+            <Button
+              shadow
+              color="warning"
+              auto
+              className="bg-yellow-500 ml-8"
+              onPress={handler}
+            >
+              <Image src="/images/icons/file.png" width={30} height={30} />
+              {t("translateFile")}
+            </Button>
+            <Modal
+              width="50%"
+              blur
+              aria-labelledby="modal-title"
+              aria-describedby="modal-description"
+              open={fileTranslate}
+              onClose={closeFileTranslateHandler}
+            >
+              <Modal.Header>
+                <div className="text-xl font-bold">Test</div>
+              </Modal.Header>
+              <Modal.Body>
+                <div className="self-center">Test</div>
+              </Modal.Body>
+              <Modal.Footer>
+                <Button auto flat color="error" onClick={closeFileTranslateHandler}>
+                  {t("closeButton")}
+                </Button>
+              </Modal.Footer>{" "}
+            </Modal>
+          </div>
 
         </div>
         {translationType == "textTranslation" ? (
