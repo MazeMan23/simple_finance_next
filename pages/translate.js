@@ -12,6 +12,7 @@ import {
   Loading,
   Collapse,
   Avatar,
+  Link
 } from "@nextui-org/react";
 import Image from "next/image";
 import { Form } from "react-bootstrap";
@@ -237,7 +238,8 @@ export default function Translate() {
       </ParticlesHero>
       <div className="lg:h-[100%]">
         <div className="flex flex-row mt-16 ml-4 md:ml-16">
-          <Button
+
+          {/* <Button
             shadow
             color="success"
             auto
@@ -251,7 +253,7 @@ export default function Translate() {
               className="!z-[30]"
             />
             {t("translateText")}
-          </Button>
+          </Button> */}
 
           {/* modal + link to contact page */}
           <div>
@@ -259,7 +261,7 @@ export default function Translate() {
               shadow
               color="warning"
               auto
-              className="bg-yellow-500 ml-8"
+              className="bg-yellow-500"
               onPress={handler}
             >
               <Image src="/images/icons/file.png" width={30} height={30} />
@@ -274,10 +276,14 @@ export default function Translate() {
               onClose={closeFileTranslateHandler}
             >
               <Modal.Header>
-                <div className="text-xl font-bold">Test</div>
+                <div className="text-xl font-bold"> {t("translateFile")}</div>
               </Modal.Header>
               <Modal.Body>
-                <div className="self-center">Test</div>
+                <div className="self-center text-center scale-100 hover:scale-105 duration-200">
+                  <Link href="/contact" color="text">
+                    {t("translateFileText")}
+                  </Link>
+                </div>
               </Modal.Body>
               <Modal.Footer>
                 <Button auto flat color="error" onClick={closeFileTranslateHandler}>
@@ -648,7 +654,7 @@ export default function Translate() {
       </div>
 
       <Collapse.Group splitted>
-        <h1 className="text-center text-3xl font-bold">{t("our_services")}</h1>
+        <h1 className="text-center text-2xl font-bold lg:text-3xl">{t("our_services")}</h1>
         <div className="grid grid-cols-1 gap-x-12 pt-6 pb-12 px-5 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-10">
           {services_list.map((item, index) => (
             <div key={index} className="scale-100 hover:scale-105 duration-200 drop-shadow-xl">
