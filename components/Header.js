@@ -91,9 +91,9 @@ export default function Header({ t }) {
           </Navbar.Content>
         </Navbar>
         {megaMenu ? (
-          <div className="w-full bg-[#021f41] h-48">
-            <div className="mt-4 flex flex-col justify-center gap-8">
-              <div className="flex flex-row w-full justify-center gap-16">
+          <div className="w-full bg-[#021f41]">
+            <div className="pt-4 pb-6 mx-4 flex flex-col">
+              <div className="grid grid-cols-5 gap-2 xl:gap-4">
                 <Link href="/finance">
                   <div className=" hover:cursor-pointer flex flex-row items-center">
                     <div className="w-16 h-16">
@@ -103,7 +103,7 @@ export default function Header({ t }) {
                         height={500}
                       />
                     </div>
-                    <div className="flex flex-col">
+                    <div className="flex flex-col w-[80%]">
                       <p className="text-[#e98f2f] text-xl font-bold">
                         Simple Finance
                       </p>
@@ -122,9 +122,9 @@ export default function Header({ t }) {
                         height={500}
                       />
                     </div>
-                    <div className="flex flex-col">
+                    <div className="flex flex-col w-[80%]">
                       <p className="text-[#e98f2f] text-xl font-bold">
-                        Simple LAW
+                        LAW
                       </p>
                       <p className="text-gray-400 font-semibold">
                         {t("legal")}
@@ -134,16 +134,16 @@ export default function Header({ t }) {
                 </Link>
                 <Link href="/marketing">
                   <div className=" hover:cursor-pointer flex flex-row items-center">
-                    <div className="w-14 h-14">
+                    <div className="w-16 h-16 mr-1">
                       <Image
                         src="/images/service_market_cut.png"
                         width={500}
                         height={500}
                       />
                     </div>
-                    <div className="flex flex-col">
+                    <div className="flex flex-col w-[80%]">
                       <p className="text-[#e98f2f] text-xl font-bold">
-                        Simple Marketing
+                        Marketing
                       </p>
                       <p className="text-gray-400 font-semibold">
                         {t("marketing")}
@@ -153,16 +153,16 @@ export default function Header({ t }) {
                 </Link>
                 <Link href="/translate">
                   <div className=" hover:cursor-pointer flex flex-row items-center">
-                    <div className="w-12 h-12">
+                    <div className="w-14 h-14 mr-2">
                       <Image
                         src="/images/service_translate.png"
                         width={500}
                         height={500}
                       />
                     </div>
-                    <div className="flex flex-col">
+                    <div className="flex flex-col w-[80%]">
                       <p className="text-[#e98f2f] text-xl font-bold">
-                        Simple Translate
+                        Translate
                       </p>
                       <p className="text-gray-400 font-semibold">
                         {t("translation")}
@@ -172,35 +172,33 @@ export default function Header({ t }) {
                 </Link>
                 <Link href="/hr">
                   <div className=" hover:cursor-pointer flex flex-row items-center">
-                    <div className="w-14 h-14">
+                    <div className="w-14 h-14 mr-2">
                       <Image
                         src="/images/hr_cut.png"
                         width={500}
                         height={500}
                       />
                     </div>
-                    <div className="flex flex-col">
+                    <div className="flex flex-col w-[80%]">
                       <p className="text-[#e98f2f] text-xl font-bold">
-                        Simple HR
+                        HR
                       </p>
                       <p className="text-gray-400 font-semibold">{t("hr")}</p>
                     </div>
                   </div>
                 </Link>
-              </div>
-              <div className="flex flex-row w-full justify-center gap-16">
                 <Link href="/project">
-                  <div className=" hover:cursor-pointer flex flex-row items-center">
-                    <div className="w-16 h-16">
+                  <div className="hover:cursor-pointer flex flex-row items-center">
+                    <div className="w-14 h-14 ml-1">
                       <Image
                         src="/images/service_project.png"
                         width={500}
                         height={500}
                       />
                     </div>
-                    <div className="flex flex-col">
+                    <div className="flex flex-col w-[80%] ml-2">
                       <p className="text-[#e98f2f] text-xl font-bold">
-                        Simple Project
+                        Projects
                       </p>
                       <p className="text-gray-400 font-semibold">
                         {t("project")}
@@ -210,16 +208,16 @@ export default function Header({ t }) {
                 </Link>
                 <Link href="/standards">
                   <div className=" hover:cursor-pointer flex flex-row items-center">
-                    <div className="w-16 h-16">
+                    <div className="w-14 h-14 ml-1">
                       <Image
                         src="/images/standards_cut.png"
                         width={500}
                         height={500}
                       />
                     </div>
-                    <div className="flex flex-col">
+                    <div className="flex flex-col w-[80%] ml-2">
                       <p className="text-[#e98f2f] text-xl font-bold">
-                        Simple Standards
+                        Standards
                       </p>
                       <p className="text-gray-400 font-semibold">
                         {t("standard")}
@@ -229,18 +227,35 @@ export default function Header({ t }) {
                 </Link>
                 <Link href="/it">
                   <div className=" hover:cursor-pointer flex flex-row items-center">
-                    <div className="w-16 h-16">
+                    <div className="w-16 h-16 mr-1">
                       <Image
                         src="/images/service_it_cut.png"
                         width={500}
                         height={500}
                       />
                     </div>
-                    <div className="flex flex-col">
+                    <div className="flex flex-col w-[80%]">
                       <p className="text-[#e98f2f] text-xl font-bold">
-                        Simple IT
+                        IT
                       </p>
                       <p className="text-gray-400 font-semibold">{t("it")}</p>
+                    </div>
+                  </div>
+                </Link>
+                <Link href="/insurance">
+                  <div className=" hover:cursor-pointer flex flex-row items-center ml-[-2px]">
+                    <div className="w-16 h-14 mr-1">
+                      <Image
+                        src="/images/insurance_crop.png"
+                        width={560}
+                        height={500}
+                      />
+                    </div>
+                    <div className="flex flex-col w-[80%]">
+                      <p className="text-[#e98f2f] text-xl font-bold">
+                        Insurance
+                      </p>
+                      <p className="text-gray-400 font-semibold">{t("insurance")}</p>
                     </div>
                   </div>
                 </Link>
@@ -299,7 +314,7 @@ export default function Header({ t }) {
                 aria-label="Услуги finacne"
                 className="bg-[#091E42]"
                 css={{
-                  $$dropdownMenuWidth: "340px",
+                  $$dropdownMenuWidth: "360px",
                   $$dropdownItemHeight: "70px",
                   "& .nextui-dropdown-item": {
                     py: "$4",
@@ -355,7 +370,7 @@ export default function Header({ t }) {
                       </div>
                       <div className="flex flex-col">
                         <p className="text-[#e98f2f] text-xl font-bold">
-                          Simple LAW
+                          LAW
                         </p>
                         <p className="text-gray-400 font-semibold">
                           {t("legal")}
@@ -379,7 +394,7 @@ export default function Header({ t }) {
                       </div>
                       <div className="flex flex-col">
                         <p className="text-[#e98f2f] text-xl font-bold">
-                          Simple Marketing
+                          Marketing
                         </p>
                         <p className="text-gray-400 font-semibold">
                           {t("marketing")}
@@ -393,7 +408,7 @@ export default function Header({ t }) {
                   className="active:bg-[#021f41] focus:bg-[#021f41] hover:bg-[#021f41]"
                 >
                   <Link href="/translate">
-                    <div className=" hover:cursor-pointer flex flex-row items-center">
+                    <div className="ml-1 hover:cursor-pointer flex flex-row items-center">
                       <div className="w-14 h-14">
                         <Image
                           src="/images/service_translate.png"
@@ -401,9 +416,9 @@ export default function Header({ t }) {
                           height={500}
                         />
                       </div>
-                      <div className="flex flex-col">
+                      <div className="flex flex-col ml-1">
                         <p className="text-[#e98f2f] text-xl font-bold">
-                          Simple Translate
+                          Translate
                         </p>
                         <p className="text-gray-400 font-semibold">
                           {t("translation")}
@@ -417,17 +432,17 @@ export default function Header({ t }) {
                   className="active:bg-[#021f41] focus:bg-[#021f41] hover:bg-[#021f41]"
                 >
                   <Link href="/hr">
-                    <div className=" hover:cursor-pointer flex flex-row items-center">
-                      <div className="w-16 h-16">
+                    <div className="hover:cursor-pointer flex flex-row items-center">
+                      <div className="w-14 h-14">
                         <Image
                           src="/images/hr_cut.png"
                           width={500}
                           height={500}
                         />
                       </div>
-                      <div className="flex flex-col">
+                      <div className="flex flex-col ml-1">
                         <p className="text-[#e98f2f] text-xl font-bold">
-                          Simple HR
+                          HR
                         </p>
                         <p className="text-gray-400 font-semibold">{t("hr")}</p>
                       </div>
@@ -440,16 +455,16 @@ export default function Header({ t }) {
                 >
                   <Link href="/project">
                     <div className=" hover:cursor-pointer flex flex-row items-center">
-                      <div className="w-16 h-16">
+                      <div className="w-14 h-14">
                         <Image
                           src="/images/service_project.png"
                           width={500}
                           height={500}
                         />
                       </div>
-                      <div className="flex flex-col">
+                      <div className="flex flex-col ml-1">
                         <p className="text-[#e98f2f] text-xl font-bold">
-                          Simple Project
+                          Projects
                         </p>
                         <p className="text-gray-400 font-semibold">
                           {t("project")}
@@ -464,16 +479,16 @@ export default function Header({ t }) {
                 >
                   <Link href="/standards">
                     <div className=" hover:cursor-pointer flex flex-row items-center">
-                      <div className="w-16 h-16">
+                      <div className="w-14 h-14">
                         <Image
                           src="/images/standards_cut.png"
                           width={500}
                           height={500}
                         />
                       </div>
-                      <div className="flex flex-col">
+                      <div className="flex flex-col ml-2">
                         <p className="text-[#e98f2f] text-xl font-bold">
-                          Simple Standards
+                          Standards
                         </p>
                         <p className="text-gray-400 font-semibold">
                           {t("standard")}
@@ -487,7 +502,7 @@ export default function Header({ t }) {
                   className="active:bg-[#021f41] focus:bg-[#021f41] hover:bg-[#021f41]"
                 >
                   <Link href="/it">
-                    <div className=" hover:cursor-pointer flex flex-row items-center">
+                    <div className="hover:cursor-pointer flex flex-row items-center ml-[-5px]">
                       <div className="w-16 h-16">
                         <Image
                           src="/images/service_it_cut.png"
@@ -495,11 +510,33 @@ export default function Header({ t }) {
                           height={500}
                         />
                       </div>
-                      <div className="flex flex-col">
+                      <div className="flex flex-col ml-1">
                         <p className="text-[#e98f2f] text-xl font-bold">
-                          Simple IT
+                          IT
                         </p>
                         <p className="text-gray-400 font-semibold">{t("it")}</p>
+                      </div>
+                    </div>
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item
+                  showFullDescription
+                  className="active:bg-[#021f41] focus:bg-[#021f41] hover:bg-[#021f41]"
+                >
+                  <Link href="/insurance">
+                    <div className=" hover:cursor-pointer flex flex-row items-center ml-[-3px]">
+                      <div className="w-14 h-14">
+                        <Image
+                          src="/images/insurance_crop.png"
+                          width={500}
+                          height={500}
+                        />
+                      </div>
+                      <div className="flex flex-col ml-2">
+                        <p className="text-[#e98f2f] text-xl font-bold">
+                          Insurance
+                        </p>
+                        <p className="text-gray-400 font-semibold">{t("insurance")}</p>
                       </div>
                     </div>
                   </Link>
