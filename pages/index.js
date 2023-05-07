@@ -95,6 +95,13 @@ export default function Index() {
       desc: t("project"),
       url: "project",
     },
+    {
+      title: h("valuation"),
+      img: "/images/service_value.png",
+      banner: "/images/simple-value-dark-t.jpg",
+      desc: t("service_val"),
+      url: "value",
+    },
   ];
 
   return (

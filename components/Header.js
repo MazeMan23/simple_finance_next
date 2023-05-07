@@ -123,9 +123,7 @@ export default function Header({ t }) {
                       />
                     </div>
                     <div className="flex flex-col w-[80%]">
-                      <p className="text-[#e98f2f] text-xl font-bold">
-                        LAW
-                      </p>
+                      <p className="text-[#e98f2f] text-xl font-bold">LAW</p>
                       <p className="text-gray-400 font-semibold">
                         {t("legal")}
                       </p>
@@ -180,9 +178,7 @@ export default function Header({ t }) {
                       />
                     </div>
                     <div className="flex flex-col w-[80%]">
-                      <p className="text-[#e98f2f] text-xl font-bold">
-                        HR
-                      </p>
+                      <p className="text-[#e98f2f] text-xl font-bold">HR</p>
                       <p className="text-gray-400 font-semibold">{t("hr")}</p>
                     </div>
                   </div>
@@ -235,9 +231,7 @@ export default function Header({ t }) {
                       />
                     </div>
                     <div className="flex flex-col w-[80%]">
-                      <p className="text-[#e98f2f] text-xl font-bold">
-                        IT
-                      </p>
+                      <p className="text-[#e98f2f] text-xl font-bold">IT</p>
                       <p className="text-gray-400 font-semibold">{t("it")}</p>
                     </div>
                   </div>
@@ -255,7 +249,26 @@ export default function Header({ t }) {
                       <p className="text-[#e98f2f] text-xl font-bold">
                         Insurance
                       </p>
-                      <p className="text-gray-400 font-semibold">{t("insurance")}</p>
+                      <p className="text-gray-400 font-semibold">
+                        {t("insurance")}
+                      </p>
+                    </div>
+                  </div>
+                </Link>
+                <Link href="/insurance">
+                  <div className=" hover:cursor-pointer flex flex-row items-center ml-[-2px]">
+                    <div className="w-16 h-14 mr-1">
+                      <Image
+                        src="/images/logo-value_cut.png"
+                        width={560}
+                        height={500}
+                      />
+                    </div>
+                    <div className="flex flex-col w-[80%]">
+                      <p className="text-[#e98f2f] text-xl font-bold">Value</p>
+                      <p className="text-gray-400 font-semibold">
+                        {t("valuation")}
+                      </p>
                     </div>
                   </div>
                 </Link>
@@ -369,9 +382,7 @@ export default function Header({ t }) {
                         />
                       </div>
                       <div className="flex flex-col">
-                        <p className="text-[#e98f2f] text-xl font-bold">
-                          LAW
-                        </p>
+                        <p className="text-[#e98f2f] text-xl font-bold">LAW</p>
                         <p className="text-gray-400 font-semibold">
                           {t("legal")}
                         </p>
@@ -441,9 +452,7 @@ export default function Header({ t }) {
                         />
                       </div>
                       <div className="flex flex-col ml-1">
-                        <p className="text-[#e98f2f] text-xl font-bold">
-                          HR
-                        </p>
+                        <p className="text-[#e98f2f] text-xl font-bold">HR</p>
                         <p className="text-gray-400 font-semibold">{t("hr")}</p>
                       </div>
                     </div>
@@ -511,9 +520,7 @@ export default function Header({ t }) {
                         />
                       </div>
                       <div className="flex flex-col ml-1">
-                        <p className="text-[#e98f2f] text-xl font-bold">
-                          IT
-                        </p>
+                        <p className="text-[#e98f2f] text-xl font-bold">IT</p>
                         <p className="text-gray-400 font-semibold">{t("it")}</p>
                       </div>
                     </div>
@@ -536,7 +543,33 @@ export default function Header({ t }) {
                         <p className="text-[#e98f2f] text-xl font-bold">
                           Insurance
                         </p>
-                        <p className="text-gray-400 font-semibold">{t("insurance")}</p>
+                        <p className="text-gray-400 font-semibold">
+                          {t("insurance")}
+                        </p>
+                      </div>
+                    </div>
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item
+                  showFullDescription
+                  className="active:bg-[#021f41] focus:bg-[#021f41] hover:bg-[#021f41]"
+                >
+                  <Link href="/insurance">
+                    <div className=" hover:cursor-pointer flex flex-row items-center ml-[-3px]">
+                      <div className="w-14 h-14">
+                        <Image
+                          src="/images/logo-value_cut.png"
+                          width={500}
+                          height={500}
+                        />
+                      </div>
+                      <div className="flex flex-col ml-2">
+                        <p className="text-[#e98f2f] text-xl font-bold">
+                          Value
+                        </p>
+                        <p className="text-gray-400 font-semibold">
+                          {t("valuation")}
+                        </p>
                       </div>
                     </div>
                   </Link>
