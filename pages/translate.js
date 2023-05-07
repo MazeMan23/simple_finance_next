@@ -12,11 +12,10 @@ import {
   Loading,
   Collapse,
   Avatar,
-  Link
+  Link,
 } from "@nextui-org/react";
 import Image from "next/image";
 import { Form } from "react-bootstrap";
-import { useRouter } from "next/router";
 
 export async function getStaticProps({ locale }) {
   const header = (await import(`../translations/header/${locale}.json`))
@@ -42,8 +41,6 @@ export default function Translate() {
   const t = useTranslations("translate");
   const h = useTranslations("header");
   const f = useTranslations("footer");
-
-  const router = useRouter();
 
   // console.log(router.locale);
 
@@ -106,8 +103,7 @@ export default function Translate() {
   const [errorText, setErrorText] = React.useState("");
   const [fileTranslate, setFileTranslate] = React.useState(false);
 
-  const [translationType, setTranslationType] =
-    React.useState("textTranslation");
+  const [translationType] = React.useState("textTranslation");
 
   const { setVisible, bindings } = useModal();
 
@@ -128,65 +124,87 @@ export default function Translate() {
     {
       title: t("translationTitle"),
       text: t("translationText"),
-      img: "/images/translation.jpg"
+      img: "/images/translation.jpg",
     },
     {
       title: t("interpretationTitle"),
       text: t("interpretationText"),
-      img: "/images/interpretation.jpg"
+      img: "/images/interpretation.jpg",
     },
     {
       title: t("editingTitle"),
       text: t("editingText"),
-      img: "/images/Editing.jpg"
+      img: "/images/Editing.jpg",
     },
     {
       title: t("proofreadingTitile"),
       text: t("proofreadingText"),
-      img: "/images/proofreading.jpg"
+      img: "/images/proofreading.jpg",
     },
     {
       title: t("machineTranslationTitle"),
       text: t("machineTranslationText"),
       addit: t("machineTranslationAddit"),
-      img: "/images/translate-keyboard-key.jpg"
+      img: "/images/translate-keyboard-key.jpg",
     },
     {
       title: t("icoTitle"),
       text: t("icoText"),
       service: t("icoService"),
-      args: [t("icoArg"), t("icoArg1"), t("icoArg2"), t("icoArg3"), t("icoArg4")],
-      img: "/images/ICO.jpg"
+      args: [
+        t("icoArg"),
+        t("icoArg1"),
+        t("icoArg2"),
+        t("icoArg3"),
+        t("icoArg4"),
+      ],
+      img: "/images/ICO.jpg",
     },
     {
       title: t("transcreationTitle"),
       text: t("transcreationText"),
-      args: [t("transcreationArg"), t("transcreationArg1"), t("transcreationArg2"), t("transcreationArg3"), t("transcreationArg4"), t("transcreationArg5")],
-      img: "/images/transcreation.png"
+      args: [
+        t("transcreationArg"),
+        t("transcreationArg1"),
+        t("transcreationArg2"),
+        t("transcreationArg3"),
+        t("transcreationArg4"),
+        t("transcreationArg5"),
+      ],
+      img: "/images/transcreation.png",
     },
     {
       title: t("legalisationTitle"),
       text: t("legalisationText"),
-      img: "/images/legalization.jpg"
+      img: "/images/legalization.jpg",
     },
     {
       title: t("localizationTitle"),
       text: t("localizationText"),
-      args: [t("localizationArg"), t("localizationArg1"), t("localizationArg2"), t("localizationArg3")],
-      img: "/images/localization.jpg"
+      args: [
+        t("localizationArg"),
+        t("localizationArg1"),
+        t("localizationArg2"),
+        t("localizationArg3"),
+      ],
+      img: "/images/localization.jpg",
     },
     {
       title: t("multilingualTitle"),
       text: t("multilingualText"),
-      args: [t("multilingualArg"), t("multilingualArg1"), t("multilingualArg2")],
+      args: [
+        t("multilingualArg"),
+        t("multilingualArg1"),
+        t("multilingualArg2"),
+      ],
       addit: t("multilingualAddit"),
-      img: "/images/multilingual.jpg"
+      img: "/images/multilingual.jpg",
     },
     {
       title: t("qualityTranslationTitle"),
       text: t("qualityTranslationText"),
       addit: t("qualityTranslationAddit"),
-      img: "/images/quality.jpg"
+      img: "/images/quality.jpg",
     },
     {
       title: t("automatedTitle"),
@@ -194,9 +212,8 @@ export default function Translate() {
       text2: t("automatedText2"),
       service: t("automatedService"),
       args: [t("automatedArg"), t("automatedArg1"), t("automatedArg2")],
-      img: "/images/auto-translate.png"
+      img: "/images/auto-translate.png",
     },
-
   ];
 
   return (
@@ -238,7 +255,6 @@ export default function Translate() {
       </ParticlesHero>
       <div className="lg:h-[100%]">
         <div className="flex flex-row mt-16 ml-4 md:ml-16">
-
           {/* <Button
             shadow
             color="success"
@@ -286,13 +302,17 @@ export default function Translate() {
                 </div>
               </Modal.Body>
               <Modal.Footer>
-                <Button auto flat color="error" onClick={closeFileTranslateHandler}>
+                <Button
+                  auto
+                  flat
+                  color="error"
+                  onClick={closeFileTranslateHandler}
+                >
                   {t("closeButton")}
                 </Button>
               </Modal.Footer>{" "}
             </Modal>
           </div>
-
         </div>
         {translationType == "textTranslation" ? (
           <form
@@ -654,43 +674,52 @@ export default function Translate() {
       </div>
 
       <Collapse.Group splitted>
-        <h1 className="text-center text-2xl font-bold lg:text-3xl">{t("our_services")}</h1>
+        <h1 className="text-center text-2xl font-bold lg:text-3xl">
+          {t("our_services")}
+        </h1>
         <div className="grid grid-cols-1 gap-x-12 pt-6 pb-12 px-5 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-10">
           {services_list.map((item, index) => (
-            <div key={index} className="scale-100 hover:scale-105 duration-200 drop-shadow-xl">
+            <div
+              key={index}
+              className="scale-100 hover:scale-105 duration-200 drop-shadow-xl"
+            >
               <Collapse
                 title={item.title}
                 className="text-lg font-semibold"
-                contentLeft={
-                  <Avatar src={item.img} css={{ size: "$20" }} />
-                }
+                contentLeft={<Avatar src={item.img} css={{ size: "$20" }} />}
               >
                 <div className="text-justify indent-3 mb-2">{item.text}</div>
-                {item.text2
-                  ? <div className="text-justify indent-3 mb-2">{item.text2}</div>
-                  : <></>
-                }
-                {item.service
-                  ? <p className="indent-3 mb-2">{item.service}</p>
-                  : <></>
-                }
-                {item.args
-                  ? <ul className="list-disc marker:text-orange-500">
+                {item.text2 ? (
+                  <div className="text-justify indent-3 mb-2">{item.text2}</div>
+                ) : (
+                  <></>
+                )}
+                {item.service ? (
+                  <p className="indent-3 mb-2">{item.service}</p>
+                ) : (
+                  <></>
+                )}
+                {item.args ? (
+                  <ul className="list-disc marker:text-orange-500">
                     {item.args.map((arg, index) => (
-                      <li key={index} className="ml-5">{arg}</li>
+                      <li key={index} className="ml-5">
+                        {arg}
+                      </li>
                     ))}
                   </ul>
-                  : <></>
-                }
-                {item.addit
-                  ? <p className="mt-2 indent-3 text-justify">{item.addit}</p>
-                  : <></>
-                }
+                ) : (
+                  <></>
+                )}
+                {item.addit ? (
+                  <p className="mt-2 indent-3 text-justify">{item.addit}</p>
+                ) : (
+                  <></>
+                )}
               </Collapse>
             </div>
           ))}
         </div>
       </Collapse.Group>
-    </Layout >
+    </Layout>
   );
 }
