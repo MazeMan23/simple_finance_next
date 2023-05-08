@@ -107,14 +107,19 @@ export default function Index() {
   return (
     <Layout h={h} f={f}>
       <ParticlesHero img="/images/main-bg.jpg">
-        <div className="flex flex-col justify-center text-center text-white gap-4">
-          <div className="text-2xl font-bold">{t("heroTitle")}</div>
-          <div className="text-2xl font-semibold tracking-widest">
+        <div className="flex flex-col justify-center text-center tracking-tight text-white gap-4">
+          <div className="text-2xl font-bold animate-slideToL">
+            {t("heroTitle")}
+          </div>
+          <div className="text-2xl font-semibold tracking-widest animate-slideToL">
             {t("heroSubtitle")}
+          </div>
+          <div className="text-sm text-justify indent-5 font-semibold animate-slideToR mx-[5%] lg:text-xl 2xl:text-2xl">
+            {t("whoAreWe")}
           </div>
         </div>
       </ParticlesHero>
-      <div style={{ backgroundColor: "#F8FCFD" }}>
+      {/* <div style={{ backgroundColor: "#F8FCFD" }}>
         <div className="flex mr-3 ml-3 flex-row md:mr-20 md:ml-20">
           <div className="flex flex-col">
             <h1 className="mt-5 text-3xl font-semibold">
@@ -133,7 +138,7 @@ export default function Index() {
             </ul>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="bg-slate-100">
         <div className="flex flex-col items-center">
           <h1 className="text-3xl font-semibold	mt-10 mb-3">
