@@ -238,7 +238,7 @@ export default function Header({ t }) {
                 </Link>
                 <Link href="/insurance">
                   <div className=" hover:cursor-pointer flex flex-row items-center ml-[-2px]">
-                    <div className="w-16 h-14 mr-1">
+                    <div className="w-14 h-14 mr-1">
                       <Image
                         src="/images/insurance_crop.png"
                         width={560}
@@ -255,9 +255,9 @@ export default function Header({ t }) {
                     </div>
                   </div>
                 </Link>
-                <Link href="/insurance">
+                <Link href="/value">
                   <div className=" hover:cursor-pointer flex flex-row items-center ml-[-2px]">
-                    <div className="w-16 h-14 mr-1">
+                    <div className="w-14 h-14 mr-1">
                       <Image
                         src="/images/logo-value_cut.png"
                         width={560}
@@ -554,7 +554,7 @@ export default function Header({ t }) {
                   showFullDescription
                   className="active:bg-[#021f41] focus:bg-[#021f41] hover:bg-[#021f41]"
                 >
-                  <Link href="/insurance">
+                  <Link href="/value">
                     <div className=" hover:cursor-pointer flex flex-row items-center ml-[-3px]">
                       <div className="w-14 h-14">
                         <Image
