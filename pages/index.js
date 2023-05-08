@@ -107,7 +107,7 @@ export default function Index() {
     },
     {
       title: h("valuation"),
-      img: "/images/value-cut-card.png",
+      img: "/images/service_value.png",
       banner: "/images/simple-value-dark-t.jpg",
       desc: t("service_val"),
       url: "value",
