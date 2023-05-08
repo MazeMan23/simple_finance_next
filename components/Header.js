@@ -183,7 +183,7 @@ export default function Header({ t }) {
                     </div>
                   </div>
                 </Link>
-                <Link href="/project">
+                <Link href="/projects">
                   <div className="hover:cursor-pointer flex flex-row items-center">
                     <div className="w-14 h-14 ml-1">
                       <Image
@@ -462,7 +462,7 @@ export default function Header({ t }) {
                   showFullDescription
                   className="active:bg-[#021f41] focus:bg-[#021f41] hover:bg-[#021f41] mt-2 mb-2"
                 >
-                  <Link href="/project">
+                  <Link href="/projects">
                     <div className=" hover:cursor-pointer flex flex-row items-center">
                       <div className="w-14 h-14">
                         <Image

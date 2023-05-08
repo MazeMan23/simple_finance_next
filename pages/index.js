@@ -124,7 +124,7 @@ export default function Index() {
       img: "/images/projects-cut-card.png",
       banner: "/images/project-background.png",
       desc: t("project"),
-      url: "project",
+      url: "projects",
     },
     {
       title: h("insurance"),
