@@ -77,7 +77,7 @@ export default function Index() {
     {
       title: h("valuation"),
       img: "/images/service_value.png",
-      banner: "/images/banner-card.png",
+      banner: "/images/simple-value-dark-t.jpg",
       desc: t("service_val"),
       url: "value",
     },
@@ -96,11 +96,11 @@ export default function Index() {
       url: "project",
     },
     {
-      title: h("valuation"),
-      img: "/images/service_value.png",
-      banner: "/images/simple-value-dark-t.jpg",
-      desc: t("service_val"),
-      url: "value",
+      title: h("insurance"),
+      img: "/images/insurance-cut.png",
+      banner: "/images/insurance-bg.jpg",
+      desc: t("insurance"),
+      url: "insurance",
     },
   ];
 
