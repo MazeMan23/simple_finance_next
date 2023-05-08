@@ -37,7 +37,7 @@ export default function Finance() {
   const services_list = [
     {
       category: t("erpTitle"),
-      banner: "/images/microsoft.avif",
+      banner: "/images/business-central.jpg",
       desc1: t("erpTitle1"),
       desc2: t("erpTitle2"),
       desc3: t("erpTitle3"),
@@ -324,12 +324,12 @@ export default function Finance() {
                   <li className="mt-1">{item.desc6}</li>
                   {(item.category == "Предимства на Microsoft Office 365" ||
                     item.category == t("business_services")) && (
-                    <li className="mt-1">{item.desc7}</li>
-                  )}
+                      <li className="mt-1">{item.desc7}</li>
+                    )}
                   {(item.category == "Предимства на Microsoft Office 365" ||
                     item.category == t("business_services")) && (
-                    <li className="mt-1">{item.desc8}</li>
-                  )}
+                      <li className="mt-1">{item.desc8}</li>
+                    )}
                   {item.category == "Предимства на Microsoft Office 365" && (
                     <li className="mt-1">{item.desc9}</li>
                   )}
