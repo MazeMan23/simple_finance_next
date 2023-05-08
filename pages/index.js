@@ -107,7 +107,7 @@ export default function Index() {
     },
     {
       title: h("valuation"),
-      img: "/images/service_value.png",
+      img: "/images/logo-value_cut.png",
       banner: "/images/simple-value-dark-t.jpg",
       desc: t("service_val"),
       url: "value",
@@ -192,7 +192,7 @@ export default function Index() {
                       height={697}
                     />
                     <div className="flex flex-row justify-start items-center mt-2 p-4 pb-0 h-[5rem]">
-                      <div className="w-[20%] flex flex-col justify-center">
+                      <div className="w-[16%] flex flex-col justify-center">
                         <Image
                           src={item.img}
                           className="rounded-lg bg-[#11213E]"
