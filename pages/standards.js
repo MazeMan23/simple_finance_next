@@ -111,7 +111,7 @@ export default function Finance() {
 
   return (
     <Layout h={h} f={f}>
-      <ParticlesHero img="/images/standards-background.jpg">
+      <ParticlesHero img="/images/ISO-Certification.jpg">
         <div className="flex flex-col justify-center text-center text-white gap-4">
           <div className="text-2xl md:text-5xl font-bold text-orange-400 mx-3">{t("heroTitle")}</div>
           <div className="text-lg md:text-2xl font-semibold tracking-normal mx-5 max-w-4xl md:mx-auto">

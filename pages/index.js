@@ -101,7 +101,7 @@ export default function Index() {
     {
       title: h("standard"),
       img: "/images/standards_cut.png",
-      banner: "/images/standards-background.jpg",
+      banner: "/images/iso-certification.jpg",
       desc: t("service_stand"),
       url: "standards",
     },

@@ -53,7 +53,7 @@ export default function Finance() {
           height={400}
         />
         <div className="flex flex-col mt-6 lg:ml-4 lg:mr-4 lg:w-1/2 gap-4">
-          <div className="text-justify font-semibold indent-4 text-lg">
+          <div className="text-justify font-semibold indent-4 text-lg tracking-tight">
             {t("heroText")}
           </div>
         </div>
@@ -65,7 +65,7 @@ export default function Finance() {
 
       <div className="flex flex-col w-[95%] max-w-[95%] mx-auto mb-16 lg:w-11/12 lg:max-w-[1300px]">
         <div className="flex flex-col-reverse rounded-xl shadow-2xl mb-16 lg:flex-row ">
-          <div className="mx-3 mb-6 self-center lg:ml-8 lg:w-[45%]">
+          <div className="mx-3 mb-6 self-center lg:ml-8 lg:w-[45%] tracking-tight ">
             <h1 className="text-center mt-2 text-2xl font-bold mb-4">
               {t("researchTitle")}
             </h1>
@@ -93,7 +93,7 @@ export default function Finance() {
               className="rounded-t-lg lg:rounded-lg"
             />
           </div>
-          <div className="self-center mx-6 mb-6 lg:mr-8 lg:ml-6 lg:w-[60%]">
+          <div className="self-center mx-6 mb-6 lg:mr-8 lg:ml-6 lg:w-[60%] tracking-tight">
             <h1 className="text-center mt-2 text-2xl font-bold mb-4">
               {t("projectManagementTitle")}
             </h1>
