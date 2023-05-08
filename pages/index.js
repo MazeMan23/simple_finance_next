@@ -2,7 +2,7 @@ import React from "react";
 import { useTranslations } from "use-intl";
 import Layout from "../components/Layout";
 import ParticlesHero from "../components/ParticlesHero";
-import ContactForm from "../components/ContactForm";
+import { Partner } from "../components/Partner";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -30,6 +30,37 @@ export default function Index() {
   const h = useTranslations("header");
   const f = useTranslations("footer");
   const c = useTranslations("contact");
+
+  const partners = [
+    {
+      name: "AllDigital",
+      image: "/images/partners/ad.png",
+    },
+    {
+      name: "Check Point",
+      image: "/images/partners/checkpoint.png",
+    },
+    {
+      name: "Crayon",
+      image: "/images/partners/crayon.png",
+    },
+    {
+      name: "Navtech",
+      image: "/images/partners/navtech.png",
+    },
+    {
+      name: "PolyComp",
+      image: "/images/partners/polycomp.png",
+    },
+    {
+      name: "TUV Rheinland",
+      image: "/images/partners/tuv.png",
+    },
+    {
+      name: "Javery LTD",
+      image: "/images/javery3.png",
+    },
+  ];
 
   const services_list = [
     {
@@ -182,7 +213,14 @@ export default function Index() {
           </div>
         </div>
       </div>
-      <ContactForm t={c} h={h} />
+      <div className="text-center py-8 text-2xl md:text-3xl font-bold  bg-slate-100">
+        {c("partnerTitle")}
+      </div>
+      <div className="flex flex-row flex-wrap justify-center gap-8 pb-8 bg-slate-100">
+        {partners.map((p, i) => (
+          <Partner image={p.image} text={p.name} key={i} />
+        ))}
+      </div>
     </Layout>
   );
 }
