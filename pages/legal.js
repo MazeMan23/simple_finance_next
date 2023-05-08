@@ -32,42 +32,42 @@ export default function Legal() {
 
   const services = [
     {
-      url: "/images/icons/chart.png",
+      url: "/images/documents.jpg",
       title: t("companies"),
       points: new Array(13)
         .fill(undefined)
         .map((val, index) => t(`companies_${index + 1}`)),
     },
     {
-      url: "/images/icons/file.png",
+      url: "/images/deal.jpg",
       title: t("transactions"),
       points: new Array(3)
         .fill(undefined)
         .map((val, index) => t(`transactions_${index + 1}`)),
     },
     {
-      url: "/images/icons/dollar.png",
+      url: "/images/bank-img.jpg",
       title: t("banks"),
       points: new Array(6)
         .fill(undefined)
         .map((val, index) => t(`banks_${index + 1}`)),
     },
     {
-      url: "/images/icons/boy.png",
+      url: "/images/consulting.jpg",
       title: t("procurement"),
       points: new Array(4)
         .fill(undefined)
         .map((val, index) => t(`procurement_${index + 1}`)),
     },
     {
-      url: "/images/icons/tools.png",
+      url: "/images/labour-relations.jpg",
       title: t("labour"),
       points: new Array(7)
         .fill(undefined)
         .map((val, index) => t(`labour_${index + 1}`)),
     },
     {
-      url: "/images/icons/shield.png",
+      url: "/images/civil-law.jpg",
       title: t("law"),
       points: new Array(5)
         .fill(undefined)
