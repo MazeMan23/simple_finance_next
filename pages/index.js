@@ -34,70 +34,70 @@ export default function Index() {
   const services_list = [
     {
       title: h("finance"),
-      img: "/images/service_finance.jpg",
+      img: "/images/finance-cut-card.png",
       banner: "/images/simple_finance.png",
       desc: t("service_fin"),
       url: "finance",
     },
     {
       title: h("it"),
-      img: "/images/service_it.png",
+      img: "/images/service_it_cut.png",
       banner: "/images/simple_it.jpg",
       desc: t("service_it"),
       url: "it",
     },
     {
       title: h("legal"),
-      img: "/images/service_law.jpg",
+      img: "/images/service_law_cut.jpg",
       banner: "/images/simple_law.jpg",
       desc: t("service_law"),
       url: "legal",
     },
     {
       title: h("marketing"),
-      img: "/images/service_market.png",
+      img: "/images/service_market_cut.png",
       banner: "/images/simple_marketing.jpg",
       desc: t("service_mar"),
       url: "marketing",
     },
     {
       title: h("hr"),
-      img: "/images/hr.png",
+      img: "/images/hr-cut-card.png",
       banner: "/images/hr-background.jpg",
       desc: t("service_hr"),
       url: "hr",
     },
     {
       title: h("standard"),
-      img: "/images/standarts.png",
+      img: "/images/standards_cut.png",
       banner: "/images/standards-background.jpg",
       desc: t("service_stand"),
       url: "standards",
     },
     {
       title: h("valuation"),
-      img: "/images/service_value.png",
+      img: "/images/value-cut-card.png",
       banner: "/images/simple-value-dark-t.jpg",
       desc: t("service_val"),
       url: "value",
     },
     {
       title: h("translation"),
-      img: "/images/SimpleTRANSLATE.png",
+      img: "/images/service_translate.png",
       banner: "/images/translate.jpg",
       desc: t("translate"),
       url: "translate",
     },
     {
       title: h("project"),
-      img: "/images/service_project.png",
+      img: "/images/projects-cut-card.png",
       banner: "/images/project-background.png",
       desc: t("project"),
       url: "project",
     },
     {
       title: h("insurance"),
-      img: "/images/insurance-cut.png",
+      img: "/images/insurance-cut-card.png",
       banner: "/images/insurance-bg.jpg",
       desc: t("insurance"),
       url: "insurance",
@@ -161,7 +161,7 @@ export default function Index() {
                       height={697}
                     />
                     <div className="flex flex-row justify-start items-center mt-2 p-4 pb-0 h-[5rem]">
-                      <div className="w-[15%] flex flex-col justify-center">
+                      <div className="w-[20%] flex flex-col justify-center">
                         <Image
                           src={item.img}
                           className="rounded-lg bg-[#11213E]"
