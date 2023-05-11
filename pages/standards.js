@@ -131,7 +131,7 @@ export default function Finance() {
           {certificates_list.map((item, index) => (
             <div
               key={index}
-              className="rounded-xl bg-white active:bg-gray-200 w-full md:w-[68%] lg:w-[43%] xl:w-[41%] 2xl:w-[47%]"
+              className="rounded-xl bg-white active:bg-gray-200 w-full md:w-[68%] lg:w-[47%] xl:w-[45%] 2xl:w-[47%]"
             >
               <Collapse
                 className="font-semibold text-xs md:text-xl scale-100 hover:scale-105"
@@ -141,7 +141,7 @@ export default function Finance() {
                   <Image src={item.banner} className="rounded-t-xl" objectFit="cover" width={180} height={180} />
                 }
               >
-                <p className="mb-3 indent-5 text-xs font-bold text-gray-700 text-justify break-all md:text-xl">{item.desc}</p>
+                <p className="mb-3 indent-5 text-xs font-bold text-gray-700 text-justify md:text-xl">{item.desc}</p>
                 {item["benefit"] ? (
                   <div>
                     <p className="indent-5 text-xs font-bold text-gray-700 md:text-xl">{item.benefit}</p>
