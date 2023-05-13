@@ -73,23 +73,23 @@ export default function Finance() {
               {t("researchText")}
             </div>
           </div>
-          <div className="xl:mx-auto lg:my-8 lg:mr-6 flex">
+          <div className=" lg:my-8 lg:mr-6 flex lg:w-[60%]">
             <Image
               src="/images/pexels-lukas.jpg"
               objectFit="cover"
-              width={600}
-              height={400}
+              width={1000}
+              height={500}
               className="rounded-t-lg lg:rounded-lg"
             />
           </div>
         </div>
         <div className="flex flex-col rounded-xl shadow-2xl lg:flex-row">
-          <div className="lg:my-8 lg:ml-8 flex">
+          <div className="lg:my-8 lg:ml-8 flex lg:w-[60%]">
             <Image
               src="/images/pexels-andrea-piacquadio-3760529.jpg"
               objectFit="cover"
-              width={600}
-              height={400}
+              width={1000}
+              height={500}
               className="rounded-t-lg lg:rounded-lg"
             />
           </div>

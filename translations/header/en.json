@@ -7,14 +7,14 @@
     "legal": "Legal",
     "it": "Information Technology",
     "marketing": "Sales and Marketing",
-    "valuation": "Licensed Valuations",
+    "value": "Licensed Valuations",
     "risk": "Insurance and Risk Assessment",
     "management": "Project Management and Funding",
-    "standard": "ISO Standards",
-    "translation": "Automated Translation",
+    "standards": "ISO Standards",
+    "translate": "Automated Translation",
     "login": "Login For Clients",
     "contact": "Contact",
-    "project": "EU Funding Preparation",
+    "projects": "EU Funding Preparation",
     "insurance": "Business insurance services"
   }
 }

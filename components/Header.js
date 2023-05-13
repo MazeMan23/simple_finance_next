@@ -163,7 +163,7 @@ export default function Header({ t }) {
                         Translate
                       </p>
                       <p className="text-gray-400 font-semibold">
-                        {t("translation")}
+                        {t("translate")}
                       </p>
                     </div>
                   </div>
@@ -197,7 +197,7 @@ export default function Header({ t }) {
                         Projects
                       </p>
                       <p className="text-gray-400 font-semibold">
-                        {t("project")}
+                        {t("projects")}
                       </p>
                     </div>
                   </div>
@@ -216,7 +216,7 @@ export default function Header({ t }) {
                         Standards
                       </p>
                       <p className="text-gray-400 font-semibold">
-                        {t("standard")}
+                        {t("standards")}
                       </p>
                     </div>
                   </div>
@@ -267,7 +267,7 @@ export default function Header({ t }) {
                     <div className="flex flex-col w-[80%]">
                       <p className="text-[#e98f2f] text-xl font-bold">Value</p>
                       <p className="text-gray-400 font-semibold">
-                        {t("valuation")}
+                        {t("value")}
                       </p>
                     </div>
                   </div>
@@ -432,7 +432,7 @@ export default function Header({ t }) {
                           Translate
                         </p>
                         <p className="text-gray-400 font-semibold">
-                          {t("translation")}
+                          {t("translate")}
                         </p>
                       </div>
                     </div>
@@ -476,7 +476,7 @@ export default function Header({ t }) {
                           Projects
                         </p>
                         <p className="text-gray-400 font-semibold">
-                          {t("project")}
+                          {t("projects")}
                         </p>
                       </div>
                     </div>
@@ -500,7 +500,7 @@ export default function Header({ t }) {
                           Standards
                         </p>
                         <p className="text-gray-400 font-semibold">
-                          {t("standard")}
+                          {t("standards")}
                         </p>
                       </div>
                     </div>
@@ -568,7 +568,7 @@ export default function Header({ t }) {
                           Value
                         </p>
                         <p className="text-gray-400 font-semibold">
-                          {t("valuation")}
+                          {t("value")}
                         </p>
                       </div>
                     </div>

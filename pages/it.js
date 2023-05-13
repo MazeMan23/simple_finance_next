@@ -37,7 +37,7 @@ export default function Finance() {
   const services_list = [
     {
       category: t("erpTitle"),
-      banner: "/images/business-central.jpg",
+      banner: "/images/Dynamics-365-Business-Central-text.png",
       desc1: t("erpTitle1"),
       desc2: t("erpTitle2"),
       desc3: t("erpTitle3"),

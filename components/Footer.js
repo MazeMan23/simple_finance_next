@@ -4,15 +4,25 @@ import React from "react";
 import SimpleLink from "./SimpleLink";
 
 export default function Footer({ t, h }) {
-  const list = ["finance", "it", "legal", "marketing"];
+  const list = [
+    "finance",
+    "it",
+    "legal",
+    "marketing",
+    "translate",
+    "hr",
+    "projects",
+    "standards",
+    "insurance",
+    "value"];
 
   return (
     <footer className="flex flex-col justify-center  bg-[#091E42]">
       <div className="flex flex-row justify-center min-w-full">
-        <div className="flex lg:flex-row flex-col justify-evenly p-10 gap-8 lg:w-[75%]">
-          <div className="flex flex-col justify-start">
-            <div className="text-white text-lg">{t("services")}</div>
-            <div className="flex flex-col justify-start min-w-full">
+        <div className="flex lg:flex-row flex-col justify-evenly p-10 w-[90%] md:w-[80%] lg:w-full">
+          <div className="flex flex-col justify-center">
+            <div className="text-white text-lg md:text-center mb-2">{t("services")}</div>
+            <div className="grid gap-x-2 md:grid-cols-2 mb-2 lg:gap-x-6">
               {list.map((service) => (
                 <SimpleLink href={`/${service}`} key={service}>
                   {h(service)}
