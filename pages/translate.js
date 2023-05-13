@@ -239,11 +239,11 @@ export default function Translate() {
       </Modal>
       <ParticlesHero img="/images/translate.jpg">
         <div className="flex flex-col justify-center text-center items-center text-white gap-4">
-          <div className=" h-48 w-96 self-center">
+          <div className=" h-48 w-48 self-center">
             <Image
-              src="/images/simple-translate.png"
-              width={8334}
-              height={5442}
+              src="/images/translate.png"
+              width={1000}
+              height={1000}
               alt="Simple Translate Logo"
             />
           </div>
