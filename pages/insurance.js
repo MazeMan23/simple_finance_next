@@ -6,14 +6,10 @@ import ContactForm from "../components/ContactForm";
 import { Collapse, Avatar } from "@nextui-org/react";
 
 export async function getStaticProps({ locale }) {
-  const header = (await import(`../translations/header/${locale}.json`))
-    .default;
-  const footer = (await import(`../translations/footer/${locale}.json`))
-    .default;
-  const contact = (await import(`../translations/contact/${locale}.json`))
-    .default;
-  const insurance = (await import(`../translations/insurance/${locale}.json`))
-    .default;
+  const header = (await import(`../translations/header/${locale}.json`)).default;
+  const footer = (await import(`../translations/footer/${locale}.json`)).default;
+  const contact = (await import(`../translations/contact/${locale}.json`)).default;
+  const insurance = (await import(`../translations/insurance/${locale}.json`)).default;
 
   const final = { ...insurance, ...header, ...footer, ...contact };
 
@@ -30,7 +26,6 @@ export default function Translate() {
   const h = useTranslations("header");
   const f = useTranslations("footer");
   const c = useTranslations("contact");
-
 
   const services_list = [
     {
@@ -54,18 +49,13 @@ export default function Translate() {
       title: t("propInsuranceTitle"),
       text: t("propInsuranceText"),
       service: t("propInsuranceService"),
-      args: [
-        t("propInsuranceArg"),
-        t("propInsuranceArg1"),
-      ],
+      args: [t("propInsuranceArg"), t("propInsuranceArg1")],
       img: "/images/property-insurance.jpg",
     },
     {
       title: t("financialRisksTitle"),
       text: t("financialRisksText"),
-      textArgs: [t("financialRisksTextArg"),
-      t("financialRisksTextArg1"),
-      t("financialRisksTextArg2")],
+      textArgs: [t("financialRisksTextArg"), t("financialRisksTextArg1"), t("financialRisksTextArg2")],
       service: t("financialRisksService"),
       args: [
         t("financialRisksArg"),
@@ -73,7 +63,7 @@ export default function Translate() {
         t("financialRisksArg2"),
         t("financialRisksArg3"),
         t("financialRisksArg4"),
-        t("financialRisksArg5")
+        t("financialRisksArg5"),
       ],
       img: "/images/financial-risk.jpg",
     },
@@ -101,13 +91,7 @@ export default function Translate() {
       title: t("lawsuitsTitle"),
       text: t("lawsuitsText"),
       service: t("lawsuitsService"),
-      args: [
-        t("lawsuitsArg"),
-        t("lawsuitsArg1"),
-        t("lawsuitsArg2"),
-        t("lawsuitsArg3"),
-        t("lawsuitsArg4"),
-      ],
+      args: [t("lawsuitsArg"), t("lawsuitsArg1"), t("lawsuitsArg2"), t("lawsuitsArg3"), t("lawsuitsArg4")],
       img: "/images/lawsuit.jpg",
     },
     {
@@ -126,18 +110,18 @@ export default function Translate() {
     {
       title: t("agriculturalInsuranceTitle"),
       text: t("agriculturalInsuranceText"),
-      textArgs: [t("agriculturalInsuranceTextArg"),
-      t("agriculturalInsuranceTextArg1")],
+      textArgs: [t("agriculturalInsuranceTextArg"), t("agriculturalInsuranceTextArg1")],
       service: t("agriculturalInsuranceService"),
-      args: [t("agriculturalInsuranceArg"),
-      t("agriculturalInsuranceArg1"),
-      t("agriculturalInsuranceArg2"),
-      t("agriculturalInsuranceArg3"),
-      t("agriculturalInsuranceArg4"),
-      t("agriculturalInsuranceArg5"),
-      t("agriculturalInsuranceArg6"),
-      t("agriculturalInsuranceArg7"),
-      t("agriculturalInsuranceArg8"),
+      args: [
+        t("agriculturalInsuranceArg"),
+        t("agriculturalInsuranceArg1"),
+        t("agriculturalInsuranceArg2"),
+        t("agriculturalInsuranceArg3"),
+        t("agriculturalInsuranceArg4"),
+        t("agriculturalInsuranceArg5"),
+        t("agriculturalInsuranceArg6"),
+        t("agriculturalInsuranceArg7"),
+        t("agriculturalInsuranceArg8"),
       ],
       img: "/images/AGRICULTURE-INSURANCE.png",
     },
@@ -162,9 +146,7 @@ export default function Translate() {
     <Layout h={h} f={f}>
       <ParticlesHero img="/images/insurance-bg.jpg">
         <div className="flex flex-col justify-center text-center items-center text-white gap-4">
-          <div className=" text-2xl md:text-5xl max-w-4xl font-bold">
-            {t("heroTitle")}
-          </div>
+          <div className=" text-2xl md:text-5xl max-w-4xl font-bold">{t("heroTitle")}</div>
           <div className="text-xl font-bold max-w-3xl">{t("heroSubtitle")}</div>
         </div>
       </ParticlesHero>
@@ -174,10 +156,7 @@ export default function Translate() {
         </div>
         <div className="grid grid-cols-1 gap-x-12 mt-2 pb-12 px-5 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-10">
           {services_list.map((item, index) => (
-            <div
-              key={index}
-              className="scale-100 hover:scale-105 duration-200 drop-shadow-xl"
-            >
+            <div key={index} className="scale-100 hover:scale-105 duration-200 drop-shadow-xl">
               <Collapse
                 title={item.title}
                 className="text-lg font-semibold"
@@ -195,16 +174,8 @@ export default function Translate() {
                 ) : (
                   <></>
                 )}
-                {item.text2 ? (
-                  <div className="text-justify indent-3 mb-2">{item.text2}</div>
-                ) : (
-                  <></>
-                )}
-                {item.service ? (
-                  <p className="indent-3 mb-2">{item.service}</p>
-                ) : (
-                  <></>
-                )}
+                {item.text2 ? <div className="text-justify indent-3 mb-2">{item.text2}</div> : <></>}
+                {item.service ? <p className="indent-3 mb-2">{item.service}</p> : <></>}
                 {item.args ? (
                   <ul className="list-disc marker:text-orange-500">
                     {item.args.map((arg, index) => (
@@ -216,11 +187,7 @@ export default function Translate() {
                 ) : (
                   <></>
                 )}
-                {item.addit ? (
-                  <p className="mt-2 indent-3 text-justify">{item.addit}</p>
-                ) : (
-                  <></>
-                )}
+                {item.addit ? <p className="mt-2 indent-3 text-justify">{item.addit}</p> : <></>}
               </Collapse>
             </div>
           ))}

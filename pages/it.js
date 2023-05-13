@@ -7,12 +7,9 @@ import ContactForm from "../components/ContactForm";
 import Image from "next/image";
 
 export async function getStaticProps({ locale }) {
-  const header = (await import(`../translations/header/${locale}.json`))
-    .default;
-  const footer = (await import(`../translations/footer/${locale}.json`))
-    .default;
-  const contact = (await import(`../translations/contact/${locale}.json`))
-    .default;
+  const header = (await import(`../translations/header/${locale}.json`)).default;
+  const footer = (await import(`../translations/footer/${locale}.json`)).default;
+  const contact = (await import(`../translations/contact/${locale}.json`)).default;
   const it = (await import(`../translations/it/${locale}.json`)).default;
 
   const final = { ...it, ...header, ...footer, ...contact };
@@ -77,9 +74,7 @@ export default function Finance() {
     <Layout h={h} f={f}>
       <ParticlesHero img="/images/simple_it.jpg">
         <div className="flex flex-col justify-center text-center items-center text-white gap-4">
-          <div className=" text-2xl md:text-5xl max-w-4xl font-bold">
-            {t("title")}
-          </div>
+          <div className=" text-2xl md:text-5xl max-w-4xl font-bold">{t("title")}</div>
           <div className="text-xl font-bold max-w-3xl">{t("subtitle")}</div>
         </div>
       </ParticlesHero>
@@ -87,12 +82,7 @@ export default function Finance() {
         <div className="flex flex-col slef-center items-center">
           <div className="flex flex-row items-center justify-center gap-2">
             <div className="w-1/4 hidden lg:flex">
-              <Image
-                src="/images/it.jpg"
-                width={6144}
-                height={4069}
-                className="rounded-xl"
-              />
+              <Image src="/images/it.jpg" width={6144} height={4069} className="rounded-xl" />
             </div>
             <div className="flex flex-col items-center ml-4 mr-4 lg:w-1/2 gap-4">
               <p className="text-center text-lg">{t("general")}</p>
@@ -109,9 +99,7 @@ export default function Finance() {
                 <Collapse
                   title={t("roadmap")}
                   className="scale-100 hover:scale-105"
-                  contentLeft={
-                    <Avatar className="!z-0" src="/images/it4.png" size="xl" />
-                  }
+                  contentLeft={<Avatar className="!z-0" src="/images/it4.png" size="xl" />}
                 >
                   <ul className="list-disc ml-5 mt-5 marker:text-white">
                     <li className="mt-1">{t("roadmap1")}</li>
@@ -124,9 +112,7 @@ export default function Finance() {
                 <Collapse
                   title={t("innovation")}
                   className="scale-100 hover:scale-105"
-                  contentLeft={
-                    <Avatar className="!z-0" src="/images/3cx.png" size="xl" />
-                  }
+                  contentLeft={<Avatar className="!z-0" src="/images/3cx.png" size="xl" />}
                 >
                   <ul className="list-disc ml-5 mt-5 marker:text-white">
                     <li className="mt-1">{t("innovation1")}</li>
@@ -137,13 +123,7 @@ export default function Finance() {
                 <Collapse
                   title={t("mobile")}
                   className="scale-100 hover:scale-105"
-                  contentLeft={
-                    <Avatar
-                      className="!z-0"
-                      src="/images/mobile.jpg"
-                      size="xl"
-                    />
-                  }
+                  contentLeft={<Avatar className="!z-0" src="/images/mobile.jpg" size="xl" />}
                 >
                   <ul className="list-disc ml-5 mt-5 marker:text-white">
                     <li className="mt-1">{t("mobile1")}</li>
@@ -162,9 +142,7 @@ export default function Finance() {
                 <Collapse
                   title={t("relations")}
                   className="scale-100 hover:scale-105"
-                  contentLeft={
-                    <Avatar className="!z-0" src="/images/it3.png" size="xl" />
-                  }
+                  contentLeft={<Avatar className="!z-0" src="/images/it3.png" size="xl" />}
                 >
                   <ul className="list-disc ml-5 mt-5 marker:text-white">
                     <li className="mt-1">{t("relations1")}</li>
@@ -181,9 +159,7 @@ export default function Finance() {
                 <Collapse
                   title={t("tc")}
                   className="scale-100 hover:scale-105"
-                  contentLeft={
-                    <Avatar className="!z-0" src="/images/web.webp" size="xl" />
-                  }
+                  contentLeft={<Avatar className="!z-0" src="/images/web.webp" size="xl" />}
                 >
                   <ul className="list-disc ml-5 mt-5 marker:text-white">
                     <li className="mt-1">{t("tc1")}</li>
@@ -304,17 +280,9 @@ export default function Finance() {
                 }}
               >
                 <div className="w-fit">
-                  <Image
-                    src={item.banner}
-                    className="rounded-t-xl"
-                    layout="intrinsic"
-                    width={1920}
-                    height={720}
-                  />
+                  <Image src={item.banner} className="rounded-t-xl" layout="intrinsic" width={1920} height={720} />
                 </div>
-                <h1 className=" mt-4 ml-4 text-lg font-semibold">
-                  {item.category}
-                </h1>
+                <h1 className=" mt-4 ml-4 text-lg font-semibold">{item.category}</h1>
                 <ul className="px-8 mb-4 list-disc text-gray-700 font-semibold text-smml-5 mt-5 marker:text-orange-500">
                   <li className="mt-1">{item.desc1}</li>
                   <li className="mt-1">{item.desc2}</li>
@@ -323,16 +291,10 @@ export default function Finance() {
                   <li className="mt-1">{item.desc5}</li>
                   <li className="mt-1">{item.desc6}</li>
                   {(item.category == "Предимства на Microsoft Office 365" ||
-                    item.category == t("business_services")) && (
-                      <li className="mt-1">{item.desc7}</li>
-                    )}
+                    item.category == t("business_services")) && <li className="mt-1">{item.desc7}</li>}
                   {(item.category == "Предимства на Microsoft Office 365" ||
-                    item.category == t("business_services")) && (
-                      <li className="mt-1">{item.desc8}</li>
-                    )}
-                  {item.category == "Предимства на Microsoft Office 365" && (
-                    <li className="mt-1">{item.desc9}</li>
-                  )}
+                    item.category == t("business_services")) && <li className="mt-1">{item.desc8}</li>}
+                  {item.category == "Предимства на Microsoft Office 365" && <li className="mt-1">{item.desc9}</li>}
                 </ul>
                 <p className="font-bold ml-8 mb-2">{t("learnMore")}</p>
               </div>
