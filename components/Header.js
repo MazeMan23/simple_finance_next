@@ -25,7 +25,7 @@ export default function Header({ t }) {
           }}
           maxWidth="xl"
         >
-          <Navbar.Brand className="w-48 h-48">
+          <Navbar.Brand className="w-48">
             <Link href="/">
               <div className="cursor-pointer">
                 <Image src="/images/logo.png" width={2061} height={968} />
