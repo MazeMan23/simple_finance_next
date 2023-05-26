@@ -3,7 +3,7 @@ import { useTranslations } from "use-intl";
 import Layout from "../components/Layout";
 import ParticlesHero from "../components/ParticlesHero";
 import ContactForm from "../components/ContactForm";
-import { Image, Collapse, Avatar } from "@nextui-org/react";
+import { Image, Card, Text } from "@nextui-org/react";
 
 export async function getStaticProps({ locale }) {
   const header = (await import(`../translations/header/${locale}.json`)).default;
@@ -27,6 +27,29 @@ export default function Translate() {
   const f = useTranslations("footer");
   const c = useTranslations("contact");
 
+  const offices_list = [
+    {
+      title: "Графикс",
+      img: "/images/grafix.jpeg",
+      location: "ул.\"Йерусалим\" 6"
+    },
+    {
+      title: "Европарк",
+      img: "/images/europark.jpeg",
+      location: "бул.\"Цариградско шосе\" 40"
+    },
+    {
+      title: "Тетрикс",
+      img: "/images/tetrix.jpeg",
+      location: "бул.\"Драган Цанков\" 23А"
+    },
+    {
+      title: "Изток Тауър",
+      img: "/images/iztok_tower.jpeg",
+      location: "бул.\"Доктор Г.М. Димитров\" 16А"
+    },
+  ]
+
   return (
     <Layout h={h} f={f}>
       <ParticlesHero img="/images/offices.png">
@@ -48,6 +71,29 @@ export default function Translate() {
         <div className="font-semibold">{t("finalText")}</div>
       </div>
 
+      <div className="grid grid-cols-2 gap-12 justify-center mx-[18%] my-16">
+        {offices_list.map((office, index) =>
+          <Card key={index}>
+            <Card.Image
+              src={office.img}
+              objectFit="cover"
+              width="100%"
+              height={340}
+              alt="Office image"
+            />
+            <div className="absolute bottom-[51px] w-screen py-2 bg-blue-900/70">
+              <Text size={26} className="uppercase font-bold text-slate-100 ml-4">
+                {office.title}
+              </Text>
+            </div>
+            <div className=" bg-orange-400 py-3">
+              <Text size={18} className="ml-2">
+                {office.location}
+              </Text>
+            </div>
+          </Card>
+        )}
+      </div>
 
       <ContactForm t={c} h={h} />
     </Layout>
