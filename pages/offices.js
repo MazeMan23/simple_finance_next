@@ -29,24 +29,24 @@ export default function Translate() {
 
   const offices_list = [
     {
-      title: "Графикс",
+      title: t("grafix"),
       img: "/images/grafix.jpeg",
-      location: "ул.\"Йерусалим\" 6"
+      location: t("grafixLocation")
     },
     {
-      title: "Европарк",
+      title: t("europark"),
       img: "/images/europark.jpeg",
-      location: "бул.\"Цариградско шосе\" 40"
+      location: t("europarkLocation")
     },
     {
-      title: "Тетрикс",
+      title: t("tetrix"),
       img: "/images/tetrix.jpeg",
-      location: "бул.\"Драган Цанков\" 23А"
+      location: t("tetrixLocation")
     },
     {
-      title: "Изток Тауър",
+      title: t("tower"),
       img: "/images/iztok_tower.jpeg",
-      location: "бул.\"Доктор Г.М. Димитров\" 16А"
+      location: t("towerLocation")
     },
   ]
 
@@ -86,16 +86,22 @@ export default function Translate() {
                 {office.title}
               </Text>
             </div>
-            <div className=" bg-orange-400 py-3">
-              <Text size={18} className="ml-2">
+            <div className="flex py-3 bg-orange-400">
+              <div className="ml-3">
+                <Image
+                  src="/images/location-pin.png"
+                  width={25}
+                  height={25} />
+              </div>
+              <div className="text-lg font-semibold ml-2 text-white">
                 {office.location}
-              </Text>
+              </div>
             </div>
           </Card>
         )}
       </div>
 
       <ContactForm t={c} h={h} />
-    </Layout>
+    </Layout >
   );
 }
