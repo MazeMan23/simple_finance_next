@@ -70,7 +70,6 @@ export default function Translate() {
         <div className="">{t("text")}</div>
         <div className="font-semibold">{t("finalText")}</div>
       </div>
-
       <div className="grid grid-cols-1 gap-10 justify-center mx-auto my-8 md:grid-cols-2 2xl:grid-cols-4">
         {offices_list.map((office, index) =>
           <Card key={index} className="w-[350px] lg:w-[420px]">
@@ -81,7 +80,7 @@ export default function Translate() {
               height={340}
               alt="Office image"
             />
-            <div className="absolute bottom-[51px] w-screen py-2 bg-blue-900/70">
+            <div className="absolute bottom-[51px] w-screen py-2 bg-[#132844]/80">
               <Text size={26} className="uppercase font-bold text-slate-100 ml-4">
                 {office.title}
               </Text>
@@ -100,7 +99,6 @@ export default function Translate() {
           </Card>
         )}
       </div>
-
       <ContactForm t={c} h={h} />
     </Layout >
   );

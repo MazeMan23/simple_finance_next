@@ -272,6 +272,23 @@ export default function Header({ t }) {
                     </div>
                   </div>
                 </Link>
+                <Link href="/offices">
+                  <div className=" hover:cursor-pointer flex flex-row items-center ml-1">
+                    <div className="w-14 h-14">
+                      <Image
+                        src="/images/cut_offices_logo.png"
+                        width={500}
+                        height={500}
+                      />
+                    </div>
+                    <div className="flex flex-col w-[80%] ml-2">
+                      <p className="text-[#e98f2f] text-xl font-bold">Offices</p>
+                      <p className="text-gray-400 font-semibold">
+                        {t("offices")}
+                      </p>
+                    </div>
+                  </div>
+                </Link>
               </div>
             </div>
           </div>
@@ -569,6 +586,28 @@ export default function Header({ t }) {
                         </p>
                         <p className="text-gray-400 font-semibold">
                           {t("value")}
+                        </p>
+                      </div>
+                    </div>
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item
+                  showFullDescription
+                  className="active:bg-[#021f41] focus:bg-[#021f41] hover:bg-[#021f41]"
+                >
+                  <Link href="/offices">
+                    <div className=" hover:cursor-pointer flex flex-row items-center">
+                      <div className="w-14 h-14">
+                        <Image
+                          src="/images/cut_offices_logo.png"
+                          width={500}
+                          height={500}
+                        />
+                      </div>
+                      <div className="flex flex-col w-[80%] ml-2">
+                        <p className="text-[#e98f2f] text-xl font-bold">Offices</p>
+                        <p className="text-gray-400 font-semibold">
+                          {t("offices")}
                         </p>
                       </div>
                     </div>

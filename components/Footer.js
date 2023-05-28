@@ -14,7 +14,8 @@ export default function Footer({ t, h }) {
     "projects",
     "standards",
     "insurance",
-    "value"];
+    "value",
+    "offices"];
 
   return (
     <footer className="flex flex-col justify-center  bg-[#091E42]">

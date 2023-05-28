@@ -133,6 +133,14 @@ export default function Index() {
       desc: t("insurance"),
       url: "insurance",
     },
+    {
+      title: h("offices"),
+      img: "/images/cut_offices_logo.png",
+      banner: "/images/offices.png",
+      desc: t("offices"),
+      url: "offices",
+    },
+
   ];
 
   return (
