@@ -66,9 +66,19 @@ export default function Finance() {
       <div className="flex flex-col items-center justify-center flex-wrap gap-5 px-5 mb-10 lg:flex-row">
         {services_list.map((item, index) =>
           index % 2 === 0 ? (
-            <div key={index} className="flex flex-col md:flex-row justify-center rounded-xl bg-white shadow-xl w-[82%] lg:w-[80%] xl:w-[49%] xl:min-h-[428px] 2xl:min-h-[356px]">
+            <div
+              key={index}
+              className="flex flex-col md:flex-row justify-center rounded-xl bg-white shadow-xl w-[82%] lg:w-[80%] xl:w-[49%] xl:min-h-[428px] 2xl:min-h-[356px]"
+            >
               <div className="flex flex-col md:flex-row">
-                <Image className="rounded-t-xl md:rounded-l-xl md:rounded-tr-none" src={item.banner} objectFit="cover" layout="intrinsic" width={412} height={320} />
+                <Image
+                  className="rounded-t-xl md:rounded-l-xl md:rounded-tr-none"
+                  src={item.banner}
+                  objectFit="cover"
+                  layout="intrinsic"
+                  width={412}
+                  height={320}
+                />
               </div>
               <div className="md:mx-auto md:max-w-[48%] my-auto">
                 <h1 className="font-bold text-2xl text-center">{item.category}</h1>
@@ -84,7 +94,10 @@ export default function Finance() {
               </div>
             </div>
           ) : (
-            <div key={index} className="flex flex-col-reverse md:flex-row md:justify-between rounded-xl bg-white shadow-xl w-[82%] lg:w-[80%] xl:w-[49%] xl:min-h-[428px] 2xl:min-h-[356px]">
+            <div
+              key={index}
+              className="flex flex-col-reverse md:flex-row md:justify-between rounded-xl bg-white shadow-xl w-[82%] lg:w-[80%] xl:w-[49%] xl:min-h-[428px] 2xl:min-h-[356px]"
+            >
               <div className="ml-5 md:mx-auto md:max-w-[48%] my-auto">
                 <div className="flex flex-col justify-center">
                   <h1 className="font-bold text-2xl text-center">{item.category}</h1>
@@ -98,7 +111,14 @@ export default function Finance() {
                 </div>
               </div>
               <div className="flex flex-col md:flex-row">
-                <Image className="rounded-b-xl md:rounded-l-none md:rounded-r-xl" src={item.banner} objectFit="cover" layout="intrinsic" width={412} height={320} />
+                <Image
+                  className="rounded-b-xl md:rounded-l-none md:rounded-r-xl"
+                  src={item.banner}
+                  objectFit="cover"
+                  layout="intrinsic"
+                  width={412}
+                  height={320}
+                />
               </div>
             </div>
           )

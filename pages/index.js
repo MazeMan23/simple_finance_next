@@ -8,12 +8,9 @@ import Image from "next/image";
 
 export async function getStaticProps({ locale }) {
   const index = (await import(`../translations/index/${locale}.json`)).default;
-  const header = (await import(`../translations/header/${locale}.json`))
-    .default;
-  const footer = (await import(`../translations/footer/${locale}.json`))
-    .default;
-  const contact = (await import(`../translations/contact/${locale}.json`))
-    .default;
+  const header = (await import(`../translations/header/${locale}.json`)).default;
+  const footer = (await import(`../translations/footer/${locale}.json`)).default;
+  const contact = (await import(`../translations/contact/${locale}.json`)).default;
 
   const final = { ...index, ...header, ...footer, ...contact };
 
@@ -140,19 +137,14 @@ export default function Index() {
       desc: t("offices"),
       url: "offices",
     },
-
   ];
 
   return (
     <Layout h={h} f={f}>
       <ParticlesHero img="/images/main-bg.jpg">
         <div className="flex flex-col justify-center text-center tracking-tight text-white gap-4">
-          <div className="text-2xl font-bold animate-slideToL">
-            {t("heroTitle")}
-          </div>
-          <div className="text-2xl font-semibold tracking-widest animate-slideToL">
-            {t("heroSubtitle")}
-          </div>
+          <div className="text-2xl font-bold animate-slideToL">{t("heroTitle")}</div>
+          <div className="text-2xl font-semibold tracking-widest animate-slideToL">{t("heroSubtitle")}</div>
           <div className="text-sm text-justify indent-5 font-semibold animate-slideToR mx-[5%] lg:text-xl 2xl:text-2xl">
             {t("whoAreWe")}
           </div>
@@ -180,9 +172,7 @@ export default function Index() {
       </div> */}
       <div className="bg-slate-100">
         <div className="flex flex-col items-center">
-          <h1 className="text-3xl font-semibold	mt-10 mb-3">
-            {t("servicesTitle")}
-          </h1>
+          <h1 className="text-3xl font-semibold	mt-10 mb-3">{t("servicesTitle")}</h1>
           <div className="flex flex-row justify-center gap-4 px-8 mb-4 flex-wrap">
             {services_list.map((item, index) => (
               <div
@@ -211,9 +201,7 @@ export default function Index() {
                       </div>
                       <p className="ml-2 text-2xl w-[85%]">{item.title}</p>
                     </div>
-                    <p className="text-gray-700 font-semibold text-sm mt-2 p-4">
-                      {item.desc}
-                    </p>
+                    <p className="text-gray-700 font-semibold text-sm mt-2 p-4">{item.desc}</p>
                   </div>
                 </Link>
               </div>
@@ -221,9 +209,7 @@ export default function Index() {
           </div>
         </div>
       </div>
-      <div className="text-center py-8 text-2xl md:text-3xl font-bold  bg-slate-100">
-        {c("partnerTitle")}
-      </div>
+      <div className="text-center py-8 text-2xl md:text-3xl font-bold  bg-slate-100">{c("partnerTitle")}</div>
       <div className="flex flex-row flex-wrap justify-center gap-8 pb-8 bg-slate-100">
         {partners.map((p, i) => (
           <Partner image={p.image} text={p.name} key={i} />

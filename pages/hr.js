@@ -57,13 +57,32 @@ export default function Finance() {
       banner: "/images/personnel-administration.jpg",
       desc: t("staffAdministration_desc"),
       info: [t("staffAdministration_info")],
-      args: [t("administration_arg1"), t("administration_arg2"), t("administration_arg3"), t("administration_arg4"), t("administration_arg5"), t("administration_arg6"), t("administration_arg7"), t("administration_arg8"), t("administration_arg9"), t("administration_arg10")],
+      args: [
+        t("administration_arg1"),
+        t("administration_arg2"),
+        t("administration_arg3"),
+        t("administration_arg4"),
+        t("administration_arg5"),
+        t("administration_arg6"),
+        t("administration_arg7"),
+        t("administration_arg8"),
+        t("administration_arg9"),
+        t("administration_arg10"),
+      ],
     },
     {
       category: t("compStructuring_title"),
       banner: "/images/comp-structuring.jpg",
       info: [t("compStructuring_desc")],
-      args: [t("compStructuring_arg1"), t("compStructuring_arg2"), t("compStructuring_arg3"), t("compStructuring_arg4"), t("compStructuring_arg5"), t("compStructuring_arg6"), t("compStructuring_arg7")],
+      args: [
+        t("compStructuring_arg1"),
+        t("compStructuring_arg2"),
+        t("compStructuring_arg3"),
+        t("compStructuring_arg4"),
+        t("compStructuring_arg5"),
+        t("compStructuring_arg6"),
+        t("compStructuring_arg7"),
+      ],
     },
   ];
 
@@ -78,9 +97,19 @@ export default function Finance() {
       <Collapse.Group>
         <div className="flex flex-row justify-center gap-10 px-8 mb-8 flex-wrap">
           {services_list.map((item, index) => (
-            <div key={index} className="rounded-xl bg-white active:bg-gray-200 w-full md:w-[68%] lg:w-[43%] xl:w-[41%] 2xl:w-[610px] scale-100 duration-150 hover:scale-105">
+            <div
+              key={index}
+              className="rounded-xl bg-white active:bg-gray-200 w-full md:w-[68%] lg:w-[43%] xl:w-[41%] 2xl:w-[610px] scale-100 duration-150 hover:scale-105"
+            >
               <div className="flex flex-col">
-                <Image src={item.banner} className="rounded-t-xl" layout="intrinsic" width={412} height={360} objectFit="cover" />
+                <Image
+                  src={item.banner}
+                  className="rounded-t-xl"
+                  layout="intrinsic"
+                  width={412}
+                  height={360}
+                  objectFit="cover"
+                />
               </div>
               <Collapse className="font-bold text-2xl" title={item.category} shadow="true">
                 <p className="indent-5 font-bold text-gray-700 text-left">{item.desc}</p>

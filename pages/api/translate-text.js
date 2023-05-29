@@ -3,9 +3,7 @@ import * as deepl from "deepl-node";
 export default async function translateText(req, res) {
   // only post requests so they're encrypted by HTTPS
   if (req.method !== "POST") {
-    res
-      .status(405)
-      .json({ error: "This API endpoint only accepts POST requests!" });
+    res.status(405).json({ error: "This API endpoint only accepts POST requests!" });
     return;
   }
 
@@ -26,9 +24,7 @@ export default async function translateText(req, res) {
 
   // don't try to translate the same language
   if (inputLanguage === outputLanguage) {
-    res
-      .status(400)
-      .json({ error: "Input and output language must be different!" });
+    res.status(400).json({ error: "Input and output language must be different!" });
     return;
   }
 
@@ -48,29 +44,19 @@ export default async function translateText(req, res) {
   const translator = new deepl.Translator(process.env.DEEPL_API_KEY);
 
   // check if language is present in deepl lib
-  if (
-    !(await translator.getSourceLanguages()).find(
-      (language) => language.code.toLocaleLowerCase() == inputLanguage
-    )
-  ) {
+  if (!(await translator.getSourceLanguages()).find((language) => language.code.toLocaleLowerCase() == inputLanguage)) {
     res.status(400).json({ error: "Unrecognized input language!" });
     return;
   }
   if (
-    !(await translator.getTargetLanguages()).find(
-      (language) => language.code.toLocaleLowerCase() == outputLanguage
-    )
+    !(await translator.getTargetLanguages()).find((language) => language.code.toLocaleLowerCase() == outputLanguage)
   ) {
     res.status(400).json({ error: "Unrecognized output language!" });
     return;
   }
 
   // call API
-  const result = await translator.translateText(
-    input,
-    inputLanguage,
-    outputLanguage
-  );
+  const result = await translator.translateText(input, inputLanguage, outputLanguage);
 
   // all ok, send it
   res.status(200).json({ output: result.text });

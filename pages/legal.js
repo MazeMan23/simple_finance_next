@@ -7,12 +7,9 @@ import ContactForm from "../components/ContactForm";
 
 export async function getStaticProps({ locale }) {
   const legal = (await import(`../translations/legal/${locale}.json`)).default;
-  const header = (await import(`../translations/header/${locale}.json`))
-    .default;
-  const footer = (await import(`../translations/footer/${locale}.json`))
-    .default;
-  const contact = (await import(`../translations/contact/${locale}.json`))
-    .default;
+  const header = (await import(`../translations/header/${locale}.json`)).default;
+  const footer = (await import(`../translations/footer/${locale}.json`)).default;
+  const contact = (await import(`../translations/contact/${locale}.json`)).default;
 
   const final = { ...legal, ...header, ...footer, ...contact };
 
@@ -34,44 +31,32 @@ export default function Legal() {
     {
       url: "/images/documents.jpg",
       title: t("companies"),
-      points: new Array(13)
-        .fill(undefined)
-        .map((val, index) => t(`companies_${index + 1}`)),
+      points: new Array(13).fill(undefined).map((val, index) => t(`companies_${index + 1}`)),
     },
     {
       url: "/images/deal.jpg",
       title: t("transactions"),
-      points: new Array(3)
-        .fill(undefined)
-        .map((val, index) => t(`transactions_${index + 1}`)),
+      points: new Array(3).fill(undefined).map((val, index) => t(`transactions_${index + 1}`)),
     },
     {
       url: "/images/bank-img.jpg",
       title: t("banks"),
-      points: new Array(6)
-        .fill(undefined)
-        .map((val, index) => t(`banks_${index + 1}`)),
+      points: new Array(6).fill(undefined).map((val, index) => t(`banks_${index + 1}`)),
     },
     {
       url: "/images/consulting.jpg",
       title: t("procurement"),
-      points: new Array(4)
-        .fill(undefined)
-        .map((val, index) => t(`procurement_${index + 1}`)),
+      points: new Array(4).fill(undefined).map((val, index) => t(`procurement_${index + 1}`)),
     },
     {
       url: "/images/labour-relations.jpg",
       title: t("labour"),
-      points: new Array(7)
-        .fill(undefined)
-        .map((val, index) => t(`labour_${index + 1}`)),
+      points: new Array(7).fill(undefined).map((val, index) => t(`labour_${index + 1}`)),
     },
     {
       url: "/images/civil-law.jpg",
       title: t("law"),
-      points: new Array(5)
-        .fill(undefined)
-        .map((val, index) => t(`law_${index + 1}`)),
+      points: new Array(5).fill(undefined).map((val, index) => t(`law_${index + 1}`)),
     },
   ];
 
@@ -110,25 +95,15 @@ export default function Legal() {
     <Layout h={h} f={f}>
       <ParticlesHero img="/images/simple-law.jpg">
         <div className="flex flex-col justify-center text-center text-white gap-4">
-          <div className=" text-2xl md:text-5xl font-bold">
-            {t("heroTitle")}
-          </div>
-          <div className="text-xl md:text-4xl font-bold">
-            {t("heroSubtitle1")}
-          </div>
-          <div className="text-lg md:text-xl font-semibold tracking-widest">
-            {t("heroSubtitle2")}
-          </div>
+          <div className=" text-2xl md:text-5xl font-bold">{t("heroTitle")}</div>
+          <div className="text-xl md:text-4xl font-bold">{t("heroSubtitle1")}</div>
+          <div className="text-lg md:text-xl font-semibold tracking-widest">{t("heroSubtitle2")}</div>
         </div>
       </ParticlesHero>
       <div className="flex flex-col items-center mt-8">
         <div className="flex flex-row justify-center gap-10 flex-wrap mx-auto p-10 pt-5">
-          <p className="lg:max-w-[45%] lg:text-lg lg:font-semibold">
-            {t("text1")}
-          </p>
-          <p className="lg:max-w-[45%] lg:text-lg lg:font-semibold">
-            {t("text2")}
-          </p>
+          <p className="lg:max-w-[45%] lg:text-lg lg:font-semibold">{t("text1")}</p>
+          <p className="lg:max-w-[45%] lg:text-lg lg:font-semibold">{t("text2")}</p>
         </div>
         <h1 className="text-2xl font-semibold">{t("servicesTitle")}</h1>
         <div className="flex flex-col lg:flex-row">
@@ -141,9 +116,7 @@ export default function Legal() {
                       className="scale-100 hover:scale-105"
                       key={index}
                       title={value.title}
-                      contentLeft={
-                        <Avatar src={value.url} size="xl" className="!z-0" />
-                      }
+                      contentLeft={<Avatar src={value.url} size="xl" className="!z-0" />}
                     >
                       <ul className="list-disc ml-5 mt-5 marker:text-orange-500">
                         {value.points.map((value, index) => (
@@ -167,9 +140,7 @@ export default function Legal() {
                       className="scale-100 hover:scale-105"
                       key={index}
                       title={value.title}
-                      contentLeft={
-                        <Avatar src={value.url} size="xl" className="!z-0" />
-                      }
+                      contentLeft={<Avatar src={value.url} size="xl" className="!z-0" />}
                     >
                       <ul className="list-disc ml-5 mt-5 marker:text-orange-500">
                         {value.points.map((value, index) => (
