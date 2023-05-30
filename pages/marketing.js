@@ -6,10 +6,14 @@ import ContactForm from "../components/ContactForm";
 import { Avatar, Collapse, Grid } from "@nextui-org/react";
 
 export async function getStaticProps({ locale }) {
-  const header = (await import(`../translations/header/${locale}.json`)).default;
-  const footer = (await import(`../translations/footer/${locale}.json`)).default;
-  const contact = (await import(`../translations/contact/${locale}.json`)).default;
-  const marketing = (await import(`../translations/marketing/${locale}.json`)).default;
+  const header = (await import(`../translations/header/${locale}.json`))
+    .default;
+  const footer = (await import(`../translations/footer/${locale}.json`))
+    .default;
+  const contact = (await import(`../translations/contact/${locale}.json`))
+    .default;
+  const marketing = (await import(`../translations/marketing/${locale}.json`))
+    .default;
 
   const final = { ...marketing, ...header, ...footer, ...contact };
 
@@ -108,7 +112,9 @@ export default function Marketing() {
     <Layout h={h} f={f}>
       <ParticlesHero img="/images/simple_marketing.jpg">
         <div className="flex flex-col justify-center text-center items-center text-white gap-4">
-          <div className=" text-2xl md:text-5xl max-w-4xl font-bold">{t("heroTitle")}</div>
+          <div className=" text-2xl md:text-5xl max-w-4xl font-bold">
+            {t("heroTitle")}
+          </div>
           <div className="text-xl font-bold max-w-3xl">{t("heroSubtitle")}</div>
         </div>
       </ParticlesHero>
@@ -120,58 +126,104 @@ export default function Marketing() {
         </div>
       </div>
       <div className="flex flex-col justify-center w-full items-center mt-4">
-        <h1 className="text-5xl font-semibold">{t("services")}</h1>
+        <h1 className="text-5xl font-semibold text-center">{t("services")}</h1>
         <div className="flex flex-col lg:flex-row ml-8 mr-8">
           <Grid.Container gap={2}>
             <Grid className="flex flex-col gap-12 lg:gap-2 lg:flex-row">
               <Collapse.Group splitted className="ml-8 mr-8">
                 <Collapse
                   className="scale-100 "
-                  title={<span className="font-semibold">{t("marketing_strategy")}</span>}
-                  contentLeft={<Avatar className="!z-0" src="/images/marketing_start.jpg" size="xl" />}
+                  title={
+                    <span className="font-semibold">
+                      {t("marketing_strategy")}
+                    </span>
+                  }
+                  contentLeft={
+                    <Avatar
+                      className="!z-0"
+                      src="/images/marketing_start.jpg"
+                      size="xl"
+                    />
+                  }
                 >
-                  <span className=" text-sm md:text-lg ">{t("market_research_desc")}</span>
+                  <span className=" text-sm md:text-lg ">
+                    {t("market_research_desc")}
+                  </span>
                   <br />
                   <ul>
-                    <li className="text-sm md:text-lg">❖ {t("market_research_desc_desc")}</li>
+                    <li className="text-sm md:text-lg">
+                      ❖ {t("market_research_desc_desc")}
+                    </li>
                     <br />
-                    <li className="text-sm md:text-lg">❖ {t("customer_research")}</li>
+                    <li className="text-sm md:text-lg">
+                      ❖ {t("customer_research")}
+                    </li>
                     <br />
-                    <li className="text-sm md:text-lg">❖ {t("product_research")}</li>
+                    <li className="text-sm md:text-lg">
+                      ❖ {t("product_research")}
+                    </li>
                     <br />
-                    <li className="text-sm md:text-lg">❖ {t("user_research")}</li>
+                    <li className="text-sm md:text-lg">
+                      ❖ {t("user_research")}
+                    </li>
                   </ul>
                 </Collapse>
                 <Collapse
                   className="scale-100 "
-                  title={<span className="font-semibold">{t("market_research")}</span>}
-                  contentLeft={<Avatar className="!z-0" src="/images/market_research.jpg" size="xl" />}
+                  title={
+                    <span className="font-semibold">
+                      {t("market_research")}
+                    </span>
+                  }
+                  contentLeft={
+                    <Avatar
+                      className="!z-0"
+                      src="/images/market_research.jpg"
+                      size="xl"
+                    />
+                  }
                 >
-                  <span className=" text-sm md:text-lg ">{t("market_research_desc")}</span>
+                  <span className=" text-sm md:text-lg ">
+                    {t("market_research_desc")}
+                  </span>
                   <br />
                   <ul>
-                    <li className="text-sm md:text-lg">❖ {t("market_research_desc_desc")}</li>
+                    <li className="text-sm md:text-lg">
+                      ❖ {t("market_research_desc_desc")}
+                    </li>
                     <br />
-                    <li className="text-sm md:text-lg">❖ {t("customer_research")}</li>
+                    <li className="text-sm md:text-lg">
+                      ❖ {t("customer_research")}
+                    </li>
                     <br />
-                    <li className="text-sm md:text-lg">❖ {t("product_research")}</li>
+                    <li className="text-sm md:text-lg">
+                      ❖ {t("product_research")}
+                    </li>
                     <br />
-                    <li className="text-sm md:text-lg">❖ {t("user_research")}</li>
+                    <li className="text-sm md:text-lg">
+                      ❖ {t("user_research")}
+                    </li>
                   </ul>
                 </Collapse>
                 <Collapse
                   className="scale-100 "
                   title={<span className="font-semibold">{t("pest")}</span>}
-                  contentLeft={<Avatar className="!z-0" src="/images/pest.jpg" size="xl" />}
+                  contentLeft={
+                    <Avatar className="!z-0" src="/images/pest.jpg" size="xl" />
+                  }
                 >
-                  <span className=" text-sm md:text-lg text-center">{t("pest_desc")}</span>
+                  <span className=" text-sm md:text-lg text-center">
+                    {t("pest_desc")}
+                  </span>
                 </Collapse>
               </Collapse.Group>
             </Grid>
           </Grid.Container>
         </div>
         <br />
-        <h1 className="mb-5 text-3xl font-semibold ml-5 text-center text-gray-500">{t("digital_marketing")}</h1>
+        <h1 className="mb-5 text-3xl font-semibold ml-5 text-center text-gray-500">
+          {t("digital_marketing")}
+        </h1>
         <div className="flex flex-col lg:flex-row">
           <div className="flex flex-col">
             <Grid.Container gap={2}>
@@ -181,8 +233,16 @@ export default function Marketing() {
                     <Collapse
                       className="scale-100 "
                       key={index}
-                      title={<span className="font-semibold">{item.title}</span>}
-                      contentLeft={item.url != "none" ? <Avatar className="!z-0" src={item.url} size="xl" /> : <></>}
+                      title={
+                        <span className="font-semibold">{item.title}</span>
+                      }
+                      contentLeft={
+                        item.url != "none" ? (
+                          <Avatar className="!z-0" src={item.url} size="xl" />
+                        ) : (
+                          <></>
+                        )
+                      }
                     >
                       {item.desc}
                     </Collapse>
@@ -193,8 +253,16 @@ export default function Marketing() {
                     <Collapse
                       className="scale-100 "
                       key={index}
-                      title={<span className="font-semibold">{item.title}</span>}
-                      contentLeft={item.url != "none" ? <Avatar className="!z-0" src={item.url} size="xl" /> : <></>}
+                      title={
+                        <span className="font-semibold">{item.title}</span>
+                      }
+                      contentLeft={
+                        item.url != "none" ? (
+                          <Avatar className="!z-0" src={item.url} size="xl" />
+                        ) : (
+                          <></>
+                        )
+                      }
                     >
                       {item.desc}
                     </Collapse>
