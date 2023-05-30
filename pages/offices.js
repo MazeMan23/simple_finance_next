@@ -65,9 +65,9 @@ export default function Translate() {
         <div className="">{t("text")}</div>
         <div className="font-semibold">{t("finalText")}</div>
       </div>
-      <div className="grid grid-cols-1 gap-10 justify-center mx-auto my-8 md:grid-cols-2 2xl:grid-cols-4">
+      <div className="grid grid-cols-1 gap-10 justify-center mx-auto my-8 md:grid-cols-2 xl:grid-cols-3 3xl:grid-cols-4">
         {offices_list.map((office, index) => (
-          <Card key={index} className="w-[350px] lg:w-[420px]">
+          <Card key={index} className="w-[360px] lg:w-[420px]">
             <Card.Image src={office.img} objectFit="cover" width="100%" height={340} alt="Office image" />
             <div className="absolute bottom-[51px] w-screen py-2 bg-[#132844]/80">
               <Text size={26} className="uppercase font-bold text-slate-100 ml-4">
@@ -78,7 +78,7 @@ export default function Translate() {
               <div className="ml-3">
                 <Image src="/images/location-pin.png" width={25} height={25} />
               </div>
-              <div className="text-lg font-semibold ml-2 text-white">{office.location}</div>
+              <div className="text-lg font-semibold ml-1 text-white">{office.location}</div>
             </div>
           </Card>
         ))}

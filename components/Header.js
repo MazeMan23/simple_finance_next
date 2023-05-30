@@ -366,7 +366,7 @@ export default function Header({ t }) {
                   className="active:bg-[#021f41] focus:bg-[#021f41] hover:bg-[#021f41]"
                 >
                   <Link href="/finance">
-                    <div className=" hover:cursor-pointer flex flex-row items-center">
+                    <div className="flex flex-row items-center">
                       <div className="w-16 h-16">
                         <Image
                           src="/images/service_finance_cut.jpg"
@@ -390,7 +390,7 @@ export default function Header({ t }) {
                   className="active:bg-[#021f41] focus:bg-[#021f41] hover:bg-[#021f41]"
                 >
                   <Link href="/legal">
-                    <div className=" hover:cursor-pointer flex flex-row items-center">
+                    <div className="flex flex-row items-center">
                       <div className="w-16 h-16">
                         <Image
                           src="/images/service_law_cut.jpg"
@@ -412,7 +412,7 @@ export default function Header({ t }) {
                   className="active:bg-[#021f41] focus:bg-[#021f41] hover:bg-[#021f41]"
                 >
                   <Link href="/marketing">
-                    <div className=" hover:cursor-pointer flex flex-row items-center">
+                    <div className="flex flex-row items-center">
                       <div className="w-16 h-16">
                         <Image
                           src="/images/service_market_cut.png"
@@ -436,7 +436,7 @@ export default function Header({ t }) {
                   className="active:bg-[#021f41] focus:bg-[#021f41] hover:bg-[#021f41]"
                 >
                   <Link href="/translate">
-                    <div className="ml-1 hover:cursor-pointer flex flex-row items-center">
+                    <div className="ml-1 flex flex-row items-center">
                       <div className="w-14 h-14">
                         <Image
                           src="/images/service_translate.png"
@@ -460,7 +460,7 @@ export default function Header({ t }) {
                   className="active:bg-[#021f41] focus:bg-[#021f41] hover:bg-[#021f41]"
                 >
                   <Link href="/hr">
-                    <div className="hover:cursor-pointer flex flex-row items-center">
+                    <div className="flex flex-row items-center ml-1">
                       <div className="w-14 h-14">
                         <Image
                           src="/images/hr_cut.png"
@@ -480,7 +480,7 @@ export default function Header({ t }) {
                   className="active:bg-[#021f41] focus:bg-[#021f41] hover:bg-[#021f41] mt-2 mb-2"
                 >
                   <Link href="/projects">
-                    <div className=" hover:cursor-pointer flex flex-row items-center">
+                    <div className="flex flex-row items-center ml-1">
                       <div className="w-14 h-14">
                         <Image
                           src="/images/service_project.png"
@@ -504,7 +504,7 @@ export default function Header({ t }) {
                   className="active:bg-[#021f41] focus:bg-[#021f41] hover:bg-[#021f41]"
                 >
                   <Link href="/standards">
-                    <div className=" hover:cursor-pointer flex flex-row items-center">
+                    <div className="flex flex-row items-center ml-1">
                       <div className="w-14 h-14">
                         <Image
                           src="/images/standards_cut.png"
@@ -528,7 +528,7 @@ export default function Header({ t }) {
                   className="active:bg-[#021f41] focus:bg-[#021f41] hover:bg-[#021f41]"
                 >
                   <Link href="/it">
-                    <div className="hover:cursor-pointer flex flex-row items-center ml-[-5px]">
+                    <div className="flex flex-row items-center">
                       <div className="w-16 h-16">
                         <Image
                           src="/images/service_it_cut.png"
@@ -548,7 +548,7 @@ export default function Header({ t }) {
                   className="active:bg-[#021f41] focus:bg-[#021f41] hover:bg-[#021f41]"
                 >
                   <Link href="/insurance">
-                    <div className=" hover:cursor-pointer flex flex-row items-center ml-[-3px]">
+                    <div className="flex flex-row items-center">
                       <div className="w-14 h-14">
                         <Image
                           src="/images/insurance_crop.png"
@@ -572,7 +572,7 @@ export default function Header({ t }) {
                   className="active:bg-[#021f41] focus:bg-[#021f41] hover:bg-[#021f41]"
                 >
                   <Link href="/value">
-                    <div className=" hover:cursor-pointer flex flex-row items-center ml-[-3px]">
+                    <div className="flex flex-row items-center">
                       <div className="w-14 h-14">
                         <Image
                           src="/images/logo-value_cut.png"
@@ -596,7 +596,7 @@ export default function Header({ t }) {
                   className="active:bg-[#021f41] focus:bg-[#021f41] hover:bg-[#021f41]"
                 >
                   <Link href="/offices">
-                    <div className=" hover:cursor-pointer flex flex-row items-center">
+                    <div className="flex flex-row items-center">
                       <div className="w-14 h-14">
                         <Image
                           src="/images/cut_offices_logo.png"

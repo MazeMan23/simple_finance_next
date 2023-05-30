@@ -142,10 +142,10 @@ export default function Index() {
   return (
     <Layout h={h} f={f}>
       <ParticlesHero img="/images/main-bg.jpg">
-        <div className="flex flex-col justify-center text-center tracking-tight text-white gap-4">
-          <div className="text-2xl font-bold animate-slideToL">{t("heroTitle")}</div>
-          <div className="text-2xl font-semibold tracking-widest animate-slideToL">{t("heroSubtitle")}</div>
-          <div className="text-sm text-justify indent-5 font-semibold animate-slideToR mx-[5%] lg:text-xl 2xl:text-2xl">
+        <div className="flex flex-col justify-center text-center tracking-tight text-white gap-2">
+          <div className="text-sm lg:text-2xl font-bold animate-slideToL">{t("heroTitle")}</div>
+          <div className="text-sm lg:text-2xl font-semibold tracking-widest animate-slideToL">{t("heroSubtitle")}</div>
+          <div className="text-sm leading-tight text-justify indent-5 font-semibold animate-slideToR mx-[5%] lg:text-xl 2xl:text-2xl">
             {t("whoAreWe")}
           </div>
         </div>

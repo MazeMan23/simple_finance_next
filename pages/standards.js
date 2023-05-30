@@ -62,7 +62,7 @@ export default function Finance() {
     },
     {
       category: t("title_45001"),
-      banner: "/images/Iso-45001.png",
+      banner: "/images/iso-45001.png",
       desc: t("45001_desc"),
       benefit: t("45001_benefit"),
       args: [t("45001_arg"), t("45001_arg1"), t("45001_arg2"), t("45001_arg3"), t("45001_arg4")],
@@ -111,7 +111,7 @@ export default function Finance() {
 
   return (
     <Layout h={h} f={f}>
-      <ParticlesHero img="/images/ISO-Certification.jpg">
+      <ParticlesHero img="/images/iso.jpg">
         <div className="flex flex-col justify-center text-center text-white gap-4">
           <div className="text-2xl md:text-5xl font-bold text-orange-400 mx-3">{t("heroTitle")}</div>
           <div className="text-lg md:text-2xl font-semibold tracking-normal mx-5 max-w-4xl md:mx-auto">

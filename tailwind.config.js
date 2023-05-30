@@ -16,7 +16,10 @@ module.exports = {
           '0%': { transform: 'translateX(100%)' },
           '100%': { transform: 'translateX(0%)' }
         }
-      }
+      },
+      screens: {
+        '3xl': '1830px',
+      },
     },
   },
   plugins: [],
