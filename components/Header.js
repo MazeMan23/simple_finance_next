@@ -276,7 +276,7 @@ export default function Header({ t }) {
                 }}
               >
                 <Dropdown.Item showFullDescription className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
-                  <div onClick={() => router.push("/finance")} className="flex flex-row items-center">
+                  <Link href="/finance" className="flex flex-row items-center">
                     <div className="w-16 h-16">
                       <Image src="/images/service_finance_cut.jpg" width={500} height={500} />
                     </div>
@@ -284,10 +284,10 @@ export default function Header({ t }) {
                       <p className="text-[#e98f2f] text-xl font-bold">Simple Finance</p>
                       <p className="text-gray-400 font-semibold">{t("finance")}</p>
                     </div>
-                  </div>
+                  </Link>
                 </Dropdown.Item>
                 <Dropdown.Item showFullDescription className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
-                  <div onClick={() => router.push("/legal")} className="flex flex-row items-center">
+                  <Link href="/legal" className="flex flex-row items-center">
                     <div className="w-16 h-16">
                       <Image src="/images/service_law_cut.jpg" width={500} height={500} />
                     </div>
@@ -295,10 +295,10 @@ export default function Header({ t }) {
                       <p className="text-[#e98f2f] text-xl font-bold">LAW</p>
                       <p className="text-gray-400 font-semibold">{t("legal")}</p>
                     </div>
-                  </div>
+                  </Link>
                 </Dropdown.Item>
                 <Dropdown.Item showFullDescription className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
-                  <div onClick={() => router.push("/marketing")} className="flex flex-row items-center">
+                  <Link href="/marketing" className="flex flex-row items-center">
                     <div className="w-16 h-16">
                       <Image src="/images/service_market_cut.png" width={500} height={500} />
                     </div>
@@ -306,10 +306,10 @@ export default function Header({ t }) {
                       <p className="text-[#e98f2f] text-xl font-bold">Marketing</p>
                       <p className="text-gray-400 font-semibold">{t("marketing")}</p>
                     </div>
-                  </div>
+                  </Link>
                 </Dropdown.Item>
                 <Dropdown.Item showFullDescription className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
-                  <div onClick={() => router.push("/translate")} className="ml-1 flex flex-row items-center">
+                  <Link href="/translate" className="ml-1 flex flex-row items-center">
                     <div className="w-14 h-14">
                       <Image src="/images/service_translate.png" width={500} height={500} />
                     </div>
@@ -317,10 +317,10 @@ export default function Header({ t }) {
                       <p className="text-[#e98f2f] text-xl font-bold">Translate</p>
                       <p className="text-gray-400 font-semibold">{t("translate")}</p>
                     </div>
-                  </div>
+                  </Link>
                 </Dropdown.Item>
                 <Dropdown.Item showFullDescription className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
-                  <div onClick={() => router.push("/hr")} className="flex flex-row items-center ml-1">
+                  <Link href="/hr" className="flex flex-row items-center ml-1">
                     <div className="w-14 h-14">
                       <Image src="/images/hr_cut.png" width={500} height={500} />
                     </div>
@@ -328,13 +328,13 @@ export default function Header({ t }) {
                       <p className="text-[#e98f2f] text-xl font-bold">HR</p>
                       <p className="text-gray-400 font-semibold">{t("hr")}</p>
                     </div>
-                  </div>
+                  </Link>
                 </Dropdown.Item>
                 <Dropdown.Item
                   showFullDescription
                   className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41] mt-2 mb-2"
                 >
-                  <div onClick={() => router.push("/projects")} className="flex flex-row items-center ml-1">
+                  <Link href="/projects" className="flex flex-row items-center ml-1">
                     <div className="w-14 h-14">
                       <Image src="/images/service_project.png" width={500} height={500} />
                     </div>
@@ -342,10 +342,10 @@ export default function Header({ t }) {
                       <p className="text-[#e98f2f] text-xl font-bold">Projects</p>
                       <p className="text-gray-400 font-semibold">{t("projects")}</p>
                     </div>
-                  </div>
+                  </Link>
                 </Dropdown.Item>
                 <Dropdown.Item showFullDescription className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
-                  <div onClick={() => router.push("/standards")} className="flex flex-row items-center ml-1">
+                  <Link href="/standards" className="flex flex-row items-center ml-1">
                     <div className="w-14 h-14">
                       <Image src="/images/standards_cut.png" width={500} height={500} />
                     </div>
@@ -353,10 +353,10 @@ export default function Header({ t }) {
                       <p className="text-[#e98f2f] text-xl font-bold">Standards</p>
                       <p className="text-gray-400 font-semibold">{t("standards")}</p>
                     </div>
-                  </div>
+                  </Link>
                 </Dropdown.Item>
                 <Dropdown.Item showFullDescription className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
-                  <div onClick={() => router.push("/it")} className="flex flex-row items-center">
+                  <Link href="/it" className="flex flex-row items-center">
                     <div className="w-16 h-16">
                       <Image src="/images/service_it_cut.png" width={500} height={500} />
                     </div>
@@ -364,10 +364,10 @@ export default function Header({ t }) {
                       <p className="text-[#e98f2f] text-xl font-bold">IT</p>
                       <p className="text-gray-400 font-semibold">{t("it")}</p>
                     </div>
-                  </div>
+                  </Link>
                 </Dropdown.Item>
                 <Dropdown.Item showFullDescription className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
-                  <div onClick={() => router.push("/insurance")} className="flex flex-row items-center">
+                  <Link href="/insurance" className="flex flex-row items-center">
                     <div className="w-14 h-14">
                       <Image src="/images/insurance_crop.png" width={500} height={500} />
                     </div>
@@ -375,10 +375,10 @@ export default function Header({ t }) {
                       <p className="text-[#e98f2f] text-xl font-bold">Insurance</p>
                       <p className="text-gray-400 font-semibold">{t("insurance")}</p>
                     </div>
-                  </div>
+                  </Link>
                 </Dropdown.Item>
                 <Dropdown.Item showFullDescription className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
-                  <div onClick={() => router.push("/value")} className="flex flex-row items-center">
+                  <Link href="/value" className="flex flex-row items-center">
                     <div className="w-14 h-14">
                       <Image src="/images/logo-value_cut.png" width={500} height={500} />
                     </div>
@@ -386,10 +386,10 @@ export default function Header({ t }) {
                       <p className="text-[#e98f2f] text-xl font-bold">Value</p>
                       <p className="text-gray-400 font-semibold">{t("value")}</p>
                     </div>
-                  </div>
+                  </Link>
                 </Dropdown.Item>
                 <Dropdown.Item showFullDescription className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
-                  <div onClick={() => router.push("/offices")} className="flex flex-row items-center">
+                  <Link href="/offices" className="flex flex-row items-center">
                     <div className="w-14 h-14">
                       <Image src="/images/cut_offices_logo.png" width={500} height={500} />
                     </div>
@@ -397,7 +397,7 @@ export default function Header({ t }) {
                       <p className="text-[#e98f2f] text-xl font-bold">Offices</p>
                       <p className="text-gray-400 font-semibold">{t("offices")}</p>
                     </div>
-                  </div>
+                  </Link>
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
