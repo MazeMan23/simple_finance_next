@@ -284,7 +284,9 @@ export default function Header({ t }) {
                       <p className="text-[#e98f2f] text-xl font-bold">Simple Finance</p>
                       <p className="text-gray-400 font-semibold">{t("finance")}</p>
                     </div>
-                    <button onClick={() => router.push('/finance')} className="text-4xl font-bold text-[#e98f2f]">&#8594;</button>
+                    <button onClick={() => router.push("/finance")} className="text-4xl font-bold text-[#e98f2f]">
+                      &#8594;
+                    </button>
                   </div>
                 </Dropdown.Item>
                 <Dropdown.Item showFullDescription className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
@@ -296,7 +298,9 @@ export default function Header({ t }) {
                       <p className="text-[#e98f2f] text-xl font-bold">LAW</p>
                       <p className="text-gray-400 font-semibold">{t("legal")}</p>
                     </div>
-                    <button onClick={() => router.push('/legal')} className="text-4xl font-bold text-[#e98f2f]">&#8594;</button>
+                    <button onClick={() => router.push("/legal")} className="text-4xl font-bold text-[#e98f2f]">
+                      &#8594;
+                    </button>
                   </div>
                 </Dropdown.Item>
                 <Dropdown.Item showFullDescription className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
@@ -308,7 +312,9 @@ export default function Header({ t }) {
                       <p className="text-[#e98f2f] text-xl font-bold">Marketing</p>
                       <p className="text-gray-400 font-semibold">{t("marketing")}</p>
                     </div>
-                    <button onClick={() => router.push('/marketing')} className="text-4xl font-bold text-[#e98f2f]">&#8594;</button>
+                    <button onClick={() => router.push("/marketing")} className="text-4xl font-bold text-[#e98f2f]">
+                      &#8594;
+                    </button>
                   </div>
                 </Dropdown.Item>
                 <Dropdown.Item showFullDescription className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
@@ -320,7 +326,9 @@ export default function Header({ t }) {
                       <p className="text-[#e98f2f] text-xl font-bold">Translate</p>
                       <p className="text-gray-400 font-semibold">{t("translate")}</p>
                     </div>
-                    <button onClick={() => router.push('/translate')} className="text-4xl font-bold text-[#e98f2f]">&#8594;</button>
+                    <button onClick={() => router.push("/translate")} className="text-4xl font-bold text-[#e98f2f]">
+                      &#8594;
+                    </button>
                   </div>
                 </Dropdown.Item>
                 <Dropdown.Item showFullDescription className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
@@ -332,7 +340,9 @@ export default function Header({ t }) {
                       <p className="text-[#e98f2f] text-xl font-bold">HR</p>
                       <p className="text-gray-400 font-semibold">{t("hr")}</p>
                     </div>
-                    <button onClick={() => router.push('/hr')} className="text-4xl font-bold text-[#e98f2f]">&#8594;</button>
+                    <button onClick={() => router.push("/hr")} className="text-4xl font-bold text-[#e98f2f]">
+                      &#8594;
+                    </button>
                   </div>
                 </Dropdown.Item>
                 <Dropdown.Item
@@ -347,7 +357,9 @@ export default function Header({ t }) {
                       <p className="text-[#e98f2f] text-xl font-bold">Projects</p>
                       <p className="text-gray-400 font-semibold">{t("projects")}</p>
                     </div>
-                    <button onClick={() => router.push('/projects')} className="text-4xl font-bold text-[#e98f2f]">&#8594;</button>
+                    <button onClick={() => router.push("/projects")} className="text-4xl font-bold text-[#e98f2f]">
+                      &#8594;
+                    </button>
                   </div>
                 </Dropdown.Item>
                 <Dropdown.Item showFullDescription className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
@@ -359,7 +371,9 @@ export default function Header({ t }) {
                       <p className="text-[#e98f2f] text-xl font-bold">Standards</p>
                       <p className="text-gray-400 font-semibold">{t("standards")}</p>
                     </div>
-                    <button onClick={() => router.push('/standards')} className="text-4xl font-bold text-[#e98f2f]">&#8594;</button>
+                    <button onClick={() => router.push("/standards")} className="text-4xl font-bold text-[#e98f2f]">
+                      &#8594;
+                    </button>
                   </div>
                 </Dropdown.Item>
                 <Dropdown.Item showFullDescription className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
@@ -371,7 +385,9 @@ export default function Header({ t }) {
                       <p className="text-[#e98f2f] text-xl font-bold">IT</p>
                       <p className="text-gray-400 font-semibold">{t("it")}</p>
                     </div>
-                    <button onClick={() => router.push('/it')} className="text-4xl font-bold text-[#e98f2f]">&#8594;</button>
+                    <button onClick={() => router.push("/it")} className="text-4xl font-bold text-[#e98f2f]">
+                      &#8594;
+                    </button>
                   </div>
                 </Dropdown.Item>
                 <Dropdown.Item showFullDescription className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
@@ -383,7 +399,9 @@ export default function Header({ t }) {
                       <p className="text-[#e98f2f] text-xl font-bold">Insurance</p>
                       <p className="text-gray-400 font-semibold">{t("insurance")}</p>
                     </div>
-                    <button onClick={() => router.push('/insurance')} className="text-4xl font-bold text-[#e98f2f]">&#8594;</button>
+                    <button onClick={() => router.push("/insurance")} className="text-4xl font-bold text-[#e98f2f]">
+                      &#8594;
+                    </button>
                   </div>
                 </Dropdown.Item>
                 <Dropdown.Item showFullDescription className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
@@ -395,7 +413,9 @@ export default function Header({ t }) {
                       <p className="text-[#e98f2f] text-xl font-bold">Value</p>
                       <p className="text-gray-400 font-semibold">{t("value")}</p>
                     </div>
-                    <button onClick={() => router.push('/value')} className="text-4xl font-bold text-[#e98f2f]">&#8594;</button>
+                    <button onClick={() => router.push("/value")} className="text-4xl font-bold text-[#e98f2f]">
+                      &#8594;
+                    </button>
                   </div>
                 </Dropdown.Item>
                 <Dropdown.Item showFullDescription className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
@@ -407,7 +427,9 @@ export default function Header({ t }) {
                       <p className="text-[#e98f2f] text-xl font-bold">Offices</p>
                       <p className="text-gray-400 font-semibold">{t("offices")}</p>
                     </div>
-                    <button onClick={() => router.push('/offices')} className="text-4xl font-bold text-[#e98f2f]">&#8594;</button>
+                    <button onClick={() => router.push("/offices")} className="text-4xl font-bold text-[#e98f2f]">
+                      &#8594;
+                    </button>
                   </div>
                 </Dropdown.Item>
               </Dropdown.Menu>
