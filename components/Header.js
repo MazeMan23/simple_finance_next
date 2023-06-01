@@ -34,39 +34,33 @@ export default function Header({ t }) {
           </Navbar.Brand>
           <Navbar.Content className="gap-8">
             <Link href="/">
-              <p className="text-white duration-100 text-2xl font-thin hover:text-orange-400 hover:cursor-pointer">
-                {t("home")}
-              </p>
+              <p className="text-white duration-100 text-2xl font-thin  ">{t("home")}</p>
             </Link>
             {/* <Link isActive href="/about">
-              <p className="text-white duration-100 text-2xl font-thin hover:text-orange-400">
+              <p className="text-white duration-100 text-2xl font-thin ">
                 {t("about")}
               </p>
             </Link> */}
             <div
               href="/en"
-              className="hover:cursor-pointer"
+              className=""
               onClick={() => {
                 setMegaMenu(!megaMenu);
               }}
             >
-              <p className="text-white duration-100 text-2xl font-thin hover:text-orange-400">{t("services")}</p>
+              <p className="text-white duration-100 text-2xl font-thin ">{t("services")}</p>
             </div>
             <Link href="https://groupsimple.sharepoint.com/_layouts/15/sharepoint.aspx">
-              <p className="text-white duration-100 text-2xl font-thin hover:text-orange-400 hover:cursor-pointer">
-                {t("login")}
-              </p>
+              <p className="text-white duration-100 text-2xl font-thin  ">{t("login")}</p>
             </Link>
             <Link href="/contact">
-              <p className="text-white duration-100 text-2xl font-thin hover:text-orange-400 hover:cursor-pointer">
-                {t("contact")}
-              </p>
+              <p className="text-white duration-100 text-2xl font-thin  ">{t("contact")}</p>
             </Link>
           </Navbar.Content>
           <Navbar.Content>
             <US
               title="United States"
-              className="cursor-pointer min-w-[3rem] rounded-sm hover:scale-110 duration-100"
+              className="cursor-pointer min-w-[3rem] rounded-sm  duration-100"
               onClick={() => {
                 setCookie("NEXT_LOCALE", "en");
                 router.push(router.asPath, router.asPath, {
@@ -77,7 +71,7 @@ export default function Header({ t }) {
             />
             <BG
               title="Bulgaria"
-              className="cursor-pointer min-w-[3rem] rounded-sm hover:scale-110 duration-100"
+              className="cursor-pointer min-w-[3rem] rounded-sm  duration-100"
               onClick={() => {
                 setCookie("NEXT_LOCALE", "bg");
                 router.push(router.asPath, router.asPath, {
@@ -93,7 +87,7 @@ export default function Header({ t }) {
             <div className="pt-4 pb-6 mx-4 flex flex-col">
               <div className="grid grid-cols-5 gap-2 xl:gap-4">
                 <Link href="/finance">
-                  <div className=" hover:cursor-pointer flex flex-row items-center">
+                  <div className="  flex flex-row items-center">
                     <div className="w-16 h-16">
                       <Image src="/images/service_finance_cut.jpg" width={500} height={500} />
                     </div>
@@ -104,7 +98,7 @@ export default function Header({ t }) {
                   </div>
                 </Link>
                 <Link href="/legal">
-                  <div className=" hover:cursor-pointer flex flex-row items-center">
+                  <div className="  flex flex-row items-center">
                     <div className="w-16 h-16">
                       <Image src="/images/service_law_cut.jpg" width={500} height={500} />
                     </div>
@@ -115,7 +109,7 @@ export default function Header({ t }) {
                   </div>
                 </Link>
                 <Link href="/marketing">
-                  <div className=" hover:cursor-pointer flex flex-row items-center">
+                  <div className="  flex flex-row items-center">
                     <div className="w-16 h-16 mr-1">
                       <Image src="/images/service_market_cut.png" width={500} height={500} />
                     </div>
@@ -126,7 +120,7 @@ export default function Header({ t }) {
                   </div>
                 </Link>
                 <Link href="/translate">
-                  <div className=" hover:cursor-pointer flex flex-row items-center">
+                  <div className="  flex flex-row items-center">
                     <div className="w-14 h-14 mr-2">
                       <Image src="/images/service_translate.png" width={500} height={500} />
                     </div>
@@ -137,7 +131,7 @@ export default function Header({ t }) {
                   </div>
                 </Link>
                 <Link href="/hr">
-                  <div className=" hover:cursor-pointer flex flex-row items-center">
+                  <div className="  flex flex-row items-center">
                     <div className="w-14 h-14 mr-2">
                       <Image src="/images/hr_cut.png" width={500} height={500} />
                     </div>
@@ -148,7 +142,7 @@ export default function Header({ t }) {
                   </div>
                 </Link>
                 <Link href="/projects">
-                  <div className="hover:cursor-pointer flex flex-row items-center">
+                  <div className=" flex flex-row items-center">
                     <div className="w-14 h-14 ml-1">
                       <Image src="/images/service_project.png" width={500} height={500} />
                     </div>
@@ -159,7 +153,7 @@ export default function Header({ t }) {
                   </div>
                 </Link>
                 <Link href="/standards">
-                  <div className=" hover:cursor-pointer flex flex-row items-center">
+                  <div className="  flex flex-row items-center">
                     <div className="w-14 h-14 ml-1">
                       <Image src="/images/standards_cut.png" width={500} height={500} />
                     </div>
@@ -170,7 +164,7 @@ export default function Header({ t }) {
                   </div>
                 </Link>
                 <Link href="/it">
-                  <div className=" hover:cursor-pointer flex flex-row items-center">
+                  <div className="  flex flex-row items-center">
                     <div className="w-16 h-16 mr-1">
                       <Image src="/images/service_it_cut.png" width={500} height={500} />
                     </div>
@@ -181,7 +175,7 @@ export default function Header({ t }) {
                   </div>
                 </Link>
                 <Link href="/insurance">
-                  <div className=" hover:cursor-pointer flex flex-row items-center ml-[-2px]">
+                  <div className="  flex flex-row items-center ml-[-2px]">
                     <div className="w-14 h-14 mr-1">
                       <Image src="/images/insurance_crop.png" width={560} height={500} />
                     </div>
@@ -192,7 +186,7 @@ export default function Header({ t }) {
                   </div>
                 </Link>
                 <Link href="/value">
-                  <div className=" hover:cursor-pointer flex flex-row items-center ml-[-2px]">
+                  <div className="  flex flex-row items-center ml-[-2px]">
                     <div className="w-14 h-14 mr-1">
                       <Image src="/images/logo-value_cut.png" width={560} height={500} />
                     </div>
@@ -203,7 +197,7 @@ export default function Header({ t }) {
                   </div>
                 </Link>
                 <Link href="/offices">
-                  <div className=" hover:cursor-pointer flex flex-row items-center ml-1">
+                  <div className="  flex flex-row items-center ml-1">
                     <div className="w-14 h-14">
                       <Image src="/images/cut_offices_logo.png" width={500} height={500} />
                     </div>
@@ -256,7 +250,7 @@ export default function Header({ t }) {
                 // iconRight={icons.chevron}
                 ripple={false}
               >
-                <p className="cursor-pointer text-[rgba(255,255,255,.6)] focus:text-[#ffffff] hover:text-[#ffffff] active:text-[#ffffff] text-xl font-semibold">
+                <p className="cursor-pointer text-[rgba(255,255,255,.6)] focus:text-[#ffffff] [#ffffff] active:text-[#ffffff] text-xl font-semibold">
                   {t("services")}
                 </p>
               </Dropdown.Button>
@@ -281,10 +275,7 @@ export default function Header({ t }) {
                   },
                 }}
               >
-                <Dropdown.Item
-                  showFullDescription
-                  className="active:bg-[#021f41] focus:bg-[#021f41] hover:bg-[#021f41]"
-                >
+                <Dropdown.Item showFullDescription className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
                   <div onClick={() => router.push("/finance")} className="flex flex-row items-center">
                     <div className="w-16 h-16">
                       <Image src="/images/service_finance_cut.jpg" width={500} height={500} />
@@ -295,10 +286,7 @@ export default function Header({ t }) {
                     </div>
                   </div>
                 </Dropdown.Item>
-                <Dropdown.Item
-                  showFullDescription
-                  className="active:bg-[#021f41] focus:bg-[#021f41] hover:bg-[#021f41]"
-                >
+                <Dropdown.Item showFullDescription className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
                   <div onClick={() => router.push("/legal")} className="flex flex-row items-center">
                     <div className="w-16 h-16">
                       <Image src="/images/service_law_cut.jpg" width={500} height={500} />
@@ -309,10 +297,7 @@ export default function Header({ t }) {
                     </div>
                   </div>
                 </Dropdown.Item>
-                <Dropdown.Item
-                  showFullDescription
-                  className="active:bg-[#021f41] focus:bg-[#021f41] hover:bg-[#021f41]"
-                >
+                <Dropdown.Item showFullDescription className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
                   <div onClick={() => router.push("/marketing")} className="flex flex-row items-center">
                     <div className="w-16 h-16">
                       <Image src="/images/service_market_cut.png" width={500} height={500} />
@@ -323,10 +308,7 @@ export default function Header({ t }) {
                     </div>
                   </div>
                 </Dropdown.Item>
-                <Dropdown.Item
-                  showFullDescription
-                  className="active:bg-[#021f41] focus:bg-[#021f41] hover:bg-[#021f41]"
-                >
+                <Dropdown.Item showFullDescription className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
                   <div onClick={() => router.push("/translate")} className="ml-1 flex flex-row items-center">
                     <div className="w-14 h-14">
                       <Image src="/images/service_translate.png" width={500} height={500} />
@@ -337,10 +319,7 @@ export default function Header({ t }) {
                     </div>
                   </div>
                 </Dropdown.Item>
-                <Dropdown.Item
-                  showFullDescription
-                  className="active:bg-[#021f41] focus:bg-[#021f41] hover:bg-[#021f41]"
-                >
+                <Dropdown.Item showFullDescription className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
                   <div onClick={() => router.push("/hr")} className="flex flex-row items-center ml-1">
                     <div className="w-14 h-14">
                       <Image src="/images/hr_cut.png" width={500} height={500} />
@@ -353,7 +332,7 @@ export default function Header({ t }) {
                 </Dropdown.Item>
                 <Dropdown.Item
                   showFullDescription
-                  className="active:bg-[#021f41] focus:bg-[#021f41] hover:bg-[#021f41] mt-2 mb-2"
+                  className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41] mt-2 mb-2"
                 >
                   <div onClick={() => router.push("/projects")} className="flex flex-row items-center ml-1">
                     <div className="w-14 h-14">
@@ -365,10 +344,7 @@ export default function Header({ t }) {
                     </div>
                   </div>
                 </Dropdown.Item>
-                <Dropdown.Item
-                  showFullDescription
-                  className="active:bg-[#021f41] focus:bg-[#021f41] hover:bg-[#021f41]"
-                >
+                <Dropdown.Item showFullDescription className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
                   <div onClick={() => router.push("/standards")} className="flex flex-row items-center ml-1">
                     <div className="w-14 h-14">
                       <Image src="/images/standards_cut.png" width={500} height={500} />
@@ -379,10 +355,7 @@ export default function Header({ t }) {
                     </div>
                   </div>
                 </Dropdown.Item>
-                <Dropdown.Item
-                  showFullDescription
-                  className="active:bg-[#021f41] focus:bg-[#021f41] hover:bg-[#021f41]"
-                >
+                <Dropdown.Item showFullDescription className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
                   <div onClick={() => router.push("/it")} className="flex flex-row items-center">
                     <div className="w-16 h-16">
                       <Image src="/images/service_it_cut.png" width={500} height={500} />
@@ -393,10 +366,7 @@ export default function Header({ t }) {
                     </div>
                   </div>
                 </Dropdown.Item>
-                <Dropdown.Item
-                  showFullDescription
-                  className="active:bg-[#021f41] focus:bg-[#021f41] hover:bg-[#021f41]"
-                >
+                <Dropdown.Item showFullDescription className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
                   <div onClick={() => router.push("/insurance")} className="flex flex-row items-center">
                     <div className="w-14 h-14">
                       <Image src="/images/insurance_crop.png" width={500} height={500} />
@@ -407,10 +377,7 @@ export default function Header({ t }) {
                     </div>
                   </div>
                 </Dropdown.Item>
-                <Dropdown.Item
-                  showFullDescription
-                  className="active:bg-[#021f41] focus:bg-[#021f41] hover:bg-[#021f41]"
-                >
+                <Dropdown.Item showFullDescription className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
                   <div onClick={() => router.push("/value")} className="flex flex-row items-center">
                     <div className="w-14 h-14">
                       <Image src="/images/logo-value_cut.png" width={500} height={500} />
@@ -421,10 +388,7 @@ export default function Header({ t }) {
                     </div>
                   </div>
                 </Dropdown.Item>
-                <Dropdown.Item
-                  showFullDescription
-                  className="active:bg-[#021f41] focus:bg-[#021f41] hover:bg-[#021f41]"
-                >
+                <Dropdown.Item showFullDescription className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
                   <div onClick={() => router.push("/offices")} className="flex flex-row items-center">
                     <div className="w-14 h-14">
                       <Image src="/images/cut_offices_logo.png" width={500} height={500} />
