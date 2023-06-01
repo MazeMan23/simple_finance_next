@@ -50,9 +50,7 @@ export default function Header({ t }) {
                 setMegaMenu(!megaMenu);
               }}
             >
-              <p className="text-white duration-100 text-2xl font-thin hover:text-orange-400">
-                {t("services")}
-              </p>
+              <p className="text-white duration-100 text-2xl font-thin hover:text-orange-400">{t("services")}</p>
             </div>
             <Link href="https://groupsimple.sharepoint.com/_layouts/15/sharepoint.aspx">
               <p className="text-white duration-100 text-2xl font-thin hover:text-orange-400 hover:cursor-pointer">
@@ -97,85 +95,51 @@ export default function Header({ t }) {
                 <Link href="/finance">
                   <div className=" hover:cursor-pointer flex flex-row items-center">
                     <div className="w-16 h-16">
-                      <Image
-                        src="/images/service_finance_cut.jpg"
-                        width={500}
-                        height={500}
-                      />
+                      <Image src="/images/service_finance_cut.jpg" width={500} height={500} />
                     </div>
                     <div className="flex flex-col w-[80%]">
-                      <p className="text-[#e98f2f] text-xl font-bold">
-                        Simple Finance
-                      </p>
-                      <p className="text-gray-400 font-semibold">
-                        {t("finance")}
-                      </p>
+                      <p className="text-[#e98f2f] text-xl font-bold">Simple Finance</p>
+                      <p className="text-gray-400 font-semibold">{t("finance")}</p>
                     </div>
                   </div>
                 </Link>
                 <Link href="/legal">
                   <div className=" hover:cursor-pointer flex flex-row items-center">
                     <div className="w-16 h-16">
-                      <Image
-                        src="/images/service_law_cut.jpg"
-                        width={500}
-                        height={500}
-                      />
+                      <Image src="/images/service_law_cut.jpg" width={500} height={500} />
                     </div>
                     <div className="flex flex-col w-[80%]">
                       <p className="text-[#e98f2f] text-xl font-bold">LAW</p>
-                      <p className="text-gray-400 font-semibold">
-                        {t("legal")}
-                      </p>
+                      <p className="text-gray-400 font-semibold">{t("legal")}</p>
                     </div>
                   </div>
                 </Link>
                 <Link href="/marketing">
                   <div className=" hover:cursor-pointer flex flex-row items-center">
                     <div className="w-16 h-16 mr-1">
-                      <Image
-                        src="/images/service_market_cut.png"
-                        width={500}
-                        height={500}
-                      />
+                      <Image src="/images/service_market_cut.png" width={500} height={500} />
                     </div>
                     <div className="flex flex-col w-[80%]">
-                      <p className="text-[#e98f2f] text-xl font-bold">
-                        Marketing
-                      </p>
-                      <p className="text-gray-400 font-semibold">
-                        {t("marketing")}
-                      </p>
+                      <p className="text-[#e98f2f] text-xl font-bold">Marketing</p>
+                      <p className="text-gray-400 font-semibold">{t("marketing")}</p>
                     </div>
                   </div>
                 </Link>
                 <Link href="/translate">
                   <div className=" hover:cursor-pointer flex flex-row items-center">
                     <div className="w-14 h-14 mr-2">
-                      <Image
-                        src="/images/service_translate.png"
-                        width={500}
-                        height={500}
-                      />
+                      <Image src="/images/service_translate.png" width={500} height={500} />
                     </div>
                     <div className="flex flex-col w-[80%]">
-                      <p className="text-[#e98f2f] text-xl font-bold">
-                        Translate
-                      </p>
-                      <p className="text-gray-400 font-semibold">
-                        {t("translate")}
-                      </p>
+                      <p className="text-[#e98f2f] text-xl font-bold">Translate</p>
+                      <p className="text-gray-400 font-semibold">{t("translate")}</p>
                     </div>
                   </div>
                 </Link>
                 <Link href="/hr">
                   <div className=" hover:cursor-pointer flex flex-row items-center">
                     <div className="w-14 h-14 mr-2">
-                      <Image
-                        src="/images/hr_cut.png"
-                        width={500}
-                        height={500}
-                      />
+                      <Image src="/images/hr_cut.png" width={500} height={500} />
                     </div>
                     <div className="flex flex-col w-[80%]">
                       <p className="text-[#e98f2f] text-xl font-bold">HR</p>
@@ -186,49 +150,29 @@ export default function Header({ t }) {
                 <Link href="/projects">
                   <div className="hover:cursor-pointer flex flex-row items-center">
                     <div className="w-14 h-14 ml-1">
-                      <Image
-                        src="/images/service_project.png"
-                        width={500}
-                        height={500}
-                      />
+                      <Image src="/images/service_project.png" width={500} height={500} />
                     </div>
                     <div className="flex flex-col w-[80%] ml-2">
-                      <p className="text-[#e98f2f] text-xl font-bold">
-                        Projects
-                      </p>
-                      <p className="text-gray-400 font-semibold">
-                        {t("projects")}
-                      </p>
+                      <p className="text-[#e98f2f] text-xl font-bold">Projects</p>
+                      <p className="text-gray-400 font-semibold">{t("projects")}</p>
                     </div>
                   </div>
                 </Link>
                 <Link href="/standards">
                   <div className=" hover:cursor-pointer flex flex-row items-center">
                     <div className="w-14 h-14 ml-1">
-                      <Image
-                        src="/images/standards_cut.png"
-                        width={500}
-                        height={500}
-                      />
+                      <Image src="/images/standards_cut.png" width={500} height={500} />
                     </div>
                     <div className="flex flex-col w-[80%] ml-2">
-                      <p className="text-[#e98f2f] text-xl font-bold">
-                        Standards
-                      </p>
-                      <p className="text-gray-400 font-semibold">
-                        {t("standards")}
-                      </p>
+                      <p className="text-[#e98f2f] text-xl font-bold">Standards</p>
+                      <p className="text-gray-400 font-semibold">{t("standards")}</p>
                     </div>
                   </div>
                 </Link>
                 <Link href="/it">
                   <div className=" hover:cursor-pointer flex flex-row items-center">
                     <div className="w-16 h-16 mr-1">
-                      <Image
-                        src="/images/service_it_cut.png"
-                        width={500}
-                        height={500}
-                      />
+                      <Image src="/images/service_it_cut.png" width={500} height={500} />
                     </div>
                     <div className="flex flex-col w-[80%]">
                       <p className="text-[#e98f2f] text-xl font-bold">IT</p>
@@ -239,53 +183,33 @@ export default function Header({ t }) {
                 <Link href="/insurance">
                   <div className=" hover:cursor-pointer flex flex-row items-center ml-[-2px]">
                     <div className="w-14 h-14 mr-1">
-                      <Image
-                        src="/images/insurance_crop.png"
-                        width={560}
-                        height={500}
-                      />
+                      <Image src="/images/insurance_crop.png" width={560} height={500} />
                     </div>
                     <div className="flex flex-col w-[80%]">
-                      <p className="text-[#e98f2f] text-xl font-bold">
-                        Insurance
-                      </p>
-                      <p className="text-gray-400 font-semibold">
-                        {t("insurance")}
-                      </p>
+                      <p className="text-[#e98f2f] text-xl font-bold">Insurance</p>
+                      <p className="text-gray-400 font-semibold">{t("insurance")}</p>
                     </div>
                   </div>
                 </Link>
                 <Link href="/value">
                   <div className=" hover:cursor-pointer flex flex-row items-center ml-[-2px]">
                     <div className="w-14 h-14 mr-1">
-                      <Image
-                        src="/images/logo-value_cut.png"
-                        width={560}
-                        height={500}
-                      />
+                      <Image src="/images/logo-value_cut.png" width={560} height={500} />
                     </div>
                     <div className="flex flex-col w-[80%]">
                       <p className="text-[#e98f2f] text-xl font-bold">Value</p>
-                      <p className="text-gray-400 font-semibold">
-                        {t("value")}
-                      </p>
+                      <p className="text-gray-400 font-semibold">{t("value")}</p>
                     </div>
                   </div>
                 </Link>
                 <Link href="/offices">
                   <div className=" hover:cursor-pointer flex flex-row items-center ml-1">
                     <div className="w-14 h-14">
-                      <Image
-                        src="/images/cut_offices_logo.png"
-                        width={500}
-                        height={500}
-                      />
+                      <Image src="/images/cut_offices_logo.png" width={500} height={500} />
                     </div>
                     <div className="flex flex-col w-[80%] ml-2">
                       <p className="text-[#e98f2f] text-xl font-bold">Offices</p>
-                      <p className="text-gray-400 font-semibold">
-                        {t("offices")}
-                      </p>
+                      <p className="text-gray-400 font-semibold">{t("offices")}</p>
                     </div>
                   </div>
                 </Link>
@@ -308,11 +232,7 @@ export default function Header({ t }) {
             <div className="flex flex-col justify-center min-h-full">
               <div className="flex flex-row justify-center min-w-full">
                 <div className="w-[2rem] h-[2rem]">
-                  <FontAwesomeIcon
-                    icon={faBars}
-                    color="rgba(255,255,255,.6)"
-                    size="1x"
-                  />
+                  <FontAwesomeIcon icon={faBars} color="rgba(255,255,255,.6)" size="1x" />
                 </div>
               </div>
             </div>
@@ -365,21 +285,13 @@ export default function Header({ t }) {
                   showFullDescription
                   className="active:bg-[#021f41] focus:bg-[#021f41] hover:bg-[#021f41]"
                 >
-                  <div onClick={() => router.push('/finance')} className="flex flex-row items-center">
+                  <div onClick={() => router.push("/finance")} className="flex flex-row items-center">
                     <div className="w-16 h-16">
-                      <Image
-                        src="/images/service_finance_cut.jpg"
-                        width={500}
-                        height={500}
-                      />
+                      <Image src="/images/service_finance_cut.jpg" width={500} height={500} />
                     </div>
                     <div className="flex flex-col">
-                      <p className="text-[#e98f2f] text-xl font-bold">
-                        Simple Finance
-                      </p>
-                      <p className="text-gray-400 font-semibold">
-                        {t("finance")}
-                      </p>
+                      <p className="text-[#e98f2f] text-xl font-bold">Simple Finance</p>
+                      <p className="text-gray-400 font-semibold">{t("finance")}</p>
                     </div>
                   </div>
                 </Dropdown.Item>
@@ -387,19 +299,13 @@ export default function Header({ t }) {
                   showFullDescription
                   className="active:bg-[#021f41] focus:bg-[#021f41] hover:bg-[#021f41]"
                 >
-                  <div onClick={() => router.push('/legal')} className="flex flex-row items-center">
+                  <div onClick={() => router.push("/legal")} className="flex flex-row items-center">
                     <div className="w-16 h-16">
-                      <Image
-                        src="/images/service_law_cut.jpg"
-                        width={500}
-                        height={500}
-                      />
+                      <Image src="/images/service_law_cut.jpg" width={500} height={500} />
                     </div>
                     <div className="flex flex-col">
                       <p className="text-[#e98f2f] text-xl font-bold">LAW</p>
-                      <p className="text-gray-400 font-semibold">
-                        {t("legal")}
-                      </p>
+                      <p className="text-gray-400 font-semibold">{t("legal")}</p>
                     </div>
                   </div>
                 </Dropdown.Item>
@@ -407,21 +313,13 @@ export default function Header({ t }) {
                   showFullDescription
                   className="active:bg-[#021f41] focus:bg-[#021f41] hover:bg-[#021f41]"
                 >
-                  <div onClick={() => router.push('/marketing')} className="flex flex-row items-center">
+                  <div onClick={() => router.push("/marketing")} className="flex flex-row items-center">
                     <div className="w-16 h-16">
-                      <Image
-                        src="/images/service_market_cut.png"
-                        width={500}
-                        height={500}
-                      />
+                      <Image src="/images/service_market_cut.png" width={500} height={500} />
                     </div>
                     <div className="flex flex-col">
-                      <p className="text-[#e98f2f] text-xl font-bold">
-                        Marketing
-                      </p>
-                      <p className="text-gray-400 font-semibold">
-                        {t("marketing")}
-                      </p>
+                      <p className="text-[#e98f2f] text-xl font-bold">Marketing</p>
+                      <p className="text-gray-400 font-semibold">{t("marketing")}</p>
                     </div>
                   </div>
                 </Dropdown.Item>
@@ -429,21 +327,13 @@ export default function Header({ t }) {
                   showFullDescription
                   className="active:bg-[#021f41] focus:bg-[#021f41] hover:bg-[#021f41]"
                 >
-                  <div onClick={() => router.push('/translate')} className="ml-1 flex flex-row items-center">
+                  <div onClick={() => router.push("/translate")} className="ml-1 flex flex-row items-center">
                     <div className="w-14 h-14">
-                      <Image
-                        src="/images/service_translate.png"
-                        width={500}
-                        height={500}
-                      />
+                      <Image src="/images/service_translate.png" width={500} height={500} />
                     </div>
                     <div className="flex flex-col ml-1">
-                      <p className="text-[#e98f2f] text-xl font-bold">
-                        Translate
-                      </p>
-                      <p className="text-gray-400 font-semibold">
-                        {t("translate")}
-                      </p>
+                      <p className="text-[#e98f2f] text-xl font-bold">Translate</p>
+                      <p className="text-gray-400 font-semibold">{t("translate")}</p>
                     </div>
                   </div>
                 </Dropdown.Item>
@@ -451,13 +341,9 @@ export default function Header({ t }) {
                   showFullDescription
                   className="active:bg-[#021f41] focus:bg-[#021f41] hover:bg-[#021f41]"
                 >
-                  <div onClick={() => router.push('/hr')} className="flex flex-row items-center ml-1">
+                  <div onClick={() => router.push("/hr")} className="flex flex-row items-center ml-1">
                     <div className="w-14 h-14">
-                      <Image
-                        src="/images/hr_cut.png"
-                        width={500}
-                        height={500}
-                      />
+                      <Image src="/images/hr_cut.png" width={500} height={500} />
                     </div>
                     <div className="flex flex-col ml-1">
                       <p className="text-[#e98f2f] text-xl font-bold">HR</p>
@@ -469,21 +355,13 @@ export default function Header({ t }) {
                   showFullDescription
                   className="active:bg-[#021f41] focus:bg-[#021f41] hover:bg-[#021f41] mt-2 mb-2"
                 >
-                  <div onClick={() => router.push('/projects')} className="flex flex-row items-center ml-1">
+                  <div onClick={() => router.push("/projects")} className="flex flex-row items-center ml-1">
                     <div className="w-14 h-14">
-                      <Image
-                        src="/images/service_project.png"
-                        width={500}
-                        height={500}
-                      />
+                      <Image src="/images/service_project.png" width={500} height={500} />
                     </div>
                     <div className="flex flex-col ml-1">
-                      <p className="text-[#e98f2f] text-xl font-bold">
-                        Projects
-                      </p>
-                      <p className="text-gray-400 font-semibold">
-                        {t("projects")}
-                      </p>
+                      <p className="text-[#e98f2f] text-xl font-bold">Projects</p>
+                      <p className="text-gray-400 font-semibold">{t("projects")}</p>
                     </div>
                   </div>
                 </Dropdown.Item>
@@ -491,21 +369,13 @@ export default function Header({ t }) {
                   showFullDescription
                   className="active:bg-[#021f41] focus:bg-[#021f41] hover:bg-[#021f41]"
                 >
-                  <div onClick={() => router.push('/standards')} className="flex flex-row items-center ml-1">
+                  <div onClick={() => router.push("/standards")} className="flex flex-row items-center ml-1">
                     <div className="w-14 h-14">
-                      <Image
-                        src="/images/standards_cut.png"
-                        width={500}
-                        height={500}
-                      />
+                      <Image src="/images/standards_cut.png" width={500} height={500} />
                     </div>
                     <div className="flex flex-col ml-2">
-                      <p className="text-[#e98f2f] text-xl font-bold">
-                        Standards
-                      </p>
-                      <p className="text-gray-400 font-semibold">
-                        {t("standards")}
-                      </p>
+                      <p className="text-[#e98f2f] text-xl font-bold">Standards</p>
+                      <p className="text-gray-400 font-semibold">{t("standards")}</p>
                     </div>
                   </div>
                 </Dropdown.Item>
@@ -513,13 +383,9 @@ export default function Header({ t }) {
                   showFullDescription
                   className="active:bg-[#021f41] focus:bg-[#021f41] hover:bg-[#021f41]"
                 >
-                  <div onClick={() => router.push('/it')} className="flex flex-row items-center">
+                  <div onClick={() => router.push("/it")} className="flex flex-row items-center">
                     <div className="w-16 h-16">
-                      <Image
-                        src="/images/service_it_cut.png"
-                        width={500}
-                        height={500}
-                      />
+                      <Image src="/images/service_it_cut.png" width={500} height={500} />
                     </div>
                     <div className="flex flex-col ml-1">
                       <p className="text-[#e98f2f] text-xl font-bold">IT</p>
@@ -531,21 +397,13 @@ export default function Header({ t }) {
                   showFullDescription
                   className="active:bg-[#021f41] focus:bg-[#021f41] hover:bg-[#021f41]"
                 >
-                  <div onClick={() => router.push('/insurance')} className="flex flex-row items-center">
+                  <div onClick={() => router.push("/insurance")} className="flex flex-row items-center">
                     <div className="w-14 h-14">
-                      <Image
-                        src="/images/insurance_crop.png"
-                        width={500}
-                        height={500}
-                      />
+                      <Image src="/images/insurance_crop.png" width={500} height={500} />
                     </div>
                     <div className="flex flex-col ml-2">
-                      <p className="text-[#e98f2f] text-xl font-bold">
-                        Insurance
-                      </p>
-                      <p className="text-gray-400 font-semibold">
-                        {t("insurance")}
-                      </p>
+                      <p className="text-[#e98f2f] text-xl font-bold">Insurance</p>
+                      <p className="text-gray-400 font-semibold">{t("insurance")}</p>
                     </div>
                   </div>
                 </Dropdown.Item>
@@ -553,21 +411,13 @@ export default function Header({ t }) {
                   showFullDescription
                   className="active:bg-[#021f41] focus:bg-[#021f41] hover:bg-[#021f41]"
                 >
-                  <div onClick={() => router.push('/value')} className="flex flex-row items-center">
+                  <div onClick={() => router.push("/value")} className="flex flex-row items-center">
                     <div className="w-14 h-14">
-                      <Image
-                        src="/images/logo-value_cut.png"
-                        width={500}
-                        height={500}
-                      />
+                      <Image src="/images/logo-value_cut.png" width={500} height={500} />
                     </div>
                     <div className="flex flex-col ml-2">
-                      <p className="text-[#e98f2f] text-xl font-bold">
-                        Value
-                      </p>
-                      <p className="text-gray-400 font-semibold">
-                        {t("value")}
-                      </p>
+                      <p className="text-[#e98f2f] text-xl font-bold">Value</p>
+                      <p className="text-gray-400 font-semibold">{t("value")}</p>
                     </div>
                   </div>
                 </Dropdown.Item>
@@ -575,19 +425,13 @@ export default function Header({ t }) {
                   showFullDescription
                   className="active:bg-[#021f41] focus:bg-[#021f41] hover:bg-[#021f41]"
                 >
-                  <div onClick={() => router.push('/offices')} className="flex flex-row items-center">
+                  <div onClick={() => router.push("/offices")} className="flex flex-row items-center">
                     <div className="w-14 h-14">
-                      <Image
-                        src="/images/cut_offices_logo.png"
-                        width={500}
-                        height={500}
-                      />
+                      <Image src="/images/cut_offices_logo.png" width={500} height={500} />
                     </div>
                     <div className="flex flex-col w-[80%] ml-2">
                       <p className="text-[#e98f2f] text-xl font-bold">Offices</p>
-                      <p className="text-gray-400 font-semibold">
-                        {t("offices")}
-                      </p>
+                      <p className="text-gray-400 font-semibold">{t("offices")}</p>
                     </div>
                   </div>
                 </Dropdown.Item>
@@ -599,10 +443,7 @@ export default function Header({ t }) {
               </SimpleLink>
             </div>
             <div className="w-full">
-              <SimpleLink
-                href="https://groupsimple.sharepoint.com/_layouts/15/sharepoint.aspx"
-                className="text-lg"
-              >
+              <SimpleLink href="https://groupsimple.sharepoint.com/_layouts/15/sharepoint.aspx" className="text-lg">
                 {t("login")}
               </SimpleLink>
             </div>
