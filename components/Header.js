@@ -214,7 +214,7 @@ export default function Header({ t }) {
           <></>
         )}
       </div>
-      <nav className="flex lg:hidden flex-col justify-evenly p-4 bg-[#091E42] cursor-pointer">
+      <nav className="flex lg:hidden flex-col justify-evenly p-4 bg-[#091E42]">
         <div className="flex flex-row justify-evenly min-w-full">
           <div className="w-[25%]" />
           <div className="w-[50%]">
@@ -250,7 +250,7 @@ export default function Header({ t }) {
                 // iconRight={icons.chevron}
                 ripple={false}
               >
-                <p className="cursor-pointer text-[rgba(255,255,255,.6)] focus:text-[#ffffff] [#ffffff] active:text-[#ffffff] text-xl font-semibold">
+                <p className="text-[rgba(255,255,255,.6)] focus:text-[#ffffff] [#ffffff] active:text-[#ffffff] text-xl font-semibold">
                   {t("services")}
                 </p>
               </Dropdown.Button>
