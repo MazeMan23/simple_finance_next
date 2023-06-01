@@ -32,7 +32,7 @@ export default function Header({ t }) {
               </div>
             </Link>
           </Navbar.Brand>
-          <Navbar.Content className="gap-8">
+          <Navbar.Content className="gap-8 cursor-pointer">
             <Link href="/">
               <p className="text-white duration-100 text-2xl font-thin  ">{t("home")}</p>
             </Link>
@@ -85,7 +85,7 @@ export default function Header({ t }) {
         {megaMenu ? (
           <div className="w-full bg-[#021f41]">
             <div className="pt-4 pb-6 mx-4 flex flex-col">
-              <div className="grid grid-cols-5 gap-2 xl:gap-4">
+              <div className="grid grid-cols-5 gap-2 xl:gap-4 cursor-pointer">
                 <Link href="/finance">
                   <div className="  flex flex-row items-center">
                     <div className="w-16 h-16">
@@ -214,7 +214,7 @@ export default function Header({ t }) {
           <></>
         )}
       </div>
-      <nav className="flex lg:hidden flex-col justify-evenly p-4 bg-[#091E42]">
+      <nav className="flex lg:hidden flex-col justify-evenly p-4 bg-[#091E42] cursor-pointer">
         <div className="flex flex-row justify-evenly min-w-full">
           <div className="w-[25%]" />
           <div className="w-[50%]">
@@ -276,57 +276,67 @@ export default function Header({ t }) {
                 }}
               >
                 <Dropdown.Item showFullDescription className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
-                  <Link href="/finance" className="flex flex-row items-center">
-                    <div className="w-16 h-16">
-                      <Image src="/images/service_finance_cut.jpg" width={500} height={500} />
-                    </div>
-                    <div className="flex flex-col">
-                      <p className="text-[#e98f2f] text-xl font-bold">Simple Finance</p>
-                      <p className="text-gray-400 font-semibold">{t("finance")}</p>
-                    </div>
-                  </Link>
-                </Dropdown.Item>
-                <Dropdown.Item showFullDescription className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
-                  <Link href="/legal" className="flex flex-row items-center">
-                    <div className="w-16 h-16">
-                      <Image src="/images/service_law_cut.jpg" width={500} height={500} />
-                    </div>
-                    <div className="flex flex-col">
-                      <p className="text-[#e98f2f] text-xl font-bold">LAW</p>
-                      <p className="text-gray-400 font-semibold">{t("legal")}</p>
+                  <Link href="/finance">
+                    <div className="flex flex-row items-center">
+                      <div className="w-16 h-16">
+                        <Image src="/images/service_finance_cut.jpg" width={500} height={500} />
+                      </div>
+                      <div className="flex flex-col">
+                        <p className="text-[#e98f2f] text-xl font-bold">Simple Finance</p>
+                        <p className="text-gray-400 font-semibold">{t("finance")}</p>
+                      </div>
                     </div>
                   </Link>
                 </Dropdown.Item>
                 <Dropdown.Item showFullDescription className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
-                  <Link href="/marketing" className="flex flex-row items-center">
-                    <div className="w-16 h-16">
-                      <Image src="/images/service_market_cut.png" width={500} height={500} />
-                    </div>
-                    <div className="flex flex-col">
-                      <p className="text-[#e98f2f] text-xl font-bold">Marketing</p>
-                      <p className="text-gray-400 font-semibold">{t("marketing")}</p>
-                    </div>
-                  </Link>
-                </Dropdown.Item>
-                <Dropdown.Item showFullDescription className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
-                  <Link href="/translate" className="ml-1 flex flex-row items-center">
-                    <div className="w-14 h-14">
-                      <Image src="/images/service_translate.png" width={500} height={500} />
-                    </div>
-                    <div className="flex flex-col ml-1">
-                      <p className="text-[#e98f2f] text-xl font-bold">Translate</p>
-                      <p className="text-gray-400 font-semibold">{t("translate")}</p>
+                  <Link href="/legal">
+                    <div className="flex flex-row items-center">
+                      <div className="w-16 h-16">
+                        <Image src="/images/service_law_cut.jpg" width={500} height={500} />
+                      </div>
+                      <div className="flex flex-col">
+                        <p className="text-[#e98f2f] text-xl font-bold">LAW</p>
+                        <p className="text-gray-400 font-semibold">{t("legal")}</p>
+                      </div>
                     </div>
                   </Link>
                 </Dropdown.Item>
                 <Dropdown.Item showFullDescription className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
-                  <Link href="/hr" className="flex flex-row items-center ml-1">
-                    <div className="w-14 h-14">
-                      <Image src="/images/hr_cut.png" width={500} height={500} />
+                  <Link href="/marketing">
+                    <div className="flex flex-row items-center">
+                      <div className="w-16 h-16">
+                        <Image src="/images/service_market_cut.png" width={500} height={500} />
+                      </div>
+                      <div className="flex flex-col">
+                        <p className="text-[#e98f2f] text-xl font-bold">Marketing</p>
+                        <p className="text-gray-400 font-semibold">{t("marketing")}</p>
+                      </div>
                     </div>
-                    <div className="flex flex-col ml-1">
-                      <p className="text-[#e98f2f] text-xl font-bold">HR</p>
-                      <p className="text-gray-400 font-semibold">{t("hr")}</p>
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item showFullDescription className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
+                  <Link href="/translate">
+                    <div className="flex flex-row items-center">
+                      <div className="w-14 h-14">
+                        <Image src="/images/service_translate.png" width={500} height={500} />
+                      </div>
+                      <div className="flex flex-col ml-1">
+                        <p className="text-[#e98f2f] text-xl font-bold">Translate</p>
+                        <p className="text-gray-400 font-semibold">{t("translate")}</p>
+                      </div>
+                    </div>
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item showFullDescription className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
+                  <Link href="/hr">
+                    <div className="flex flex-row items-center">
+                      <div className="w-14 h-14">
+                        <Image src="/images/hr_cut.png" width={500} height={500} />
+                      </div>
+                      <div className="flex flex-col ml-1">
+                        <p className="text-[#e98f2f] text-xl font-bold">HR</p>
+                        <p className="text-gray-400 font-semibold">{t("hr")}</p>
+                      </div>
                     </div>
                   </Link>
                 </Dropdown.Item>
@@ -334,68 +344,80 @@ export default function Header({ t }) {
                   showFullDescription
                   className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41] mt-2 mb-2"
                 >
-                  <Link href="/projects" className="flex flex-row items-center ml-1">
-                    <div className="w-14 h-14">
-                      <Image src="/images/service_project.png" width={500} height={500} />
-                    </div>
-                    <div className="flex flex-col ml-1">
-                      <p className="text-[#e98f2f] text-xl font-bold">Projects</p>
-                      <p className="text-gray-400 font-semibold">{t("projects")}</p>
-                    </div>
-                  </Link>
-                </Dropdown.Item>
-                <Dropdown.Item showFullDescription className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
-                  <Link href="/standards" className="flex flex-row items-center ml-1">
-                    <div className="w-14 h-14">
-                      <Image src="/images/standards_cut.png" width={500} height={500} />
-                    </div>
-                    <div className="flex flex-col ml-2">
-                      <p className="text-[#e98f2f] text-xl font-bold">Standards</p>
-                      <p className="text-gray-400 font-semibold">{t("standards")}</p>
+                  <Link href="/projects">
+                    <div className="flex flex-row items-center">
+                      <div className="w-14 h-14">
+                        <Image src="/images/service_project.png" width={500} height={500} />
+                      </div>
+                      <div className="flex flex-col ml-1">
+                        <p className="text-[#e98f2f] text-xl font-bold">Projects</p>
+                        <p className="text-gray-400 font-semibold">{t("projects")}</p>
+                      </div>
                     </div>
                   </Link>
                 </Dropdown.Item>
                 <Dropdown.Item showFullDescription className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
-                  <Link href="/it" className="flex flex-row items-center">
-                    <div className="w-16 h-16">
-                      <Image src="/images/service_it_cut.png" width={500} height={500} />
-                    </div>
-                    <div className="flex flex-col ml-1">
-                      <p className="text-[#e98f2f] text-xl font-bold">IT</p>
-                      <p className="text-gray-400 font-semibold">{t("it")}</p>
-                    </div>
-                  </Link>
-                </Dropdown.Item>
-                <Dropdown.Item showFullDescription className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
-                  <Link href="/insurance" className="flex flex-row items-center">
-                    <div className="w-14 h-14">
-                      <Image src="/images/insurance_crop.png" width={500} height={500} />
-                    </div>
-                    <div className="flex flex-col ml-2">
-                      <p className="text-[#e98f2f] text-xl font-bold">Insurance</p>
-                      <p className="text-gray-400 font-semibold">{t("insurance")}</p>
+                  <Link href="/standards">
+                    <div className="flex flex-row items-center">
+                      <div className="w-14 h-14">
+                        <Image src="/images/standards_cut.png" width={500} height={500} />
+                      </div>
+                      <div className="flex flex-col ml-2">
+                        <p className="text-[#e98f2f] text-xl font-bold">Standards</p>
+                        <p className="text-gray-400 font-semibold">{t("standards")}</p>
+                      </div>
                     </div>
                   </Link>
                 </Dropdown.Item>
                 <Dropdown.Item showFullDescription className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
-                  <Link href="/value" className="flex flex-row items-center">
-                    <div className="w-14 h-14">
-                      <Image src="/images/logo-value_cut.png" width={500} height={500} />
-                    </div>
-                    <div className="flex flex-col ml-2">
-                      <p className="text-[#e98f2f] text-xl font-bold">Value</p>
-                      <p className="text-gray-400 font-semibold">{t("value")}</p>
+                  <Link href="/it">
+                    <div className="flex flex-row items-center">
+                      <div className="w-16 h-16">
+                        <Image src="/images/service_it_cut.png" width={500} height={500} />
+                      </div>
+                      <div className="flex flex-col ml-1">
+                        <p className="text-[#e98f2f] text-xl font-bold">IT</p>
+                        <p className="text-gray-400 font-semibold">{t("it")}</p>
+                      </div>
                     </div>
                   </Link>
                 </Dropdown.Item>
                 <Dropdown.Item showFullDescription className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
-                  <Link href="/offices" className="flex flex-row items-center">
-                    <div className="w-14 h-14">
-                      <Image src="/images/cut_offices_logo.png" width={500} height={500} />
+                  <Link href="/insurance">
+                    <div className="flex flex-row items-center">
+                      <div className="w-14 h-14">
+                        <Image src="/images/insurance_crop.png" width={500} height={500} />
+                      </div>
+                      <div className="flex flex-col ml-2">
+                        <p className="text-[#e98f2f] text-xl font-bold">Insurance</p>
+                        <p className="text-gray-400 font-semibold">{t("insurance")}</p>
+                      </div>
                     </div>
-                    <div className="flex flex-col w-[80%] ml-2">
-                      <p className="text-[#e98f2f] text-xl font-bold">Offices</p>
-                      <p className="text-gray-400 font-semibold">{t("offices")}</p>
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item showFullDescription className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
+                  <Link href="/value">
+                    <div className="flex flex-row items-center">
+                      <div className="w-14 h-14">
+                        <Image src="/images/logo-value_cut.png" width={500} height={500} />
+                      </div>
+                      <div className="flex flex-col ml-2">
+                        <p className="text-[#e98f2f] text-xl font-bold">Value</p>
+                        <p className="text-gray-400 font-semibold">{t("value")}</p>
+                      </div>
+                    </div>
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item showFullDescription className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
+                  <Link href="/offices">
+                    <div className="flex flex-row items-center">
+                      <div className="w-14 h-14">
+                        <Image src="/images/cut_offices_logo.png" width={500} height={500} />
+                      </div>
+                      <div className="flex flex-col w-[80%] ml-2">
+                        <p className="text-[#e98f2f] text-xl font-bold">Offices</p>
+                        <p className="text-gray-400 font-semibold">{t("offices")}</p>
+                      </div>
                     </div>
                   </Link>
                 </Dropdown.Item>
