@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { US, BG } from "country-flag-icons/react/3x2";
 import { setCookie } from "cookies-next";
 import { useRouter } from "next/router";
@@ -16,8 +16,8 @@ export default function Header({ t }) {
   const [selectedKey, setSelectedKey] = React.useState({});
 
   useEffect(() => {
-    router.push(selectedKey)
-  }, [selectedKey])
+    router.push(selectedKey);
+  }, [selectedKey]);
 
   return (
     <>
@@ -284,7 +284,8 @@ export default function Header({ t }) {
                 <Dropdown.Item
                   showFullDescription
                   key="/finance"
-                  className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
+                  className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]"
+                >
                   {/* <button onClick={() => router.push("/finance")}> */}
                   <div className="flex flex-row items-center">
                     <div className="w-16 h-16">
@@ -300,7 +301,8 @@ export default function Header({ t }) {
                 <Dropdown.Item
                   showFullDescription
                   key="/legal"
-                  className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
+                  className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]"
+                >
                   {/* <button onClick={() => router.push("/legal")} > */}
                   <div className="flex flex-row items-center">
                     <div className="w-[74px] h-16 ml-[-8px]">
@@ -316,7 +318,8 @@ export default function Header({ t }) {
                 <Dropdown.Item
                   showFullDescription
                   key="/marketing"
-                  className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
+                  className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]"
+                >
                   {/* <button onClick={() => router.push("/marketing")}> */}
                   <div className="flex flex-row items-center">
                     <div className="w-[71px] h-16 ml-[-6px]">
@@ -332,7 +335,8 @@ export default function Header({ t }) {
                 <Dropdown.Item
                   showFullDescription
                   key="/translate"
-                  className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
+                  className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]"
+                >
                   {/* <button onClick={() => router.push("/translate")}> */}
                   <div className="flex flex-row items-center">
                     <div className="w-14 h-14">
@@ -348,7 +352,8 @@ export default function Header({ t }) {
                 <Dropdown.Item
                   showFullDescription
                   key="/hr"
-                  className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
+                  className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]"
+                >
                   {/* <button onClick={() => router.push("/hr")}> */}
                   <div className="flex flex-row items-center">
                     <div className="w-14 h-14">
@@ -364,7 +369,8 @@ export default function Header({ t }) {
                 <Dropdown.Item
                   showFullDescription
                   key="/projects"
-                  className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
+                  className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]"
+                >
                   {/* <button onClick={() => router.push("/projects")}> */}
                   <div className="flex flex-row items-center">
                     <div className="w-14 h-14">
@@ -380,7 +386,8 @@ export default function Header({ t }) {
                 <Dropdown.Item
                   showFullDescription
                   key="/standards"
-                  className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
+                  className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]"
+                >
                   {/* <button onClick={() => router.push("/standards")}> */}
                   <div className="flex flex-row items-center">
                     <div className="w-14 h-14">
@@ -396,7 +403,8 @@ export default function Header({ t }) {
                 <Dropdown.Item
                   showFullDescription
                   key="/it"
-                  className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
+                  className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]"
+                >
                   {/* <button onClick={() => router.push("/it")}> */}
                   <div className="flex flex-row items-center">
                     <div className="w-16 h-16 ml-[-4px]">
@@ -412,7 +420,8 @@ export default function Header({ t }) {
                 <Dropdown.Item
                   showFullDescription
                   key="/insurance"
-                  className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
+                  className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]"
+                >
                   {/* <button onClick={() => router.push("/insurance")}> */}
                   <div className="flex flex-row items-center">
                     <div className="w-14 h-14">
@@ -428,7 +437,8 @@ export default function Header({ t }) {
                 <Dropdown.Item
                   showFullDescription
                   key="/value"
-                  className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
+                  className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]"
+                >
                   {/* <button onClick={() => router.push("/value")}> */}
                   <div className="flex flex-row items-center">
                     <div className="w-14 h-14">
@@ -444,7 +454,8 @@ export default function Header({ t }) {
                 <Dropdown.Item
                   showFullDescription
                   key="/offices"
-                  className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]">
+                  className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]"
+                >
                   {/* <button onClick={() => router.push("/offices")}> */}
                   <div className="flex flex-row items-center">
                     <div className="w-14 h-14">
@@ -499,7 +510,7 @@ export default function Header({ t }) {
         ) : (
           <></>
         )}
-      </nav >
+      </nav>
     </>
   );
 }
