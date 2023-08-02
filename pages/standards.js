@@ -141,11 +141,11 @@ export default function Finance() {
                   <Image src={item.banner} className="rounded-t-xl" objectFit="cover" width={180} height={180} />
                 }
               >
-                <p className="mb-3 indent-5 text-xs font-bold text-gray-700 text-justify md:text-xl">{item.desc}</p>
+                <p className="mb-3 text-xs font-bold text-gray-700 md:text-lg">{item.desc}</p>
                 {item["benefit"] ? (
                   <div>
-                    <p className="indent-5 text-xs font-bold text-gray-700 md:text-xl">{item.benefit}</p>
-                    <ul className="font-semibold text-xs text-gray-700 list-disc marker:text-orange-500 md:text-xl">
+                    <p className="indent-5 text-xs font-bold text-gray-700 md:text-lg">{item.benefit}</p>
+                    <ul className="font-semibold text-xs text-gray-700 list-disc marker:text-orange-500 md:text-lg">
                       {item.args.map((arg, index) => (
                         <li className="ml-10" key={index}>
                           {arg}

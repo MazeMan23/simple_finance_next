@@ -144,20 +144,17 @@ export default function Index() {
       <ParticlesHero img="/images/main-bg.jpg">
         <div className="flex flex-col justify-center text-center tracking-tight text-white gap-2">
           <div className="text-sm lg:text-2xl font-bold animate-slideToL">{t("heroTitle")}</div>
-          <div className="text-sm lg:text-2xl font-semibold tracking-widest animate-slideToL">{t("heroSubtitle")}</div>
-          <div className="text-sm leading-tight text-justify indent-5 font-semibold animate-slideToR mx-[5%] lg:text-xl 2xl:text-2xl">
-            {t("whoAreWe")}
-          </div>
+          <div className="text-sm lg:text-2xl font-semibold tracking-widest animate-slideToR">{t("heroSubtitle")}</div>
         </div>
       </ParticlesHero>
-      {/* <div style={{ backgroundColor: "#F8FCFD" }}>
+      <div style={{ backgroundColor: "#F8FCFD" }}>
         <div className="flex mr-3 ml-3 flex-row md:mr-20 md:ml-20">
           <div className="flex flex-col">
-            <h1 className="mt-5 text-3xl font-semibold">
+            <h1 className="mt-5 text-3xl font-semibold text-center">
               {t("whoAreWeTitle")}
             </h1>
-            <p className="mt-3">{t("whoAreWe")}</p>
-            <ul className="list-disc ml-5 mt-5  marker:text-orange-500">
+            <p className="my-5 text-xl text-justify indent-5">{t("whoAreWe")}</p>
+            {/* <ul className="list-disc ml-5 mt-5  marker:text-orange-500">
               <h2 className="text-xl font-bold text-black">
                 {t("whatWeDoTitle")}
               </h2>
@@ -166,10 +163,10 @@ export default function Index() {
                 {t("ourMissionTitle")}
               </h2>
               <li className="mb-2 mt-2 ml-8">{t("ourMission")}</li>
-            </ul>
+            </ul> */}
           </div>
         </div>
-      </div> */}
+      </div>
       <div className="bg-slate-100">
         <div className="flex flex-col items-center">
           <h1 className="text-3xl font-semibold	mt-10 mb-3">{t("servicesTitle")}</h1>

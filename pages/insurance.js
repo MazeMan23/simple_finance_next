@@ -162,7 +162,7 @@ export default function Translate() {
                 className="text-lg font-semibold"
                 contentLeft={<Avatar src={item.img} css={{ size: "$20" }} />}
               >
-                <div className="text-justify indent-3 mb-2">{item.text}</div>
+                <div className="mb-2">{item.text}</div>
                 {item.textArgs ? (
                   <ul className="mb-2">
                     {item.textArgs.map((arg, index) => (
@@ -174,8 +174,8 @@ export default function Translate() {
                 ) : (
                   <></>
                 )}
-                {item.text2 ? <div className="text-justify indent-3 mb-2">{item.text2}</div> : <></>}
-                {item.service ? <p className="indent-3 mb-2">{item.service}</p> : <></>}
+                {item.text2 ? <div className="mb-2">{item.text2}</div> : <></>}
+                {item.service ? <p className="mb-2">{item.service}</p> : <></>}
                 {item.args ? (
                   <ul className="list-disc marker:text-orange-500">
                     {item.args.map((arg, index) => (
@@ -187,7 +187,7 @@ export default function Translate() {
                 ) : (
                   <></>
                 )}
-                {item.addit ? <p className="mt-2 indent-3 text-justify">{item.addit}</p> : <></>}
+                {item.addit ? <p className="mt-2">{item.addit}</p> : <></>}
               </Collapse>
             </div>
           ))}

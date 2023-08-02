@@ -1,9 +1,9 @@
 {
   "insurance": {
     "htmlTitle": "Simple Insurance",
-    "heroTitle": "Simple Insurance",
+    "heroTitle": "Insurance",
     "our_services": "Simple Finance offers insurance solutions for corporate clients with different lines of business. Our underwriters are available to analyse and advise your business, with guaranteed best insurance cover that includes:",
-    "heroSubtitle": "We provide the corporate and individual business insurance services your business needs.",
+    "heroSubtitle": "We provide the corporate and individual business insurance services your business needs",
 
     "insurancePortfolioTitle": "Analysis of the available insurance portfolio",
     "insurancePortfolioText": "Insurance portfolio management can be viewed as the strategic management of a set of contracts to achieve profitability and reduce volatility. We assist in the review and analysis of individual insurance portfolios as well as the impact and requirements in terms of capacity planning, insurance policies and balancing the product mix. Analysis of the available insurance portfolio includes:",
@@ -83,10 +83,7 @@
     "agriculturalInsuranceArg8": "Download",
 
     "marineInsuranceTitle": "Marine Insurance",
-    "marineInsuranceText": "We provide solutions for specific cases faced by shipowners, shippers, charterers, shipbuilders. Our team has the experience to assist any company doing marine business, providing appropriate insurance, reinsurance and loss assistance, in all aspects of marine insurance.",
-
-    "cargoInsuranceTitle": "Cargo and CMR insurance",
-    "cargoInsuranceText": "Cargo and CMR is an insurance policy designed for companies engaged in import and export and re-export, as well as companies engaged in trade and distribution on the territory of Bulgaria. The insurances serve the commercial exchange of goods by protecting natural and legal persons, owners of cargo against risks such as loss or damage due to an insured event during their transportation from or to any part of the world or the territory of the Republic of Bulgaria.",
+    "marineInsuranceText": "Our team has the experience to assist any company doing marine business, providing appropriate insurance, reinsurance and loss assistance in all aspects of marine insurance.",
 
     "insurancePolicyTitle": "Electronic insurance policy management system",
     "insurancePolicyText": "The integrated system provides a consolidated view of policy updates, policy approval workflow, reviews and communication. The policy management system improves service quality, efficiency and accuracy while minimizing data complexity. The service enables you to access up-to-date documents, schedules, certificates, receipts, debit memos, wordings and endorsements all in one centralised location."

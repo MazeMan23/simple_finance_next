@@ -1,9 +1,9 @@
 {
   "translate": {
     "htmlTitle": "Simple Translate",
-    "heroTitle": "Simple Translate",
+    "heroTitle": "Translate",
     "our_services": "Our full range of translation services includes",
-    "heroSubtitle": "Use AI to achieve the best possible translation.",
+    "heroSubtitle": "Use AI to achieve the best possible translation",
     "placeholderInput": "The text you would like to translate",
     "placeholderOutput": "Your translated text.",
     "submitButton": "Translate",

@@ -147,10 +147,10 @@ export default function Marketing() {
                   }
                 >
                   <span className=" text-sm md:text-lg ">
-                    {t("market_research_desc")}
+                    {t("marketing_strategy_desc")}
                   </span>
                   <br />
-                  <ul>
+                  {/* <ul>
                     <li className="text-sm md:text-lg">
                       ❖ {t("market_research_desc_desc")}
                     </li>
@@ -166,7 +166,7 @@ export default function Marketing() {
                     <li className="text-sm md:text-lg">
                       ❖ {t("user_research")}
                     </li>
-                  </ul>
+                  </ul> */}
                 </Collapse>
                 <Collapse
                   className="scale-100 "
