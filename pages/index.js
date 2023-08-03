@@ -59,7 +59,7 @@ export default function Index() {
     },
     {
       name: "Actus",
-      image: "/images/partners/actus.png",
+      image: "/images/partners/actusedit.png",
     },
     {
       name: "BHH",
@@ -91,11 +91,11 @@ export default function Index() {
     },
     {
       name: "Otto International",
-      image: "/images/partners/ottointernational.png",
+      image: "/images/partners/ottointernationaledit.png",
     },
     {
       name: "QWell",
-      image: "/images/partners/qwell.png",
+      image: "/images/partners/qwelledit.png",
     },
     {
       name: "Schavemaker",
