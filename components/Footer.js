@@ -9,12 +9,12 @@ export default function Footer({ t, h }) {
     "it",
     "legal",
     "marketing",
-    "translate",
     "hr",
-    "projects",
     "standards",
-    "insurance",
     "value",
+    "translate",
+    "projects",
+    "insurance",
     "offices"];
 
   return (
@@ -23,7 +23,7 @@ export default function Footer({ t, h }) {
         <div className="flex lg:flex-row flex-col justify-evenly p-10 w-[90%] md:w-[80%] lg:w-full">
           <div className="flex flex-col justify-center">
             <div className="text-white text-lg md:text-center mb-2">{t("services")}</div>
-            <div className="grid gap-x-2 md:grid-cols-2 mb-2 lg:gap-x-6">
+            <div className="grid gap-x-2 md:grid-cols-2 mb-2 lg:gap-x-6 hover: cursor-pointer">
               {list.map((service) => (
                 <SimpleLink href={`/${service}`} key={service}>
                   {h(service)}

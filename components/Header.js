@@ -102,6 +102,17 @@ export default function Header({ t }) {
                     </div>
                   </div>
                 </Link>
+                <Link href="/it">
+                  <div className="  flex flex-row items-center">
+                    <div className="w-16 h-16 mr-1">
+                      <Image src="/images/service_it_cut.png" width={500} height={500} />
+                    </div>
+                    <div className="flex flex-col w-[80%]">
+                      <p className="text-[#e98f2f] text-xl font-bold">IT</p>
+                      <p className="text-gray-400 font-semibold">{t("it")}</p>
+                    </div>
+                  </div>
+                </Link>
                 <Link href="/legal">
                   <div className="  flex flex-row items-center">
                     <div className="w-16 h-16">
@@ -124,17 +135,6 @@ export default function Header({ t }) {
                     </div>
                   </div>
                 </Link>
-                <Link href="/translate">
-                  <div className="  flex flex-row items-center">
-                    <div className="w-14 h-14 mr-2">
-                      <Image src="/images/service_translate.png" width={500} height={500} />
-                    </div>
-                    <div className="flex flex-col w-[80%]">
-                      <p className="text-[#e98f2f] text-xl font-bold">Translate</p>
-                      <p className="text-gray-400 font-semibold">{t("translate")}</p>
-                    </div>
-                  </div>
-                </Link>
                 <Link href="/hr">
                   <div className="  flex flex-row items-center">
                     <div className="w-14 h-14 mr-2">
@@ -143,17 +143,6 @@ export default function Header({ t }) {
                     <div className="flex flex-col w-[80%]">
                       <p className="text-[#e98f2f] text-xl font-bold">HR</p>
                       <p className="text-gray-400 font-semibold">{t("hr")}</p>
-                    </div>
-                  </div>
-                </Link>
-                <Link href="/projects">
-                  <div className=" flex flex-row items-center">
-                    <div className="w-14 h-14 ml-1">
-                      <Image src="/images/service_project.png" width={500} height={500} />
-                    </div>
-                    <div className="flex flex-col w-[80%] ml-2">
-                      <p className="text-[#e98f2f] text-xl font-bold">Projects</p>
-                      <p className="text-gray-400 font-semibold">{t("projects")}</p>
                     </div>
                   </div>
                 </Link>
@@ -168,14 +157,36 @@ export default function Header({ t }) {
                     </div>
                   </div>
                 </Link>
-                <Link href="/it">
-                  <div className="  flex flex-row items-center">
-                    <div className="w-16 h-16 mr-1">
-                      <Image src="/images/service_it_cut.png" width={500} height={500} />
+                <Link href="/value">
+                  <div className="  flex flex-row items-center ml-[-2px]">
+                    <div className="w-14 h-14 mr-1">
+                      <Image src="/images/logo-value_cut.png" width={560} height={500} />
                     </div>
                     <div className="flex flex-col w-[80%]">
-                      <p className="text-[#e98f2f] text-xl font-bold">IT</p>
-                      <p className="text-gray-400 font-semibold">{t("it")}</p>
+                      <p className="text-[#e98f2f] text-xl font-bold">Value</p>
+                      <p className="text-gray-400 font-semibold">{t("value")}</p>
+                    </div>
+                  </div>
+                </Link>
+                <Link href="/translate">
+                  <div className="  flex flex-row items-center">
+                    <div className="w-14 h-14 mr-2">
+                      <Image src="/images/service_translate.png" width={500} height={500} />
+                    </div>
+                    <div className="flex flex-col w-[80%]">
+                      <p className="text-[#e98f2f] text-xl font-bold">Translate</p>
+                      <p className="text-gray-400 font-semibold">{t("translate")}</p>
+                    </div>
+                  </div>
+                </Link>
+                <Link href="/projects">
+                  <div className=" flex flex-row items-center">
+                    <div className="w-14 h-14 ml-1">
+                      <Image src="/images/service_project.png" width={500} height={500} />
+                    </div>
+                    <div className="flex flex-col w-[80%] ml-2">
+                      <p className="text-[#e98f2f] text-xl font-bold">Projects</p>
+                      <p className="text-gray-400 font-semibold">{t("projects")}</p>
                     </div>
                   </div>
                 </Link>
@@ -187,17 +198,6 @@ export default function Header({ t }) {
                     <div className="flex flex-col w-[80%]">
                       <p className="text-[#e98f2f] text-xl font-bold">Insurance</p>
                       <p className="text-gray-400 font-semibold">{t("insurance")}</p>
-                    </div>
-                  </div>
-                </Link>
-                <Link href="/value">
-                  <div className="  flex flex-row items-center ml-[-2px]">
-                    <div className="w-14 h-14 mr-1">
-                      <Image src="/images/logo-value_cut.png" width={560} height={500} />
-                    </div>
-                    <div className="flex flex-col w-[80%]">
-                      <p className="text-[#e98f2f] text-xl font-bold">Value</p>
-                      <p className="text-gray-400 font-semibold">{t("value")}</p>
                     </div>
                   </div>
                 </Link>
@@ -286,7 +286,6 @@ export default function Header({ t }) {
                   key="/finance"
                   className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]"
                 >
-                  {/* <button onClick={() => router.push("/finance")}> */}
                   <div className="flex flex-row items-center">
                     <div className="w-16 h-16">
                       <Image src="/images/service_finance_cut.jpg" width={500} height={500} />
@@ -296,116 +295,12 @@ export default function Header({ t }) {
                       <p className="text-gray-400 font-semibold">{t("finance")}</p>
                     </div>
                   </div>
-                  {/* </button> */}
-                </Dropdown.Item>
-                <Dropdown.Item
-                  showFullDescription
-                  key="/legal"
-                  className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]"
-                >
-                  {/* <button onClick={() => router.push("/legal")} > */}
-                  <div className="flex flex-row items-center">
-                    <div className="w-[74px] h-16 ml-[-8px]">
-                      <Image src="/images/service_law_cut.jpg" width={500} height={500} />
-                    </div>
-                    <div className="flex flex-col items-start">
-                      <p className="text-[#e98f2f] text-xl font-bold">LAW</p>
-                      <p className="text-gray-400 font-semibold">{t("legal")}</p>
-                    </div>
-                  </div>
-                  {/* </button> */}
-                </Dropdown.Item>
-                <Dropdown.Item
-                  showFullDescription
-                  key="/marketing"
-                  className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]"
-                >
-                  {/* <button onClick={() => router.push("/marketing")}> */}
-                  <div className="flex flex-row items-center">
-                    <div className="w-[71px] h-16 ml-[-6px]">
-                      <Image src="/images/service_market_cut.png" width={500} height={500} />
-                    </div>
-                    <div className="flex flex-col items-start">
-                      <p className="text-[#e98f2f] text-xl font-bold">Marketing</p>
-                      <p className="text-gray-400 font-semibold">{t("marketing")}</p>
-                    </div>
-                  </div>
-                  {/* </button> */}
-                </Dropdown.Item>
-                <Dropdown.Item
-                  showFullDescription
-                  key="/translate"
-                  className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]"
-                >
-                  {/* <button onClick={() => router.push("/translate")}> */}
-                  <div className="flex flex-row items-center">
-                    <div className="w-14 h-14">
-                      <Image src="/images/service_translate.png" width={500} height={500} />
-                    </div>
-                    <div className="flex flex-col items-start ml-2">
-                      <p className="text-[#e98f2f] text-xl font-bold">Translate</p>
-                      <p className="text-gray-400 font-semibold">{t("translate")}</p>
-                    </div>
-                  </div>
-                  {/* </button> */}
-                </Dropdown.Item>
-                <Dropdown.Item
-                  showFullDescription
-                  key="/hr"
-                  className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]"
-                >
-                  {/* <button onClick={() => router.push("/hr")}> */}
-                  <div className="flex flex-row items-center">
-                    <div className="w-14 h-14">
-                      <Image src="/images/hr_cut.png" width={500} height={500} />
-                    </div>
-                    <div className="flex flex-col items-start ml-2">
-                      <p className="text-[#e98f2f] text-xl font-bold">HR</p>
-                      <p className="text-gray-400 font-semibold">{t("hr")}</p>
-                    </div>
-                  </div>
-                  {/* </button> */}
-                </Dropdown.Item>
-                <Dropdown.Item
-                  showFullDescription
-                  key="/projects"
-                  className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]"
-                >
-                  {/* <button onClick={() => router.push("/projects")}> */}
-                  <div className="flex flex-row items-center">
-                    <div className="w-14 h-14">
-                      <Image src="/images/service_project.png" width={500} height={500} />
-                    </div>
-                    <div className="flex flex-col items-start ml-2">
-                      <p className="text-[#e98f2f] text-xl font-bold">Projects</p>
-                      <p className="text-gray-400 font-semibold">{t("projects")}</p>
-                    </div>
-                  </div>
-                  {/* </button> */}
-                </Dropdown.Item>
-                <Dropdown.Item
-                  showFullDescription
-                  key="/standards"
-                  className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]"
-                >
-                  {/* <button onClick={() => router.push("/standards")}> */}
-                  <div className="flex flex-row items-center">
-                    <div className="w-14 h-14">
-                      <Image src="/images/standards_cut.png" width={500} height={500} />
-                    </div>
-                    <div className="flex flex-col items-start ml-2">
-                      <p className="text-[#e98f2f] text-xl font-bold">Standards</p>
-                      <p className="text-gray-400 font-semibold">{t("standards")}</p>
-                    </div>
-                  </div>
-                  {/* </button> */}
                 </Dropdown.Item>
                 <Dropdown.Item
                   showFullDescription
                   key="/it"
                   className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]"
                 >
-                  {/* <button onClick={() => router.push("/it")}> */}
                   <div className="flex flex-row items-center">
                     <div className="w-16 h-16 ml-[-4px]">
                       <Image src="/images/service_it_cut.png" width={500} height={500} />
@@ -415,31 +310,72 @@ export default function Header({ t }) {
                       <p className="text-gray-400 font-semibold">{t("it")}</p>
                     </div>
                   </div>
-                  {/* </button> */}
                 </Dropdown.Item>
                 <Dropdown.Item
                   showFullDescription
-                  key="/insurance"
+                  key="/legal"
                   className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]"
                 >
-                  {/* <button onClick={() => router.push("/insurance")}> */}
                   <div className="flex flex-row items-center">
-                    <div className="w-14 h-14">
-                      <Image src="/images/insurance_crop.png" width={500} height={500} />
+                    <div className="w-[74px] h-16 ml-[-8px]">
+                      <Image src="/images/service_law_cut.jpg" width={500} height={500} />
                     </div>
-                    <div className="flex flex-col items-start ml-2">
-                      <p className="text-[#e98f2f] text-xl font-bold">Insurance</p>
-                      <p className="text-gray-400 font-semibold">{t("insurance")}</p>
+                    <div className="flex flex-col items-start">
+                      <p className="text-[#e98f2f] text-xl font-bold">LAW</p>
+                      <p className="text-gray-400 font-semibold">{t("legal")}</p>
                     </div>
                   </div>
-                  {/* </button> */}
+                </Dropdown.Item>
+                <Dropdown.Item
+                  showFullDescription
+                  key="/marketing"
+                  className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]"
+                >
+                  <div className="flex flex-row items-center">
+                    <div className="w-[71px] h-16 ml-[-6px]">
+                      <Image src="/images/service_market_cut.png" width={500} height={500} />
+                    </div>
+                    <div className="flex flex-col items-start">
+                      <p className="text-[#e98f2f] text-xl font-bold">Marketing</p>
+                      <p className="text-gray-400 font-semibold">{t("marketing")}</p>
+                    </div>
+                  </div>
+                </Dropdown.Item>
+                <Dropdown.Item
+                  showFullDescription
+                  key="/hr"
+                  className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]"
+                >
+                  <div className="flex flex-row items-center">
+                    <div className="w-14 h-14">
+                      <Image src="/images/hr_cut.png" width={500} height={500} />
+                    </div>
+                    <div className="flex flex-col items-start ml-2">
+                      <p className="text-[#e98f2f] text-xl font-bold">HR</p>
+                      <p className="text-gray-400 font-semibold">{t("hr")}</p>
+                    </div>
+                  </div>
+                </Dropdown.Item>
+                <Dropdown.Item
+                  showFullDescription
+                  key="/standards"
+                  className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]"
+                >
+                  <div className="flex flex-row items-center">
+                    <div className="w-14 h-14">
+                      <Image src="/images/standards_cut.png" width={500} height={500} />
+                    </div>
+                    <div className="flex flex-col items-start ml-2">
+                      <p className="text-[#e98f2f] text-xl font-bold">Standards</p>
+                      <p className="text-gray-400 font-semibold">{t("standards")}</p>
+                    </div>
+                  </div>
                 </Dropdown.Item>
                 <Dropdown.Item
                   showFullDescription
                   key="/value"
                   className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]"
                 >
-                  {/* <button onClick={() => router.push("/value")}> */}
                   <div className="flex flex-row items-center">
                     <div className="w-14 h-14">
                       <Image src="/images/logo-value_cut.png" width={500} height={500} />
@@ -449,14 +385,57 @@ export default function Header({ t }) {
                       <p className="text-gray-400 font-semibold">{t("value")}</p>
                     </div>
                   </div>
-                  {/* </button> */}
+                </Dropdown.Item>
+                <Dropdown.Item
+                  showFullDescription
+                  key="/translate"
+                  className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]"
+                >
+                  <div className="flex flex-row items-center">
+                    <div className="w-14 h-14">
+                      <Image src="/images/service_translate.png" width={500} height={500} />
+                    </div>
+                    <div className="flex flex-col items-start ml-2">
+                      <p className="text-[#e98f2f] text-xl font-bold">Translate</p>
+                      <p className="text-gray-400 font-semibold">{t("translate")}</p>
+                    </div>
+                  </div>
+                </Dropdown.Item>
+                <Dropdown.Item
+                  showFullDescription
+                  key="/projects"
+                  className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]"
+                >
+                  <div className="flex flex-row items-center">
+                    <div className="w-14 h-14">
+                      <Image src="/images/service_project.png" width={500} height={500} />
+                    </div>
+                    <div className="flex flex-col items-start ml-2">
+                      <p className="text-[#e98f2f] text-xl font-bold">Projects</p>
+                      <p className="text-gray-400 font-semibold">{t("projects")}</p>
+                    </div>
+                  </div>
+                </Dropdown.Item>
+                <Dropdown.Item
+                  showFullDescription
+                  key="/insurance"
+                  className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]"
+                >
+                  <div className="flex flex-row items-center">
+                    <div className="w-14 h-14">
+                      <Image src="/images/insurance_crop.png" width={500} height={500} />
+                    </div>
+                    <div className="flex flex-col items-start ml-2">
+                      <p className="text-[#e98f2f] text-xl font-bold">Insurance</p>
+                      <p className="text-gray-400 font-semibold">{t("insurance")}</p>
+                    </div>
+                  </div>
                 </Dropdown.Item>
                 <Dropdown.Item
                   showFullDescription
                   key="/offices"
                   className="active:bg-[#021f41] focus:bg-[#021f41] [#021f41]"
                 >
-                  {/* <button onClick={() => router.push("/offices")}> */}
                   <div className="flex flex-row items-center">
                     <div className="w-14 h-14">
                       <Image src="/images/cut_offices_logo.png" width={500} height={500} />
@@ -466,7 +445,6 @@ export default function Header({ t }) {
                       <div className="text-gray-400 font-semibold">{t("offices")}</div>
                     </div>
                   </div>
-                  {/* </button> */}
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>

@@ -57,6 +57,54 @@ export default function Index() {
       name: "Javery LTD",
       image: "/images/javery3.png",
     },
+    {
+      name: "Actus",
+      image: "/images/partners/actus.png",
+    },
+    {
+      name: "BHH",
+      image: "/images/partners/bhhedit.png",
+    },
+    {
+      name: "Bulgaria Mall",
+      image: "/images/partners/BulgariaMalledit.png",
+    },
+    {
+      name: "Defigo",
+      image: "/images/partners/defigo.png",
+    },
+    {
+      name: "Fast Bag",
+      image: "/images/partners/fastbaglogo.png",
+    },
+    {
+      name: "Hermes",
+      image: "/images/partners/hermes.png",
+    },
+    {
+      name: "Mall of Sofia",
+      image: "/images/partners/mallofsofialogo.png",
+    },
+    {
+      name: "Nova Translate",
+      image: "/images/partners/novatranslat.png",
+    },
+    {
+      name: "Otto International",
+      image: "/images/partners/ottointernational.png",
+    },
+    {
+      name: "QWell",
+      image: "/images/partners/qwell.png",
+    },
+    {
+      name: "Schavemaker",
+      image: "/images/partners/schavemaker.png",
+    },
+    {
+      name: "Siemens Energy",
+      image: "/images/partners/siemensnergy.png",
+    },
   ];
 
   const services_list = [
